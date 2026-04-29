@@ -3,22 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Curtis Hoffmann | The Biosemiotic Loom</title>
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200;400;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <title>CURTIS HOFFMANN | THE BIOSEMIOTIC LOOM</title>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200;0,400;1,200&family=Inter:wght@300&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0d0d0d;
+      --midnight: #000b18;
+      --indigo: #1a2a44;
       --gold: #c5a059;
-      --slate: #4a5568;
       --bone: #e2e8f0;
+      --slate: #4a5568;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg);
-      background: radial-gradient(circle at center, #1a1a1a 0%, #050505 100%);
+      font-family: 'Crimson Pro', serif;
+      background-color: var(--midnight);
+      /* Indigo Radial Gradient */
+      background: radial-gradient(circle at center, var(--indigo) 0%, var(--midnight) 100%);
       min-height: 100vh;
       display: flex;
       justify-content: center;
@@ -27,76 +29,89 @@
       color: var(--bone);
     }
 
-    /* Fine-grain texture for a "museum" feel */
+    /* Diagonal Texture Lines */
     body::before {
       content: "";
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
-      opacity: 0.03;
+      opacity: 0.04;
       pointer-events: none;
-      background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+      background-image: repeating-linear-gradient(45deg, #fff 0px, #fff 1px, transparent 1px, transparent 3px);
     }
 
     .container { text-align: center; position: relative; z-index: 10; width: 100%; }
 
     header {
-      margin-bottom: 2rem;
-      animation: fadeIn 3s ease-in-out;
+      margin-bottom: 2.5rem;
+      /* The Cinematic Intro Animation */
+      animation: blurFadeIn 3.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     }
 
     .prefix {
-      font-family: 'Crimson Pro', serif;
-      font-size: 0.7rem;
+      font-size: 0.65rem;
       letter-spacing: 0.8em;
       color: var(--gold);
       text-transform: uppercase;
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
+      font-weight: 300;
     }
 
     h1 {
-      font-family: 'Crimson Pro', serif;
-      font-size: clamp(2rem, 6vw, 3.5rem);
+      font-size: clamp(2rem, 6vw, 3.2rem);
       font-weight: 200;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.3em;
       color: var(--bone);
       text-transform: uppercase;
     }
 
     .tagline {
-      font-size: 0.8rem;
-      font-weight: 300;
-      letter-spacing: 0.4em;
+      font-size: 0.85rem;
+      font-style: italic;
+      letter-spacing: 0.2em;
       color: var(--slate);
-      margin-top: 0.5rem;
+      margin-top: 0.8rem;
     }
 
     .canvas-container {
       position: relative;
       width: 100vw;
-      height: 550px;
+      height: 500px;
       margin: 0 auto;
       cursor: crosshair;
     }
 
-    canvas { display: block; filter: drop-shadow(0 0 20px rgba(197, 160, 89, 0.1)); }
+    canvas { display: block; filter: drop-shadow(0 0 20px rgba(197, 160, 89, 0.15)); }
 
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    /* Cool Blur/Fade Intro */
+    @keyframes blurFadeIn {
+      0% {
+        opacity: 0;
+        filter: blur(15px);
+        transform: translateY(15px);
+        letter-spacing: 1.5em;
+      }
+      100% {
+        opacity: 1;
+        filter: blur(0px);
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <div class="prefix">Anthropological Systems</div>
-      <h1>Curtis Hoffmann</h1>
-      <div class="tagline">Genomic Weaver • PhD Candidate</div>
+      <div class="prefix">Fragmenta Genomica // Anthropologia</div>
+      <h1>CURTIS HOFFMANN</h1>
+      <div class="tagline">A weaver of biological and cultural lineages.</div>
     </header>
     <div class="canvas-container">
-      <canvas id="kineticCanvas"></canvas>
+      <canvas id="kineticLoom"></canvas>
     </div>
   </div>
 
   <script>
-    const canvas = document.getElementById('kineticCanvas');
+    const canvas = document.getElementById('kineticLoom');
     const ctx = canvas.getContext('2d');
     let t = 0, lastTs = 0, mouseX = -1, mouseY = -1, pointerInside = false;
     let bloom = 0;
@@ -132,111 +147,97 @@
       }
     });
 
-    function drawSacredGeometry(x, y, size, active) {
+    function drawVesicaIcon(x, y, size, active) {
       ctx.save();
       ctx.translate(x, y);
-      ctx.rotate(t * 0.2);
-      
-      const petals = 8;
+      ctx.rotate(t * 0.15);
       ctx.lineWidth = 0.8;
-      
-      // The "Brahman" Flower
-      for (let i = 0; i < petals; i++) {
-        ctx.rotate((Math.PI * 2) / petals);
-        ctx.strokeStyle = `rgba(197, 160, 89, ${active})`;
-        
+      ctx.strokeStyle = `rgba(197, 160, 89, ${active * 0.6})`;
+      const count = 6;
+      for (let i = 0; i < count; i++) {
+        ctx.rotate((Math.PI * 2) / count);
         ctx.beginPath();
-        ctx.moveTo(0, 0);
-        ctx.bezierCurveTo(size/2, -size/2, size, -size/4, size, 0);
-        ctx.bezierCurveTo(size, size/4, size/2, size/2, 0, 0);
-        ctx.stroke();
-        
-        // Internal geometry
-        ctx.beginPath();
-        ctx.arc(size/2, 0, size/4, 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(74, 85, 104, ${active * 0.5})`;
+        ctx.arc(size / 2.5, 0, size / 1.8, 0, Math.PI * 2);
         ctx.stroke();
       }
-      
-      // Core
       ctx.fillStyle = `rgba(226, 232, 240, ${active})`;
       ctx.beginPath();
-      ctx.arc(0, 0, 2, 0, Math.PI * 2);
+      ctx.arc(0, 0, 1.5, 0, Math.PI * 2);
       ctx.fill();
-      
       ctx.restore();
     }
 
     function loop(ts) {
       const dt = (ts - lastTs) / 1000 || 0;
       lastTs = ts;
-      t += dt * 0.3; // Meditative rotation speed
+      t += dt * 0.4;
       const w = canvas.clientWidth, h = canvas.clientHeight;
+      const centerX = w / 2, centerY = h / 2;
       ctx.clearRect(0, 0, w, h);
 
-      const centerY = h / 2;
       bloom += ((pointerInside ? 1 : 0) - bloom) * 0.04;
+      const pulse = (Math.sin(t * 3) + 1) / 2;
 
-      // The "Infinite Silk" Braid
+      // 1. CONCENTRIC SEISMIC CIRCLES (GOLD)
+      if (bloom > 0.02) {
+        for (let r = 0; r < 7; r++) {
+          const radius = (55 * r + (t * 45) % 55) * bloom;
+          const alpha = Math.max(0, (1 - radius / (w * 0.4))) * bloom * (0.12 + pulse * 0.06);
+          ctx.beginPath();
+          ctx.strokeStyle = `rgba(197, 160, 89, ${alpha})`;
+          ctx.lineWidth = 0.6 + (pulse * 1.2);
+          ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
+          ctx.stroke();
+        }
+      }
+
+      // 2. DNA WOVEN ROPE (12 STRANDS)
       const threadCount = 12;
-      const points = 120;
-      
+      const points = 180;
       for (let s = 0; s < threadCount; s++) {
         ctx.beginPath();
         const offset = (s / threadCount) * Math.PI * 2;
-        const colorShift = Math.sin(t + offset) * 20;
-        ctx.strokeStyle = `rgba(${197+colorShift}, ${160+colorShift}, ${89+colorShift}, ${0.35 * (1 - bloom)})`;
-        ctx.lineWidth = 0.6;
-
+        ctx.strokeStyle = `rgba(197, 160, 89, ${0.3 * (1 - bloom)})`;
+        ctx.lineWidth = 0.7;
         for (let i = 0; i <= points; i++) {
           const x = (i / points) * w;
-          // Mathematical "Helix-Torus" combination
-          const xFactor = x * 0.008;
-          const y1 = Math.sin(xFactor + t + offset) * 50;
-          const y2 = Math.cos(xFactor * 0.5 - t + offset) * 20;
-          
-          const y = centerY + (y1 + y2) * (1 - bloom);
-          
+          const xFactor = x * 0.01;
+          const y1 = Math.sin(xFactor + t + offset) * 48;
+          const y2 = Math.cos(xFactor * 0.5 - t * 0.5 + offset) * 15;
+          const distToCenter = Math.abs(x - centerX);
+          const disruptionAmps = Math.max(0, (250 - distToCenter));
+          const richterJitter = Math.sin((x * 0.5) + (t * 12)) * (pulse * 14 * bloom * (disruptionAmps / 250));
+          const y = centerY + (y1 + y2) * (1 - bloom) + richterJitter;
           if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
         }
         ctx.stroke();
       }
 
-      // Interactive Bloom Grid
+      // 3. OVERLAPPING CIRCLE ICONS (4x2 GRID)
       nodes = [];
       let isHovering = false;
       if (bloom > 0.01) {
-        const cols = 4;
-        for (let r = 0; r < 2; r++) {
+        const rows = 2, cols = 4;
+        for (let r = 0; r < rows; r++) {
           for (let c = 0; c < cols; c++) {
             const x = (w / (cols + 1)) * (c + 1);
-            const y = centerY + (r === 0 ? -125 : 125) * bloom;
-            const radius = 65 * bloom;
-            
-            drawSacredGeometry(x, y + Math.sin(t*2 + c)*10, 40 * bloom, bloom);
-            nodes.push({ x, y, r: radius, link: nodeLinks[r*4 + c] });
-
-            const dx = mouseX - x, dy = mouseY - y;
-            if (pointerInside && Math.sqrt(dx*dx + dy*dy) < radius) isHovering = true;
-            
-            // Connection threads (The "Tension" of the loom)
-            ctx.beginPath();
-            ctx.strokeStyle = `rgba(197, 160, 89, ${bloom * 0.12})`;
-            ctx.moveTo(x, y);
-            ctx.lineTo(w/2, centerY);
-            ctx.stroke();
+            const y = centerY + (r === 0 ? -130 : 130) * bloom + Math.sin(t*0.7 + c)*6;
+            const size = 38 * bloom;
+            drawVesicaIcon(x, y, size, bloom);
+            nodes.push({ x, y, r: size * 1.3, link: nodeLinks[r*4 + c] });
+            if (pointerInside && Math.sqrt((mouseX-x)**2 + (mouseY-y)**2) < size * 1.3) isHovering = true;
           }
         }
       }
 
       canvas.style.cursor = isHovering ? 'pointer' : 'default';
 
-      // Status Label
-      ctx.font = "300 9px 'Inter'";
+      // ROMAN MAXIMUM ETHOS LABEL
+      ctx.font = "400 9px 'Crimson Pro'";
       ctx.textAlign = "center";
-      ctx.letterSpacing = "0.8em";
-      ctx.fillStyle = `rgba(197, 160, 89, ${0.1 + bloom * 0.6})`;
-      ctx.fillText(bloom > 0.8 ? "SYSTEM CONFIGURATION: HARMONIC" : "CALIBRATING ANCESTRAL FREQUENCIES", w/2, 40);
+      ctx.letterSpacing = "0.9em";
+      ctx.fillStyle = `rgba(226, 232, 240, ${0.1 + bloom * 0.5})`;
+      ctx.fillText(bloom > 0.8 ? "SYSTEMA STABILITUM // ARCHIVUM" : "OBSERVARE ET COLLIGERE", w/2, 40);
 
       requestAnimationFrame(loop);
     }

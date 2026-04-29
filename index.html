@@ -29,7 +29,6 @@
       color: var(--bone);
     }
 
-    /* Diagonal Texture Lines */
     body::before {
       content: "";
       position: fixed;
@@ -76,12 +75,10 @@
       width: 100vw;
       height: 460px;
       margin: 0 auto;
-      cursor: crosshair;
     }
 
     canvas { display: block; filter: drop-shadow(0 0 20px rgba(197, 160, 89, 0.15)); }
 
-    /* Footer / CV Button Section */
     footer {
       position: relative;
       z-index: 20;
@@ -126,7 +123,7 @@
       <canvas id="kineticLoom"></canvas>
     </div>
     <footer>
-      <a href="https://docs.google.com/document/d/1HQFREZZm8r_EJMEj9ELAulepvqKbjB1_POZPjLV6dxM/edit?usp=sharing" class="cv-button">Curriculum Vitae</a>
+      <a href="https://docs.google.com/document/d/1HQFREZZm8r_EJMEj9ELAulepvqKbjB1_POZPjLV6dxM/edit?usp=sharing" target="_blank" class="cv-button">Curriculum Vitae</a>
     </footer>
   </div>
 
@@ -136,9 +133,18 @@
     let t = 0, lastTs = 0, mouseX = -1, mouseY = -1, pointerInside = false;
     let bloom = 0;
     
-    let nodes = [];
-    // Google Scholar Link
-    const nodeLinks = Array.from({length: 8}, () => `https://scholar.google.com/citations?user=EOEi56EAAAAJ&hl=en`);
+    const nodeData = [
+      { label: "Google Scholar", link: "https://scholar.google.com/citations?user=EOEi56EAAAAJ&hl=en", hoverState: 0 },
+      { label: "Tikkun Mada", link: "https://tikkunmada.com", hoverState: 0 },
+      { label: "Biodefense Budget", link: "https://phagehunter.github.io/biodefense", hoverState: 0 },
+      { label: "Soundcloud", link: "https://soundcloud.com/rudimylo", hoverState: 0 },
+      { label: "Archive Alpha", link: "#", hoverState: 0 },
+      { label: "Archive Beta", link: "#", hoverState: 0 },
+      { label: "Archive Gamma", link: "#", hoverState: 0 },
+      { label: "Archive Delta", link: "#", hoverState: 0 }
+    ];
+
+    let currentNodes = [];
 
     function sizeCanvas() {
       const dpr = window.devicePixelRatio || 1;
@@ -161,26 +167,37 @@
     
     canvas.addEventListener('click', () => {
       if (bloom > 0.6) {
-        nodes.forEach(n => {
+        currentNodes.forEach(n => {
           const dx = mouseX - n.x, dy = mouseY - n.y;
-          if (Math.sqrt(dx*dx + dy*dy) < n.r) window.open(n.link, '_blank');
+          if (Math.sqrt(dx*dx + dy*dy) < n.r && n.link !== "#") window.open(n.link, '_blank');
         });
       }
     });
 
-    function drawVesicaIcon(x, y, size, active) {
+    function drawVesicaIcon(x, y, size, active, hoverState) {
       ctx.save();
       ctx.translate(x, y);
       ctx.rotate(t * 0.15);
-      ctx.lineWidth = 0.8;
-      ctx.strokeStyle = `rgba(197, 160, 89, ${active * 0.6})`;
+      
+      const scaleBoost = 1 + (hoverState * 0.2);
+      const finalOpacity = (active * 0.5) + (hoverState * 0.5);
+      
+      ctx.lineWidth = 0.8 + (hoverState * 0.6);
+      ctx.strokeStyle = `rgba(197, 160, 89, ${finalOpacity})`;
+      
+      if (hoverState > 0.01) {
+        ctx.shadowBlur = hoverState * 20;
+        ctx.shadowColor = `rgba(197, 160, 89, ${hoverState * 0.8})`;
+      }
+
       const count = 6;
       for (let i = 0; i < count; i++) {
         ctx.rotate((Math.PI * 2) / count);
         ctx.beginPath();
-        ctx.arc(size / 2.5, 0, size / 1.8, 0, Math.PI * 2);
+        ctx.arc((size * scaleBoost) / 2.5, 0, (size * scaleBoost) / 1.8, 0, Math.PI * 2);
         ctx.stroke();
       }
+      
       ctx.fillStyle = `rgba(226, 232, 240, ${active})`;
       ctx.beginPath();
       ctx.arc(0, 0, 1.5, 0, Math.PI * 2);
@@ -199,7 +216,7 @@
       bloom += ((pointerInside ? 1 : 0) - bloom) * 0.04;
       const pulse = (Math.sin(t * 3) + 1) / 2;
 
-      // 1. CONCENTRIC SEISMIC CIRCLES (GOLD)
+      // 1. SEISMIC CIRCLES
       if (bloom > 0.02) {
         for (let r = 0; r < 7; r++) {
           const radius = (55 * r + (t * 45) % 55) * bloom;
@@ -226,33 +243,61 @@
           const y1 = Math.sin(xFactor + t + offset) * 48;
           const y2 = Math.cos(xFactor * 0.5 - t * 0.5 + offset) * 15;
           const distToCenter = Math.abs(x - centerX);
-          const disruptionAmps = Math.max(0, (250 - distToCenter));
-          const jitter = Math.sin((x * 0.5) + (t * 12)) * (pulse * 14 * bloom * (disruptionAmps / 250));
+          const disruption = Math.max(0, (250 - distToCenter));
+          const jitter = Math.sin((x * 0.5) + (t * 12)) * (pulse * 14 * bloom * (disruption / 250));
           const y = centerY + (y1 + y2) * (1 - bloom) + jitter;
           if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
         }
         ctx.stroke();
       }
 
-      // 3. NODES (4x2 GRID)
-      nodes = [];
-      let isHovering = false;
-      if (bloom > 0.01) {
-        const rows = 2, cols = 4;
-        for (let r = 0; r < rows; r++) {
-          for (let c = 0; c < cols; c++) {
-            const x = (w / (cols + 1)) * (c + 1);
-            const y = centerY + (r === 0 ? -130 : 130) * bloom + Math.sin(t*0.7 + c)*6;
-            const size = 38 * bloom;
-            drawVesicaIcon(x, y, size, bloom);
-            nodes.push({ x, y, r: size * 1.3, link: nodeLinks[r*4 + c] });
-            const dx = mouseX - x, dy = mouseY - y;
-            if (pointerInside && Math.sqrt(dx*dx + dy*dy) < size * 1.3) isHovering = true;
-          }
-        }
-      }
+      // 3. NODES & SMOOTH HOVER
+      currentNodes = [];
+      let anyHovered = false;
+      const rows = 2, cols = 4;
 
-      canvas.style.cursor = isHovering ? 'pointer' : 'default';
+      nodeData.forEach((data, index) => {
+        const row = Math.floor(index / cols);
+        const col = index % cols;
+        const x = (w / (cols + 1)) * (col + 1);
+        const y = centerY + (row === 0 ? -130 : 130) * bloom + Math.sin(t * 0.7 + col) * 6;
+        const size = 38 * bloom;
+
+        const dist = Math.sqrt((mouseX - x)**2 + (mouseY - y)**2);
+        const isCurrentlyHovered = pointerInside && dist < size * 1.3;
+        
+        // Decreased multiplication factor (0.15 to 0.04) for much softer, slower glow
+        data.hoverState += (isCurrentlyHovered ? 1 - data.hoverState : -data.hoverState) * 0.04;
+
+        drawVesicaIcon(x, y, size, bloom, data.hoverState);
+        
+        currentNodes.push({ x, y, r: size * 1.3, label: data.label, link: data.link, hover: data.hoverState });
+        if (isCurrentlyHovered) anyHovered = true;
+      });
+
+      canvas.style.cursor = anyHovered ? 'pointer' : 'default';
+
+      // 4. KINETIC LABELS (Updated text placement and smoothing)
+      currentNodes.forEach(n => {
+        if (n.hover > 0.01) {
+          ctx.save();
+          ctx.font = "300 11px 'Crimson Pro'";
+          ctx.textAlign = "center";
+          
+          // Smoother letter spacing transition
+          ctx.letterSpacing = (0.3 + n.hover * 0.2) + "em";
+          
+          // Increased padding from node center (y) to get below icon graphic
+          const labelPadding = 48; // Space between node center and label top
+          const yOffset = labelPadding + (n.hover * 4) + (Math.sin(t*5)*n.hover);
+          
+          ctx.fillStyle = `rgba(226, 232, 240, ${n.hover * 0.9})`;
+          
+          // Draw text BELOW the icon using n.y + fixed padding
+          ctx.fillText(n.label.toUpperCase(), n.x, n.y + yOffset);
+          ctx.restore();
+        }
+      });
 
       // STATUS LABEL
       ctx.font = "400 9px 'Crimson Pro'";

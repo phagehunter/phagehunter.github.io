@@ -106,25 +106,30 @@
       color: var(--bone);
     }
 
-    /* Audio Controls Style */
+    /* Audio Toggle Styling */
     #audio-toggle {
       position: fixed;
-      bottom: 20px;
-      left: 20px;
+      bottom: 25px;
+      left: 25px;
       z-index: 100;
       background: transparent;
-      border: none;
+      border: 1px solid rgba(74, 85, 104, 0.3);
+      padding: 6px 12px;
       color: var(--slate);
       font-family: 'Crimson Pro', serif;
       font-size: 0.6rem;
-      letter-spacing: 0.3em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       cursor: pointer;
-      transition: color 0.3s ease;
-      opacity: 0.6;
+      transition: all 0.4s ease;
+      opacity: 0.7;
     }
 
-    #audio-toggle:hover { color: var(--gold); opacity: 1; }
+    #audio-toggle:hover {
+      color: var(--gold);
+      border-color: var(--gold);
+      opacity: 1;
+    }
 
     @keyframes blurFadeIn {
       0% { opacity: 0; filter: blur(15px); transform: translateY(15px); letter-spacing: 1.5em; }
@@ -138,7 +143,7 @@
     <source src="background.mp3" type="audio/mpeg">
   </audio>
 
-  <button id="audio-toggle">Sound Off</button>
+  <button id="audio-toggle">Sound: Off</button>
 
   <div class="container">
     <header>
@@ -162,42 +167,47 @@
     
     let t = 0, lastTs = 0, mouseX = -1, mouseY = -1, pointerInside = false;
     let bloom = 0;
-    
-    // --- Audio Logic ---
     let musicStarted = false;
 
-    function startMusic() {
+    // --- Kinetic Audio Controller ---
+    function initAudio() {
       if (musicStarted) return;
+      
       music.volume = 0;
       music.play().then(() => {
         musicStarted = true;
-        audioBtn.innerText = "Sound On";
-        // Smooth Fade In
-        let fade = setInterval(() => {
-          if (music.volume < 0.3) { // Max volume 30% for background feel
-            music.volume += 0.01;
+        audioBtn.innerText = "Sound: On";
+        
+        // Smooth Volume Build
+        let fadeInterval = setInterval(() => {
+          if (music.volume < 0.4) {
+            music.volume += 0.02;
           } else {
-            clearInterval(fade);
+            clearInterval(fadeInterval);
           }
-        }, 100);
-      }).catch(e => console.log("User interaction required for audio."));
-      window.removeEventListener('click', startMusic);
+        }, 150);
+        
+        console.log("Archivum Audio Initiated.");
+      }).catch(err => {
+        console.log("Waiting for user interaction to play audio.");
+      });
     }
 
-    window.addEventListener('click', startMusic);
+    // Trigger audio on first interaction
+    window.addEventListener('click', initAudio);
 
     audioBtn.addEventListener('click', (e) => {
-      e.stopPropagation(); // Don't trigger startMusic again
+      e.stopPropagation(); // Stop from triggering initAudio twice
       if (music.paused) {
         music.play();
-        audioBtn.innerText = "Sound On";
+        audioBtn.innerText = "Sound: On";
       } else {
         music.pause();
-        audioBtn.innerText = "Sound Off";
+        audioBtn.innerText = "Sound: Off";
       }
     });
 
-    // --- Visual Data ---
+    // --- Visual Archivum Data ---
     const nodeData = [
       { label: "Google Scholar", link: "https://scholar.google.com/citations?user=EOEi56EAAAAJ&hl=en", hoverState: 0 },
       { label: "Tikkun Mada", link: "https://tikkunmada.com", hoverState: 0 },
@@ -228,7 +238,11 @@
       mouseY = e.clientY - rect.top;
       pointerInside = true;
     });
-    canvas.addEventListener('mouseleave', () => { pointerInside = false; canvas.style.cursor = 'default'; });
+    
+    canvas.addEventListener('mouseleave', () => { 
+      pointerInside = false; 
+      canvas.style.cursor = 'default'; 
+    });
     
     canvas.addEventListener('click', () => {
       if (bloom > 0.6) {
@@ -281,7 +295,7 @@
       bloom += ((pointerInside ? 1 : 0) - bloom) * 0.04;
       const pulse = (Math.sin(t * 3) + 1) / 2;
 
-      // 1. SEISMIC CIRCLES
+      // 1. SEISMIC BACKGROUND
       if (bloom > 0.02) {
         for (let r = 0; r < 7; r++) {
           const radius = (55 * r + (t * 45) % 55) * bloom;
@@ -294,7 +308,7 @@
         }
       }
 
-      // 2. DNA WEAVE
+      // 2. DNA WOVEN ROPE
       const threadCount = 12;
       const points = 180;
       for (let s = 0; s < threadCount; s++) {
@@ -316,7 +330,7 @@
         ctx.stroke();
       }
 
-      // 3. NODES & SMOOTH HOVER (Soft Easing)
+      // 3. NODES & SOFT GLOW HOVER
       currentNodes = [];
       let anyHovered = false;
       const rows = 2, cols = 4;
@@ -331,7 +345,7 @@
         const dist = Math.sqrt((mouseX - x)**2 + (mouseY - y)**2);
         const isCurrentlyHovered = pointerInside && dist < size * 1.3;
         
-        // Very soft easing (0.04) for kinetic glow
+        // Slower, softer kinetic glow easing (0.04)
         data.hoverState += (isCurrentlyHovered ? 1 - data.hoverState : -data.hoverState) * 0.04;
 
         drawVesicaIcon(x, y, size, bloom, data.hoverState);
@@ -342,7 +356,7 @@
 
       canvas.style.cursor = anyHovered ? 'pointer' : 'default';
 
-      // 4. KINETIC LABELS (Clear Spacing)
+      // 4. KINETIC LABELS (Proper Spacing)
       currentNodes.forEach(n => {
         if (n.hover > 0.01) {
           ctx.save();
@@ -350,7 +364,8 @@
           ctx.textAlign = "center";
           ctx.letterSpacing = (0.3 + n.hover * 0.2) + "em";
           
-          const labelPadding = 48; 
+          // Fixed padding ensures text is always below the icon
+          const labelPadding = 50; 
           const yOffset = labelPadding + (n.hover * 4) + (Math.sin(t*5)*n.hover);
           
           ctx.fillStyle = `rgba(226, 232, 240, ${n.hover * 0.9})`;
@@ -359,7 +374,7 @@
         }
       });
 
-      // STATUS LABEL
+      // STATUS HEADER
       ctx.font = "400 9px 'Crimson Pro'";
       ctx.textAlign = "center";
       ctx.letterSpacing = "0.9em";
@@ -368,6 +383,7 @@
 
       requestAnimationFrame(loop);
     }
+    
     requestAnimationFrame(loop);
   </script>
 </body>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Curtis Hoffmann">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="42%" r="70%">
+      <stop offset="0%" stop-color="#1a2a44"/>
+      <stop offset="100%" stop-color="#000b18"/>
+    </radialGradient>
+  </defs>
+  <rect x="0" y="0" width="512" height="512" rx="112" fill="url(#bg)"/>
+  <g fill="none" stroke="#c5a059" stroke-width="9" stroke-opacity="0.9">
+    <circle cx="351.0" cy="256.0" r="135"/>
+    <circle cx="303.5" cy="338.3" r="135"/>
+    <circle cx="208.5" cy="338.3" r="135"/>
+    <circle cx="161.0" cy="256.0" r="135"/>
+    <circle cx="208.5" cy="173.7" r="135"/>
+    <circle cx="303.5" cy="173.7" r="135"/>
+  </g>
+  <circle cx="256" cy="256" r="15" fill="#e2e8f0"/>
+</svg>

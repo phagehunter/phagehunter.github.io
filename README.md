@@ -7,7 +7,7 @@ The landing page for Curtis Hoffmann's site, served from this repository by GitH
 ```
 index.html          the whole page: hero loom, project grid, bio, contact
 CNAME               custom domain for GitHub Pages
-site.webmanifest    name, colours and icons for home-screen installs
+site.webmanifest    name, colors and icons for home-screen installs
 favicon.svg, favicon-32.png, apple-touch-icon.png, icon-192.png, icon-512.png
 og-image.jpg        1200×630 social preview
 symphony.mp3        optional background music; only downloaded if a visitor turns sound on

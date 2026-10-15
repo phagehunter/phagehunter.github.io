@@ -4,280 +4,311 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Curtis Hoffmann — Weaving Biological &amp; Cultural Lineages</title>
-  <meta name="description" content="Curtis Hoffmann — researcher weaving biological and cultural lineages, with interactive atlases on exoplanets, human evolution, biodefense, and the RNA virome.">
+  <meta name="description" content="Curtis S. Hoffmann, Georgetown University: infectious disease, virology, network science and medical anthropology, and a set of interactive atlases on exoplanets, human evolution, biodefense budgets, the RNA virome, the Odyssey and the Catalogue of Life.">
   <meta name="author" content="Curtis Hoffmann">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#000b18">
   <meta name="color-scheme" content="dark">
   <link rel="canonical" href="https://curtishoffmann.com/">
 
-  <!-- Icons -->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Open Graph (Facebook, LinkedIn, iMessage, Slack…) -->
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="profile">
   <meta property="og:site_name" content="Curtis Hoffmann">
   <meta property="og:title" content="Curtis Hoffmann — Weaving Biological & Cultural Lineages">
-  <meta property="og:description" content="Researcher weaving biological and cultural lineages, with interactive atlases on exoplanets, human evolution, biodefense, and the RNA virome.">
+  <meta property="og:description" content="Researcher at Georgetown University and maker of interactive atlases: exoplanets, human evolution, biodefense budgets, the RNA virome, the Odyssey, the Catalogue of Life.">
   <meta property="og:url" content="https://curtishoffmann.com/">
   <meta property="og:image" content="https://curtishoffmann.com/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Curtis Hoffmann — weaving biological and cultural lineages">
-
-  <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Curtis Hoffmann — Weaving Biological & Cultural Lineages">
-  <meta name="twitter:description" content="Researcher weaving biological and cultural lineages, with interactive atlases on exoplanets, human evolution, biodefense, and the RNA virome.">
+  <meta name="twitter:description" content="Researcher at Georgetown University and maker of interactive atlases on exoplanets, human evolution, biodefense, the RNA virome, the Odyssey and the Catalogue of Life.">
   <meta name="twitter:image" content="https://curtishoffmann.com/og-image.jpg">
   <meta name="twitter:image:alt" content="Curtis Hoffmann — weaving biological and cultural lineages">
 
-  <!-- Structured data: Person (helps Google understand who this is) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Curtis Hoffmann",
-    "url": "https://curtishoffmann.com/",
-    "description": "Researcher weaving biological and cultural lineages.",
-    "sameAs": [
-      "https://scholar.google.com/citations?user=EOEi56EAAAAJ&hl=en",
-      "https://www.linkedin.com/in/phagehunter/"
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://curtishoffmann.com/#person",
+        "name": "Curtis S. Hoffmann",
+        "givenName": "Curtis",
+        "familyName": "Hoffmann",
+        "url": "https://curtishoffmann.com/",
+        "image": "https://curtishoffmann.com/og-image.jpg",
+        "description": "Researcher at Georgetown University working on infectious disease, virology, network science and medical anthropology; maker of interactive scientific atlases.",
+        "affiliation": { "@type": "CollegeOrUniversity", "name": "Georgetown University" },
+        "knowsAbout": ["infectious disease", "virology", "network science", "medical anthropology", "human evolution", "biodefense", "data visualization"],
+        "sameAs": [
+          "https://scholar.google.com/citations?user=EOEi56EAAAAJ&hl=en",
+          "https://www.linkedin.com/in/phagehunter",
+          "https://github.com/phagehunter"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://curtishoffmann.com/#website",
+        "url": "https://curtishoffmann.com/",
+        "name": "Curtis Hoffmann",
+        "author": { "@id": "https://curtishoffmann.com/#person" }
+      },
+      {
+        "@type": "ItemList",
+        "name": "Interactive atlases by Curtis Hoffmann",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "url": "https://curtishoffmann.com/exoplanetatlas/", "name": "Exoplanet Atlas" },
+          { "@type": "ListItem", "position": 2, "url": "https://curtishoffmann.com/humanevolution/", "name": "Twenty-Four Cousins" },
+          { "@type": "ListItem", "position": 3, "url": "https://curtishoffmann.com/biodefense/", "name": "Biodefense Vault" },
+          { "@type": "ListItem", "position": 4, "url": "https://curtishoffmann.com/rnaviromeatlas/", "name": "RNA Virome Atlas" },
+          { "@type": "ListItem", "position": 5, "url": "https://curtishoffmann.com/odyssey/", "name": "Odyssey Character Map" },
+          { "@type": "ListItem", "position": 6, "url": "https://curtishoffmann.com/catalogue_of_life/", "name": "Catalogue of Life Explorer" }
+        ]
+      }
     ]
   }
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200;0,400;1,200&family=Inter:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200;0,400;0,600;1,200;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     :root {
       --midnight: #000b18;
       --indigo: #1a2a44;
+      --surface: #071631;
+      --line: #1c3050;
       --gold: #c5a059;
+      --gold-bright: #e3c27c;
       --bone: #e2e8f0;
+      --bone-dim: #b9c4d6;
+      --muted: #8d9bb0;
       --slate: #4a5568;
+      --focus: #7cc4ff;
       --safe-top: env(safe-area-inset-top, 0px);
       --safe-bottom: env(safe-area-inset-bottom, 0px);
+      --gutter: 1.25rem;
     }
+    @media (min-width: 720px) { :root { --gutter: 2rem; } }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { -webkit-text-size-adjust: 100%; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
 
     body {
-      font-family: 'Crimson Pro', serif;
-      background-color: var(--midnight);
-      background: radial-gradient(circle at center, var(--indigo) 0%, var(--midnight) 100%);
-      height: 100vh;
-      height: 100dvh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      overflow: hidden;
+      font-family: 'Crimson Pro', Georgia, serif;
+      background: var(--midnight);
       color: var(--bone);
       -webkit-font-smoothing: antialiased;
-      padding: calc(1.5rem + var(--safe-top)) 1.25rem calc(1.25rem + var(--safe-bottom));
+      line-height: 1.5;
     }
-
     body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      opacity: 0.04;
-      pointer-events: none;
-      z-index: 1;
+      content: ""; position: fixed; inset: 0; opacity: 0.04; pointer-events: none; z-index: 1;
       background-image: repeating-linear-gradient(45deg, #fff 0px, #fff 1px, transparent 1px, transparent 3px);
     }
+    a { color: var(--gold); text-underline-offset: 3px; }
+    a:hover { color: var(--gold-bright); }
+    :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 3px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    .skip-link { position: absolute; left: var(--gutter); top: -60px; z-index: 300; background: var(--gold); color: var(--midnight); padding: .5rem .9rem; border-radius: 3px; font-family: 'Inter', sans-serif; font-size: .85rem; }
+    .skip-link:focus { top: .75rem; }
 
-    header {
-      position: relative;
-      z-index: 20;
-      text-align: center;
-      flex-shrink: 0;
-      padding: 0 0.5rem;
-      animation: blurFadeIn 3s cubic-bezier(0.22, 1, 0.36, 1) both;
-    }
-
-    .prefix {
-      font-size: clamp(0.55rem, 2.4vw, 0.65rem);
-      letter-spacing: 0.7em;
-      color: var(--gold);
-      text-transform: uppercase;
-      margin-bottom: 1.1rem;
-      font-weight: 300;
-      padding-left: 0.7em;
-      overflow-wrap: break-word;
-    }
-
-    h1 {
-      font-size: clamp(1.9rem, 8vw, 3.2rem);
-      font-weight: 200;
-      letter-spacing: 0.28em;
-      color: var(--bone);
-      text-transform: uppercase;
-      padding-left: 0.28em;
-    }
-
-    .tagline {
-      font-size: clamp(0.8rem, 3.6vw, 0.9rem);
-      font-style: italic;
-      letter-spacing: 0.18em;
-      color: #7c8aa0;
-      margin-top: 0.8rem;
-    }
-
-    .canvas-container {
-      position: relative;
-      z-index: 10;
-      flex: 1 1 auto;
-      min-height: 0;
-      width: 100vw;
-      align-self: center;
-    }
-
-    canvas {
-      display: block;
-      width: 100%;
-      height: 100%;
-      filter: drop-shadow(0 0 20px rgba(197, 160, 89, 0.15));
-      touch-action: manipulation;
-    }
-
-    footer {
-      position: relative;
-      z-index: 20;
-      flex-shrink: 0;
-      text-align: center;
-      margin-top: 0.5rem;
-      animation: blurFadeIn 4s cubic-bezier(0.22, 1, 0.36, 1) both;
-    }
-
-    .cv-button {
-      display: inline-block;
-      padding: 0.9rem 2.6rem;
-      border: 1px solid rgba(197, 160, 89, 0.3);
-      border-radius: 2px;
-      color: var(--gold);
-      text-decoration: none;
-      font-size: 0.72rem;
-      letter-spacing: 0.4em;
-      text-transform: uppercase;
-      transition: all 0.5s ease;
-      background: transparent;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    .cv-button:hover,
-    .cv-button:focus-visible {
-      border-color: var(--gold);
-      background: rgba(197, 160, 89, 0.05);
-      letter-spacing: 0.5em;
-      color: var(--bone);
-      outline: none;
-    }
-
-    /* Sound toggle: fixed bottom-left on wide screens… */
-    #audio-toggle {
-      position: fixed;
-      bottom: calc(16px + var(--safe-bottom));
-      left: calc(16px + env(safe-area-inset-left, 0px));
-      z-index: 100;
-      background: rgba(0, 11, 24, 0.5);
-      backdrop-filter: blur(4px);
-      border: 1px solid rgba(74, 85, 104, 0.35);
-      border-radius: 2px;
-      min-height: 40px;
-      padding: 8px 14px;
-      color: var(--slate);
-      font-family: 'Crimson Pro', serif;
-      font-size: 0.62rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: color 0.4s ease, border-color 0.4s ease, opacity 0.4s ease;
-      opacity: 0.75;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    #audio-toggle:hover,
-    #audio-toggle:focus-visible {
-      color: var(--gold);
-      border-color: var(--gold);
-      opacity: 1;
-      outline: none;
-    }
-
-    /* …and centered in the flow below Contact once the screen is narrow */
-    @media (max-width: 620px) {
-      #audio-toggle {
-        position: static;
-        bottom: auto;
-        left: auto;
-        margin: 0.9rem auto 0;
-        align-self: center;
-      }
-    }
-
-    .sr-only {
-      position: absolute;
-      width: 1px; height: 1px;
-      padding: 0; margin: -1px;
+    /* ── Hero: the loom ── */
+    .hero {
+      position: relative; z-index: 2;
+      min-height: 100vh; min-height: 100svh;
+      display: flex; flex-direction: column; align-items: center;
+      background: radial-gradient(circle at center, var(--indigo) 0%, var(--midnight) 100%);
+      padding: calc(1.5rem + var(--safe-top)) var(--gutter) calc(1.25rem + var(--safe-bottom));
       overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
     }
+    .hero header { position: relative; z-index: 20; text-align: center; flex-shrink: 0; padding: 0 .5rem; animation: blurFadeIn 1.4s cubic-bezier(0.22, 1, 0.36, 1) both; }
+    .prefix { font-size: clamp(0.55rem, 2.4vw, 0.65rem); letter-spacing: 0.7em; color: var(--gold); text-transform: uppercase; margin-bottom: 1.1rem; font-weight: 300; padding-left: 0.7em; overflow-wrap: break-word; }
+    h1 { font-size: clamp(1.9rem, 8vw, 3.2rem); font-weight: 200; letter-spacing: 0.28em; color: var(--bone); text-transform: uppercase; padding-left: 0.28em; line-height: 1.15; }
+    .tagline { font-size: clamp(0.8rem, 3.6vw, 0.95rem); font-style: italic; letter-spacing: 0.18em; color: #7c8aa0; margin-top: 0.8rem; }
+
+    .canvas-container { position: relative; z-index: 10; flex: 1 1 auto; min-height: 260px; width: 100vw; align-self: center; }
+    canvas { display: block; width: 100%; height: 100%; filter: drop-shadow(0 0 20px rgba(197, 160, 89, 0.15)); touch-action: manipulation; }
+
+    .hero-foot { position: relative; z-index: 20; flex-shrink: 0; text-align: center; margin-top: 0.5rem; animation: blurFadeIn 1.8s cubic-bezier(0.22, 1, 0.36, 1) both; display: flex; flex-direction: column; align-items: center; gap: .9rem; }
+    .hero-foot .row { display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; }
+    .cv-button {
+      display: inline-flex; align-items: center; justify-content: center; min-height: 44px;
+      padding: 0.8rem 2.2rem; border: 1px solid rgba(197, 160, 89, 0.35); border-radius: 2px;
+      color: var(--gold); text-decoration: none; font-size: 0.72rem; letter-spacing: 0.4em; text-transform: uppercase;
+      transition: all 0.4s ease; background: transparent; -webkit-tap-highlight-color: transparent;
+    }
+    .cv-button:hover, .cv-button:focus-visible { border-color: var(--gold); background: rgba(197, 160, 89, 0.06); color: var(--bone); outline: none; }
+    .cv-button.solid { background: var(--gold); color: var(--midnight); border-color: var(--gold); }
+    .cv-button.solid:hover, .cv-button.solid:focus-visible { background: var(--gold-bright); color: var(--midnight); }
+    .scroll-cue { font-family: 'Inter', sans-serif; font-size: .62rem; letter-spacing: .3em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
+    .scroll-cue:hover { color: var(--gold); }
+
+    #audio-toggle {
+      position: absolute; bottom: calc(16px + var(--safe-bottom)); left: calc(16px + env(safe-area-inset-left, 0px)); z-index: 30;
+      background: rgba(0, 11, 24, 0.5); backdrop-filter: blur(4px); border: 1px solid rgba(74, 85, 104, 0.45); border-radius: 2px;
+      min-height: 40px; padding: 8px 14px; color: var(--muted); font-family: 'Crimson Pro', serif; font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
+      cursor: pointer; transition: color 0.3s, border-color 0.3s; -webkit-tap-highlight-color: transparent;
+    }
+    #audio-toggle:hover, #audio-toggle:focus-visible { color: var(--gold); border-color: var(--gold); outline: none; }
+    @media (max-width: 620px) { #audio-toggle { position: static; margin-top: .2rem; } }
+
+    /* ── Content below the loom ── */
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 var(--gutter); position: relative; z-index: 2; }
+    section.block { padding: 4.5rem 0 1rem; }
+    .eyebrow { font-family: 'Inter', sans-serif; font-size: .62rem; letter-spacing: .32em; text-transform: uppercase; color: var(--gold); margin-bottom: .9rem; display: flex; align-items: center; gap: 1rem; }
+    .eyebrow::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+    h2 { font-weight: 200; font-size: clamp(1.9rem, 4.5vw, 2.8rem); letter-spacing: .02em; line-height: 1.15; margin-bottom: .6rem; }
+    h2 em { font-style: italic; color: var(--gold); }
+    .deck { font-size: 1.1rem; color: var(--bone-dim); max-width: 640px; margin-bottom: 2rem; }
+
+    .grid { display: grid; grid-template-columns: 1fr; gap: .9rem; }
+    @media (min-width: 640px) { .grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 960px) { .grid { grid-template-columns: 1fr 1fr 1fr; } }
+    .project {
+      position: relative; display: flex; flex-direction: column; gap: .5rem; min-height: 190px;
+      padding: 1.4rem 1.4rem 1.2rem; background: var(--surface); border: 1px solid var(--line); border-radius: 4px;
+      text-decoration: none; color: var(--bone); transition: border-color .25s, transform .25s, background .25s;
+    }
+    .project:hover, .project:focus-visible { border-color: var(--gold); background: #0a1b3a; transform: translateY(-2px); color: var(--bone); outline: none; }
+    .project:focus-visible { box-shadow: 0 0 0 2px var(--focus); }
+    .project .ico { width: 34px; height: 34px; color: var(--gold); opacity: .85; }
+    .project h3 { font-weight: 400; font-size: 1.45rem; letter-spacing: .01em; line-height: 1.15; }
+    .project p { font-size: 1rem; color: var(--bone-dim); flex: 1; }
+    .project .go { font-family: 'Inter', sans-serif; font-size: .62rem; letter-spacing: .28em; text-transform: uppercase; color: var(--gold); }
+    .project:hover .go { color: var(--gold-bright); }
+
+    .about { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+    @media (min-width: 820px) { .about { grid-template-columns: 1.4fr 1fr; gap: 3rem; } }
+    .about p { font-size: 1.15rem; color: var(--bone-dim); margin-bottom: 1rem; max-width: 60ch; }
+    .about p strong { color: var(--bone); font-weight: 400; }
+    .links { list-style: none; display: grid; gap: .6rem; }
+    .links a { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .9rem 1.1rem; border: 1px solid var(--line); border-radius: 4px; text-decoration: none; color: var(--bone); background: var(--surface); transition: border-color .25s; min-height: 48px; }
+    .links a:hover, .links a:focus-visible { border-color: var(--gold); outline: none; }
+    .links .k { font-family: 'Inter', sans-serif; font-size: .62rem; letter-spacing: .28em; text-transform: uppercase; color: var(--muted); }
+    .links .v { font-size: 1.05rem; }
+
+    footer { position: relative; z-index: 2; margin-top: 4rem; border-top: 1px solid var(--line); padding: 2rem 0 calc(2.5rem + var(--safe-bottom)); font-family: 'Inter', sans-serif; font-size: .78rem; color: var(--muted); }
+    footer .row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .8rem 2rem; }
+    footer .motto { font-family: 'Crimson Pro', serif; font-style: italic; letter-spacing: .12em; color: var(--slate); }
 
     @keyframes blurFadeIn {
-      0% { opacity: 0; filter: blur(14px); transform: translateY(14px); letter-spacing: 1.2em; }
+      0% { opacity: 0; filter: blur(10px); transform: translateY(10px); }
       100% { opacity: 1; filter: blur(0); transform: translateY(0); }
     }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#projects">Skip to projects</a>
 
   <audio id="bgMusic" loop preload="none">
     <source src="symphony.mp3" type="audio/mpeg">
   </audio>
 
-  <header>
-    <div class="prefix">Tikkun Mada • תִּיקּוּן עוֹלָם</div>
-    <h1>Curtis Hoffmann</h1>
-    <p class="tagline">weaving biological and cultural lineages</p>
-  </header>
+  <section class="hero" aria-label="Introduction">
+    <header>
+      <div class="prefix">Tikkun Mada • תִּיקּוּן עוֹלָם</div>
+      <h1>Curtis Hoffmann</h1>
+      <p class="tagline">weaving biological and cultural lineages</p>
+    </header>
 
-  <div class="canvas-container">
-    <canvas id="kineticLoom" aria-hidden="true"></canvas>
-  </div>
+    <div class="canvas-container">
+      <canvas id="kineticLoom" aria-hidden="true"></canvas>
+    </div>
+
+    <div class="hero-foot">
+      <div class="row">
+        <a href="#projects" class="cv-button solid">Explore the atlases</a>
+        <a href="mailto:ch1620@georgetown.edu" class="cv-button">Contact</a>
+      </div>
+      <a href="#projects" class="scroll-cue" aria-label="Scroll to projects">↓ six projects</a>
+    </div>
+
+    <button id="audio-toggle" type="button" aria-pressed="false">Sound: Off</button>
+  </section>
+
+  <main>
+    <section class="block wrap" id="projects">
+      <div class="eyebrow">Interactive atlases</div>
+      <h2>Six ways of <em>looking at a lineage</em>.</h2>
+      <p class="deck">Each of these is a self-contained, static site: open data, one page, no account, built to be explored on a phone as easily as on a desk.</p>
+      <div class="grid">
+        <a class="project" href="https://curtishoffmann.com/exoplanetatlas/">
+          <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="24" cy="24" r="9"/><ellipse cx="24" cy="24" rx="20" ry="7" transform="rotate(-20 24 24)"/><circle cx="40" cy="12" r="1.5" fill="currentColor"/></svg>
+          <h3>Exoplanet Atlas</h3>
+          <p>Six thousand worlds beyond the Solar System, one sky. Browse 6,278 confirmed planets by size, orbit and host star.</p>
+          <span class="go">Open atlas →</span>
+        </a>
+        <a class="project" href="https://curtishoffmann.com/humanevolution/">
+          <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="24" cy="20" r="11"/><circle cx="24" cy="20" r="3.5" fill="currentColor"/><rect x="20" y="33" width="8" height="9" rx="2.5"/></svg>
+          <h3>Twenty-Four Cousins</h3>
+          <p>A field guide to the human family: 24 hominin species across seven million years, with a time slider, brain-size chart and sourced profiles.</p>
+          <span class="go">Open guide →</span>
+        </a>
+        <a class="project" href="https://curtishoffmann.com/biodefense/">
+          <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M24 5l15 6v11c0 9-6 16-15 21C15 38 9 31 9 22V11z"/><path d="M17 24h14M24 17v14"/></svg>
+          <h3>Biodefense Vault</h3>
+          <p>A searchable budget database of biodefense spending, laid out as a matrix of programs, agencies and years.</p>
+          <span class="go">Open database →</span>
+        </a>
+        <a class="project" href="https://curtishoffmann.com/rnaviromeatlas/">
+          <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M14 6c0 12 20 12 20 24s-20 12-20 24M34 6c0 12-20 12-20 24s20 12 20 24"/><path d="M17 12h14M17 36h14M20 24h8"/></svg>
+          <h3>RNA Virome Atlas</h3>
+          <p>A cosmos of RNA viruses recovered from metatranscriptomes: where they were found, what they infect, how they relate.</p>
+          <span class="go">Open atlas →</span>
+        </a>
+        <a class="project" href="https://curtishoffmann.com/odyssey/">
+          <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M6 34c6-4 12-4 18 0s12 4 18 0"/><path d="M12 30l4-16h16l4 16"/><path d="M24 14V8"/></svg>
+          <h3>Odyssey Character Map</h3>
+          <p>A visual companion to Homer's epic: every character, where they appear, and who they are bound to.</p>
+          <span class="go">Open map →</span>
+        </a>
+        <a class="project" href="https://curtishoffmann.com/catalogue_of_life/">
+          <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M24 42V22M24 22L10 10M24 22l14-12M10 10L6 4M10 10l-2 8M38 10l4-6M38 10l2 8"/></svg>
+          <h3>Catalogue of Life Explorer</h3>
+          <p>Browse the tree of life, search 7.8 million names, and compare how closely any two species are related.</p>
+          <span class="go">Open explorer →</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="block wrap" id="about">
+      <div class="eyebrow">About</div>
+      <div class="about">
+        <div>
+          <h2>Biology, <em>culture</em>, and the threads between them.</h2>
+          <p><strong>Curtis S. Hoffmann</strong> is a researcher at Georgetown University working across infectious disease, virology, network science and medical anthropology.</p>
+          <p>Published work ranges from a One Health response to severe fever with thrombocytopenia syndrome in Thailand, to transcriptomic biomarkers of severe COVID-19, to epidemiological modeling of Operation Outbreak, a real-life outbreak simulation for students. The atlases above are the other half of the same habit: taking a large public dataset and making it something a person can walk around in.</p>
+        </div>
+        <ul class="links" aria-label="Profiles and contact">
+          <li><a href="https://scholar.google.com/citations?user=EOEi56EAAAAJ&amp;hl=en"><span class="k">Publications</span><span class="v">Google Scholar</span></a></li>
+          <li><a href="https://www.linkedin.com/in/phagehunter"><span class="k">Profile</span><span class="v">LinkedIn</span></a></li>
+          <li><a href="https://github.com/phagehunter"><span class="k">Code</span><span class="v">GitHub</span></a></li>
+          <li><a href="mailto:ch1620@georgetown.edu"><span class="k">Email</span><span class="v">ch1620@georgetown.edu</span></a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <a href="mailto:ch1620@georgetown.edu" class="cv-button">Contact Me</a>
+    <div class="wrap row">
+      <span>© <span id="year">2026</span> Curtis Hoffmann. Built as a static site on GitHub Pages.</span>
+      <span class="motto">Observare et colligere</span>
+    </div>
   </footer>
-
-  <button id="audio-toggle" type="button" aria-pressed="false">Sound: Off</button>
-
-  <!-- Accessible / crawlable mirror of the canvas navigation -->
-  <nav class="sr-only" aria-label="Projects and profiles">
-    <ul>
-      <li><a href="https://phagehunter.github.io/exoplanetatlas/">Exoplanet Atlas</a></li>
-      <li><a href="https://phagehunter.github.io/humanevolution/">Human Evolution</a></li>
-      <li><a href="https://phagehunter.github.io/biodefense/">Biodefense Budget</a></li>
-      <li><a href="https://phagehunter.github.io/rnaviromeatlas/">RNA Virome Atlas</a></li>
-      <li><a href="https://phagehunter.github.io/odyssey/">Odyssey Character Map</a></li>
-      <li><a href="https://phagehunter.github.io/catalogue_of_life/">Catalogue of Life</a></li>
-      <li><a href="https://scholar.google.com/citations?user=EOEi56EAAAAJ&hl=en">Google Scholar</a></li>
-      <li><a href="https://www.linkedin.com/in/phagehunter/">LinkedIn</a></li>
-    </ul>
-  </nav>
 
   <script>
     const canvas = document.getElementById('kineticLoom');
     const ctx = canvas.getContext('2d');
     const music = document.getElementById('bgMusic');
     const audioBtn = document.getElementById('audio-toggle');
+    document.getElementById('year').textContent = new Date().getFullYear();
 
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const isTouch = window.matchMedia('(hover: none), (pointer: coarse)').matches
@@ -311,15 +342,16 @@
       }
     });
 
+    // The loom's nodes mirror the project grid below; links open in the same tab.
     const nodeData = [
-      { label: "Exoplanet Atlas", link: "https://phagehunter.github.io/exoplanetatlas/", hoverState: 0 },
-      { label: "Human Evolution", link: "https://phagehunter.github.io/humanevolution/", hoverState: 0 },
-      { label: "Biodefense Budget", link: "https://phagehunter.github.io/biodefense/", hoverState: 0 },
-      { label: "RNA Virome Atlas", link: "https://phagehunter.github.io/rnaviromeatlas/", hoverState: 0 },
-      { label: "Odyssey Atlas", link: "https://phagehunter.github.io/odyssey/", hoverState: 0 },
-      { label: "Catalogue of Life", link: "https://phagehunter.github.io/catalogue_of_life/", hoverState: 0 },
+      { label: "Exoplanet Atlas", link: "https://curtishoffmann.com/exoplanetatlas/", hoverState: 0 },
+      { label: "Twenty-Four Cousins", link: "https://curtishoffmann.com/humanevolution/", hoverState: 0 },
+      { label: "Biodefense Vault", link: "https://curtishoffmann.com/biodefense/", hoverState: 0 },
+      { label: "RNA Virome Atlas", link: "https://curtishoffmann.com/rnaviromeatlas/", hoverState: 0 },
+      { label: "Odyssey Map", link: "https://curtishoffmann.com/odyssey/", hoverState: 0 },
+      { label: "Catalogue of Life", link: "https://curtishoffmann.com/catalogue_of_life/", hoverState: 0 },
       { label: "Google Scholar", link: "https://scholar.google.com/citations?user=EOEi56EAAAAJ&hl=en", hoverState: 0 },
-      { label: "LinkedIn", link: "https://www.linkedin.com/in/phagehunter/", hoverState: 0 }
+      { label: "LinkedIn", link: "https://www.linkedin.com/in/phagehunter", hoverState: 0 }
     ];
 
     let currentNodes = [];
@@ -352,14 +384,13 @@
     });
 
     function openNodeAt(x, y) {
-      let opened = false;
-      currentNodes.forEach(n => {
+      for (const n of currentNodes) {
         if (Math.hypot(x - n.x, y - n.y) < n.r * 1.35 && n.link) {
-          window.open(n.link, '_blank', 'noopener');
-          opened = true;
+          window.location.assign(n.link);
+          return true;
         }
-      });
-      return opened;
+      }
+      return false;
     }
 
     canvas.addEventListener('click', () => {
@@ -402,7 +433,6 @@
       ctx.restore();
     }
 
-    // Draw the Latin motto, auto-shrinking so it always fits with side padding
     function drawMotto(text, y, w) {
       const maxW = w - 48;
       let fs = (w < 620) ? 8 : 9;
@@ -462,7 +492,6 @@
         ctx.stroke();
       }
 
-      // --- Constellation of link nodes (responsive layout, eased for smoothness) ---
       const narrow = w < 620;
       const cols = narrow ? 2 : 4;
       const rows = Math.ceil(nodeData.length / cols);
@@ -480,8 +509,6 @@
         const spreadTargetY = centerY + (ny * h - centerY) * spreadY;
         const baseTargetY = centerY + (spreadTargetY - centerY) * bloom;
 
-        // Ease current position toward target → node positions glide when the
-        // layout changes (e.g. 4-col ↔ 2-col as the window resizes).
         if (data.cx === undefined) { data.cx = targetX; data.cyBase = baseTargetY; }
         data.cx += (targetX - data.cx) * 0.14;
         data.cyBase += (baseTargetY - data.cyBase) * 0.14;
@@ -503,7 +530,7 @@
 
       const labelFont = narrow ? "300 10px 'Crimson Pro'" : "300 11px 'Crimson Pro'";
       currentNodes.forEach(n => {
-        const strength = isTouch ? bloom : n.hover;
+        const strength = isTouch ? bloom : Math.max(n.hover, bloom * 0.45);
         if (strength > 0.05) {
           ctx.save();
           ctx.font = labelFont;
@@ -517,7 +544,6 @@
         }
       });
 
-      // Motto (auto-fit) + tap hint placed well below the loom
       drawMotto(bloom > 0.8 ? "SYSTEMA STABILITUM // ARCHIVUM" : "OBSERVARE ET COLLIGERE",
                 (w < 620 ? 26 : 30), w);
 

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Curtis Hoffmann — Weaving Biological &amp; Cultural Lineages</title>
-  <meta name="description" content="Curtis S. Hoffmann, Georgetown University: infectious disease, virology, network science and medical anthropology, and a set of interactive atlases on exoplanets, human evolution, biodefense budgets, the RNA virome, the Odyssey and the Catalogue of Life.">
+  <meta name="description" content="Curtis Hoffmann is a researcher at the intersection of biology and anthropology: how microbes move through communities and cultures, live outbreak simulations, and interactive projects on exoplanets, human evolution, biodefense budgets, the RNA virome, careers in outbreak science, and more.">
   <meta name="author" content="Curtis Hoffmann">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#000b18">
@@ -43,7 +43,7 @@
         "familyName": "Hoffmann",
         "url": "https://curtishoffmann.com/",
         "image": "https://curtishoffmann.com/og-image.jpg",
-        "description": "Researcher at Georgetown University working on infectious disease, virology, network science and medical anthropology; maker of interactive scientific atlases.",
+        "description": "Researcher at the intersection of biology and anthropology: how microbes move through communities and cultures, and live outbreak simulations that help people experience how epidemics unfold.",
         "affiliation": { "@type": "CollegeOrUniversity", "name": "Georgetown University" },
         "knowsAbout": ["infectious disease", "virology", "network science", "medical anthropology", "human evolution", "biodefense", "data visualization"],
         "sameAs": [
@@ -61,14 +61,20 @@
       },
       {
         "@type": "ItemList",
-        "name": "Interactive atlases by Curtis Hoffmann",
+        "name": "Projects by Curtis Hoffmann",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "url": "https://curtishoffmann.com/exoplanetatlas/", "name": "Exoplanet Atlas" },
           { "@type": "ListItem", "position": 2, "url": "https://curtishoffmann.com/humanevolution/", "name": "Twenty-Four Cousins" },
           { "@type": "ListItem", "position": 3, "url": "https://curtishoffmann.com/biodefense/", "name": "Biodefense Vault" },
           { "@type": "ListItem", "position": 4, "url": "https://curtishoffmann.com/rnaviromeatlas/", "name": "RNA Virome Atlas" },
           { "@type": "ListItem", "position": 5, "url": "https://curtishoffmann.com/odyssey/", "name": "Odyssey Character Map" },
-          { "@type": "ListItem", "position": 6, "url": "https://curtishoffmann.com/catalogue_of_life/", "name": "Catalogue of Life Explorer" }
+          { "@type": "ListItem", "position": 6, "url": "https://curtishoffmann.com/catalogue_of_life/", "name": "Catalogue of Life Explorer" },
+          { "@type": "ListItem", "position": 7, "url": "https://curtishoffmann.com/outbreak-science-careers/", "name": "Outbreak Science Careers" },
+          { "@type": "ListItem", "position": 8, "url": "https://curtishoffmann.com/nsfreg/", "name": "NSF Restricted Entities Guide" },
+          { "@type": "ListItem", "position": 9, "url": "https://curtishoffmann.com/scripture/", "name": "Scripture Atlas" },
+          { "@type": "ListItem", "position": 10, "url": "https://curtishoffmann.com/saphan/", "name": "Saphan" },
+          { "@type": "ListItem", "position": 11, "url": "https://curtishoffmann.com/whybox/", "name": "whybox" },
+          { "@type": "ListItem", "position": 12, "url": "https://github.com/phagehunter/ember", "name": "Ember" }
         ]
       }
     ]
@@ -147,17 +153,14 @@
     .cv-button:hover, .cv-button:focus-visible { border-color: var(--gold); background: rgba(197, 160, 89, 0.06); color: var(--bone); outline: none; }
     .cv-button.solid { background: var(--gold); color: var(--midnight); border-color: var(--gold); }
     .cv-button.solid:hover, .cv-button.solid:focus-visible { background: var(--gold-bright); color: var(--midnight); }
-    .scroll-cue { font-family: 'Inter', sans-serif; font-size: .62rem; letter-spacing: .3em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
-    .scroll-cue:hover { color: var(--gold); }
+    .scroll-cue { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; color: var(--muted); text-decoration: none; animation: cueBob 2.4s ease-in-out infinite; }
+    .scroll-cue:hover, .scroll-cue:focus-visible { color: var(--gold); }
+    @keyframes cueBob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
 
-    #audio-toggle {
-      position: absolute; bottom: calc(16px + var(--safe-bottom)); left: calc(16px + env(safe-area-inset-left, 0px)); z-index: 30;
-      background: rgba(0, 11, 24, 0.5); backdrop-filter: blur(4px); border: 1px solid rgba(74, 85, 104, 0.45); border-radius: 2px;
-      min-height: 40px; padding: 8px 14px; color: var(--muted); font-family: 'Crimson Pro', serif; font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
-      cursor: pointer; transition: color 0.3s, border-color 0.3s; -webkit-tap-highlight-color: transparent;
-    }
-    #audio-toggle:hover, #audio-toggle:focus-visible { color: var(--gold); border-color: var(--gold); outline: none; }
-    @media (max-width: 620px) { #audio-toggle { position: static; margin-top: .2rem; } }
+    .cv-button.icon { gap: .55rem; padding: .8rem 1.3rem; letter-spacing: .3em; cursor: pointer; font-family: 'Crimson Pro', serif; }
+    .cv-button.icon .wave { opacity: 0; transition: opacity .3s; }
+    .cv-button.icon[aria-pressed="true"] { border-color: var(--gold); color: var(--bone); }
+    .cv-button.icon[aria-pressed="true"] .wave { opacity: 1; }
 
     /* ── Content below the loom ── */
     .wrap { max-width: 1080px; margin: 0 auto; padding: 0 var(--gutter); position: relative; z-index: 2; }
@@ -197,6 +200,7 @@
     footer { position: relative; z-index: 2; margin-top: 4rem; border-top: 1px solid var(--line); padding: 2rem 0 calc(2.5rem + var(--safe-bottom)); font-family: 'Inter', sans-serif; font-size: .78rem; color: var(--muted); }
     footer .row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .8rem 2rem; }
     footer .motto { font-family: 'Crimson Pro', serif; font-style: italic; letter-spacing: .12em; color: var(--slate); }
+    footer .motto .he { font-style: normal; letter-spacing: 0; }
 
     @keyframes blurFadeIn {
       0% { opacity: 0; filter: blur(10px); transform: translateY(10px); }
@@ -224,20 +228,18 @@
 
     <div class="hero-foot">
       <div class="row">
-        <a href="#projects" class="cv-button solid">Explore the atlases</a>
+        <a href="#projects" class="cv-button solid">Explore projects</a>
         <a href="mailto:ch1620@georgetown.edu" class="cv-button">Contact</a>
+        <button id="audio-toggle" class="cv-button icon" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path class="wave" d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span class="lbl">Sound off</span></button>
       </div>
-      <a href="#projects" class="scroll-cue" aria-label="Scroll to projects">↓ six projects</a>
+      <a href="#projects" class="scroll-cue" aria-label="Scroll to projects"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16M5 13l7 7 7-7"/></svg></a>
     </div>
 
-    <button id="audio-toggle" type="button" aria-pressed="false">Sound: Off</button>
   </section>
 
   <main>
     <section class="block wrap" id="projects">
-      <div class="eyebrow">Interactive atlases</div>
-      <h2>Six ways of <em>looking at a lineage</em>.</h2>
-      <p class="deck">Each of these is a self-contained, static site: open data, one page, no account, built to be explored on a phone as easily as on a desk.</p>
+      <h2 class="eyebrow">Projects</h2>
       <div class="grid">
         <a class="project" href="https://curtishoffmann.com/exoplanetatlas/">
           <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="24" cy="24" r="9"/><ellipse cx="24" cy="24" rx="20" ry="7" transform="rotate(-20 24 24)"/><circle cx="40" cy="12" r="1.5" fill="currentColor"/></svg>
@@ -253,8 +255,8 @@
         </a>
         <a class="project" href="https://curtishoffmann.com/biodefense/">
           <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M24 5l15 6v11c0 9-6 16-15 21C15 38 9 31 9 22V11z"/><path d="M17 24h14M24 17v14"/></svg>
-          <h3>Biodefense Vault</h3>
-          <p>A searchable budget database of biodefense spending, laid out as a matrix of programs, agencies and years.</p>
+          <h3>Biodefense Budget</h3>
+          <p>Every federal biodefense budget line from FY2019 to the FY2026 request, by department, category, and program, with year-over-year change.</p>
           <span class="go">Open database →</span>
         </a>
         <a class="project" href="https://curtishoffmann.com/rnaviromeatlas/">
@@ -275,6 +277,42 @@
           <p>Browse the tree of life, search 7.8 million names, and compare how closely any two species are related.</p>
           <span class="go">Open explorer →</span>
         </a>
+        <a class="project" href="https://curtishoffmann.com/outbreak-science-careers/">
+          <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M8 40c6-10 12-14 16-14s10 4 16 14"/><circle cx="24" cy="16" r="7"/><path d="M4 44h40"/></svg>
+          <h3>Outbreak Science Careers</h3>
+          <p>A guide to careers in outbreak science and biosecurity: ten career tracks with pay and outlook data, fellowships, degree programs, free training, and funding.</p>
+          <span class="go">Open guide →</span>
+        </a>
+        <a class="project" href="https://curtishoffmann.com/nsfreg/">
+          <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="8" y="6" width="32" height="36" rx="3"/><path d="M14 14h20M14 22h20M14 30h12"/></svg>
+          <h3>NSF Restricted Entities Guide</h3>
+          <p>A searchable guide to the thirteen U.S. restricted-party lists named in NSF's July 2026 Dear Colleague Letter, with more than 5,900 entries.</p>
+          <span class="go">Open guide →</span>
+        </a>
+        <a class="project" href="https://curtishoffmann.com/scripture/">
+          <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M8 8h14a4 4 0 0 1 4 4v28a3 3 0 0 0-3-3H8z"/><path d="M40 8H26a4 4 0 0 0-4 4v28a3 3 0 0 1 3-3h15z"/></svg>
+          <h3>Scripture Atlas</h3>
+          <p>A visual literary analysis of the King James Bible, the Book of Mormon, and the Pearl of Great Price: 192 figures in a character network, with chapter guides.</p>
+          <span class="go">Open atlas →</span>
+        </a>
+        <a class="project" href="https://curtishoffmann.com/saphan/">
+          <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 30c8-10 32-10 40 0"/><path d="M4 30v8M44 30v8M14 24v14M24 22v16M34 24v14"/></svg>
+          <h3>Saphan</h3>
+          <p>An offline-first phrasebook of reviewed health phrases in Thai, Burmese, Mon, and English for village health volunteers in Kanchanaburi, Thailand. In development.</p>
+          <span class="go">Open app →</span>
+        </a>
+        <a class="project" href="https://curtishoffmann.com/whybox/">
+          <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="8" y="14" width="32" height="26" rx="3"/><path d="M8 22h32M20 14V8h8v6"/><circle cx="24" cy="31" r="3"/></svg>
+          <h3>whybox</h3>
+          <p>A science sandbox for reasoning from the outputs you can see to the mechanisms you cannot, built as a working skeleton with one complete example.</p>
+          <span class="go">Open sandbox →</span>
+        </a>
+        <a class="project" href="https://github.com/phagehunter/ember">
+          <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M24 6c2 8 10 10 10 20a10 10 0 0 1-20 0c0-5 3-7 4-10 1 3 3 4 4 4-1-5 0-10 2-14z"/></svg>
+          <h3>Ember</h3>
+          <p>Free spaced-repetition flashcards for Mac and Windows using the FSRS-6 scheduler: no account, no subscription, one local file. Early release.</p>
+          <span class="go">Download on GitHub →</span>
+        </a>
       </div>
     </section>
 
@@ -283,8 +321,8 @@
       <div class="about">
         <div>
           <h2>Biology, <em>culture</em>, and the threads between them.</h2>
-          <p><strong>Curtis S. Hoffmann</strong> is a researcher at Georgetown University working across infectious disease, virology, network science and medical anthropology.</p>
-          <p>Published work ranges from a One Health response to severe fever with thrombocytopenia syndrome in Thailand, to transcriptomic biomarkers of severe COVID-19, to epidemiological modeling of Operation Outbreak, a real-life outbreak simulation for students. The atlases above are the other half of the same habit: taking a large public dataset and making it something a person can walk around in.</p>
+          <p>Pathogens have a knack for disrupting society. It's our job to understand them. The deeper we look, the more we learn about ourselves: our cultures, our fears, our shared history.</p>
+          <p><strong>Curtis Hoffmann</strong> is a researcher working at the intersection of biology and anthropology. He studies how microbes move through communities and cultures, and he designs live outbreak simulations that help people experience how epidemics unfold.</p>
         </div>
         <ul class="links" aria-label="Profiles and contact">
           <li><a href="https://scholar.google.com/citations?user=EOEi56EAAAAJ&amp;hl=en"><span class="k">Publications</span><span class="v">Google Scholar</span></a></li>
@@ -298,8 +336,8 @@
 
   <footer>
     <div class="wrap row">
-      <span>© <span id="year">2026</span> Curtis Hoffmann. Built as a static site on GitHub Pages.</span>
-      <span class="motto">Observare et colligere</span>
+      <span>© <span id="year">2026</span> Curtis Hoffmann</span>
+      <span class="motto">Tikkun Mada <span class="he">• תִּיקּוּן עוֹלָם</span></span>
     </div>
   </footer>
 
@@ -324,7 +362,7 @@
         music.volume = 0;
         music.play().then(() => {
           musicInitialized = true;
-          audioBtn.innerText = 'Sound: On';
+          audioBtn.querySelector('.lbl').textContent = 'Sound on';
           audioBtn.setAttribute('aria-pressed', 'true');
           const fade = setInterval(() => {
             if (music.volume < 0.4) music.volume = Math.min(0.4, music.volume + 0.02);
@@ -333,11 +371,11 @@
         }).catch(() => {});
       } else if (music.paused) {
         music.play();
-        audioBtn.innerText = 'Sound: On';
+        audioBtn.querySelector('.lbl').textContent = 'Sound on';
         audioBtn.setAttribute('aria-pressed', 'true');
       } else {
         music.pause();
-        audioBtn.innerText = 'Sound: Off';
+        audioBtn.querySelector('.lbl').textContent = 'Sound off';
         audioBtn.setAttribute('aria-pressed', 'false');
       }
     });
@@ -346,12 +384,16 @@
     const nodeData = [
       { label: "Exoplanet Atlas", link: "https://curtishoffmann.com/exoplanetatlas/", hoverState: 0 },
       { label: "Twenty-Four Cousins", link: "https://curtishoffmann.com/humanevolution/", hoverState: 0 },
-      { label: "Biodefense Vault", link: "https://curtishoffmann.com/biodefense/", hoverState: 0 },
+      { label: "Biodefense Budget", link: "https://curtishoffmann.com/biodefense/", hoverState: 0 },
       { label: "RNA Virome Atlas", link: "https://curtishoffmann.com/rnaviromeatlas/", hoverState: 0 },
       { label: "Odyssey Map", link: "https://curtishoffmann.com/odyssey/", hoverState: 0 },
       { label: "Catalogue of Life", link: "https://curtishoffmann.com/catalogue_of_life/", hoverState: 0 },
-      { label: "Google Scholar", link: "https://scholar.google.com/citations?user=EOEi56EAAAAJ&hl=en", hoverState: 0 },
-      { label: "LinkedIn", link: "https://www.linkedin.com/in/phagehunter", hoverState: 0 }
+      { label: "Outbreak Careers", link: "https://curtishoffmann.com/outbreak-science-careers/", hoverState: 0 },
+      { label: "NSF Entities Guide", link: "https://curtishoffmann.com/nsfreg/", hoverState: 0 },
+      { label: "Scripture Atlas", link: "https://curtishoffmann.com/scripture/", hoverState: 0 },
+      { label: "Saphan", link: "https://curtishoffmann.com/saphan/", hoverState: 0 },
+      { label: "whybox", link: "https://curtishoffmann.com/whybox/", hoverState: 0 },
+      { label: "Ember", link: "https://github.com/phagehunter/ember", hoverState: 0 }
     ];
 
     let currentNodes = [];
@@ -493,9 +535,9 @@
       }
 
       const narrow = w < 620;
-      const cols = narrow ? 2 : 4;
+      const cols = narrow ? 3 : 4;
       const rows = Math.ceil(nodeData.length / cols);
-      const nodeSize = narrow ? 30 : 38;
+      const nodeSize = narrow ? 22 : 34;
       const spreadY = Math.min(1, (h * 0.42) / Math.max(1, (rows - 1) / 2 * (h / (rows + 1))));
 
       currentNodes = [];
@@ -528,7 +570,7 @@
 
       canvas.style.cursor = anyHovered ? 'pointer' : 'default';
 
-      const labelFont = narrow ? "300 10px 'Crimson Pro'" : "300 11px 'Crimson Pro'";
+      const labelFont = narrow ? "300 9px 'Crimson Pro'" : "300 11px 'Crimson Pro'";
       currentNodes.forEach(n => {
         const strength = isTouch ? bloom : Math.max(n.hover, bloom * 0.45);
         if (strength > 0.05) {
@@ -537,7 +579,7 @@
           ctx.textAlign = "center";
           ctx.letterSpacing = (narrow ? 0.12 : (0.3 + n.hover * 0.2)) + "em";
           const wobble = isTouch ? 0 : (n.hover * 4 + Math.sin(t * 5) * n.hover);
-          const yOffset = (narrow ? 40 : 50) + wobble;
+          const yOffset = (narrow ? 30 : 46) + wobble;
           ctx.fillStyle = `rgba(226, 232, 240, ${strength * 0.9})`;
           ctx.fillText(n.label.toUpperCase(), n.x, n.y + yOffset);
           ctx.restore();

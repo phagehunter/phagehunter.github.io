@@ -1,0 +1,21 @@
+name: Photo guard
+# Fails the push if any image under photos/ still carries metadata, or if an
+# original was committed to photos/inbox/. It never writes to the repository.
+on:
+  push:
+    paths: ["photos/**"]
+  pull_request:
+    paths: ["photos/**"]
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: No originals in the inbox
+        run: |
+          if git ls-files photos/inbox | grep -q .; then
+            echo "::error::Files are committed under photos/inbox/. Originals must never be pushed; see photos/README.md."
+            exit 1
+          fi
+      - name: No metadata in published photos
+        run: python3 photos/check.py photos/web

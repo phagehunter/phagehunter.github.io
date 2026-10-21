@@ -105,7 +105,12 @@ def main(argv):
     targets = []
     for a in argv[1:] or ["photos/web"]:
         p = pathlib.Path(a)
-        targets += sorted(x for x in p.rglob("*") if x.suffix.lower() in IMAGE_SUFFIXES) if p.is_dir() else [p]
+        if p.is_dir():
+            targets += sorted(x for x in p.rglob("*") if x.suffix.lower() in IMAGE_SUFFIXES)
+        elif p.is_file():
+            targets.append(p)
+        else:
+            print(f"ok   {p}: nothing to scan (does not exist yet)")
     bad = 0
     for p in targets:
         f = findings(p)

@@ -15,7 +15,7 @@ For each image the script
      thumbnail) and <hash>.jpg (fallback), named by a hash of the pixels, never
      by the original file name;
   4. adds an entry to photos/manifest.json with the size, a dominant color for
-     the placeholder, and empty "caption" and "alt" fields to fill in;
+     the blur-up placeholder, and empty "caption" and "alt" fields to fill in;
   5. re-reads every file it wrote and refuses to finish if any metadata remains;
   6. moves the original into photos/inbox/done/ (ignored by git).
 
@@ -50,7 +50,7 @@ Image.MAX_IMAGE_PIXELS = 120_000_000
 def load_manifest():
     if MANIFEST.exists():
         return json.loads(MANIFEST.read_text(encoding="utf-8"))
-    return {"placeholder": "Prints are being scanned. The first set arrives soon.", "photos": []}
+    return {"photos": []}
 
 
 def to_srgb(img):

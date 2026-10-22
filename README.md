@@ -5,7 +5,7 @@ The landing page for Curtis Hoffmann's site, served from this repository by GitH
 ## What is here
 
 ```
-index.html          the whole page: hero loom, project grid, photographs, bio, bookmarks, contact
+index.html          the whole page: hero loom, project grid, photography, bio, bookmarks, contact
 CNAME               custom domain for GitHub Pages
 site.webmanifest    name, colors and icons for home-screen installs
 favicon.svg, favicon-32.png, apple-touch-icon.png, icon-192.png, icon-512.png
@@ -34,9 +34,9 @@ Links should use `https://curtishoffmann.com/...` rather than `phagehunter.githu
 
 The domain is proxied through Cloudflare, so Cloudflare terminates HTTPS. "Enforce HTTPS" in the Pages settings does take effect on the project repositories (those that have it on redirect plain `http://` to `https://`), but this root repository, which carries the custom-domain record, may refuse it until GitHub sees a certificate. The fallback is "Always Use HTTPS" in the Cloudflare dashboard (SSL/TLS → Edge Certificates), with the encryption mode on "Full".
 
-## Photographs
+## Photography
 
-`photos/` holds the photography section. Drop originals into `photos/inbox/` (ignored by git) and double-click `Add photos.command`; it strips every trace of metadata (GPS, camera, dates, XMP, color profile), writes hashed WebP and JPEG copies into `photos/web/`, updates `photos/manifest.json`, and offers to commit and push. A GitHub Action re-scans every push that touches the folder and fails if metadata or an original slipped through. Details in [photos/README.md](photos/README.md).
+`photos/` holds the Photography section, which stays hidden until `photos/manifest.json` has entries. Drop originals into `photos/inbox/` (ignored by git) and double-click `Add photos.command`; it strips every trace of metadata (GPS, camera, dates, XMP, color profile), writes hashed WebP and JPEG copies into `photos/web/`, updates `photos/manifest.json`, and offers to commit and push. A GitHub Action re-scans every push that touches the folder and fails if metadata or an original slipped through. Details in [photos/README.md](photos/README.md).
 
 ## Bookmarks
 

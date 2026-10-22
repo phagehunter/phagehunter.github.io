@@ -1,12 +1,12 @@
-# Photographs
+# Photography
 
-The photography section of curtishoffmann.com is driven by `manifest.json` and the files in `web/`. Nothing here is hand-edited except captions.
+The Photography section of curtishoffmann.com is driven by `manifest.json` and the files in `web/`. The section stays hidden on the live page until the manifest has at least one entry. Nothing here is hand-edited except captions.
 
 ## Adding photographs
 
 1. Drop the pictures (JPEG, PNG, WebP, TIFF; convert HEIC to JPEG first, Preview does it with File → Export) into `photos/inbox/`. That folder is ignored by git, so originals cannot be pushed by mistake.
 2. Double-click `Add photos.command` in the repository root. It cleans every file, shows what it wrote, and asks before committing and pushing. The site updates about a minute after the push.
-3. When there is time, open `manifest.json` and fill in `caption` (shown under the image) and `alt` (read by screen readers and search engines) for each entry. Both are optional; an entry with an empty caption shows no caption.
+3. When there is time, open `manifest.json` and fill in `caption` (shown under the image) and `alt` (read by screen readers and search engines) for each entry. Both are optional; an entry with an empty caption shows no caption. The section appears on the site as soon as the first entry is published.
 
 The same thing from a terminal:
 

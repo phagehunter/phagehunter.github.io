@@ -21,7 +21,7 @@ Everything here is a static site on GitHub Pages. The projects below are separat
 
 ## On this page
 
-- Photographs: a small portfolio, stripped of location and device metadata before publication.
+- Photography: a small portfolio, stripped of location and device metadata before publication; shown once the first set is published.
 - Bookmarks: about 165 sites kept for design, data, references and reading, checked October 2026.
 
 ## Contact

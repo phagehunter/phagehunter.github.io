@@ -23,7 +23,7 @@ for i, g in enumerate(data["groups"]):
     pid = "bm-" + re.sub(r"[^a-z0-9]+", "-", g.lower()).strip("-")
     lis = "".join(f'<li><a href="{html.escape(b["url"])}" rel="noopener"><span class="t">{html.escape(b["name"])}</span><span class="d">{html.escape(b["domain"])}</span></a></li>' for b in items)
     parts.append(f'''        <div class="bm-group">
-          <h3><button class="bm-toggle" type="button" aria-expanded="{"true" if i == 0 else "false"}" aria-controls="{pid}"><span>{html.escape(g)}</span><span class="n" data-total="{len(items)}">{len(items)}</span>{chevron}</button></h3>
+          <h3><button class="bm-toggle" type="button" aria-expanded="false" aria-controls="{pid}"><span>{html.escape(g)}</span><span class="n" data-total="{len(items)}">{len(items)}</span>{chevron}</button></h3>
           <div class="bm-panel" id="{pid}"><div><ul class="bm-list">{lis}</ul></div></div>
         </div>''')
 block = "\n".join(parts)

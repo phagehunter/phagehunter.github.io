@@ -1,0 +1,1000 @@
+{
+ "note": "Curated from Curtis's bookmarks, checked 22 October 2026. Edit this file and run build_bookmarks.py.",
+ "groups": [
+  "Design tools",
+  "Data sources",
+  "References",
+  "Data visualization and images",
+  "Higher-education media",
+  "Science media",
+  "Poetry and literary magazines",
+  "Research organizations",
+  "Statistics software"
+ ],
+ "links": [
+  {
+   "name": "Amnesty International Security Lab",
+   "url": "https://securitylab.amnesty.org/about/",
+   "group": "Design tools",
+   "domain": "securitylab.amnesty.org"
+  },
+  {
+   "name": "Anime.js",
+   "url": "https://animejs.com/",
+   "group": "Design tools",
+   "domain": "animejs.com"
+  },
+  {
+   "name": "Animmaster Lib",
+   "url": "https://animmasterlib.dev/",
+   "group": "Design tools",
+   "domain": "animmasterlib.dev"
+  },
+  {
+   "name": "Color Shades Generator",
+   "url": "https://mdigi.tools/color-shades/",
+   "group": "Design tools",
+   "domain": "mdigi.tools"
+  },
+  {
+   "name": "Coolors",
+   "url": "https://coolors.co/",
+   "group": "Design tools",
+   "domain": "coolors.co"
+  },
+  {
+   "name": "dark.design",
+   "url": "https://www.dark.design/",
+   "group": "Design tools",
+   "domain": "dark.design"
+  },
+  {
+   "name": "Design Spells",
+   "url": "https://www.designspells.com/",
+   "group": "Design tools",
+   "domain": "designspells.com"
+  },
+  {
+   "name": "DesignMD",
+   "url": "https://designmd.me/",
+   "group": "Design tools",
+   "domain": "designmd.me"
+  },
+  {
+   "name": "DrawKit Peach illustrations",
+   "url": "https://www.drawkit.com/illustrations/peach-illustration-system",
+   "group": "Design tools",
+   "domain": "drawkit.com"
+  },
+  {
+   "name": "Durves",
+   "url": "https://www.durves.com/",
+   "group": "Design tools",
+   "domain": "durves.com"
+  },
+  {
+   "name": "Figcomponents",
+   "url": "https://www.figcomponents.com/",
+   "group": "Design tools",
+   "domain": "figcomponents.com"
+  },
+  {
+   "name": "Flowbase",
+   "url": "https://www.flowbase.co/",
+   "group": "Design tools",
+   "domain": "flowbase.co"
+  },
+  {
+   "name": "Fontshare",
+   "url": "https://fontshare.com/",
+   "group": "Design tools",
+   "domain": "fontshare.com"
+  },
+  {
+   "name": "Footer gallery",
+   "url": "https://www.footer.design/",
+   "group": "Design tools",
+   "domain": "footer.design"
+  },
+  {
+   "name": "Godly",
+   "url": "https://godly.website/",
+   "group": "Design tools",
+   "domain": "godly.website"
+  },
+  {
+   "name": "Icons8",
+   "url": "https://icons8.com/",
+   "group": "Design tools",
+   "domain": "icons8.com"
+  },
+  {
+   "name": "Iconsax",
+   "url": "https://iconsax.io/",
+   "group": "Design tools",
+   "domain": "iconsax.io"
+  },
+  {
+   "name": "LS Graphics",
+   "url": "https://www.ls.graphics/",
+   "group": "Design tools",
+   "domain": "ls.graphics"
+  },
+  {
+   "name": "Open Peeps",
+   "url": "https://www.openpeeps.com/",
+   "group": "Design tools",
+   "domain": "openpeeps.com"
+  },
+  {
+   "name": "OpenAlternative",
+   "url": "https://openalternative.co/",
+   "group": "Design tools",
+   "domain": "openalternative.co"
+  },
+  {
+   "name": "QuickRef cheat sheets",
+   "url": "https://quickref.me/",
+   "group": "Design tools",
+   "domain": "quickref.me"
+  },
+  {
+   "name": "Rotato",
+   "url": "https://rotato.app/",
+   "group": "Design tools",
+   "domain": "rotato.app"
+  },
+  {
+   "name": "Shader Gradient",
+   "url": "https://www.shadergradient.co/",
+   "group": "Design tools",
+   "domain": "shadergradient.co"
+  },
+  {
+   "name": "Shots",
+   "url": "https://shots.so/",
+   "group": "Design tools",
+   "domain": "shots.so"
+  },
+  {
+   "name": "Spectrum vector shapes",
+   "url": "https://spectrums.framer.website/",
+   "group": "Design tools",
+   "domain": "spectrums.framer.website"
+  },
+  {
+   "name": "SVGator",
+   "url": "https://www.svgator.com/",
+   "group": "Design tools",
+   "domain": "svgator.com"
+  },
+  {
+   "name": "Typescale",
+   "url": "https://typescale.com/",
+   "group": "Design tools",
+   "domain": "typescale.com"
+  },
+  {
+   "name": "UI Guideline",
+   "url": "https://www.uiguideline.com/",
+   "group": "Design tools",
+   "domain": "uiguideline.com"
+  },
+  {
+   "name": "UNCUT.wtf",
+   "url": "https://uncut.wtf/",
+   "group": "Design tools",
+   "domain": "uncut.wtf"
+  },
+  {
+   "name": "Unicorn Icons",
+   "url": "https://www.unicornicons.com/",
+   "group": "Design tools",
+   "domain": "unicornicons.com"
+  },
+  {
+   "name": "Unsplash",
+   "url": "https://unsplash.com/",
+   "group": "Design tools",
+   "domain": "unsplash.com"
+  },
+  {
+   "name": "Velvetyne",
+   "url": "https://velvetyne.fr/",
+   "group": "Design tools",
+   "domain": "velvetyne.fr"
+  },
+  {
+   "name": "Add Health",
+   "url": "https://addhealth.cpc.unc.edu/",
+   "group": "Data sources",
+   "domain": "addhealth.cpc.unc.edu"
+  },
+  {
+   "name": "Association of Religion Data Archives",
+   "url": "https://www.thearda.com/",
+   "group": "Data sources",
+   "domain": "thearda.com"
+  },
+  {
+   "name": "Bureau of Labor Statistics",
+   "url": "https://www.bls.gov/",
+   "group": "Data sources",
+   "domain": "bls.gov"
+  },
+  {
+   "name": "CDC BRFSS",
+   "url": "https://www.cdc.gov/brfss/",
+   "group": "Data sources",
+   "domain": "cdc.gov"
+  },
+  {
+   "name": "CDC WONDER",
+   "url": "https://wonder.cdc.gov/",
+   "group": "Data sources",
+   "domain": "wonder.cdc.gov"
+  },
+  {
+   "name": "County Health Rankings",
+   "url": "https://www.countyhealthrankings.org/",
+   "group": "Data sources",
+   "domain": "countyhealthrankings.org"
+  },
+  {
+   "name": "Data and Story Library",
+   "url": "https://dasl.datadescription.com/",
+   "group": "Data sources",
+   "domain": "dasl.datadescription.com"
+  },
+  {
+   "name": "Data Commons (was Google Public Data Explorer)",
+   "url": "https://datacommons.org/",
+   "group": "Data sources",
+   "domain": "datacommons.org"
+  },
+  {
+   "name": "Dataverse",
+   "url": "https://dataverse.org/",
+   "group": "Data sources",
+   "domain": "dataverse.org"
+  },
+  {
+   "name": "Dryad Digital Repository",
+   "url": "https://datadryad.org/",
+   "group": "Data sources",
+   "domain": "datadryad.org"
+  },
+  {
+   "name": "figshare",
+   "url": "https://figshare.com/",
+   "group": "Data sources",
+   "domain": "figshare.com"
+  },
+  {
+   "name": "General Social Survey",
+   "url": "https://gss.norc.org/",
+   "group": "Data sources",
+   "domain": "gss.norc.org"
+  },
+  {
+   "name": "ICPSR",
+   "url": "https://www.icpsr.umich.edu/",
+   "group": "Data sources",
+   "domain": "icpsr.umich.edu"
+  },
+  {
+   "name": "IPUMS",
+   "url": "https://www.ipums.org/",
+   "group": "Data sources",
+   "domain": "ipums.org"
+  },
+  {
+   "name": "National Addiction & HIV Data Archive Program",
+   "url": "https://www.icpsr.umich.edu/web/pages/NAHDAP/",
+   "group": "Data sources",
+   "domain": "icpsr.umich.edu"
+  },
+  {
+   "name": "National Longitudinal Surveys",
+   "url": "https://www.bls.gov/nls/",
+   "group": "Data sources",
+   "domain": "bls.gov"
+  },
+  {
+   "name": "Office for National Statistics (UK)",
+   "url": "https://www.ons.gov.uk/",
+   "group": "Data sources",
+   "domain": "ons.gov.uk"
+  },
+  {
+   "name": "Pew Research Center",
+   "url": "https://www.pewresearch.org/",
+   "group": "Data sources",
+   "domain": "pewresearch.org"
+  },
+  {
+   "name": "Social Science Data Analysis Network",
+   "url": "https://www.ssdan.net/",
+   "group": "Data sources",
+   "domain": "ssdan.net"
+  },
+  {
+   "name": "Sourcebook of Criminal Justice Statistics",
+   "url": "https://www.albany.edu/sourcebook/",
+   "group": "Data sources",
+   "domain": "albany.edu"
+  },
+  {
+   "name": "Sperling's Best Places",
+   "url": "https://www.bestplaces.net/",
+   "group": "Data sources",
+   "domain": "bestplaces.net"
+  },
+  {
+   "name": "StatCrunch",
+   "url": "https://www.statcrunch.com/",
+   "group": "Data sources",
+   "domain": "statcrunch.com"
+  },
+  {
+   "name": "StatLib",
+   "url": "https://lib.stat.cmu.edu/",
+   "group": "Data sources",
+   "domain": "lib.stat.cmu.edu"
+  },
+  {
+   "name": "Survey Documentation and Analysis",
+   "url": "https://sda.berkeley.edu/",
+   "group": "Data sources",
+   "domain": "sda.berkeley.edu"
+  },
+  {
+   "name": "The Guardian - datasets",
+   "url": "https://www.theguardian.com/data",
+   "group": "Data sources",
+   "domain": "theguardian.com"
+  },
+  {
+   "name": "U.S. Census Bureau",
+   "url": "https://www.census.gov/",
+   "group": "Data sources",
+   "domain": "census.gov"
+  },
+  {
+   "name": "UCI Machine Learning Repository",
+   "url": "https://archive.ics.uci.edu/",
+   "group": "Data sources",
+   "domain": "archive.ics.uci.edu"
+  },
+  {
+   "name": "World Bank Data",
+   "url": "https://data.worldbank.org/",
+   "group": "Data sources",
+   "domain": "data.worldbank.org"
+  },
+  {
+   "name": "World Factbook",
+   "url": "https://www.cia.gov/the-world-factbook/",
+   "group": "Data sources",
+   "domain": "cia.gov"
+  },
+  {
+   "name": "Encyclopaedia Britannica",
+   "url": "https://www.britannica.com/",
+   "group": "References",
+   "domain": "britannica.com"
+  },
+  {
+   "name": "Infoplease",
+   "url": "https://www.infoplease.com/",
+   "group": "References",
+   "domain": "infoplease.com"
+  },
+  {
+   "name": "Oxford Dictionary of National Biography",
+   "url": "https://www.oxforddnb.com/",
+   "group": "References",
+   "domain": "oxforddnb.com"
+  },
+  {
+   "name": "Oxford English Dictionary",
+   "url": "https://www.oed.com/",
+   "group": "References",
+   "domain": "oed.com"
+  },
+  {
+   "name": "PlanetMath",
+   "url": "https://planetmath.org/",
+   "group": "References",
+   "domain": "planetmath.org"
+  },
+  {
+   "name": "Rhyming Dictionary",
+   "url": "https://www.rhymezone.com/",
+   "group": "References",
+   "domain": "rhymezone.com"
+  },
+  {
+   "name": "Social Research Methods",
+   "url": "https://conjointly.com/kb/",
+   "group": "References",
+   "domain": "conjointly.com"
+  },
+  {
+   "name": "Stanford Encyclopedia of Philosophy",
+   "url": "https://plato.stanford.edu/",
+   "group": "References",
+   "domain": "plato.stanford.edu"
+  },
+  {
+   "name": "Wikipedia",
+   "url": "https://en.wikipedia.org/",
+   "group": "References",
+   "domain": "en.wikipedia.org"
+  },
+  {
+   "name": "Wolfram MathWorld",
+   "url": "https://mathworld.wolfram.com/",
+   "group": "References",
+   "domain": "mathworld.wolfram.com"
+  },
+  {
+   "name": "Wolfram|Alpha",
+   "url": "https://www.wolframalpha.com/",
+   "group": "References",
+   "domain": "wolframalpha.com"
+  },
+  {
+   "name": "YourDictionary",
+   "url": "https://www.yourdictionary.com/",
+   "group": "References",
+   "domain": "yourdictionary.com"
+  },
+  {
+   "name": "Easel.ly",
+   "url": "https://www.easel.ly/",
+   "group": "Data visualization and images",
+   "domain": "easel.ly"
+  },
+  {
+   "name": "Edward Tufte",
+   "url": "https://www.edwardtufte.com/",
+   "group": "Data visualization and images",
+   "domain": "edwardtufte.com"
+  },
+  {
+   "name": "Flickr",
+   "url": "https://www.flickr.com/",
+   "group": "Data visualization and images",
+   "domain": "flickr.com"
+  },
+  {
+   "name": "Flowvella",
+   "url": "https://flowvella.com/",
+   "group": "Data visualization and images",
+   "domain": "flowvella.com"
+  },
+  {
+   "name": "Gallery of data visualization",
+   "url": "https://www.datavis.ca/gallery/",
+   "group": "Data visualization and images",
+   "domain": "datavis.ca"
+  },
+  {
+   "name": "Gapminder",
+   "url": "https://www.gapminder.org/",
+   "group": "Data visualization and images",
+   "domain": "gapminder.org"
+  },
+  {
+   "name": "Junk Charts",
+   "url": "https://junkcharts.typepad.com/",
+   "group": "Data visualization and images",
+   "domain": "junkcharts.typepad.com"
+  },
+  {
+   "name": "Our World in Data",
+   "url": "https://ourworldindata.org/",
+   "group": "Data visualization and images",
+   "domain": "ourworldindata.org"
+  },
+  {
+   "name": "Pixabay",
+   "url": "https://pixabay.com/",
+   "group": "Data visualization and images",
+   "domain": "pixabay.com"
+  },
+  {
+   "name": "Plotly",
+   "url": "https://plotly.com/",
+   "group": "Data visualization and images",
+   "domain": "plotly.com"
+  },
+  {
+   "name": "Stephanie Evergreen's blog",
+   "url": "https://stephanieevergreen.com/blog/",
+   "group": "Data visualization and images",
+   "domain": "stephanieevergreen.com"
+  },
+  {
+   "name": "Storytelling with Data",
+   "url": "https://www.storytellingwithdata.com/",
+   "group": "Data visualization and images",
+   "domain": "storytellingwithdata.com"
+  },
+  {
+   "name": "Visual News",
+   "url": "https://www.visualnews.com/",
+   "group": "Data visualization and images",
+   "domain": "visualnews.com"
+  },
+  {
+   "name": "Visualizing Economics",
+   "url": "https://www.visualizingeconomics.com/",
+   "group": "Data visualization and images",
+   "domain": "visualizingeconomics.com"
+  },
+  {
+   "name": "Wikimedia Commons",
+   "url": "https://commons.wikimedia.org/",
+   "group": "Data visualization and images",
+   "domain": "commons.wikimedia.org"
+  },
+  {
+   "name": "Chronicle of Higher Education",
+   "url": "https://www.chronicle.com/",
+   "group": "Higher-education media",
+   "domain": "chronicle.com"
+  },
+  {
+   "name": "Inside Higher Ed",
+   "url": "https://www.insidehighered.com/",
+   "group": "Higher-education media",
+   "domain": "insidehighered.com"
+  },
+  {
+   "name": "Times Higher Education",
+   "url": "https://www.timeshighereducation.com/",
+   "group": "Higher-education media",
+   "domain": "timeshighereducation.com"
+  },
+  {
+   "name": "University Business Magazine",
+   "url": "https://universitybusiness.com/",
+   "group": "Higher-education media",
+   "domain": "universitybusiness.com"
+  },
+  {
+   "name": "American Scientist",
+   "url": "https://www.americanscientist.org/",
+   "group": "Science media",
+   "domain": "americanscientist.org"
+  },
+  {
+   "name": "Discover",
+   "url": "https://www.discovermagazine.com/",
+   "group": "Science media",
+   "domain": "discovermagazine.com"
+  },
+  {
+   "name": "Locus",
+   "url": "https://locusmag.com/",
+   "group": "Science media",
+   "domain": "locusmag.com"
+  },
+  {
+   "name": "Natural History Magazine",
+   "url": "https://www.naturalhistorymag.com/",
+   "group": "Science media",
+   "domain": "naturalhistorymag.com"
+  },
+  {
+   "name": "Phys.org social sciences",
+   "url": "https://phys.org/science-news/social-sciences/",
+   "group": "Science media",
+   "domain": "phys.org"
+  },
+  {
+   "name": "Physics Today",
+   "url": "https://pubs.aip.org/physicstoday",
+   "group": "Science media",
+   "domain": "pubs.aip.org"
+  },
+  {
+   "name": "Popular Science",
+   "url": "https://www.popsci.com/",
+   "group": "Science media",
+   "domain": "popsci.com"
+  },
+  {
+   "name": "Proceedings of the National Academy of Sciences",
+   "url": "https://www.pnas.org/",
+   "group": "Science media",
+   "domain": "pnas.org"
+  },
+  {
+   "name": "Psychiatric Times",
+   "url": "https://www.psychiatrictimes.com/",
+   "group": "Science media",
+   "domain": "psychiatrictimes.com"
+  },
+  {
+   "name": "PsyPost",
+   "url": "https://www.psypost.org/",
+   "group": "Science media",
+   "domain": "psypost.org"
+  },
+  {
+   "name": "Science News",
+   "url": "https://www.sciencenews.org/",
+   "group": "Science media",
+   "domain": "sciencenews.org"
+  },
+  {
+   "name": "Scientific American",
+   "url": "https://www.scientificamerican.com/",
+   "group": "Science media",
+   "domain": "scientificamerican.com"
+  },
+  {
+   "name": "Strange Horizons",
+   "url": "https://strangehorizons.com/",
+   "group": "Science media",
+   "domain": "strangehorizons.com"
+  },
+  {
+   "name": "Symposium Magazine",
+   "url": "https://www.symposium-magazine.com/",
+   "group": "Science media",
+   "domain": "symposium-magazine.com"
+  },
+  {
+   "name": "Wired",
+   "url": "https://www.wired.com/",
+   "group": "Science media",
+   "domain": "wired.com"
+  },
+  {
+   "name": "Academy of American Poets",
+   "url": "https://poets.org/",
+   "group": "Poetry and literary magazines",
+   "domain": "poets.org"
+  },
+  {
+   "name": "American Poetry Review",
+   "url": "https://aprweb.org/",
+   "group": "Poetry and literary magazines",
+   "domain": "aprweb.org"
+  },
+  {
+   "name": "Boston Review",
+   "url": "https://www.bostonreview.net/",
+   "group": "Poetry and literary magazines",
+   "domain": "bostonreview.net"
+  },
+  {
+   "name": "Hudson Review",
+   "url": "https://hudsonreview.com/",
+   "group": "Poetry and literary magazines",
+   "domain": "hudsonreview.com"
+  },
+  {
+   "name": "Mythic Delirium",
+   "url": "https://mythicdelirium.com/",
+   "group": "Poetry and literary magazines",
+   "domain": "mythicdelirium.com"
+  },
+  {
+   "name": "Narrative Magazine",
+   "url": "https://www.narrativemagazine.com/",
+   "group": "Poetry and literary magazines",
+   "domain": "narrativemagazine.com"
+  },
+  {
+   "name": "New American Writing",
+   "url": "https://www.newamericanwriting.com/",
+   "group": "Poetry and literary magazines",
+   "domain": "newamericanwriting.com"
+  },
+  {
+   "name": "New Criterion",
+   "url": "https://newcriterion.com/",
+   "group": "Poetry and literary magazines",
+   "domain": "newcriterion.com"
+  },
+  {
+   "name": "Painted Bride Quarterly",
+   "url": "https://pbqmag.org/",
+   "group": "Poetry and literary magazines",
+   "domain": "pbqmag.org"
+  },
+  {
+   "name": "Paris Review",
+   "url": "https://www.theparisreview.org/",
+   "group": "Poetry and literary magazines",
+   "domain": "theparisreview.org"
+  },
+  {
+   "name": "Ploughshares",
+   "url": "https://www.pshares.org/",
+   "group": "Poetry and literary magazines",
+   "domain": "pshares.org"
+  },
+  {
+   "name": "Poets & Writers",
+   "url": "https://www.pw.org/",
+   "group": "Poetry and literary magazines",
+   "domain": "pw.org"
+  },
+  {
+   "name": "Science Fiction Poetry Association",
+   "url": "https://www.sfpoetry.com/",
+   "group": "Poetry and literary magazines",
+   "domain": "sfpoetry.com"
+  },
+  {
+   "name": "Tanka Online",
+   "url": "https://www.tankaonline.com/",
+   "group": "Poetry and literary magazines",
+   "domain": "tankaonline.com"
+  },
+  {
+   "name": "The Atlantic",
+   "url": "https://www.theatlantic.com/",
+   "group": "Poetry and literary magazines",
+   "domain": "theatlantic.com"
+  },
+  {
+   "name": "The Literary Review",
+   "url": "https://www.theliteraryreview.org/",
+   "group": "Poetry and literary magazines",
+   "domain": "theliteraryreview.org"
+  },
+  {
+   "name": "The Sun Magazine",
+   "url": "https://www.thesunmagazine.org/",
+   "group": "Poetry and literary magazines",
+   "domain": "thesunmagazine.org"
+  },
+  {
+   "name": "The Writer's Almanac",
+   "url": "https://www.garrisonkeillor.com/the-writers-almanac/",
+   "group": "Poetry and literary magazines",
+   "domain": "garrisonkeillor.com"
+  },
+  {
+   "name": "Threepenny Review",
+   "url": "https://www.threepennyreview.com/",
+   "group": "Poetry and literary magazines",
+   "domain": "threepennyreview.com"
+  },
+  {
+   "name": "Campbell Collaboration",
+   "url": "https://www.campbellcollaboration.org/",
+   "group": "Research organizations",
+   "domain": "campbellcollaboration.org"
+  },
+  {
+   "name": "Centre for Crime and Justice Studies",
+   "url": "https://www.crimeandjustice.org.uk/",
+   "group": "Research organizations",
+   "domain": "crimeandjustice.org.uk"
+  },
+  {
+   "name": "Child Trends",
+   "url": "https://www.childtrends.org/",
+   "group": "Research organizations",
+   "domain": "childtrends.org"
+  },
+  {
+   "name": "Gallup",
+   "url": "https://www.gallup.com/",
+   "group": "Research organizations",
+   "domain": "gallup.com"
+  },
+  {
+   "name": "Grants.gov",
+   "url": "https://www.grants.gov/",
+   "group": "Research organizations",
+   "domain": "grants.gov"
+  },
+  {
+   "name": "Institute for Quantitative Social Science",
+   "url": "https://www.iq.harvard.edu/",
+   "group": "Research organizations",
+   "domain": "iq.harvard.edu"
+  },
+  {
+   "name": "Institute for Social Research",
+   "url": "https://isr.umich.edu/",
+   "group": "Research organizations",
+   "domain": "isr.umich.edu"
+  },
+  {
+   "name": "Mathematica",
+   "url": "https://www.mathematica.org/",
+   "group": "Research organizations",
+   "domain": "mathematica.org"
+  },
+  {
+   "name": "National Bureau of Economic Research",
+   "url": "https://www.nber.org/",
+   "group": "Research organizations",
+   "domain": "nber.org"
+  },
+  {
+   "name": "National Center for Education Statistics",
+   "url": "https://nces.ed.gov/",
+   "group": "Research organizations",
+   "domain": "nces.ed.gov"
+  },
+  {
+   "name": "National Institute of Mental Health",
+   "url": "https://www.nimh.nih.gov/",
+   "group": "Research organizations",
+   "domain": "nimh.nih.gov"
+  },
+  {
+   "name": "National Institute on Alcohol Abuse and Alcoholism",
+   "url": "https://www.niaaa.nih.gov/",
+   "group": "Research organizations",
+   "domain": "niaaa.nih.gov"
+  },
+  {
+   "name": "National Institute on Drug Abuse",
+   "url": "https://nida.nih.gov/",
+   "group": "Research organizations",
+   "domain": "nida.nih.gov"
+  },
+  {
+   "name": "National Science Foundation",
+   "url": "https://www.nsf.gov/",
+   "group": "Research organizations",
+   "domain": "nsf.gov"
+  },
+  {
+   "name": "NORC at the University of Chicago",
+   "url": "https://www.norc.org/",
+   "group": "Research organizations",
+   "domain": "norc.org"
+  },
+  {
+   "name": "RAND",
+   "url": "https://www.rand.org/",
+   "group": "Research organizations",
+   "domain": "rand.org"
+  },
+  {
+   "name": "Roper Center",
+   "url": "https://ropercenter.cornell.edu/",
+   "group": "Research organizations",
+   "domain": "ropercenter.cornell.edu"
+  },
+  {
+   "name": "RTI International",
+   "url": "https://www.rti.org/",
+   "group": "Research organizations",
+   "domain": "rti.org"
+  },
+  {
+   "name": "SAMHSA",
+   "url": "https://www.samhsa.gov/",
+   "group": "Research organizations",
+   "domain": "samhsa.gov"
+  },
+  {
+   "name": "The Pluralism Project",
+   "url": "https://pluralism.org/",
+   "group": "Research organizations",
+   "domain": "pluralism.org"
+  },
+  {
+   "name": "United Nations Office on Drugs and Crime",
+   "url": "https://www.unodc.org/",
+   "group": "Research organizations",
+   "domain": "unodc.org"
+  },
+  {
+   "name": "Urban Institute",
+   "url": "https://www.urban.org/",
+   "group": "Research organizations",
+   "domain": "urban.org"
+  },
+  {
+   "name": "Bristol multilevel modelling course",
+   "url": "https://www.bristol.ac.uk/cmm/learning/",
+   "group": "Statistics software",
+   "domain": "bristol.ac.uk"
+  },
+  {
+   "name": "Centre for Multilevel Modelling",
+   "url": "https://www.bristol.ac.uk/cmm/",
+   "group": "Statistics software",
+   "domain": "bristol.ac.uk"
+  },
+  {
+   "name": "CRAN",
+   "url": "https://cran.r-project.org/",
+   "group": "Statistics software",
+   "domain": "cran.r-project.org"
+  },
+  {
+   "name": "EQS (Multivariate Software)",
+   "url": "https://www.mvsoft.com/",
+   "group": "Statistics software",
+   "domain": "mvsoft.com"
+  },
+  {
+   "name": "IBM SPSS Statistics",
+   "url": "https://www.ibm.com/products/spss-statistics",
+   "group": "Statistics software",
+   "domain": "ibm.com"
+  },
+  {
+   "name": "Kristopher Preacher's quantpsy.org",
+   "url": "https://quantpsy.org/",
+   "group": "Statistics software",
+   "domain": "quantpsy.org"
+  },
+  {
+   "name": "Lumivero (NVivo, formerly QSR)",
+   "url": "https://lumivero.com/",
+   "group": "Statistics software",
+   "domain": "lumivero.com"
+  },
+  {
+   "name": "Mplus",
+   "url": "https://www.statmodel.com/",
+   "group": "Statistics software",
+   "domain": "statmodel.com"
+  },
+  {
+   "name": "PDFescape",
+   "url": "https://www.pdfescape.com/",
+   "group": "Statistics software",
+   "domain": "pdfescape.com"
+  },
+  {
+   "name": "Quick-R",
+   "url": "https://www.statmethods.net/",
+   "group": "Statistics software",
+   "domain": "statmethods.net"
+  },
+  {
+   "name": "SAS",
+   "url": "https://www.sas.com/",
+   "group": "Statistics software",
+   "domain": "sas.com"
+  },
+  {
+   "name": "Stata",
+   "url": "https://www.stata.com/",
+   "group": "Statistics software",
+   "domain": "stata.com"
+  },
+  {
+   "name": "Statistical Innovations",
+   "url": "https://www.statisticalinnovations.com/",
+   "group": "Statistics software",
+   "domain": "statisticalinnovations.com"
+  },
+  {
+   "name": "SUDAAN",
+   "url": "https://www.rti.org/impact/sudaanr-statistical-software-analyzing-correlated-data",
+   "group": "Statistics software",
+   "domain": "rti.org"
+  },
+  {
+   "name": "WHONET",
+   "url": "https://whonet.org/",
+   "group": "Statistics software",
+   "domain": "whonet.org"
+  },
+  {
+   "name": "Zamzar file conversion",
+   "url": "https://www.zamzar.com/",
+   "group": "Statistics software",
+   "domain": "zamzar.com"
+  }
+ ]
+}

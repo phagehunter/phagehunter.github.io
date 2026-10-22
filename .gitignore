@@ -1,0 +1,5 @@
+# Originals never enter the repository: git history is permanent and the
+# originals carry GPS and camera metadata. photos/add.py writes clean copies
+# to photos/web/, which is tracked.
+photos/inbox/
+.DS_Store

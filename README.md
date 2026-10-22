@@ -5,13 +5,15 @@ The landing page for Curtis Hoffmann's site, served from this repository by GitH
 ## What is here
 
 ```
-index.html          the whole page: hero loom, project grid, bio, contact
+index.html          the whole page: hero loom, project grid, photographs, bio, bookmarks, contact
 CNAME               custom domain for GitHub Pages
 site.webmanifest    name, colors and icons for home-screen installs
 favicon.svg, favicon-32.png, apple-touch-icon.png, icon-192.png, icon-512.png
 og-image.jpg        1200×630 social preview
 symphony.mp3        optional background music; only downloaded if a visitor turns sound on
-robots.txt, sitemap.xml
+robots.txt, sitemap.xml, llms.txt
+data/bookmarks.json, build_bookmarks.py   the Bookmarks section (see below)
+photos/                                   the photography section (see below)
 ```
 
 There is no build step and no dependency. Edit `index.html`, commit, and GitHub Pages publishes it within a minute or two.
@@ -30,4 +32,12 @@ Links should use `https://curtishoffmann.com/...` rather than `phagehunter.githu
 
 ## Hosting notes
 
-The domain is proxied through Cloudflare, so Cloudflare terminates HTTPS. GitHub cannot issue its own certificate while that is the case, which is why "Enforce HTTPS" is unavailable in the Pages settings. To make plain `http://` requests redirect, turn on "Always Use HTTPS" in the Cloudflare dashboard (SSL/TLS → Edge Certificates) and keep the encryption mode on "Full".
+The domain is proxied through Cloudflare, so Cloudflare terminates HTTPS. "Enforce HTTPS" in the Pages settings does take effect on the project repositories (those that have it on redirect plain `http://` to `https://`), but this root repository, which carries the custom-domain record, may refuse it until GitHub sees a certificate. The fallback is "Always Use HTTPS" in the Cloudflare dashboard (SSL/TLS → Edge Certificates), with the encryption mode on "Full".
+
+## Photographs
+
+`photos/` holds the photography section. Drop originals into `photos/inbox/` (ignored by git) and double-click `Add photos.command`; it strips every trace of metadata (GPS, camera, dates, XMP, color profile), writes hashed WebP and JPEG copies into `photos/web/`, updates `photos/manifest.json`, and offers to commit and push. A GitHub Action re-scans every push that touches the folder and fails if metadata or an original slipped through. Details in [photos/README.md](photos/README.md).
+
+## Bookmarks
+
+The Bookmarks section is generated from `data/bookmarks.json` by `build_bookmarks.py`, which rewrites the block between the `bookmarks:start` and `bookmarks:end` markers in `index.html`. Add or remove a link in the JSON, run the script, commit both files.

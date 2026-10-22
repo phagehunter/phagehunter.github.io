@@ -104,7 +104,10 @@
     @media (min-width: 720px) { :root { --gutter: 2rem; } }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scrollbar-color: var(--line) var(--midnight); caret-color: var(--gold); accent-color: var(--gold); }
+    ::selection { background: var(--gold); color: var(--midnight); }
+    h1, h2, h3 { text-wrap: balance; }
+    p, li, figcaption { text-wrap: pretty; }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
 
     body {
@@ -134,7 +137,11 @@
       padding: calc(1.5rem + var(--safe-top)) var(--gutter) calc(1.25rem + var(--safe-bottom));
       overflow: hidden;
     }
-    .hero header { position: relative; z-index: 20; text-align: center; flex-shrink: 0; padding: 0 .5rem; animation: blurFadeIn 1.4s cubic-bezier(0.22, 1, 0.36, 1) both; }
+    .hero header { position: relative; z-index: 20; text-align: center; flex-shrink: 0; padding: 0 .5rem; }
+    .hero header > * { animation: blurFadeIn .9s cubic-bezier(0.22, 1, 0.36, 1) both; will-change: opacity, transform, filter; }
+    .hero header > :nth-child(1) { animation-delay: .05s; }
+    .hero header > :nth-child(2) { animation-delay: .13s; }
+    .hero header > :nth-child(3) { animation-delay: .21s; }
     .prefix { font-size: clamp(0.55rem, 2.4vw, 0.65rem); letter-spacing: 0.7em; color: var(--gold); text-transform: uppercase; margin-bottom: 1.1rem; font-weight: 300; padding-left: 0.7em; overflow-wrap: break-word; }
     h1 { font-size: clamp(1.9rem, 8vw, 3.2rem); font-weight: 200; letter-spacing: 0.28em; color: var(--bone); text-transform: uppercase; padding-left: 0.28em; line-height: 1.15; }
     .tagline { font-size: clamp(0.8rem, 3.6vw, 0.95rem); font-style: italic; letter-spacing: 0.18em; color: #7c8aa0; margin-top: 0.8rem; }
@@ -142,17 +149,18 @@
     .canvas-container { position: relative; z-index: 10; flex: 1 1 auto; min-height: 260px; width: 100vw; align-self: center; }
     canvas { display: block; width: 100%; height: 100%; filter: drop-shadow(0 0 20px rgba(197, 160, 89, 0.15)); touch-action: manipulation; }
 
-    .hero-foot { position: relative; z-index: 20; flex-shrink: 0; text-align: center; margin-top: 0.5rem; animation: blurFadeIn 1.8s cubic-bezier(0.22, 1, 0.36, 1) both; display: flex; flex-direction: column; align-items: center; gap: .9rem; }
+    .hero-foot { position: relative; z-index: 20; flex-shrink: 0; text-align: center; margin-top: 0.5rem; animation: blurFadeIn .9s cubic-bezier(0.22, 1, 0.36, 1) .45s both; display: flex; flex-direction: column; align-items: center; gap: .9rem; }
     .hero-foot .row { display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; }
     .cv-button {
       display: inline-flex; align-items: center; justify-content: center; min-height: 44px;
       padding: 0.8rem 2.2rem; border: 1px solid rgba(197, 160, 89, 0.35); border-radius: 2px;
       color: var(--gold); text-decoration: none; font-size: 0.72rem; letter-spacing: 0.4em; text-transform: uppercase;
-      transition: all 0.4s ease; background: transparent; -webkit-tap-highlight-color: transparent;
+      transition: border-color .15s ease-out, background .15s ease-out, color .15s ease-out, transform .15s ease-out; background: transparent; -webkit-tap-highlight-color: transparent;
     }
     .cv-button:hover, .cv-button:focus-visible { border-color: var(--gold); background: rgba(197, 160, 89, 0.06); color: var(--bone); outline: none; }
     .cv-button.solid { background: var(--gold); color: var(--midnight); border-color: var(--gold); }
     .cv-button.solid:hover, .cv-button.solid:focus-visible { background: var(--gold-bright); color: var(--midnight); }
+    .cv-button:active { transform: scale(.96); }
     .scroll-cue { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; color: var(--muted); text-decoration: none; animation: cueBob 2.4s ease-in-out infinite; }
     .scroll-cue:hover, .scroll-cue:focus-visible { color: var(--gold); }
     @keyframes cueBob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
@@ -168,7 +176,8 @@
     .eyebrow { font-family: 'Inter', sans-serif; font-size: .62rem; letter-spacing: .32em; text-transform: uppercase; color: var(--gold); margin-bottom: .9rem; display: flex; align-items: center; gap: 1rem; }
     .eyebrow::after { content: ""; flex: 1; height: 1px; background: var(--line); }
     h2 { font-weight: 200; font-size: clamp(1.9rem, 4.5vw, 2.8rem); letter-spacing: .02em; line-height: 1.15; margin-bottom: .6rem; }
-    h2 em { font-style: italic; color: var(--gold); }
+    h2 em, .lede em { font-style: italic; color: var(--gold); }
+    .lede { font-weight: 200; font-size: clamp(1.9rem, 4.5vw, 2.8rem); letter-spacing: .02em; line-height: 1.15; margin-bottom: .6rem; color: var(--bone); max-width: none; text-wrap: balance; }
     .deck { font-size: 1.1rem; color: var(--bone-dim); max-width: 640px; margin-bottom: 2rem; }
 
     .grid { display: grid; grid-template-columns: 1fr; gap: .9rem; }
@@ -176,10 +185,12 @@
     @media (min-width: 960px) { .grid { grid-template-columns: 1fr 1fr 1fr; } }
     .project {
       position: relative; display: flex; flex-direction: column; gap: .5rem; min-height: 190px;
-      padding: 1.4rem 1.4rem 1.2rem; background: var(--surface); border: 1px solid var(--line); border-radius: 4px;
-      text-decoration: none; color: var(--bone); transition: border-color .25s, transform .25s, background .25s;
+      padding: 1.4rem 1.4rem 1.2rem; background: var(--surface); border: 1px solid var(--line); border-radius: 6px;
+      text-decoration: none; color: var(--bone); transition: border-color .15s ease-out, transform .15s ease-out, background .15s ease-out, box-shadow .15s ease-out;
+      box-shadow: 0 0 0 1px rgba(255,255,255,.04), 0 1px 2px rgba(0,0,0,.3);
     }
-    .project:hover, .project:focus-visible { border-color: var(--gold); background: #0a1b3a; transform: translateY(-2px); color: var(--bone); outline: none; }
+    .project:active { transform: scale(.985); }
+    .project:hover, .project:focus-visible { border-color: var(--gold); background: #0a1b3a; transform: translateY(-2px); color: var(--bone); outline: none; box-shadow: 0 0 0 1px rgba(255,255,255,.06), 0 10px 24px -12px rgba(0,0,0,.6); }
     .project:focus-visible { box-shadow: 0 0 0 2px var(--focus); }
     .project .ico { width: 34px; height: 34px; color: var(--gold); opacity: .85; }
     .project h3 { font-weight: 400; font-size: 1.45rem; letter-spacing: .01em; line-height: 1.15; }
@@ -189,13 +200,79 @@
 
     .about { display: grid; grid-template-columns: 1fr; gap: 2rem; }
     @media (min-width: 820px) { .about { grid-template-columns: 1.4fr 1fr; gap: 3rem; } }
-    .about p { font-size: 1.15rem; color: var(--bone-dim); margin-bottom: 1rem; max-width: 60ch; }
+    .about p:not(.lede) { font-size: 1.15rem; color: var(--bone-dim); margin-bottom: 1rem; max-width: 60ch; }
     .about p strong { color: var(--bone); font-weight: 400; }
     .links { list-style: none; display: grid; gap: .6rem; }
-    .links a { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .9rem 1.1rem; border: 1px solid var(--line); border-radius: 4px; text-decoration: none; color: var(--bone); background: var(--surface); transition: border-color .25s; min-height: 48px; }
+    .links a { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .9rem 1.1rem; border: 1px solid var(--line); border-radius: 6px; text-decoration: none; color: var(--bone); background: var(--surface); transition: border-color .15s ease-out, transform .15s ease-out; min-height: 48px; }
+    .links a:active { transform: scale(.985); }
     .links a:hover, .links a:focus-visible { border-color: var(--gold); outline: none; }
     .links .k { font-family: 'Inter', sans-serif; font-size: .62rem; letter-spacing: .28em; text-transform: uppercase; color: var(--muted); }
     .links .v { font-size: 1.05rem; }
+
+    /* ── Photographs: film strip + lightbox ── */
+    .photos-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: .6rem 2rem; margin-bottom: 1.4rem; }
+    .photos-head .sub { font-style: italic; color: var(--muted); font-size: 1.05rem; max-width: 52ch; text-wrap: pretty; }
+    .strip-nav { display: flex; gap: .5rem; }
+    .strip-nav[hidden] { display: none; }
+    .strip-btn { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: var(--surface); color: var(--gold); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; transition: border-color .15s ease-out, transform .15s ease-out, opacity .15s ease-out; -webkit-tap-highlight-color: transparent; }
+    .strip-btn:hover, .strip-btn:focus-visible { border-color: var(--gold); outline: none; }
+    .strip-btn:focus-visible { box-shadow: 0 0 0 2px var(--focus); }
+    .strip-btn:active { transform: scale(.96); }
+    .strip-btn[disabled] { opacity: .3; cursor: default; }
+    .strip { display: flex; gap: .9rem; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; padding: 2px 2px 1rem; scrollbar-width: thin; scrollbar-color: var(--line) transparent; -webkit-overflow-scrolling: touch; user-select: none; -webkit-user-select: none; }
+    .shot { flex: 0 0 auto; margin: 0; scroll-snap-align: start; display: flex; flex-direction: column; gap: .45rem; }
+    .frame { display: block; position: relative; height: clamp(220px, 38vw, 400px); aspect-ratio: var(--ar, 3 / 2); max-width: calc(100vw - 2 * var(--gutter)); border: 0; padding: 0; border-radius: 3px; overflow: hidden; background: var(--ph, var(--surface)); outline: 1px solid rgba(255,255,255,.1); outline-offset: -1px; cursor: zoom-in; transition: outline-color .15s ease-out; -webkit-tap-highlight-color: transparent; }
+    .frame:hover, .frame:focus-visible { outline: 1px solid rgba(227,194,124,.7); }
+    .frame:focus-visible { box-shadow: 0 0 0 2px var(--focus); }
+    .frame img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0; transition: opacity .5s ease-out; pointer-events: none; -webkit-user-drag: none; }
+    .frame img.in { opacity: 1; }
+    .frame::after { content: ""; position: absolute; inset: 0; }  /* catches drag and long-press so the image itself is never the target */
+    .frame.empty { display: flex; align-items: center; justify-content: center; background: transparent; outline: 1px dashed rgba(197,160,89,.4); cursor: default; }
+    .frame.empty::before { content: ""; position: absolute; inset: 10px; outline: 1px solid rgba(197,160,89,.14); border-radius: 2px; }
+    .frame.empty span { font-style: italic; color: var(--muted); font-size: .95rem; letter-spacing: .04em; }
+    .shot figcaption { font-style: italic; color: var(--muted); font-size: .95rem; max-width: 40ch; text-wrap: pretty; }
+    .photos-note { font-style: italic; color: var(--muted); margin-top: .4rem; font-size: 1.05rem; }
+    .photos-count { font-family: 'Inter', sans-serif; font-size: .62rem; letter-spacing: .28em; text-transform: uppercase; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+    .lightbox { border: 0; padding: 0; margin: 0; width: 100vw; height: 100vh; max-width: 100vw; max-height: 100vh; background: transparent; color: var(--bone); }
+    .lightbox::backdrop { background: rgba(0, 11, 24, .94); }
+    .lightbox[open] { display: grid; grid-template-rows: auto 1fr auto; animation: lbIn .25s cubic-bezier(.22, 1, .36, 1) both; }
+    @keyframes lbIn { from { opacity: 0; transform: scale(.97); } to { opacity: 1; transform: none; } }
+    .lb-bar { display: flex; justify-content: space-between; align-items: center; padding: calc(.75rem + var(--safe-top)) var(--gutter) .5rem; }
+    .lb-stage { display: flex; align-items: center; justify-content: center; padding: 0 var(--gutter); min-height: 0; user-select: none; -webkit-user-select: none; }
+    .lb-stage img { max-width: min(100%, 1600px); max-height: calc(100vh - 11rem); width: auto; height: auto; object-fit: contain; outline: 1px solid rgba(255,255,255,.1); outline-offset: -1px; pointer-events: none; -webkit-user-drag: none; background: var(--ph, var(--surface)); }
+    .lb-foot { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .75rem var(--gutter) calc(1rem + var(--safe-bottom)); }
+    .lb-foot p { font-style: italic; color: var(--bone-dim); font-size: 1.05rem; text-wrap: pretty; }
+    .lb-btn { min-width: 44px; min-height: 44px; padding: .6rem 1rem; border: 1px solid var(--line); border-radius: 2px; background: rgba(7,22,49,.8); color: var(--gold); font-family: 'Inter', sans-serif; font-size: .68rem; letter-spacing: .28em; text-transform: uppercase; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: .5rem; transition: border-color .15s ease-out, transform .15s ease-out; }
+    .lb-btn:hover, .lb-btn:focus-visible { border-color: var(--gold); color: var(--bone); outline: none; }
+    .lb-btn:active { transform: scale(.96); }
+
+    /* ── Bookmarks ── */
+    .bm-tools { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .8rem 2rem; margin: 0 0 1rem; }
+    .bm-filter { font-family: 'Inter', sans-serif; font-size: 1rem; padding: .7rem 1rem; min-height: 44px; width: min(100%, 340px); background: var(--surface); border: 1px solid var(--line); border-radius: 6px; color: var(--bone); transition: border-color .15s ease-out; }
+    .bm-filter::placeholder { color: var(--slate); }
+    .bm-filter:focus { border-color: var(--gold); outline: none; box-shadow: 0 0 0 2px rgba(124,196,255,.35); }
+    .bm-count { font-family: 'Inter', sans-serif; font-size: .62rem; letter-spacing: .28em; text-transform: uppercase; color: var(--muted); font-variant-numeric: tabular-nums; }
+    .bm-group { border-top: 1px solid var(--line); }
+    .bm-group:last-child { border-bottom: 1px solid var(--line); }
+    .bm-group h3 { font-weight: 400; font-size: 1rem; }
+    .bm-toggle { width: 100%; display: flex; align-items: center; gap: 1rem; padding: 1rem 0; min-height: 56px; background: none; border: 0; color: var(--bone); font-family: 'Crimson Pro', Georgia, serif; font-size: 1.4rem; font-weight: 400; text-align: left; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+    .bm-toggle:hover span:first-child, .bm-toggle:focus-visible span:first-child { color: var(--gold-bright); }
+    .bm-toggle:focus-visible { outline: none; box-shadow: inset 0 0 0 2px var(--focus); border-radius: 3px; }
+    .bm-toggle .n { margin-left: auto; font-family: 'Inter', sans-serif; font-size: .66rem; letter-spacing: .2em; color: var(--muted); font-variant-numeric: tabular-nums; }
+    .bm-toggle svg { flex-shrink: 0; color: var(--gold); transition: transform .25s cubic-bezier(.22, 1, .36, 1); }
+    .bm-toggle[aria-expanded="true"] svg { transform: scaleY(-1); }
+    .bm-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .35s cubic-bezier(.22, 1, .36, 1); }
+    .bm-toggle[aria-expanded="true"] ~ .bm-panel, h3:has(.bm-toggle[aria-expanded="true"]) + .bm-panel { grid-template-rows: 1fr; }
+    .bm-panel > div { overflow: hidden; }
+    .bm-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: .25rem .8rem; padding: 0 0 1.2rem; }
+    .bm-list a { display: flex; flex-direction: column; justify-content: center; gap: .1rem; min-height: 48px; padding: .5rem .7rem; border-radius: 3px; text-decoration: none; color: var(--bone); transition: background .15s ease-out; }
+    .bm-list a:hover, .bm-list a:focus-visible { background: rgba(197,160,89,.08); color: var(--bone); outline: none; }
+    .bm-list a:focus-visible { box-shadow: inset 0 0 0 2px var(--focus); }
+    .bm-list .t { font-size: 1.08rem; line-height: 1.25; }
+    .bm-list .d { font-family: 'Inter', sans-serif; font-size: .66rem; color: var(--muted); letter-spacing: .04em; }
+    .bm-list li[hidden], .bm-group[hidden] { display: none; }
+    .bm-empty { padding: 1.2rem 0; font-style: italic; color: var(--muted); }
 
     footer { position: relative; z-index: 2; margin-top: 4rem; border-top: 1px solid var(--line); padding: 2rem 0 calc(2.5rem + var(--safe-bottom)); font-family: 'Inter', sans-serif; font-size: .78rem; color: var(--muted); }
     footer .row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .8rem 2rem; }
@@ -203,7 +280,7 @@
     footer .motto .he { font-style: normal; letter-spacing: 0; }
 
     @keyframes blurFadeIn {
-      0% { opacity: 0; filter: blur(10px); transform: translateY(10px); }
+      0% { opacity: 0; filter: blur(3px); transform: translateY(12px); }
       100% { opacity: 1; filter: blur(0); transform: translateY(0); }
     }
   </style>
@@ -238,8 +315,8 @@
   </section>
 
   <main>
-    <section class="block wrap" id="projects">
-      <h2 class="eyebrow">Projects</h2>
+    <section class="block wrap" id="projects" aria-labelledby="projects-h">
+      <h2 class="eyebrow" id="projects-h">Projects</h2>
       <div class="grid">
         <a class="project" href="https://curtishoffmann.com/exoplanetatlas/">
           <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="24" cy="24" r="9"/><ellipse cx="24" cy="24" rx="20" ry="7" transform="rotate(-20 24 24)"/><circle cx="40" cy="12" r="1.5" fill="currentColor"/></svg>
@@ -316,11 +393,34 @@
       </div>
     </section>
 
-    <section class="block wrap" id="about">
-      <div class="eyebrow">About</div>
+    <section class="block wrap" id="photographs" aria-labelledby="photographs-h">
+      <h2 class="eyebrow" id="photographs-h">Photographs</h2>
+      <div class="photos-head">
+        <p class="sub">Field notes in another medium: places, people, and the odd microbe-shaped cloud.</p>
+        <div class="strip-nav" hidden>
+          <button class="strip-btn" type="button" data-dir="-1" aria-label="Previous photographs"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+          <button class="strip-btn" type="button" data-dir="1" aria-label="Next photographs"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+        </div>
+      </div>
+      <div class="strip" tabindex="0" aria-label="Photographs, scroll sideways" role="list">
+        <figure class="shot" role="listitem"><div class="frame empty" style="--ar: 3 / 2"><span>Print 1</span></div></figure>
+        <figure class="shot" role="listitem"><div class="frame empty" style="--ar: 2 / 3"><span>Print 2</span></div></figure>
+        <figure class="shot" role="listitem"><div class="frame empty" style="--ar: 1 / 1"><span>Print 3</span></div></figure>
+      </div>
+      <p class="photos-note">Prints are being scanned. The first set arrives soon.</p>
+    </section>
+
+    <dialog class="lightbox" id="lightbox" aria-label="Photograph">
+      <div class="lb-bar"><span class="photos-count" id="lb-count"></span><button class="lb-btn" type="button" data-close>Close</button></div>
+      <div class="lb-stage"><img id="lb-img" alt="" draggable="false"></div>
+      <div class="lb-foot"><button class="lb-btn" type="button" data-step="-1" aria-label="Previous photograph">Prev</button><p id="lb-cap"></p><button class="lb-btn" type="button" data-step="1" aria-label="Next photograph">Next</button></div>
+    </dialog>
+
+    <section class="block wrap" id="about" aria-labelledby="about-h">
+      <h2 class="eyebrow" id="about-h">About</h2>
       <div class="about">
         <div>
-          <h2>Biology, <em>culture</em>, and the threads between them.</h2>
+          <p class="lede">Biology, <em>culture</em>, and the threads between them.</p>
           <p>Pathogens have a knack for disrupting society. It's our job to understand them. The deeper we look, the more we learn about ourselves: our cultures, our fears, our shared history.</p>
           <p><strong>Curtis Hoffmann</strong> is a researcher working at the intersection of biology and anthropology. He studies how microbes move through communities and cultures, and he designs live outbreak simulations that help people experience how epidemics unfold.</p>
         </div>
@@ -332,11 +432,64 @@
         </ul>
       </div>
     </section>
+
+    <section class="block wrap" id="bookmarks" aria-labelledby="bookmarks-h">
+      <h2 class="eyebrow" id="bookmarks-h">Bookmarks</h2>
+      <div class="photos-head">
+        <p class="sub">Sites worth keeping: design tools, data sources, references, and places to read. Kept because they are still useful, checked in October 2026.</p>
+      </div>
+      <div class="bm-tools">
+        <label class="sr-only" for="bm-filter">Filter bookmarks</label>
+        <input class="bm-filter" id="bm-filter" type="search" placeholder="Filter, e.g. fonts, census, poetry" autocomplete="off" spellcheck="false">
+        <span class="bm-count" id="bm-count" aria-live="polite"></span>
+      </div>
+      <div class="bm-groups">
+        <!-- bookmarks:start -->
+        <div class="bm-group">
+          <h3><button class="bm-toggle" type="button" aria-expanded="true" aria-controls="bm-design-tools"><span>Design tools</span><span class="n" data-total="32">32</span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button></h3>
+          <div class="bm-panel" id="bm-design-tools"><div><ul class="bm-list"><li><a href="https://securitylab.amnesty.org/about/" rel="noopener"><span class="t">Amnesty International Security Lab</span><span class="d">securitylab.amnesty.org</span></a></li><li><a href="https://animejs.com/" rel="noopener"><span class="t">Anime.js</span><span class="d">animejs.com</span></a></li><li><a href="https://animmasterlib.dev/" rel="noopener"><span class="t">Animmaster Lib</span><span class="d">animmasterlib.dev</span></a></li><li><a href="https://mdigi.tools/color-shades/" rel="noopener"><span class="t">Color Shades Generator</span><span class="d">mdigi.tools</span></a></li><li><a href="https://coolors.co/" rel="noopener"><span class="t">Coolors</span><span class="d">coolors.co</span></a></li><li><a href="https://www.dark.design/" rel="noopener"><span class="t">dark.design</span><span class="d">dark.design</span></a></li><li><a href="https://www.designspells.com/" rel="noopener"><span class="t">Design Spells</span><span class="d">designspells.com</span></a></li><li><a href="https://designmd.me/" rel="noopener"><span class="t">DesignMD</span><span class="d">designmd.me</span></a></li><li><a href="https://www.drawkit.com/illustrations/peach-illustration-system" rel="noopener"><span class="t">DrawKit Peach illustrations</span><span class="d">drawkit.com</span></a></li><li><a href="https://www.durves.com/" rel="noopener"><span class="t">Durves</span><span class="d">durves.com</span></a></li><li><a href="https://www.figcomponents.com/" rel="noopener"><span class="t">Figcomponents</span><span class="d">figcomponents.com</span></a></li><li><a href="https://www.flowbase.co/" rel="noopener"><span class="t">Flowbase</span><span class="d">flowbase.co</span></a></li><li><a href="https://fontshare.com/" rel="noopener"><span class="t">Fontshare</span><span class="d">fontshare.com</span></a></li><li><a href="https://www.footer.design/" rel="noopener"><span class="t">Footer gallery</span><span class="d">footer.design</span></a></li><li><a href="https://godly.website/" rel="noopener"><span class="t">Godly</span><span class="d">godly.website</span></a></li><li><a href="https://icons8.com/" rel="noopener"><span class="t">Icons8</span><span class="d">icons8.com</span></a></li><li><a href="https://iconsax.io/" rel="noopener"><span class="t">Iconsax</span><span class="d">iconsax.io</span></a></li><li><a href="https://www.ls.graphics/" rel="noopener"><span class="t">LS Graphics</span><span class="d">ls.graphics</span></a></li><li><a href="https://www.openpeeps.com/" rel="noopener"><span class="t">Open Peeps</span><span class="d">openpeeps.com</span></a></li><li><a href="https://openalternative.co/" rel="noopener"><span class="t">OpenAlternative</span><span class="d">openalternative.co</span></a></li><li><a href="https://quickref.me/" rel="noopener"><span class="t">QuickRef cheat sheets</span><span class="d">quickref.me</span></a></li><li><a href="https://rotato.app/" rel="noopener"><span class="t">Rotato</span><span class="d">rotato.app</span></a></li><li><a href="https://www.shadergradient.co/" rel="noopener"><span class="t">Shader Gradient</span><span class="d">shadergradient.co</span></a></li><li><a href="https://shots.so/" rel="noopener"><span class="t">Shots</span><span class="d">shots.so</span></a></li><li><a href="https://spectrums.framer.website/" rel="noopener"><span class="t">Spectrum vector shapes</span><span class="d">spectrums.framer.website</span></a></li><li><a href="https://www.svgator.com/" rel="noopener"><span class="t">SVGator</span><span class="d">svgator.com</span></a></li><li><a href="https://typescale.com/" rel="noopener"><span class="t">Typescale</span><span class="d">typescale.com</span></a></li><li><a href="https://www.uiguideline.com/" rel="noopener"><span class="t">UI Guideline</span><span class="d">uiguideline.com</span></a></li><li><a href="https://uncut.wtf/" rel="noopener"><span class="t">UNCUT.wtf</span><span class="d">uncut.wtf</span></a></li><li><a href="https://www.unicornicons.com/" rel="noopener"><span class="t">Unicorn Icons</span><span class="d">unicornicons.com</span></a></li><li><a href="https://unsplash.com/" rel="noopener"><span class="t">Unsplash</span><span class="d">unsplash.com</span></a></li><li><a href="https://velvetyne.fr/" rel="noopener"><span class="t">Velvetyne</span><span class="d">velvetyne.fr</span></a></li></ul></div></div>
+        </div>
+        <div class="bm-group">
+          <h3><button class="bm-toggle" type="button" aria-expanded="false" aria-controls="bm-data-sources"><span>Data sources</span><span class="n" data-total="29">29</span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button></h3>
+          <div class="bm-panel" id="bm-data-sources"><div><ul class="bm-list"><li><a href="https://addhealth.cpc.unc.edu/" rel="noopener"><span class="t">Add Health</span><span class="d">addhealth.cpc.unc.edu</span></a></li><li><a href="https://www.thearda.com/" rel="noopener"><span class="t">Association of Religion Data Archives</span><span class="d">thearda.com</span></a></li><li><a href="https://www.bls.gov/" rel="noopener"><span class="t">Bureau of Labor Statistics</span><span class="d">bls.gov</span></a></li><li><a href="https://www.cdc.gov/brfss/" rel="noopener"><span class="t">CDC BRFSS</span><span class="d">cdc.gov</span></a></li><li><a href="https://wonder.cdc.gov/" rel="noopener"><span class="t">CDC WONDER</span><span class="d">wonder.cdc.gov</span></a></li><li><a href="https://www.countyhealthrankings.org/" rel="noopener"><span class="t">County Health Rankings</span><span class="d">countyhealthrankings.org</span></a></li><li><a href="https://dasl.datadescription.com/" rel="noopener"><span class="t">Data and Story Library</span><span class="d">dasl.datadescription.com</span></a></li><li><a href="https://datacommons.org/" rel="noopener"><span class="t">Data Commons (was Google Public Data Explorer)</span><span class="d">datacommons.org</span></a></li><li><a href="https://dataverse.org/" rel="noopener"><span class="t">Dataverse</span><span class="d">dataverse.org</span></a></li><li><a href="https://datadryad.org/" rel="noopener"><span class="t">Dryad Digital Repository</span><span class="d">datadryad.org</span></a></li><li><a href="https://figshare.com/" rel="noopener"><span class="t">figshare</span><span class="d">figshare.com</span></a></li><li><a href="https://gss.norc.org/" rel="noopener"><span class="t">General Social Survey</span><span class="d">gss.norc.org</span></a></li><li><a href="https://www.icpsr.umich.edu/" rel="noopener"><span class="t">ICPSR</span><span class="d">icpsr.umich.edu</span></a></li><li><a href="https://www.ipums.org/" rel="noopener"><span class="t">IPUMS</span><span class="d">ipums.org</span></a></li><li><a href="https://www.icpsr.umich.edu/web/pages/NAHDAP/" rel="noopener"><span class="t">National Addiction &amp; HIV Data Archive Program</span><span class="d">icpsr.umich.edu</span></a></li><li><a href="https://www.bls.gov/nls/" rel="noopener"><span class="t">National Longitudinal Surveys</span><span class="d">bls.gov</span></a></li><li><a href="https://www.ons.gov.uk/" rel="noopener"><span class="t">Office for National Statistics (UK)</span><span class="d">ons.gov.uk</span></a></li><li><a href="https://www.pewresearch.org/" rel="noopener"><span class="t">Pew Research Center</span><span class="d">pewresearch.org</span></a></li><li><a href="https://www.ssdan.net/" rel="noopener"><span class="t">Social Science Data Analysis Network</span><span class="d">ssdan.net</span></a></li><li><a href="https://www.albany.edu/sourcebook/" rel="noopener"><span class="t">Sourcebook of Criminal Justice Statistics</span><span class="d">albany.edu</span></a></li><li><a href="https://www.bestplaces.net/" rel="noopener"><span class="t">Sperling&#x27;s Best Places</span><span class="d">bestplaces.net</span></a></li><li><a href="https://www.statcrunch.com/" rel="noopener"><span class="t">StatCrunch</span><span class="d">statcrunch.com</span></a></li><li><a href="https://lib.stat.cmu.edu/" rel="noopener"><span class="t">StatLib</span><span class="d">lib.stat.cmu.edu</span></a></li><li><a href="https://sda.berkeley.edu/" rel="noopener"><span class="t">Survey Documentation and Analysis</span><span class="d">sda.berkeley.edu</span></a></li><li><a href="https://www.theguardian.com/data" rel="noopener"><span class="t">The Guardian - datasets</span><span class="d">theguardian.com</span></a></li><li><a href="https://www.census.gov/" rel="noopener"><span class="t">U.S. Census Bureau</span><span class="d">census.gov</span></a></li><li><a href="https://archive.ics.uci.edu/" rel="noopener"><span class="t">UCI Machine Learning Repository</span><span class="d">archive.ics.uci.edu</span></a></li><li><a href="https://data.worldbank.org/" rel="noopener"><span class="t">World Bank Data</span><span class="d">data.worldbank.org</span></a></li><li><a href="https://www.cia.gov/the-world-factbook/" rel="noopener"><span class="t">World Factbook</span><span class="d">cia.gov</span></a></li></ul></div></div>
+        </div>
+        <div class="bm-group">
+          <h3><button class="bm-toggle" type="button" aria-expanded="false" aria-controls="bm-references"><span>References</span><span class="n" data-total="12">12</span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button></h3>
+          <div class="bm-panel" id="bm-references"><div><ul class="bm-list"><li><a href="https://www.britannica.com/" rel="noopener"><span class="t">Encyclopaedia Britannica</span><span class="d">britannica.com</span></a></li><li><a href="https://www.infoplease.com/" rel="noopener"><span class="t">Infoplease</span><span class="d">infoplease.com</span></a></li><li><a href="https://www.oxforddnb.com/" rel="noopener"><span class="t">Oxford Dictionary of National Biography</span><span class="d">oxforddnb.com</span></a></li><li><a href="https://www.oed.com/" rel="noopener"><span class="t">Oxford English Dictionary</span><span class="d">oed.com</span></a></li><li><a href="https://planetmath.org/" rel="noopener"><span class="t">PlanetMath</span><span class="d">planetmath.org</span></a></li><li><a href="https://www.rhymezone.com/" rel="noopener"><span class="t">Rhyming Dictionary</span><span class="d">rhymezone.com</span></a></li><li><a href="https://conjointly.com/kb/" rel="noopener"><span class="t">Social Research Methods</span><span class="d">conjointly.com</span></a></li><li><a href="https://plato.stanford.edu/" rel="noopener"><span class="t">Stanford Encyclopedia of Philosophy</span><span class="d">plato.stanford.edu</span></a></li><li><a href="https://en.wikipedia.org/" rel="noopener"><span class="t">Wikipedia</span><span class="d">en.wikipedia.org</span></a></li><li><a href="https://mathworld.wolfram.com/" rel="noopener"><span class="t">Wolfram MathWorld</span><span class="d">mathworld.wolfram.com</span></a></li><li><a href="https://www.wolframalpha.com/" rel="noopener"><span class="t">Wolfram|Alpha</span><span class="d">wolframalpha.com</span></a></li><li><a href="https://www.yourdictionary.com/" rel="noopener"><span class="t">YourDictionary</span><span class="d">yourdictionary.com</span></a></li></ul></div></div>
+        </div>
+        <div class="bm-group">
+          <h3><button class="bm-toggle" type="button" aria-expanded="false" aria-controls="bm-data-visualization-and-images"><span>Data visualization and images</span><span class="n" data-total="15">15</span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button></h3>
+          <div class="bm-panel" id="bm-data-visualization-and-images"><div><ul class="bm-list"><li><a href="https://www.easel.ly/" rel="noopener"><span class="t">Easel.ly</span><span class="d">easel.ly</span></a></li><li><a href="https://www.edwardtufte.com/" rel="noopener"><span class="t">Edward Tufte</span><span class="d">edwardtufte.com</span></a></li><li><a href="https://www.flickr.com/" rel="noopener"><span class="t">Flickr</span><span class="d">flickr.com</span></a></li><li><a href="https://flowvella.com/" rel="noopener"><span class="t">Flowvella</span><span class="d">flowvella.com</span></a></li><li><a href="https://www.datavis.ca/gallery/" rel="noopener"><span class="t">Gallery of data visualization</span><span class="d">datavis.ca</span></a></li><li><a href="https://www.gapminder.org/" rel="noopener"><span class="t">Gapminder</span><span class="d">gapminder.org</span></a></li><li><a href="https://junkcharts.typepad.com/" rel="noopener"><span class="t">Junk Charts</span><span class="d">junkcharts.typepad.com</span></a></li><li><a href="https://ourworldindata.org/" rel="noopener"><span class="t">Our World in Data</span><span class="d">ourworldindata.org</span></a></li><li><a href="https://pixabay.com/" rel="noopener"><span class="t">Pixabay</span><span class="d">pixabay.com</span></a></li><li><a href="https://plotly.com/" rel="noopener"><span class="t">Plotly</span><span class="d">plotly.com</span></a></li><li><a href="https://stephanieevergreen.com/blog/" rel="noopener"><span class="t">Stephanie Evergreen&#x27;s blog</span><span class="d">stephanieevergreen.com</span></a></li><li><a href="https://www.storytellingwithdata.com/" rel="noopener"><span class="t">Storytelling with Data</span><span class="d">storytellingwithdata.com</span></a></li><li><a href="https://www.visualnews.com/" rel="noopener"><span class="t">Visual News</span><span class="d">visualnews.com</span></a></li><li><a href="https://www.visualizingeconomics.com/" rel="noopener"><span class="t">Visualizing Economics</span><span class="d">visualizingeconomics.com</span></a></li><li><a href="https://commons.wikimedia.org/" rel="noopener"><span class="t">Wikimedia Commons</span><span class="d">commons.wikimedia.org</span></a></li></ul></div></div>
+        </div>
+        <div class="bm-group">
+          <h3><button class="bm-toggle" type="button" aria-expanded="false" aria-controls="bm-higher-education-media"><span>Higher-education media</span><span class="n" data-total="4">4</span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button></h3>
+          <div class="bm-panel" id="bm-higher-education-media"><div><ul class="bm-list"><li><a href="https://www.chronicle.com/" rel="noopener"><span class="t">Chronicle of Higher Education</span><span class="d">chronicle.com</span></a></li><li><a href="https://www.insidehighered.com/" rel="noopener"><span class="t">Inside Higher Ed</span><span class="d">insidehighered.com</span></a></li><li><a href="https://www.timeshighereducation.com/" rel="noopener"><span class="t">Times Higher Education</span><span class="d">timeshighereducation.com</span></a></li><li><a href="https://universitybusiness.com/" rel="noopener"><span class="t">University Business Magazine</span><span class="d">universitybusiness.com</span></a></li></ul></div></div>
+        </div>
+        <div class="bm-group">
+          <h3><button class="bm-toggle" type="button" aria-expanded="false" aria-controls="bm-science-media"><span>Science media</span><span class="n" data-total="15">15</span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button></h3>
+          <div class="bm-panel" id="bm-science-media"><div><ul class="bm-list"><li><a href="https://www.americanscientist.org/" rel="noopener"><span class="t">American Scientist</span><span class="d">americanscientist.org</span></a></li><li><a href="https://www.discovermagazine.com/" rel="noopener"><span class="t">Discover</span><span class="d">discovermagazine.com</span></a></li><li><a href="https://locusmag.com/" rel="noopener"><span class="t">Locus</span><span class="d">locusmag.com</span></a></li><li><a href="https://www.naturalhistorymag.com/" rel="noopener"><span class="t">Natural History Magazine</span><span class="d">naturalhistorymag.com</span></a></li><li><a href="https://phys.org/science-news/social-sciences/" rel="noopener"><span class="t">Phys.org social sciences</span><span class="d">phys.org</span></a></li><li><a href="https://pubs.aip.org/physicstoday" rel="noopener"><span class="t">Physics Today</span><span class="d">pubs.aip.org</span></a></li><li><a href="https://www.popsci.com/" rel="noopener"><span class="t">Popular Science</span><span class="d">popsci.com</span></a></li><li><a href="https://www.pnas.org/" rel="noopener"><span class="t">Proceedings of the National Academy of Sciences</span><span class="d">pnas.org</span></a></li><li><a href="https://www.psychiatrictimes.com/" rel="noopener"><span class="t">Psychiatric Times</span><span class="d">psychiatrictimes.com</span></a></li><li><a href="https://www.psypost.org/" rel="noopener"><span class="t">PsyPost</span><span class="d">psypost.org</span></a></li><li><a href="https://www.sciencenews.org/" rel="noopener"><span class="t">Science News</span><span class="d">sciencenews.org</span></a></li><li><a href="https://www.scientificamerican.com/" rel="noopener"><span class="t">Scientific American</span><span class="d">scientificamerican.com</span></a></li><li><a href="https://strangehorizons.com/" rel="noopener"><span class="t">Strange Horizons</span><span class="d">strangehorizons.com</span></a></li><li><a href="https://www.symposium-magazine.com/" rel="noopener"><span class="t">Symposium Magazine</span><span class="d">symposium-magazine.com</span></a></li><li><a href="https://www.wired.com/" rel="noopener"><span class="t">Wired</span><span class="d">wired.com</span></a></li></ul></div></div>
+        </div>
+        <div class="bm-group">
+          <h3><button class="bm-toggle" type="button" aria-expanded="false" aria-controls="bm-poetry-and-literary-magazines"><span>Poetry and literary magazines</span><span class="n" data-total="19">19</span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button></h3>
+          <div class="bm-panel" id="bm-poetry-and-literary-magazines"><div><ul class="bm-list"><li><a href="https://poets.org/" rel="noopener"><span class="t">Academy of American Poets</span><span class="d">poets.org</span></a></li><li><a href="https://aprweb.org/" rel="noopener"><span class="t">American Poetry Review</span><span class="d">aprweb.org</span></a></li><li><a href="https://www.bostonreview.net/" rel="noopener"><span class="t">Boston Review</span><span class="d">bostonreview.net</span></a></li><li><a href="https://hudsonreview.com/" rel="noopener"><span class="t">Hudson Review</span><span class="d">hudsonreview.com</span></a></li><li><a href="https://mythicdelirium.com/" rel="noopener"><span class="t">Mythic Delirium</span><span class="d">mythicdelirium.com</span></a></li><li><a href="https://www.narrativemagazine.com/" rel="noopener"><span class="t">Narrative Magazine</span><span class="d">narrativemagazine.com</span></a></li><li><a href="https://www.newamericanwriting.com/" rel="noopener"><span class="t">New American Writing</span><span class="d">newamericanwriting.com</span></a></li><li><a href="https://newcriterion.com/" rel="noopener"><span class="t">New Criterion</span><span class="d">newcriterion.com</span></a></li><li><a href="https://pbqmag.org/" rel="noopener"><span class="t">Painted Bride Quarterly</span><span class="d">pbqmag.org</span></a></li><li><a href="https://www.theparisreview.org/" rel="noopener"><span class="t">Paris Review</span><span class="d">theparisreview.org</span></a></li><li><a href="https://www.pshares.org/" rel="noopener"><span class="t">Ploughshares</span><span class="d">pshares.org</span></a></li><li><a href="https://www.pw.org/" rel="noopener"><span class="t">Poets &amp; Writers</span><span class="d">pw.org</span></a></li><li><a href="https://www.sfpoetry.com/" rel="noopener"><span class="t">Science Fiction Poetry Association</span><span class="d">sfpoetry.com</span></a></li><li><a href="https://www.tankaonline.com/" rel="noopener"><span class="t">Tanka Online</span><span class="d">tankaonline.com</span></a></li><li><a href="https://www.theatlantic.com/" rel="noopener"><span class="t">The Atlantic</span><span class="d">theatlantic.com</span></a></li><li><a href="https://www.theliteraryreview.org/" rel="noopener"><span class="t">The Literary Review</span><span class="d">theliteraryreview.org</span></a></li><li><a href="https://www.thesunmagazine.org/" rel="noopener"><span class="t">The Sun Magazine</span><span class="d">thesunmagazine.org</span></a></li><li><a href="https://www.garrisonkeillor.com/the-writers-almanac/" rel="noopener"><span class="t">The Writer&#x27;s Almanac</span><span class="d">garrisonkeillor.com</span></a></li><li><a href="https://www.threepennyreview.com/" rel="noopener"><span class="t">Threepenny Review</span><span class="d">threepennyreview.com</span></a></li></ul></div></div>
+        </div>
+        <div class="bm-group">
+          <h3><button class="bm-toggle" type="button" aria-expanded="false" aria-controls="bm-research-organizations"><span>Research organizations</span><span class="n" data-total="22">22</span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button></h3>
+          <div class="bm-panel" id="bm-research-organizations"><div><ul class="bm-list"><li><a href="https://www.campbellcollaboration.org/" rel="noopener"><span class="t">Campbell Collaboration</span><span class="d">campbellcollaboration.org</span></a></li><li><a href="https://www.crimeandjustice.org.uk/" rel="noopener"><span class="t">Centre for Crime and Justice Studies</span><span class="d">crimeandjustice.org.uk</span></a></li><li><a href="https://www.childtrends.org/" rel="noopener"><span class="t">Child Trends</span><span class="d">childtrends.org</span></a></li><li><a href="https://www.gallup.com/" rel="noopener"><span class="t">Gallup</span><span class="d">gallup.com</span></a></li><li><a href="https://www.grants.gov/" rel="noopener"><span class="t">Grants.gov</span><span class="d">grants.gov</span></a></li><li><a href="https://www.iq.harvard.edu/" rel="noopener"><span class="t">Institute for Quantitative Social Science</span><span class="d">iq.harvard.edu</span></a></li><li><a href="https://isr.umich.edu/" rel="noopener"><span class="t">Institute for Social Research</span><span class="d">isr.umich.edu</span></a></li><li><a href="https://www.mathematica.org/" rel="noopener"><span class="t">Mathematica</span><span class="d">mathematica.org</span></a></li><li><a href="https://www.nber.org/" rel="noopener"><span class="t">National Bureau of Economic Research</span><span class="d">nber.org</span></a></li><li><a href="https://nces.ed.gov/" rel="noopener"><span class="t">National Center for Education Statistics</span><span class="d">nces.ed.gov</span></a></li><li><a href="https://www.nimh.nih.gov/" rel="noopener"><span class="t">National Institute of Mental Health</span><span class="d">nimh.nih.gov</span></a></li><li><a href="https://www.niaaa.nih.gov/" rel="noopener"><span class="t">National Institute on Alcohol Abuse and Alcoholism</span><span class="d">niaaa.nih.gov</span></a></li><li><a href="https://nida.nih.gov/" rel="noopener"><span class="t">National Institute on Drug Abuse</span><span class="d">nida.nih.gov</span></a></li><li><a href="https://www.nsf.gov/" rel="noopener"><span class="t">National Science Foundation</span><span class="d">nsf.gov</span></a></li><li><a href="https://www.norc.org/" rel="noopener"><span class="t">NORC at the University of Chicago</span><span class="d">norc.org</span></a></li><li><a href="https://www.rand.org/" rel="noopener"><span class="t">RAND</span><span class="d">rand.org</span></a></li><li><a href="https://ropercenter.cornell.edu/" rel="noopener"><span class="t">Roper Center</span><span class="d">ropercenter.cornell.edu</span></a></li><li><a href="https://www.rti.org/" rel="noopener"><span class="t">RTI International</span><span class="d">rti.org</span></a></li><li><a href="https://www.samhsa.gov/" rel="noopener"><span class="t">SAMHSA</span><span class="d">samhsa.gov</span></a></li><li><a href="https://pluralism.org/" rel="noopener"><span class="t">The Pluralism Project</span><span class="d">pluralism.org</span></a></li><li><a href="https://www.unodc.org/" rel="noopener"><span class="t">United Nations Office on Drugs and Crime</span><span class="d">unodc.org</span></a></li><li><a href="https://www.urban.org/" rel="noopener"><span class="t">Urban Institute</span><span class="d">urban.org</span></a></li></ul></div></div>
+        </div>
+        <div class="bm-group">
+          <h3><button class="bm-toggle" type="button" aria-expanded="false" aria-controls="bm-statistics-software"><span>Statistics software</span><span class="n" data-total="16">16</span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button></h3>
+          <div class="bm-panel" id="bm-statistics-software"><div><ul class="bm-list"><li><a href="https://www.bristol.ac.uk/cmm/learning/" rel="noopener"><span class="t">Bristol multilevel modelling course</span><span class="d">bristol.ac.uk</span></a></li><li><a href="https://www.bristol.ac.uk/cmm/" rel="noopener"><span class="t">Centre for Multilevel Modelling</span><span class="d">bristol.ac.uk</span></a></li><li><a href="https://cran.r-project.org/" rel="noopener"><span class="t">CRAN</span><span class="d">cran.r-project.org</span></a></li><li><a href="https://www.mvsoft.com/" rel="noopener"><span class="t">EQS (Multivariate Software)</span><span class="d">mvsoft.com</span></a></li><li><a href="https://www.ibm.com/products/spss-statistics" rel="noopener"><span class="t">IBM SPSS Statistics</span><span class="d">ibm.com</span></a></li><li><a href="https://quantpsy.org/" rel="noopener"><span class="t">Kristopher Preacher&#x27;s quantpsy.org</span><span class="d">quantpsy.org</span></a></li><li><a href="https://lumivero.com/" rel="noopener"><span class="t">Lumivero (NVivo, formerly QSR)</span><span class="d">lumivero.com</span></a></li><li><a href="https://www.statmodel.com/" rel="noopener"><span class="t">Mplus</span><span class="d">statmodel.com</span></a></li><li><a href="https://www.pdfescape.com/" rel="noopener"><span class="t">PDFescape</span><span class="d">pdfescape.com</span></a></li><li><a href="https://www.statmethods.net/" rel="noopener"><span class="t">Quick-R</span><span class="d">statmethods.net</span></a></li><li><a href="https://www.sas.com/" rel="noopener"><span class="t">SAS</span><span class="d">sas.com</span></a></li><li><a href="https://www.stata.com/" rel="noopener"><span class="t">Stata</span><span class="d">stata.com</span></a></li><li><a href="https://www.statisticalinnovations.com/" rel="noopener"><span class="t">Statistical Innovations</span><span class="d">statisticalinnovations.com</span></a></li><li><a href="https://www.rti.org/impact/sudaanr-statistical-software-analyzing-correlated-data" rel="noopener"><span class="t">SUDAAN</span><span class="d">rti.org</span></a></li><li><a href="https://whonet.org/" rel="noopener"><span class="t">WHONET</span><span class="d">whonet.org</span></a></li><li><a href="https://www.zamzar.com/" rel="noopener"><span class="t">Zamzar file conversion</span><span class="d">zamzar.com</span></a></li></ul></div></div>
+        </div>
+        <!-- bookmarks:end -->
+        <p class="bm-empty" id="bm-empty" hidden>Nothing matches. Try a shorter word.</p>
+      </div>
+    </section>
   </main>
 
   <footer>
     <div class="wrap row">
-      <span>© <span id="year">2026</span> Curtis Hoffmann</span>
+      <span>© <span id="year" style="font-variant-numeric: tabular-nums">2026</span> Curtis Hoffmann</span>
       <span class="motto">Tikkun Mada <span class="he">• תִּיקּוּן עוֹלָם</span></span>
     </div>
   </footer>
@@ -609,6 +762,129 @@
     } else {
       requestAnimationFrame(loop);
     }
+  </script>
+  <script>
+    // ── Photographs: load the manifest, build the strip, run the lightbox ──
+    (function () {
+      const sec = document.getElementById('photographs');
+      const strip = sec.querySelector('.strip');
+      const nav = sec.querySelector('.strip-nav');
+      const note = sec.querySelector('.photos-note');
+      const box = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lb-img'), lbCap = document.getElementById('lb-cap'), lbCount = document.getElementById('lb-count');
+      let photos = [], current = 0, opener = null;
+      const supportsWebp = document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') === 0;
+
+      function pick(p) { return supportsWebp ? p.src : (p.fallback || p.src); }
+
+      function render() {
+        strip.innerHTML = '';
+        photos.forEach((p, i) => {
+          const fig = document.createElement('figure'); fig.className = 'shot'; fig.setAttribute('role', 'listitem');
+          const btn = document.createElement('button'); btn.type = 'button'; btn.className = 'frame';
+          btn.style.setProperty('--ar', p.w + ' / ' + p.h); btn.style.setProperty('--ph', p.color || '');
+          btn.setAttribute('aria-label', (p.alt || p.caption || ('Photograph ' + (i + 1))) + ', open larger');
+          const img = document.createElement('img'); img.alt = p.alt || ''; img.loading = i < 3 ? 'eager' : 'lazy'; img.decoding = 'async'; img.draggable = false;
+          img.width = p.w; img.height = p.h; img.src = supportsWebp ? p.thumb : pick(p);
+          img.addEventListener('load', () => img.classList.add('in'), { once: true });
+          btn.appendChild(img); btn.addEventListener('click', () => open(i, btn));
+          fig.appendChild(btn);
+          if (p.caption) { const c = document.createElement('figcaption'); c.textContent = p.caption; fig.appendChild(c); }
+          strip.appendChild(fig);
+        });
+        note.innerHTML = '<span class="photos-count">' + photos.length + ' photograph' + (photos.length === 1 ? '' : 's') + '</span>';
+        nav.hidden = photos.length < 2;
+        updateNav();
+      }
+
+      function updateNav() {
+        const max = strip.scrollWidth - strip.clientWidth - 2;
+        nav.querySelector('[data-dir="-1"]').disabled = strip.scrollLeft <= 2;
+        nav.querySelector('[data-dir="1"]').disabled = strip.scrollLeft >= max;
+      }
+      nav.addEventListener('click', (e) => {
+        const b = e.target.closest('[data-dir]'); if (!b) return;
+        const first = strip.querySelector('.shot');
+        const step = first ? first.getBoundingClientRect().width + 14 : strip.clientWidth * .8;
+        strip.scrollBy({ left: step * Number(b.dataset.dir), behavior: 'smooth' });
+      });
+      strip.addEventListener('scroll', updateNav, { passive: true });
+      window.addEventListener('resize', updateNav);
+      strip.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { e.preventDefault(); nav.querySelector('[data-dir="' + (e.key === 'ArrowRight' ? 1 : -1) + '"]').click(); }
+      });
+      sec.addEventListener('contextmenu', (e) => { if (e.target.closest('.frame')) e.preventDefault(); });
+      box.addEventListener('contextmenu', (e) => e.preventDefault());
+
+      function show(i) {
+        current = (i + photos.length) % photos.length;
+        const p = photos[current];
+        lbImg.src = pick(p); lbImg.alt = p.alt || ''; lbImg.width = p.w; lbImg.height = p.h; lbImg.style.setProperty('--ph', p.color || '');
+        lbCap.textContent = p.caption || '';
+        lbCount.textContent = (current + 1) + ' of ' + photos.length;
+        const next = photos[(current + 1) % photos.length]; if (next && next !== p) { const pre = new Image(); pre.src = pick(next); }
+      }
+      function open(i, from) {
+        if (typeof box.showModal !== 'function') { return; }
+        opener = from; show(i); box.showModal();
+      }
+      box.addEventListener('click', (e) => {
+        const step = e.target.closest('[data-step]'); if (step) { show(current + Number(step.dataset.step)); return; }
+        if (e.target.closest('[data-close]') || e.target === box) box.close();
+      });
+      box.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight') show(current + 1);
+        if (e.key === 'ArrowLeft') show(current - 1);
+      });
+      let tx = null;
+      box.addEventListener('touchstart', (e) => { tx = e.changedTouches[0].clientX; }, { passive: true });
+      box.addEventListener('touchend', (e) => { if (tx === null) return; const dx = e.changedTouches[0].clientX - tx; tx = null; if (Math.abs(dx) > 48) show(current + (dx < 0 ? 1 : -1)); }, { passive: true });
+      box.addEventListener('close', () => { lbImg.removeAttribute('src'); if (opener) opener.focus(); });
+
+      fetch('photos/manifest.json', { cache: 'no-cache' })
+        .then((r) => r.ok ? r.json() : null)
+        .then((m) => {
+          if (!m) return;
+          if (m.placeholder) note.textContent = m.placeholder;
+          photos = (m.photos || []).filter((p) => p && p.src && p.w && p.h);
+          if (photos.length) render();
+        })
+        .catch(() => {});
+    })();
+
+    // ── Bookmarks: accordion + filter ──
+    (function () {
+      const groups = Array.from(document.querySelectorAll('.bm-group'));
+      const filter = document.getElementById('bm-filter');
+      const count = document.getElementById('bm-count');
+      const empty = document.getElementById('bm-empty');
+      const total = document.querySelectorAll('.bm-list li').length;
+      const fmt = (n) => n.toLocaleString('en-US');
+      count.textContent = fmt(total) + ' links';
+      groups.forEach((g) => {
+        const b = g.querySelector('.bm-toggle');
+        b.addEventListener('click', () => b.setAttribute('aria-expanded', b.getAttribute('aria-expanded') !== 'true'));
+      });
+      let timer;
+      filter.addEventListener('input', () => {
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+          const q = filter.value.trim().toLowerCase();
+          let shown = 0;
+          groups.forEach((g, gi) => {
+            let n = 0;
+            g.querySelectorAll('li').forEach((li) => { const hit = !q || li.textContent.toLowerCase().includes(q); li.hidden = !hit; if (hit) n++; });
+            g.hidden = q ? n === 0 : false;
+            g.querySelector('.n').textContent = q ? n + ' of ' + g.querySelector('.n').dataset.total : g.querySelector('.n').dataset.total;
+            if (q) g.querySelector('.bm-toggle').setAttribute('aria-expanded', n > 0);
+            else g.querySelector('.bm-toggle').setAttribute('aria-expanded', gi === 0);
+            shown += n;
+          });
+          empty.hidden = shown > 0;
+          count.textContent = q ? fmt(shown) + ' of ' + fmt(total) + ' links' : fmt(total) + ' links';
+        }, 80);
+      });
+    })();
   </script>
 </body>
 </html>

@@ -1,0 +1,31 @@
+# Curtis Hoffmann
+
+> Personal site of Curtis Hoffmann, a researcher working at the intersection of biology and anthropology: how microbes move through communities and cultures, and live outbreak simulations that let people experience how epidemics unfold.
+
+Everything here is a static site on GitHub Pages. The projects below are separate repositories under https://github.com/phagehunter, each with its own README, data provenance and license (code MIT; compiled data CC BY 4.0 unless the project says otherwise).
+
+## Projects
+
+- [Exoplanet Atlas](https://curtishoffmann.com/exoplanetatlas/): confirmed planets from the NASA Exoplanet Archive, browsable by size, orbit and host star, on a timeline and a sky map.
+- [Twenty-Four Cousins](https://curtishoffmann.com/humanevolution/): a field guide to 24 hominin species with literature-sourced dates, brain sizes and sites.
+- [US Biodefense Budget](https://curtishoffmann.com/biodefense/): every federal biodefense budget line FY2019 to FY2026, from the Council on Strategic Risks dataset.
+- [Outbreak Science Careers](https://curtishoffmann.com/outbreak-science-careers/): roles, pay, training and pathways into outbreak science and biosecurity, with Bureau of Labor Statistics figures.
+- [Catalogue of Life Explorer](https://curtishoffmann.com/catalogue_of_life/): browse the tree of life, search 7.8 million names, and compare how closely any two species are related.
+- [RNA Virome Atlas](https://curtishoffmann.com/rnaviromeatlas/): RNA viruses recovered from metatranscriptomes: where they were found, what they infect, how they relate.
+- [Odyssey Character Map](https://curtishoffmann.com/odyssey/): a visual companion to Homer's epic: every character, where they appear, and who they are bound to.
+- [NSF Restricted Entities Guide](https://curtishoffmann.com/nsfreg/): a searchable guide to the thirteen U.S. restricted-party lists named in NSF's July 2026 Dear Colleague Letter.
+- [Scripture Atlas](https://curtishoffmann.com/scripture/): a visual literary analysis of the King James Bible, the Book of Mormon, and the Pearl of Great Price, with a character network and chapter guides.
+- [Saphan](https://curtishoffmann.com/saphan/): an offline-first phrasebook of reviewed health phrases in Thai, Burmese, Mon, and English for village health volunteers in Kanchanaburi, Thailand. In development.
+- [whybox](https://curtishoffmann.com/whybox/): a science sandbox for reasoning from the outputs you can see to the mechanisms you cannot.
+- [Ember](https://github.com/phagehunter/ember): free spaced-repetition flashcards for Mac and Windows using the FSRS-6 scheduler. Early release.
+
+## On this page
+
+- Photographs: a small portfolio, stripped of location and device metadata before publication.
+- Bookmarks: about 165 sites kept for design, data, references and reading, checked October 2026.
+
+## Contact
+
+- Email: ch1620@georgetown.edu
+- Google Scholar: https://scholar.google.com/citations?user=EOEi56EAAAAJ
+- GitHub: https://github.com/phagehunter

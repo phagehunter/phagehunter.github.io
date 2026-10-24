@@ -418,7 +418,7 @@
     .cv li, .cv .line { border-top: 0; }
     .cv li { padding: .4rem 0; }
     .cv .line { padding: .35rem 0 0; line-height: 1.5; }
-    .cv .cursor { display: inline-block; width: .5em; height: 1em; background: var(--gold); vertical-align: -0.12em; margin-left: 2px; animation: blink 1s steps(1) infinite; }
+    .cv .cursor { display: inline; padding-left: .5em; margin-left: 2px; background: var(--gold); animation: blink 1s steps(1) infinite; }   /* a plain inline box, so it cannot break onto its own line after the last word */
     @keyframes blink { 50% { opacity: 0; } }
     .cv .typed { visibility: hidden; }
     .cv .typed.on { visibility: visible; }
@@ -821,13 +821,13 @@
       const card = document.querySelector('.cv'); if (!card) return;
       const spans = Array.from(card.querySelectorAll('.typed'));
       const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (reduce || !('IntersectionObserver' in window)) { spans.forEach((s) => s.classList.add('on')); card.querySelectorAll('.cv-h').forEach((h) => h.classList.add('drawn')); return; }
+      const cursor = document.createElement('span'); cursor.className = 'cursor'; cursor.setAttribute('aria-hidden', 'true');
+      if (reduce || !('IntersectionObserver' in window)) { spans.forEach((s) => s.classList.add('on')); card.querySelectorAll('.cv-h').forEach((h) => h.classList.add('drawn')); spans[spans.length - 1].appendChild(cursor); return; }
       const texts = spans.map((s) => s.textContent);
       const CPS = 42, PAUSE = 160;                                   // characters per second; pause after each line, in ms
       const starts = []; let total = 0;
       texts.forEach((t) => { starts.push(total); total += t.length * (1000 / CPS) + PAUSE; });
       let t0 = null, started = false, timer = 0;
-      const cursor = document.createElement('span'); cursor.className = 'cursor'; cursor.setAttribute('aria-hidden', 'true');
       function frame() {
         const ts = Date.now(); if (t0 === null) t0 = ts;
         const el = ts - t0; let done = true;
@@ -841,7 +841,7 @@
           if (k < full.length) { if (cursor.parentNode !== s) s.insertBefore(cursor, s.lastChild); } else if (cursor.parentNode === s) cursor.remove();
           if (k >= full.length && s.parentNode.classList.contains('cv-h')) s.parentNode.classList.add('drawn');
         });
-        if (done) { cursor.remove(); clearInterval(timer); }
+        if (done) { clearInterval(timer); spans[spans.length - 1].appendChild(cursor); }   // the cursor stays, blinking after the last line
       }
       function start() {
         if (started) return; started = true; io.disconnect(); clearInterval(poll); window.removeEventListener('scroll', check);

@@ -276,6 +276,16 @@
     .featured a { color: var(--gold); text-decoration: none; font-family: var(--serif); font-size: var(--s1); }
     .featured a:hover { color: var(--text); }
     .featured .cta { display: block; margin-top: .1rem; }
+    .featured { transition: opacity .7s ease; }
+    .featured.pending { opacity: 0; }
+    .featured a.reel { display: inline-block; vertical-align: bottom; }
+    .featured .win { display: block; overflow: hidden; }
+    .featured .strip { display: block; will-change: transform; }
+    .featured .r { display: block; white-space: nowrap; }
+    .featured .cta { transition: opacity .6s ease .1s; }
+    .featured.spinning .cta { opacity: 0; }
+    .featured.landed a { animation: land .6s ease; }
+    @keyframes land { 0% { color: var(--text); } 100% { color: var(--gold); } }
     .btn { position: relative; isolation: isolate; overflow: hidden; display: inline-flex; align-items: center; gap: .5rem; font-size: .9rem; font-weight: 600; padding: .85rem 1.35rem; border-radius: 6px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none;
       background: linear-gradient(160deg, #162a47 0%, var(--surface) 55%, #0e1c33 100%); box-shadow: 0 1px 0 rgba(255,255,255,.04) inset;
       transition: transform .8s cubic-bezier(.22,.61,.36,1), box-shadow .8s cubic-bezier(.22,.61,.36,1), color .6s ease, border-color .6s ease; }
@@ -333,7 +343,7 @@
 
     /* shadow viruses: faint geometric outlines behind each section, floating, eased away from the pointer */
     .drift { position: absolute; inset: 0; overflow: clip; pointer-events: none; z-index: 0; }
-    .microbe { position: absolute; height: auto; overflow: visible; fill: rgba(227, 194, 124, .025); stroke: rgba(227, 194, 124, .13); stroke-width: 1.1; stroke-linejoin: round; stroke-linecap: round; transform: translate(var(--dx, 0px), var(--dy, 0px)) rotate(var(--rot, 0deg)); will-change: transform; pointer-events: auto; cursor: grab; touch-action: pan-y; transition: stroke .2s, fill .2s; }
+    .microbe { position: absolute; height: auto; overflow: visible; fill: rgba(227, 194, 124, .025); stroke: rgba(227, 194, 124, .13); stroke-width: 1.1; stroke-linejoin: round; stroke-linecap: round; transform: translate(var(--dx, 0px), var(--dy, 0px)) rotate(var(--rot, 0deg)); will-change: transform; pointer-events: auto; cursor: grab; touch-action: none; transition: stroke .2s, fill .2s; }
     .microbe:hover { stroke: rgba(227, 194, 124, .3); }
     .microbe.held { cursor: grabbing; stroke: rgba(227, 194, 124, .45); fill: rgba(227, 194, 124, .05); }
     .microbe .body, .microbe .nudge { transform-box: fill-box; transform-origin: center; }
@@ -939,14 +949,17 @@
       function wire(el) {
         const it = { kind: 'page', el, n: el.querySelector('.nudge'), k: 1, cx: 0, cy: 0, cr: 0, tx: 0, ty: 0, tr: 0, dx: 0, dy: 0, vx: 0, vy: 0, held: false, busy: false };
         items.push(it);
-        let sx = 0, sy = 0, ox = 0, oy = 0, lx = 0, ly = 0, lt = 0;
+        let sx = 0, sy = 0, ox = 0, oy = 0, lx = 0, ly = 0, lt = 0, t0 = 0, mode = '';
         el.addEventListener('pointerdown', (e) => {
-          if (e.pointerType === 'touch' || e.button !== 0 || it.busy) return;
+          if (e.button !== 0 || it.busy) return;
           e.preventDefault(); try { el.setPointerCapture(e.pointerId); } catch (_) {} it.held = true; el.classList.add('held');
-          sx = e.clientX; sy = e.clientY; ox = it.dx; oy = it.dy; lx = sx; ly = sy; lt = performance.now(); it.vx = it.vy = 0; it.tx = it.ty = it.tr = 0;
+          sx = e.clientX; sy = e.clientY; ox = it.dx; oy = it.dy; lx = sx; ly = sy; lt = t0 = performance.now(); it.vx = it.vy = 0; it.tx = it.ty = it.tr = 0;
+          mode = e.pointerType === 'touch' ? '' : 'drag';     // a finger decides on its first move: a quick vertical flick scrolls, anything else drags
         });
         el.addEventListener('pointermove', (e) => {
           if (!it.held) return;
+          if (!mode) { const mx = e.clientX - sx, my = e.clientY - sy; if (Math.hypot(mx, my) < 8) return; mode = (performance.now() - t0 < 160 && Math.abs(my) > Math.abs(mx) * 1.5) ? 'scroll' : 'drag'; if (mode === 'scroll') el.classList.remove('held'); }
+          if (mode === 'scroll') { window.scrollBy({ top: ly - e.clientY, behavior: 'instant' }); lx = e.clientX; ly = e.clientY; return; }
           it.dx = ox + (e.clientX - sx); it.dy = oy + (e.clientY - sy);
           const now = performance.now(), dt = Math.max(8, now - lt);
           it.vx = (e.clientX - lx) / dt * 16 * .6 + it.vx * .4; it.vy = (e.clientY - ly) / dt * 16 * .6 + it.vy * .4;   // velocity per frame, smoothed
@@ -955,6 +968,7 @@
         });
         const drop = (e) => {
           if (!it.held) return; it.held = false; el.classList.remove('held'); if (performance.now() - lt > 80) it.vx = it.vy = 0;
+          if (mode !== 'drag') { it.vx = it.vy = 0; wake(); return; }
           const me = center(el);
           const other = items.find((o) => o !== it && o.kind === 'page' && !o.busy && !o.held && o.el.parentElement === el.parentElement && (() => { const c = center(o.el); return Math.hypot(c.x - me.x, c.y - me.y) < (me.w + c.w) * .3; })());
           if (other) reassort(it, other).catch((err) => { console.warn('reassort', err); [it, other].forEach((o) => { o.busy = false; o.el.style.opacity = ''; }); wake(); }); else wake();
@@ -1117,7 +1131,30 @@
         return P[((a + d) % P.length + P.length) % P.length];
       }
       const el = document.getElementById('featured'), f = pick(Date.now());
-      const a = el.querySelector('a'); a.href = f.href; a.textContent = f.title; el.querySelector('.cta').textContent = f.cta;
+      const a = el.querySelector('a'), cta = el.querySelector('.cta'); a.href = f.href; a.textContent = f.title; cta.textContent = f.cta;
+      // The reveal: the line stays blank for three seconds after the page opens, then fades in and runs through every project
+      // name like a slot reel, slowing down to land on the day's pick; the one-line note follows.
+      const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!reduce) {
+        el.classList.add('pending');
+        setTimeout(() => {
+          const box = a.getBoundingClientRect(), H = box.height || 28, Wd = box.width;
+          const order = P.slice(P.indexOf(f) + 1).concat(P.slice(0, P.indexOf(f) + 1));   // ends on the pick
+          const names = order.concat(order);                                                // two turns of the reel
+          const strip = document.createElement('span'); strip.className = 'strip';
+          names.forEach((q) => { const r = document.createElement('span'); r.className = 'r'; r.style.height = r.style.lineHeight = H + 'px'; r.textContent = q.title; strip.appendChild(r); });
+          const win = document.createElement('span'); win.className = 'win'; win.style.height = H + 'px'; win.style.width = Math.ceil(Wd) + 'px'; win.appendChild(strip);
+          a.textContent = ''; a.appendChild(win); a.classList.add('reel'); el.classList.remove('pending'); el.classList.add('spinning');
+          const steps = names.length - 1, DUR = 2600, t0 = performance.now();
+          const easeOut = (t) => 1 - Math.pow(1 - t, 3);
+          (function spin(now) {
+            const t = Math.min(1, (now - t0) / DUR);
+            strip.style.transform = 'translateY(' + (-easeOut(t) * steps * H).toFixed(2) + 'px)';
+            if (t < 1) requestAnimationFrame(spin);
+            else { a.textContent = f.title; a.classList.remove('reel'); el.classList.remove('spinning'); el.classList.add('landed'); }
+          })(t0);
+        }, 3000);
+      }
       window.featuredFor = (y, m, d) => pick(Date.UTC(y, m - 1, d)).title;   // for checking: featuredFor(2026, 10, 25)
     })();
   </script>

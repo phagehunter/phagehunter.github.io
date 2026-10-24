@@ -282,8 +282,16 @@
     .featured .win { display: block; overflow: hidden; }
     .featured .strip { display: block; will-change: transform; }
     .featured .r { display: block; white-space: nowrap; }
-    .featured.pending .cta, .featured.spinning .cta { opacity: 0; transform: translateY(.35rem); transition: none; }
+    .featured.pending .cta, .featured.cue .cta, .featured.spinning .cta { opacity: 0; transform: translateY(.35rem); transition: none; }
+    .featured a { transition: opacity .45s ease; }
+    .featured.pending a, .featured.cue a { opacity: 0; }   /* the name waits for the reel, half a second after the label */
     .featured.landed .cta { opacity: 1; transform: none; transition: opacity 1s ease .25s, transform 1s cubic-bezier(.2,.7,.2,1) .25s; }
+    /* the opening: a quarter second in, the hero fades up line by line, the constellation with it; the Check out line keeps its own cue */
+    @media (prefers-reduced-motion: no-preference) {
+      .hero .prefix, .hero h1, .hero .tag, .hero .btns, .hero .sky { animation: fadeUp 1s cubic-bezier(.2,.7,.2,1) both; }
+      .hero .prefix { animation-delay: .25s; } .hero h1 { animation-delay: .35s; } .hero .tag { animation-delay: .45s; } .hero .btns { animation-delay: .55s; } .hero .sky { animation-delay: .45s; animation-duration: 1.4s; }
+      @keyframes fadeUp { from { opacity: 0; transform: translateY(.6rem); } to { opacity: 1; transform: none; } }
+    }
     .featured.landed a { animation: land .6s ease; }
     @keyframes land { 0% { color: var(--text); } 100% { color: var(--gold); } }
     .btn { position: relative; isolation: isolate; overflow: hidden; display: inline-flex; align-items: center; gap: .5rem; font-size: .9rem; font-weight: 600; padding: .85rem 1.35rem; border-radius: 6px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none;
@@ -1133,11 +1141,12 @@
       }
       const el = document.getElementById('featured'), f = pick(Date.now());
       const a = el.querySelector('a'), cta = el.querySelector('.cta'); a.href = f.href; a.textContent = f.title; cta.textContent = f.cta;
-      // The reveal: the line stays blank for three seconds after the page opens, then fades in and runs through every project
-      // name like a slot reel, slowing down to land on the day's pick; the one-line note follows.
+      // The reveal: the line stays blank while the hero fades in; at 1.5 s the "Check out" label appears, at 2 s the name runs through
+      // every project like a slot reel, slowing down to land on the day's pick; the one-line note follows.
       const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
       if (reduce) el.classList.remove('pending');
       else {
+        setTimeout(() => { el.classList.remove('pending'); el.classList.add('cue'); }, 1500);   // the "Check out" label fades in first
         setTimeout(() => {
           const box = a.getBoundingClientRect(), H = box.height || 28, Wd = box.width;
           const order = P.slice(P.indexOf(f) + 1).concat(P.slice(0, P.indexOf(f) + 1));   // ends on the pick
@@ -1145,7 +1154,7 @@
           const strip = document.createElement('span'); strip.className = 'strip';
           names.forEach((q) => { const r = document.createElement('span'); r.className = 'r'; r.style.height = r.style.lineHeight = H + 'px'; r.textContent = q.title; strip.appendChild(r); });
           const win = document.createElement('span'); win.className = 'win'; win.style.height = H + 'px'; win.style.width = Math.ceil(Wd) + 'px'; win.appendChild(strip);
-          a.textContent = ''; a.appendChild(win); a.classList.add('reel'); el.classList.remove('pending'); el.classList.add('spinning');
+          a.textContent = ''; a.appendChild(win); a.classList.add('reel'); el.classList.remove('cue'); el.classList.add('spinning');
           const steps = names.length - 1, DUR = 2600, t0 = performance.now();
           const easeOut = (t) => 1 - Math.pow(1 - t, 3);
           (function spin(now) {
@@ -1154,7 +1163,7 @@
             if (t < 1) requestAnimationFrame(spin);
             else { a.textContent = f.title; a.classList.remove('reel'); el.classList.remove('spinning'); el.classList.add('landed'); }
           })(t0);
-        }, 3000);
+        }, 2000);                                                                                // the reel, half a second after the label
       }
       window.featuredFor = (y, m, d) => pick(Date.UTC(y, m - 1, d)).title;   // for checking: featuredFor(2026, 10, 25)
     })();

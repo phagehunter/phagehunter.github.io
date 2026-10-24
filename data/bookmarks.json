@@ -13,12 +13,6 @@
  ],
  "links": [
   {
-   "name": "Amnesty International Security Lab",
-   "url": "https://securitylab.amnesty.org/about/",
-   "group": "Design tools",
-   "domain": "securitylab.amnesty.org"
-  },
-  {
    "name": "Anime.js",
    "url": "https://animejs.com/",
    "group": "Design tools",
@@ -767,6 +761,12 @@
    "url": "https://www.threepennyreview.com/",
    "group": "Poetry and literary magazines",
    "domain": "threepennyreview.com"
+  },
+  {
+   "name": "Amnesty International Security Lab",
+   "url": "https://securitylab.amnesty.org/about/",
+   "group": "Research organizations",
+   "domain": "securitylab.amnesty.org"
   },
   {
    "name": "Campbell Collaboration",

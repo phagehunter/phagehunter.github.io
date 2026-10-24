@@ -21,11 +21,13 @@ Everything here is a static site on GitHub Pages. The projects below are separat
 
 ## On this page
 
-- Photography: a small portfolio, stripped of location and device metadata before publication; shown once the first set is published.
+- Check out: one project a day, named under the hero buttons, rotating through the list above.
+- About: current work, fellowships, education, interests and skills, and a short selection of news coverage.
+- Contact: a form on the page (https://curtishoffmann.com/#contact).
 - Bookmarks: about 165 sites kept for design, data, references and reading, checked October 2026.
 
 ## Contact
 
-- Email: ch1620@georgetown.edu
+- Contact form: https://curtishoffmann.com/#contact
 - Google Scholar: https://scholar.google.com/citations?user=EOEi56EAAAAJ
 - GitHub: https://github.com/phagehunter

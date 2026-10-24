@@ -1,0 +1,142 @@
+{
+ "note": "The project docket for the landing page. Add an entry (or run build_projects.py add ...) and run build_projects.py; the grid, the constellation and the Spotlight rotation are rebuilt from this file. Order is grid order and Spotlight order.",
+ "spotlight": {
+  "anchor_date": "2026-10-24",
+  "anchor_title": "Outbreak Science Careers",
+  "new_project_days": 3
+ },
+ "projects": [
+  {
+   "title": "Exoplanet Atlas",
+   "href": "https://curtishoffmann.com/exoplanetatlas/",
+   "blurb": "Six thousand worlds beyond the Solar System, one sky. Browse 6,278 confirmed planets by size, orbit and host star.",
+   "go": "Open atlas",
+   "cta": "Browse six thousand worlds beyond the Solar System.",
+   "short": "Exoplanet Atlas",
+   "phone": true,
+   "icon": "<svg class=\"ico\" viewBox=\"0 0 48 48\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" aria-hidden=\"true\"><circle cx=\"24\" cy=\"24\" r=\"9\"/><ellipse cx=\"24\" cy=\"24\" rx=\"20\" ry=\"7\" transform=\"rotate(-20 24 24)\"/><circle cx=\"40\" cy=\"12\" r=\"1.5\" fill=\"currentColor\"/></svg>",
+   "added": null
+  },
+  {
+   "title": "Twenty-Four Cousins",
+   "href": "https://curtishoffmann.com/humanevolution/",
+   "blurb": "A field guide to the human family: 24 hominin species across seven million years, with a time slider, brain-size chart and sourced profiles.",
+   "go": "Open guide",
+   "cta": "Meet the twenty-four hominin species in the human family.",
+   "short": "Twenty-Four Cousins",
+   "phone": true,
+   "icon": "<svg class=\"ico\" viewBox=\"0 0 48 48\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" aria-hidden=\"true\"><circle cx=\"24\" cy=\"20\" r=\"11\"/><circle cx=\"24\" cy=\"20\" r=\"3.5\" fill=\"currentColor\"/><rect x=\"20\" y=\"33\" width=\"8\" height=\"9\" rx=\"2.5\"/></svg>",
+   "added": null
+  },
+  {
+   "title": "Biodefense Budget",
+   "href": "https://curtishoffmann.com/biodefense/",
+   "blurb": "Every federal biodefense budget line from FY2019 to the FY2026 request, by department, category, and program, with year-over-year change.",
+   "go": "Open database",
+   "cta": "Follow every federal biodefense dollar from FY2019 to the FY2026 request.",
+   "short": "Biodefense Budget",
+   "phone": true,
+   "icon": "<svg class=\"ico\" viewBox=\"0 0 48 48\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" aria-hidden=\"true\"><path d=\"M24 5l15 6v11c0 9-6 16-15 21C15 38 9 31 9 22V11z\"/><path d=\"M17 24h14M24 17v14\"/></svg>",
+   "added": null
+  },
+  {
+   "title": "RNA Virome Atlas",
+   "href": "https://curtishoffmann.com/rnaviromeatlas/",
+   "blurb": "A cosmos of RNA viruses recovered from metatranscriptomes: where they were found, what they infect, how they relate.",
+   "go": "Open atlas",
+   "cta": "Explore the RNA viruses hidden in metatranscriptomes.",
+   "short": "RNA Virome Atlas",
+   "phone": false,
+   "icon": "<svg class=\"ico\" viewBox=\"0 0 48 48\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" aria-hidden=\"true\"><path d=\"M14 6c0 12 20 12 20 24s-20 12-20 24M34 6c0 12-20 12-20 24s20 12 20 24\"/><path d=\"M17 12h14M17 36h14M20 24h8\"/></svg>",
+   "added": null
+  },
+  {
+   "title": "Odyssey Character Map",
+   "href": "https://curtishoffmann.com/odyssey/",
+   "blurb": "A visual companion to Homer's epic: every character, where they appear, and who they are bound to.",
+   "go": "Open map",
+   "cta": "See every character in Homer’s epic and who they are bound to.",
+   "short": "Odyssey Map",
+   "phone": true,
+   "icon": "<svg class=\"ico\" viewBox=\"0 0 48 48\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" aria-hidden=\"true\"><path d=\"M6 34c6-4 12-4 18 0s12 4 18 0\"/><path d=\"M12 30l4-16h16l4 16\"/><path d=\"M24 14V8\"/></svg>",
+   "added": null
+  },
+  {
+   "title": "Catalogue of Life Explorer",
+   "href": "https://curtishoffmann.com/catalogue_of_life/",
+   "blurb": "Browse the tree of life, search 7.8 million names, and compare how closely any two species are related.",
+   "go": "Open explorer",
+   "cta": "Search 7.8 million names across the tree of life.",
+   "short": "Catalogue of Life",
+   "phone": false,
+   "icon": "<svg class=\"ico\" viewBox=\"0 0 48 48\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" aria-hidden=\"true\"><path d=\"M24 42V22M24 22L10 10M24 22l14-12M10 10L6 4M10 10l-2 8M38 10l4-6M38 10l2 8\"/></svg>",
+   "added": null
+  },
+  {
+   "title": "Outbreak Science Careers",
+   "href": "https://curtishoffmann.com/outbreak-science-careers/",
+   "blurb": "A guide to careers in outbreak science and biosecurity: ten career tracks with pay and outlook data, fellowships, degree programs, free training, and funding.",
+   "go": "Open guide",
+   "cta": "See where a career in outbreak science can take you.",
+   "short": "Outbreak Careers",
+   "phone": true,
+   "icon": "<svg class=\"ico\" viewBox=\"0 0 48 48\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" aria-hidden=\"true\"><path d=\"M8 40c6-10 12-14 16-14s10 4 16 14\"/><circle cx=\"24\" cy=\"16\" r=\"7\"/><path d=\"M4 44h40\"/></svg>",
+   "added": null
+  },
+  {
+   "title": "NSF Restricted Entities Guide",
+   "href": "https://curtishoffmann.com/nsfreg/",
+   "blurb": "A searchable guide to the thirteen U.S. restricted-party lists named in NSF's July 2026 Dear Colleague Letter, with more than 5,900 entries.",
+   "go": "Open guide",
+   "cta": "Search the thirteen restricted-party lists in one place.",
+   "short": "NSF Entities Guide",
+   "phone": false,
+   "icon": "<svg class=\"ico\" viewBox=\"0 0 48 48\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" aria-hidden=\"true\"><rect x=\"8\" y=\"6\" width=\"32\" height=\"36\" rx=\"3\"/><path d=\"M14 14h20M14 22h20M14 30h12\"/></svg>",
+   "added": null
+  },
+  {
+   "title": "Scripture Atlas",
+   "href": "https://curtishoffmann.com/scripture/",
+   "blurb": "A visual literary analysis of the King James Bible, the Book of Mormon, and the Pearl of Great Price: 192 figures in a character network, with chapter guides.",
+   "go": "Open atlas",
+   "cta": "Trace 192 figures through a character network of scripture.",
+   "short": "Scripture Atlas",
+   "phone": true,
+   "icon": "<svg class=\"ico\" viewBox=\"0 0 48 48\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" aria-hidden=\"true\"><path d=\"M8 8h14a4 4 0 0 1 4 4v28a3 3 0 0 0-3-3H8z\"/><path d=\"M40 8H26a4 4 0 0 0-4 4v28a3 3 0 0 1 3-3h15z\"/></svg>",
+   "added": null
+  },
+  {
+   "title": "Saphan",
+   "href": "https://curtishoffmann.com/saphan/",
+   "blurb": "An offline-first phrasebook of reviewed health phrases in Thai, Burmese, Mon, and English for village health volunteers in Kanchanaburi, Thailand. In development.",
+   "go": "Open app",
+   "cta": "Try the offline health phrasebook for village health volunteers.",
+   "short": "Saphan",
+   "phone": false,
+   "icon": "<svg class=\"ico\" viewBox=\"0 0 48 48\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" aria-hidden=\"true\"><path d=\"M4 30c8-10 32-10 40 0\"/><path d=\"M4 30v8M44 30v8M14 24v14M24 22v16M34 24v14\"/></svg>",
+   "added": null
+  },
+  {
+   "title": "whybox",
+   "href": "https://curtishoffmann.com/whybox/",
+   "blurb": "A science sandbox for reasoning from the outputs you can see to the mechanisms you cannot, built as a working skeleton with one complete example.",
+   "go": "Open sandbox",
+   "cta": "Reason from what you can see to the mechanisms you cannot.",
+   "short": "whybox",
+   "phone": false,
+   "icon": "<svg class=\"ico\" viewBox=\"0 0 48 48\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" aria-hidden=\"true\"><rect x=\"8\" y=\"14\" width=\"32\" height=\"26\" rx=\"3\"/><path d=\"M8 22h32M20 14V8h8v6\"/><circle cx=\"24\" cy=\"31\" r=\"3\"/></svg>",
+   "added": null
+  },
+  {
+   "title": "Ember",
+   "href": "https://github.com/phagehunter/ember",
+   "blurb": "Free spaced-repetition flashcards for Mac and Windows using the FSRS-6 scheduler: no account, no subscription, one local file. Early release.",
+   "go": "Download on GitHub",
+   "cta": "Get free spaced-repetition flashcards for Mac and Windows.",
+   "short": "Ember",
+   "phone": false,
+   "icon": "<svg class=\"ico\" viewBox=\"0 0 48 48\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" aria-hidden=\"true\"><path d=\"M24 6c2 8 10 10 10 20a10 10 0 0 1-20 0c0-5 3-7 4-10 1 3 3 4 4 4-1-5 0-10 2-14z\"/></svg>",
+   "added": null
+  }
+ ]
+}

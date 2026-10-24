@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Curtis Hoffmann — Weaving Biological &amp; Cultural Lineages</title>
+  <title>Curtis Hoffmann — Weaving Biology and Culture</title>
   <meta name="description" content="Curtis Hoffmann is a researcher at the intersection of biology and anthropology: how microbes move through communities and cultures, live outbreak simulations, and interactive projects on exoplanets, human evolution, biodefense budgets, the RNA virome, careers in outbreak science, and more.">
   <meta name="author" content="Curtis Hoffmann">
   <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="theme-color" content="#000b18">
+  <meta name="theme-color" content="#0a1628">
   <meta name="color-scheme" content="dark">
   <link rel="canonical" href="https://curtishoffmann.com/">
 
@@ -18,18 +18,18 @@
 
   <meta property="og:type" content="profile">
   <meta property="og:site_name" content="Curtis Hoffmann">
-  <meta property="og:title" content="Curtis Hoffmann — Weaving Biological & Cultural Lineages">
+  <meta property="og:title" content="Curtis Hoffmann — Weaving Biology and Culture">
   <meta property="og:description" content="Researcher at Georgetown University and maker of interactive atlases: exoplanets, human evolution, biodefense budgets, the RNA virome, the Odyssey, the Catalogue of Life.">
   <meta property="og:url" content="https://curtishoffmann.com/">
   <meta property="og:image" content="https://curtishoffmann.com/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Curtis Hoffmann — weaving biological and cultural lineages">
+  <meta property="og:image:alt" content="Curtis Hoffmann — weaving biology and culture">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Curtis Hoffmann — Weaving Biological & Cultural Lineages">
+  <meta name="twitter:title" content="Curtis Hoffmann — Weaving Biology and Culture">
   <meta name="twitter:description" content="Researcher at Georgetown University and maker of interactive atlases on exoplanets, human evolution, biodefense, the RNA virome, the Odyssey and the Catalogue of Life.">
   <meta name="twitter:image" content="https://curtishoffmann.com/og-image.jpg">
-  <meta name="twitter:image:alt" content="Curtis Hoffmann — weaving biological and cultural lineages">
+  <meta name="twitter:image:alt" content="Curtis Hoffmann — weaving biology and culture">
 
   <script type="application/ld+json">
   {
@@ -80,820 +80,529 @@
     ]
   }
   </script>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200;0,400;0,600;1,200;1,400&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --midnight: #000b18;
-      --indigo: #1a2a44;
-      --surface: #071631;
-      --line: #1c3050;
-      --gold: #c5a059;
-      --gold-bright: #e3c27c;
-      --bone: #e2e8f0;
-      --bone-dim: #b9c4d6;
-      --muted: #8d9bb0;
-      --slate: #4a5568;
-      --teal: #7fd1c1;       /* interaction accent: hover, focus, the live thread */
-      --focus: #7fd1c1;
-      --safe-top: env(safe-area-inset-top, 0px);
-      --safe-bottom: env(safe-area-inset-bottom, 0px);
-      --gutter: clamp(1.5rem, 6vw, 2.5rem); /* 24 px on the smallest phones, 40 px from about 670 px up */
+      --bg: #0a1628;
+      --surface: #112138;
+      --surface-2: #162a46;
+      --line: #22365a;
+      --text: #e6ecf5;
+      --text-2: #aab8cf;
+      --muted: #8796ad;
+      --gold: #e3c27c;
+      --teal: #6fd6c6;
+      --teal-dim: #4fb8a8;
+      --focus: #6fd6c6;
+      --gutter: clamp(1.25rem, 5vw, 3rem);
+      /* type scale, ratio 1.25 from 16 px */
+      --s-1: .8rem; --s0: 1rem; --s1: 1.25rem; --s2: 1.5625rem; --s3: 1.953rem; --s4: 2.441rem; --s5: 3.052rem; --s6: 3.815rem; --s7: 4.768rem;
+      --serif: 'Crimson Pro', Georgia, serif;
+      --sans: 'Outfit', system-ui, sans-serif;
     }
-
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    button, input, select, textarea { font-family: inherit; }
-    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scrollbar-color: var(--line) var(--midnight); caret-color: var(--gold); accent-color: var(--gold); }
-    ::selection { background: var(--gold); color: var(--midnight); }
-    h1, h2, h3 { text-wrap: balance; }
-    p, li, figcaption { text-wrap: pretty; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scrollbar-color: var(--line) var(--bg); }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+    body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    ::selection { background: var(--teal); color: var(--bg); }
+    a { color: var(--teal); text-underline-offset: 3px; }
+    a:hover { color: var(--text); }
+    :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 2px; }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 400; text-wrap: balance; line-height: 1.1; }
+    p { text-wrap: pretty; }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+    .skip { position: absolute; left: var(--gutter); top: -60px; background: var(--teal); color: var(--bg); padding: .5rem .9rem; font-size: .85rem; z-index: 10; border-radius: 3px; }
+    .skip:focus { top: .75rem; }
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 0 var(--gutter); }
+    .eyebrow { font-size: var(--s-1); letter-spacing: .14em; text-transform: uppercase; color: var(--teal); font-weight: 600; }
 
-    body {
-      font-family: 'Crimson Pro', Georgia, serif;
-      background: var(--midnight);
-      color: var(--bone);
-      -webkit-font-smoothing: antialiased;
-      line-height: 1.5;
+    /* top bar */
+    .bar { position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+    .bar .wrap { display: flex; justify-content: space-between; align-items: center; gap: 1rem; height: 3.5rem; }
+    .bar .name { font-family: var(--serif); font-size: var(--s1); color: var(--text); text-decoration: none; }
+    .bar nav { display: flex; gap: 1.5rem; }
+    .bar nav a { font-family: var(--sans); font-size: .76rem; letter-spacing: .14em; text-transform: uppercase; color: var(--text-2); text-decoration: none; font-weight: 500; }
+    .bar nav a:hover { color: var(--teal); }
+    /* sound: a quiet toggle for the page's music; the waves light up while it plays */
+    .sound { margin-left: 1.25rem; width: 36px; height: 36px; border-radius: 50%; border: 1px solid transparent; background: transparent; color: var(--muted); display: inline-flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; transition: color .15s, border-color .15s; }
+    .sound:hover { color: var(--text); border-color: var(--line); }
+    .sound .w1, .sound .w2 { opacity: 0; transition: opacity .3s; }
+    .sound[aria-pressed="true"] { color: var(--teal); }
+    .sound[aria-pressed="true"] .w1 { opacity: 1; }
+    .sound[aria-pressed="true"] .w2 { opacity: .6; }
+
+    /* hero */
+    .hero { position: relative; overflow: hidden; background: radial-gradient(ellipse at 70% 40%, #1a2d4d 0%, var(--bg) 60%); border-bottom: 1px solid var(--line); }
+    .hero .wrap { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; min-height: min(88svh, 820px); padding-top: clamp(3rem, 7vw, 5rem); padding-bottom: clamp(3rem, 7vw, 5rem); }
+    .hero .prefix { font-size: var(--s-1); letter-spacing: .14em; text-transform: uppercase; color: var(--teal); font-weight: 600; margin-bottom: 1.2rem; }
+    .hero h1 { font-size: clamp(var(--s5), 8vw, var(--s7)); font-weight: 300; letter-spacing: -.01em; line-height: 1; color: var(--text); }
+    .hero .tag { font-family: var(--serif); font-style: italic; font-size: clamp(var(--s2), 3vw, var(--s3)); color: var(--gold); margin: 1rem 0 1.75rem; line-height: 1.2; }
+    .hero .lede { font-size: var(--s1); color: var(--text-2); max-width: 44ch; margin-bottom: 2rem; }
+    .btns { display: flex; gap: .75rem; flex-wrap: wrap; }
+    .featured { margin-top: 1.5rem; font-size: .95rem; color: var(--text-2); max-width: 44ch; line-height: 1.5; }
+    .featured .fl { font-size: var(--s-1); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 500; margin-right: .5rem; }
+    .featured a { color: var(--gold); text-decoration: none; font-family: var(--serif); font-size: var(--s1); }
+    .featured a:hover { color: var(--text); }
+    .featured .cta { display: block; margin-top: .1rem; }
+    .btn { position: relative; isolation: isolate; overflow: hidden; display: inline-flex; align-items: center; gap: .5rem; font-size: .9rem; font-weight: 600; padding: .85rem 1.35rem; border-radius: 6px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none;
+      background: linear-gradient(160deg, #162a47 0%, var(--surface) 55%, #0e1c33 100%); box-shadow: 0 1px 0 rgba(255,255,255,.04) inset;
+      transition: transform .8s cubic-bezier(.22,.61,.36,1), box-shadow .8s cubic-bezier(.22,.61,.36,1), color .6s ease, border-color .6s ease; }
+    .btn::before { content: ''; position: absolute; inset: 0; z-index: -1; opacity: 0; transition: opacity .8s ease; background: linear-gradient(160deg, #1b3356 0%, var(--surface-2) 55%, #122441 100%); }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 14px 28px -18px rgba(0, 0, 0, .9), 0 0 0 1px rgba(227, 194, 124, .25); color: var(--text); border-color: var(--text); }
+    .btn:hover::before { opacity: 1; }
+    .btn:active { transform: translateY(0); box-shadow: none; transition-duration: .12s; }
+    .btn.solid { color: var(--bg); border-color: #d9b86c; background: linear-gradient(160deg, #f0d79b 0%, var(--gold) 55%, #cfae63 100%); }
+    .btn.solid::before { background: linear-gradient(160deg, #f6e2ae 0%, #ecd092 55%, #d6b56c 100%); }
+    .btn.solid:hover { color: var(--bg); border-color: #f0d79b; box-shadow: 0 14px 28px -16px rgba(227, 194, 124, .55), 0 0 0 1px rgba(227, 194, 124, .35); }
+    .field { width: 100%; max-width: 520px; height: auto; display: block; margin: 0 auto; }
+    .field .node .halo { fill: var(--teal); opacity: 0; stroke: none; transition: opacity .25s; }
+    .field .node .bloom { opacity: .75; transition: opacity .25s; }
+    .field .node .core { fill: var(--text); stroke: none; }
+    .field .node .lbl { font-family: var(--serif); font-size: 9.5px; letter-spacing: .22em; fill: var(--text); stroke: none; opacity: 0; transition: opacity .25s; }
+    .field a:hover .node .halo, .field a:focus-visible .node .halo { opacity: .14; }
+    .field a:hover .node .bloom, .field a:focus-visible .node .bloom { opacity: 1; stroke: var(--teal); filter: drop-shadow(0 0 6px rgba(111, 214, 198, .7)); }
+    .field a:hover .node .lbl, .field a:focus-visible .node .lbl { opacity: .95; }
+    /* the phages at the center: floating, and nudged by the pointer */
+    .phages .head { fill: rgba(227, 194, 124, .08); }
+    .phage .body, .phage .nudge { transform-box: fill-box; transform-origin: center; }
+    .phage.c1 path { stroke-width: 1.7; }
+    .phage.c2 path { stroke-width: 2.2; }
+    .phage.c3 path { stroke-width: 1.9; }
+    .phage.bac path, .phage.bac rect { stroke-width: 1.1; }
+    .phage.cap, .phage.bac { opacity: .8; }
+    .phage .nudge { will-change: transform; }
+    .field a:focus-visible { outline: none; }
+    /* the loom: warp and weft drawn on a canvas behind the constellation, so the rosettes read as knots in the weave */
+    .sky { position: relative; }
+    /* seismic trace between sections: a flat line with one burst, drawn once when it scrolls into view */
+    .trace { display: block; width: 100%; height: 40px; overflow: visible; }
+    .trace path { fill: none; stroke: var(--line); stroke-width: 1; }
+    .trace .burst { stroke: var(--gold); opacity: .55; }
+    /* concentric rings behind the About lede */
+    /* the loom's threads above the footer: twelve gold threads drifting; under the pointer they flatten and shiver, as on the live page */
+    .threads { position: relative; height: clamp(90px, 13vh, 130px); margin-top: .5rem; }
+    .threads canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; filter: drop-shadow(0 0 18px rgba(227, 194, 124, .12)); touch-action: pan-y;
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+    @media (prefers-reduced-motion: no-preference) {
+      .field .bloom { transform-box: fill-box; transform-origin: center; animation: spin 140s linear infinite; }
+      .trace path { transition: stroke-dashoffset 2.6s ease-out; }
+      .trace .burst { transition-delay: .2s; }
+      .rings circle:nth-child(2) { transform-box: fill-box; transform-origin: center; animation: spin 120s linear infinite; }
+      .phage .body { animation: float 7s ease-in-out infinite alternate; }
+      .phage.c1 .body { animation-duration: 9s; animation-delay: -3s; }
+      .phage.c2 .body { animation-duration: 8s; animation-delay: -5s; animation-direction: alternate-reverse; }
+      .phage.c3 .body { animation-duration: 10s; animation-delay: -2s; }
+      .phage.bac .body { animation-duration: 11s; animation-delay: -6s; animation-direction: alternate-reverse; }
+      .microbe .body { animation: drift var(--dur, 10s) ease-in-out var(--delay, 0s) infinite alternate; }
+      @keyframes drift { from { transform: translate(0, -6px) rotate(-3deg); } to { transform: translate(0, 6px) rotate(3deg); } }
+      @keyframes float { from { transform: translate(0, -3px) rotate(-2.5deg); } to { transform: translate(0, 3px) rotate(2.5deg); } }
+      @keyframes spin { to { transform: rotate(360deg); } }
     }
-    a { color: var(--gold); text-underline-offset: 3px; }
-    a:hover { color: var(--gold-bright); }
-    :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 3px; }
-    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
-    .skip-link { position: absolute; left: var(--gutter); top: -60px; z-index: 300; background: var(--gold); color: var(--midnight); padding: .5rem .9rem; border-radius: 3px; font-family: 'Outfit', sans-serif; font-size: .85rem; }
-    .skip-link:focus { top: .75rem; }
 
-    /* ── Hero: the loom ── */
-    .hero {
-      position: relative; z-index: 2;
-      min-height: 92vh; min-height: 92svh;
-      display: flex; flex-direction: column; align-items: center;
-      background: radial-gradient(ellipse 70% 60% at 50% 42%, #142440 0%, #0b1a33 55%, var(--midnight) 100%);
-      padding: calc(1.5rem + var(--safe-top)) var(--gutter) calc(1.25rem + var(--safe-bottom));
-      overflow: hidden;
+    /* shadow viruses: faint geometric outlines behind each section, floating, eased away from the pointer */
+    .drift { position: absolute; inset: 0; overflow: clip; pointer-events: none; z-index: 0; }
+    .microbe { position: absolute; height: auto; overflow: visible; fill: rgba(227, 194, 124, .025); stroke: rgba(227, 194, 124, .13); stroke-width: 1.1; stroke-linejoin: round; stroke-linecap: round; transform: translate(var(--dx, 0px), var(--dy, 0px)) rotate(var(--rot, 0deg)); will-change: transform; pointer-events: auto; cursor: grab; touch-action: pan-y; transition: stroke .2s, fill .2s; }
+    .microbe:hover { stroke: rgba(227, 194, 124, .3); }
+    .microbe.held { cursor: grabbing; stroke: rgba(227, 194, 124, .45); fill: rgba(227, 194, 124, .05); }
+    .microbe .body, .microbe .nudge { transform-box: fill-box; transform-origin: center; }
+    section.block, .hero { position: relative; }
+    section.block > .wrap, .hero > .wrap { position: relative; z-index: 1; }
+    /* layout boxes let the pointer through to the shadows behind them; the content itself still takes it */
+    section.block > .wrap, .sec-head, .grid, .about, .about .text, .side, .rows, .rows ul, .bm-groups, .bm-tools, .contact, .contact .row { pointer-events: none; }
+    .wrap a, .wrap button, .wrap input, .wrap textarea, .wrap details, .wrap p, .wrap h2, .wrap h3, .wrap label, .wrap li, .wrap .cv-h, .wrap .links, .wrap svg { pointer-events: auto; }
+
+    /* sections */
+    section.block { padding: clamp(3.5rem, 8vw, 6rem) 0; }
+    section#bookmarks { padding-bottom: clamp(1.5rem, 3vw, 2.5rem); }
+    .sec-head { display: flex; justify-content: space-between; align-items: end; gap: 1.5rem; flex-wrap: wrap; margin-bottom: clamp(1.5rem, 4vw, 2.5rem); }
+    .sec-head h2 { font-size: clamp(var(--s3), 4vw, var(--s4)); }
+    .sec-head p { color: var(--text-2); max-width: 46ch; font-size: var(--s0); }
+
+    /* cards */
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+    .card { position: relative; overflow: hidden; display: grid; grid-template-rows: auto 1fr auto; gap: .6rem; padding: 1.35rem 1.5rem 1.25rem; border: 1px solid var(--line); border-radius: 10px; color: var(--text); text-decoration: none; min-height: 100%;
+      background: linear-gradient(160deg, #152844 0%, var(--surface) 48%, #0e1c33 100%); transition: border-color .15s, transform .15s, box-shadow .15s; }
+    .card::before { content: ''; position: absolute; right: -70px; top: -70px; width: 220px; height: 220px; border-radius: 50%; pointer-events: none; opacity: .55; transition: opacity .2s, transform .3s;
+      background: repeating-radial-gradient(circle at center, rgba(227, 194, 124, .09) 0 1px, transparent 1px 16px); -webkit-mask-image: radial-gradient(circle at center, #000 30%, transparent 70%); mask-image: radial-gradient(circle at center, #000 30%, transparent 70%); }
+    .card:hover { border-color: var(--teal); transform: translateY(-2px); box-shadow: 0 18px 36px -24px rgba(0, 0, 0, .9); }
+    .card:hover::before { opacity: 1; transform: scale(1.08); }
+    .card .head { display: flex; align-items: center; gap: .75rem; }
+    .card .ico { width: 28px; height: 28px; flex: 0 0 28px; color: var(--gold); }
+    .card h3 { font-size: var(--s2); color: var(--text); line-height: 1.1; }
+    .card p { font-size: .95rem; color: var(--text-2); line-height: 1.55; }
+    .card .go { display: inline-flex; align-items: center; gap: .4rem; font-size: var(--s-1); font-weight: 600; color: var(--teal); letter-spacing: .04em; margin-top: .4rem; }
+    .card:hover .go { color: var(--text); }
+
+    /* about */
+    .about { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: 2rem 4rem; align-items: start; overflow-x: clip; overflow-y: visible; }   /* clip sideways only, so the ripples can rise above the block */
+    .about .text { position: relative; }
+    .about .text > :not(.seismic) { position: relative; z-index: 1; }
+    .about .big { font-family: var(--serif); font-size: clamp(var(--s3), 3.4vw, var(--s4)); line-height: 1.2; color: var(--gold); margin-bottom: 1.4rem; }
+    .about .big em { color: var(--text); }
+    .about p { color: var(--text-2); font-size: var(--s1); max-width: 60ch; }
+    .about p + p { margin-top: 1rem; }
+    .about p strong { color: var(--text); font-weight: 600; }
+
+    .seismic { position: absolute; right: -4rem; top: -5rem; width: 22rem; height: 22rem; pointer-events: none; z-index: 0 !important; }
+    .seismic circle { fill: none; stroke: var(--line); stroke-width: 1; }
+    .about ul.links { list-style: none; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+    .about .links li + li { border-top: 1px solid var(--line); }
+    .about .links a { display: flex; justify-content: space-between; gap: 1rem; padding: .95rem 1.25rem; text-decoration: none; font-size: .9rem; }
+    .about .links a:hover { background: var(--surface-2); }
+    .about .links .k { color: var(--muted); }
+    .about .links .v { color: var(--teal); text-align: right; overflow-wrap: anywhere; }
+    /* small lists: fellowships, education, interests, skills, current work, news. Plain rows in the page's type. */
+    .rows { margin-top: 2rem; }
+    .side .rows { margin-top: 1.75rem; }
+    .cv-h { font-size: var(--s-1); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 500; margin: 1.25rem 0 .25rem; }
+    .rows > .cv-h:first-child { margin-top: 0; }
+    .rows ul { list-style: none; }
+    .rows li { padding: .55rem 0; border-top: 1px solid var(--line); }
+    .rows .role { display: block; color: var(--text); font-size: .95rem; line-height: 1.45; }
+    .rows .org { display: block; color: var(--text-2); font-size: .9rem; line-height: 1.45; margin-top: .1rem; }
+    .rows a.org { color: var(--teal); text-decoration: none; width: fit-content; }
+    .rows a.org:hover { color: var(--text); text-decoration: underline; text-underline-offset: 3px; }
+    .rows .dated { display: flex; justify-content: space-between; align-items: baseline; gap: 1.25rem; }
+    .rows .when { color: var(--gold); font-family: var(--serif); font-size: var(--s1); line-height: 1.2; white-space: nowrap; font-variant-numeric: tabular-nums; }
+    .rows .role, .rows .org, .rows .line { text-wrap: pretty; }
+    .news .role { text-wrap: balance; }
+    .rows .line { color: var(--text-2); font-size: .95rem; line-height: 1.6; padding: .5rem 0 0; border-top: 1px solid var(--line); max-width: 60ch; }
+    .news a { display: block; text-decoration: none; }
+    .news a .role { color: var(--text); }
+    .news a:hover .role { color: var(--teal); }
+    .cv .cv-h { position: relative; padding-bottom: .4rem; }
+    .cv .cv-h::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: var(--line); transform: scaleX(0); transform-origin: left; transition: transform .7s cubic-bezier(.2,.7,.2,1); }
+    .cv .cv-h.drawn::after { transform: scaleX(1); }
+    .cv li, .cv .line { border-top: 0; }
+    .cv li { padding: .4rem 0; }
+    .cv .line { padding: .35rem 0 0; line-height: 1.5; }
+    .cv .cursor { display: inline-block; width: .5em; height: 1em; background: var(--gold); vertical-align: -0.12em; margin-left: 2px; animation: blink 1s steps(1) infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+    .cv .typed { visibility: hidden; }
+    .cv .typed.on { visibility: visible; }
+
+    /* contact form */
+    .contact { max-width: 680px; display: grid; gap: 1rem; }
+    .contact .row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .contact label { display: grid; gap: .4rem; font-size: var(--s-1); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+    .contact input, .contact textarea { font: inherit; font-size: 1rem; letter-spacing: 0; text-transform: none; color: var(--text); background: linear-gradient(160deg, #152844 0%, var(--surface) 48%, #0e1c33 100%); border: 1px solid var(--line); border-radius: 8px; padding: .8rem .95rem; width: 100%; }
+    .contact textarea { resize: vertical; min-height: 8rem; }
+    .contact input:focus, .contact textarea:focus { outline: none; border-color: var(--gold); }
+    .contact .send { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+    .contact .send .btn { cursor: pointer; font-family: inherit; }
+    .contact .note { font-size: var(--s-1); color: var(--muted); }
+    .sec-head p a { color: var(--teal); text-decoration: none; }
+    .sec-head p a:hover { color: var(--text); }
+
+    /* bookmarks */
+    .bm-tools { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin-bottom: 1.25rem; }
+    .bm-filter { font: inherit; font-size: .95rem; padding: .75rem 1rem; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--text); width: min(100%, 26rem); }
+    .bm-filter::placeholder { color: var(--muted); }
+    .bm-filter:focus { border-color: var(--teal); outline: none; }
+    .bm-count { font-size: var(--s-1); color: var(--muted); }
+    .bm-groups { display: grid; grid-template-columns: minmax(0, 1fr); gap: .6rem; }
+    .bm-group { min-width: 0; max-width: 100%; overflow: hidden; background: linear-gradient(160deg, #152844 0%, var(--surface) 48%, #0e1c33 100%); border: 1px solid var(--line); border-radius: 10px; }
+    .bm-group summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1rem 1.25rem; font-family: var(--serif); font-size: var(--s2); }
+    .bm-group summary::-webkit-details-marker { display: none; }
+    .bm-group summary .n { font-family: var(--sans); font-size: var(--s-1); color: var(--muted); font-variant-numeric: tabular-nums; margin-left: auto; }
+    .bm-group summary::after { content: ''; width: .5rem; height: .5rem; border-right: 1.5px solid var(--teal); border-bottom: 1.5px solid var(--teal); transform: rotate(45deg); transition: transform .2s; flex-shrink: 0; }
+    .bm-group[open] summary::after { transform: rotate(225deg); }
+    .bm-strip-wrap { position: relative; min-width: 0; border-top: 1px solid var(--line); }
+    .bm-strip-head { display: flex; justify-content: flex-end; gap: .35rem; padding: .6rem 1rem 0; }
+    .bm-strip-head button { width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--gold); background: transparent; color: var(--gold); display: inline-flex; align-items: center; justify-content: center; cursor: pointer; transition: background .15s, color .15s; }
+    .bm-strip-head button:hover { background: var(--gold); color: var(--bg); }
+    .bm-strip-head button:disabled { opacity: .3; cursor: default; background: transparent; color: var(--gold); }
+    .bm-strip { list-style: none; width: 100%; max-width: 100%; display: flex; gap: .6rem; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: 1.25rem; padding: .5rem 1.25rem 1.1rem; scrollbar-width: thin; scrollbar-color: var(--line) transparent; -webkit-overflow-scrolling: touch; }
+    .bm-strip li { flex: 0 0 min(230px, 72vw); scroll-snap-align: start; }
+    .bm-strip li:last-child { margin-inline-end: 1.25rem; }   /* scroll containers drop trailing padding; this keeps the last tile off the edge */
+    .bm-strip-head { padding-right: 1.25rem; }
+    .bm-strip a { display: block; height: 100%; padding: .75rem .85rem; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); text-decoration: none; transition: border-color .15s, background .15s; }
+    .bm-strip a:hover { border-color: var(--teal); background: var(--surface-2); }
+    .bm-strip .t { display: block; color: var(--text); font-size: .95rem; line-height: 1.35; }
+    .bm-strip .d { display: block; color: var(--muted); font-size: .76rem; overflow-wrap: anywhere; margin-top: .2rem; }
+    .bm-empty { color: var(--muted); padding: 1rem 0; }
+
+    footer { border-top: 1px solid var(--line); }
+    footer .wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding: 1.75rem var(--gutter) 2.5rem; font-size: .85rem; color: var(--muted); }
+    footer .motto { color: var(--gold); font-family: var(--serif); font-size: var(--s0); }
+
+    @media (max-width: 960px) {
+      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .hero .wrap { grid-template-columns: 1fr; min-height: 0; }
+      .field { max-width: 360px; }
+      .about { grid-template-columns: 1fr; }
+      .contact .row { grid-template-columns: 1fr; }
+      .seismic { width: 16rem; height: 16rem; right: -3rem; top: -4rem; }
     }
-    .hero header { position: relative; z-index: 20; text-align: center; flex-shrink: 0; padding: 0 .5rem; }
-    .hero header > * { animation: blurFadeIn .9s cubic-bezier(0.22, 1, 0.36, 1) both; will-change: opacity, transform, filter; }
-    .hero header > :nth-child(1) { animation-delay: .05s; }
-    .hero header > :nth-child(2) { animation-name: trackIn; animation-duration: 1.2s; animation-delay: .1s; }
-    .hero header > :nth-child(3) { animation-delay: .21s; }
-    .prefix { font-size: clamp(0.55rem, 2.4vw, 0.65rem); letter-spacing: 0.7em; color: var(--gold); text-transform: uppercase; margin-bottom: 1.1rem; font-weight: 400; padding-left: 0.7em; overflow-wrap: break-word; }
-    h1 { font-size: clamp(1.9rem, 8vw, 3.2rem); font-weight: 200; letter-spacing: 0.28em; color: var(--bone); text-transform: uppercase; padding-left: 0.28em; line-height: 1.15; }
-    .tagline { font-size: clamp(0.85rem, 3.6vw, 1rem); font-style: italic; letter-spacing: 0.18em; color: var(--bone-dim); margin-top: 0.8rem; }
+    @media (max-width: 600px) {
+      .bar .name { font-size: .9rem; white-space: nowrap; }
+      .bar .wrap { gap: .6rem; }
+      .bar nav { gap: .55rem; }
+      .bar nav a { font-size: .64rem; letter-spacing: .04em; }
+      .bar nav a:last-child { display: none; }
+      .sound { margin-left: 0; width: 30px; height: 30px; }
+      .grid { grid-template-columns: 1fr; }
 
-    .canvas-container { position: relative; z-index: 10; flex: 1 1 auto; min-height: 260px; width: 100vw; align-self: center; }
-    canvas { display: block; width: 100%; height: 100%; filter: drop-shadow(0 0 20px rgba(197, 160, 89, 0.15)); touch-action: manipulation; }
-
-    .hero-foot { position: relative; z-index: 20; flex-shrink: 0; text-align: center; margin-top: 0.5rem; animation: blurFadeIn .9s cubic-bezier(0.22, 1, 0.36, 1) .45s both; display: flex; flex-direction: column; align-items: center; gap: .9rem; }
-    .hero-foot .row { display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; }
-    .cv-button {
-      display: inline-flex; align-items: center; justify-content: center; min-height: 44px;
-      padding: 0.8rem 2.2rem; border: 1px solid rgba(197, 160, 89, 0.6); border-radius: 2px;
-      color: var(--gold); text-decoration: none; font-size: 0.72rem; letter-spacing: 0.4em; text-transform: uppercase;
-      transition: border-color .15s ease-out, background .15s ease-out, color .15s ease-out, transform .15s ease-out; background: transparent; -webkit-tap-highlight-color: transparent;
-    }
-    .cv-button:hover, .cv-button:focus-visible { border-color: var(--gold); background: rgba(197, 160, 89, 0.06); color: var(--bone); outline: none; }
-    .cv-button.solid { background: var(--gold); color: var(--midnight); border-color: var(--gold); }
-    .cv-button.solid:hover, .cv-button.solid:focus-visible { background: var(--gold-bright); color: var(--midnight); }
-    .cv-button:active { transform: scale(.96); }
-    .scroll-cue { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; color: var(--bone-dim); text-decoration: none; animation: cueBob 2.4s ease-in-out infinite; }
-    .scroll-cue:hover, .scroll-cue:focus-visible { color: var(--gold); }
-    @keyframes cueBob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
-
-    .cv-button.icon { gap: .55rem; padding: .8rem 1.3rem; letter-spacing: .3em; cursor: pointer; font-family: 'Crimson Pro', serif; }
-    .cv-button.icon .wave { opacity: 0; transition: opacity .3s; }
-    .cv-button.icon[aria-pressed="true"] { border-color: var(--gold); color: var(--bone); }
-    .cv-button.icon[aria-pressed="true"] .wave { opacity: 1; }
-
-    /* ── Content below the loom ── */
-    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 var(--gutter); position: relative; z-index: 2; }
-    section.block { padding-top: 4.5rem; padding-bottom: 1rem; } /* vertical only: the side gutter comes from .wrap */
-    .eyebrow { font-family: 'Outfit', sans-serif; font-size: .62rem; letter-spacing: .32em; text-transform: uppercase; color: var(--gold); margin-bottom: .9rem; display: flex; align-items: center; gap: 1rem; }
-    .eyebrow::after { content: ""; flex: 1; height: 1px; background: var(--line); }
-    h2 { font-weight: 200; font-size: clamp(1.9rem, 4.5vw, 2.8rem); letter-spacing: .02em; line-height: 1.15; margin-bottom: .6rem; }
-    h2 em, .lede em { font-style: italic; color: var(--gold); }
-    .lede { font-weight: 200; font-size: clamp(1.9rem, 4.5vw, 2.8rem); letter-spacing: .02em; line-height: 1.15; margin-bottom: .6rem; color: var(--bone); max-width: none; text-wrap: balance; }
-    .deck { font-size: 1.1rem; color: var(--bone-dim); max-width: 640px; margin-bottom: 2rem; }
-
-    .grid { display: grid; grid-template-columns: 1fr; gap: .9rem; }
-    @media (min-width: 640px) { .grid { grid-template-columns: 1fr 1fr; } }
-    @media (min-width: 960px) { .grid { grid-template-columns: 1fr 1fr 1fr; } }
-    .project {
-      position: relative; display: flex; flex-direction: column; gap: .5rem; min-height: 190px;
-      padding: 1.4rem 1.4rem 1.2rem; background: var(--surface); border: 1px solid var(--line); border-radius: 6px;
-      text-decoration: none; color: var(--bone); transition: border-color .15s ease-out, transform .15s ease-out, background .15s ease-out, box-shadow .15s ease-out;
-      box-shadow: 0 0 0 1px rgba(255,255,255,.04), 0 1px 2px rgba(0,0,0,.3);
-    }
-    .project:active { transform: scale(.985); }
-    .project:hover, .project:focus-visible { border-color: var(--gold); background: #0a1b3a; transform: translateY(-2px); color: var(--bone); outline: none; box-shadow: 0 0 0 1px rgba(255,255,255,.06), 0 10px 24px -12px rgba(0,0,0,.6); }
-    .project:focus-visible { box-shadow: 0 0 0 2px var(--focus); }
-    .project .ico { width: 34px; height: 34px; color: var(--gold); opacity: .85; }
-    .project h3 { font-weight: 400; font-size: 1.45rem; letter-spacing: .01em; line-height: 1.15; }
-    .project p { font-size: 1rem; color: var(--bone-dim); flex: 1; }
-    .project .go { font-family: 'Outfit', sans-serif; font-size: .62rem; letter-spacing: .28em; text-transform: uppercase; color: var(--gold); }
-    .project:hover .go { color: var(--gold-bright); }
-
-    .about { display: grid; grid-template-columns: 1fr; gap: 2rem; }
-    @media (min-width: 820px) { .about { grid-template-columns: 1.4fr 1fr; gap: 3rem; } }
-    .about p:not(.lede) { font-size: 1.15rem; color: var(--bone-dim); margin-bottom: 1rem; max-width: 60ch; }
-    .about p strong { color: var(--bone); font-weight: 400; }
-    .links { list-style: none; display: grid; gap: .6rem; }
-    .links a { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .9rem 1.1rem; border: 1px solid var(--line); border-radius: 6px; text-decoration: none; color: var(--bone); background: var(--surface); transition: border-color .15s ease-out, transform .15s ease-out; min-height: 48px; }
-    .links a:active { transform: scale(.985); }
-    .links a:hover, .links a:focus-visible { border-color: var(--gold); outline: none; }
-    .links .k { font-family: 'Outfit', sans-serif; font-size: .62rem; letter-spacing: .28em; text-transform: uppercase; color: var(--muted); }
-    .links .v { font-size: 1.05rem; }
-
-    /* ── Photography: film strip + lightbox (the section stays hidden until photos/manifest.json has entries) ── */
-    .photos-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: .6rem 2rem; margin-bottom: 1.4rem; }
-    .photos-head { justify-content: flex-end; }
-    .strip-nav { display: flex; gap: .5rem; }
-    .strip-nav[hidden] { display: none; }
-    .strip-btn { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: var(--surface); color: var(--gold); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; transition: border-color .15s ease-out, transform .15s ease-out, opacity .15s ease-out; -webkit-tap-highlight-color: transparent; }
-    .strip-btn:hover, .strip-btn:focus-visible { border-color: var(--gold); outline: none; }
-    .strip-btn:focus-visible { box-shadow: 0 0 0 2px var(--focus); }
-    .strip-btn:active { transform: scale(.96); }
-    .strip-btn[disabled] { opacity: .3; cursor: default; }
-    .strip { display: flex; gap: .9rem; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; padding: 2px 2px 1rem; scrollbar-width: thin; scrollbar-color: var(--line) transparent; -webkit-overflow-scrolling: touch; user-select: none; -webkit-user-select: none; }
-    .shot { flex: 0 0 auto; margin: 0; scroll-snap-align: start; display: flex; flex-direction: column; gap: .45rem; }
-    .frame { display: block; position: relative; height: clamp(220px, 38vw, 400px); aspect-ratio: var(--ar, 3 / 2); max-width: calc(100vw - 2 * var(--gutter)); border: 0; padding: 0; border-radius: 3px; overflow: hidden; background: var(--ph, var(--surface)); outline: 1px solid rgba(255,255,255,.1); outline-offset: -1px; cursor: zoom-in; transition: outline-color .15s ease-out; -webkit-tap-highlight-color: transparent; }
-    .frame:hover, .frame:focus-visible { outline: 1px solid rgba(227,194,124,.7); }
-    .frame:focus-visible { box-shadow: 0 0 0 2px var(--focus); }
-    .frame img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0; transition: opacity .5s ease-out; pointer-events: none; -webkit-user-drag: none; }
-    .frame img.in { opacity: 1; }
-    .frame::after { content: ""; position: absolute; inset: 0; }  /* catches drag and long-press so the image itself is never the target */
-    .shot figcaption { font-style: italic; color: var(--muted); font-size: .95rem; max-width: 40ch; text-wrap: pretty; }
-    .photos-note { font-style: italic; color: var(--muted); margin-top: .4rem; font-size: 1.05rem; }
-    .photos-count { font-family: 'Outfit', sans-serif; font-size: .62rem; letter-spacing: .28em; text-transform: uppercase; color: var(--muted); font-variant-numeric: tabular-nums; }
-
-    .lightbox { border: 0; padding: 0; margin: 0; width: 100vw; height: 100vh; max-width: 100vw; max-height: 100vh; background: transparent; color: var(--bone); }
-    .lightbox::backdrop { background: rgba(0, 11, 24, .94); }
-    .lightbox[open] { display: grid; grid-template-rows: auto 1fr auto; animation: lbIn .25s cubic-bezier(.22, 1, .36, 1) both; }
-    @keyframes lbIn { from { opacity: 0; transform: scale(.97); } to { opacity: 1; transform: none; } }
-    .lb-bar { display: flex; justify-content: space-between; align-items: center; padding: calc(.75rem + var(--safe-top)) var(--gutter) .5rem; }
-    .lb-stage { display: flex; align-items: center; justify-content: center; padding: 0 var(--gutter); min-height: 0; user-select: none; -webkit-user-select: none; }
-    .lb-stage img { max-width: min(100%, 1600px); max-height: calc(100vh - 11rem); width: auto; height: auto; object-fit: contain; outline: 1px solid rgba(255,255,255,.1); outline-offset: -1px; pointer-events: none; -webkit-user-drag: none; background: var(--ph, var(--surface)); }
-    .lb-foot { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .75rem var(--gutter) calc(1rem + var(--safe-bottom)); }
-    .lb-foot p { font-style: italic; color: var(--bone-dim); font-size: 1.05rem; text-wrap: pretty; }
-    .lb-btn { min-width: 44px; min-height: 44px; padding: .6rem 1rem; border: 1px solid var(--line); border-radius: 2px; background: rgba(7,22,49,.8); color: var(--gold); font-family: 'Outfit', sans-serif; font-size: .68rem; letter-spacing: .28em; text-transform: uppercase; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: .5rem; transition: border-color .15s ease-out, transform .15s ease-out; }
-    .lb-btn:hover, .lb-btn:focus-visible { border-color: var(--gold); color: var(--bone); outline: none; }
-    .lb-btn:active { transform: scale(.96); }
-
-    /* ── Bookmarks ── */
-    .bm-tools { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .8rem 2rem; margin: 0 0 1rem; }
-    .bm-filter { font-family: 'Outfit', sans-serif; font-size: 1rem; padding: .7rem 1rem; min-height: 44px; width: min(100%, 340px); background: var(--surface); border: 1px solid var(--line); border-radius: 6px; color: var(--bone); transition: border-color .15s ease-out; }
-    .bm-filter::placeholder { color: var(--slate); }
-    .bm-filter:focus { border-color: var(--gold); outline: none; box-shadow: 0 0 0 2px rgba(124,196,255,.35); }
-    .bm-count { font-family: 'Outfit', sans-serif; font-size: .62rem; letter-spacing: .28em; text-transform: uppercase; color: var(--muted); font-variant-numeric: tabular-nums; }
-    .bm-group { border-top: 1px solid var(--line); }
-    .bm-group:last-child { border-bottom: 1px solid var(--line); }
-    .bm-group h3 { font-weight: 400; font-size: 1rem; }
-    .bm-toggle { width: 100%; display: flex; align-items: center; gap: 1rem; padding: 1rem 0; min-height: 56px; background: none; border: 0; color: var(--bone); font-family: 'Crimson Pro', Georgia, serif; font-size: 1.4rem; font-weight: 400; text-align: left; cursor: pointer; -webkit-tap-highlight-color: transparent; }
-    .bm-toggle:hover span:first-child, .bm-toggle:focus-visible span:first-child { color: var(--gold-bright); }
-    .bm-toggle:focus-visible { outline: none; box-shadow: inset 0 0 0 2px var(--focus); border-radius: 3px; }
-    .bm-toggle .n { margin-left: auto; font-family: 'Outfit', sans-serif; font-size: .66rem; letter-spacing: .2em; color: var(--muted); font-variant-numeric: tabular-nums; }
-    .bm-toggle svg { flex-shrink: 0; color: var(--gold); transition: transform .25s cubic-bezier(.22, 1, .36, 1); }
-    .bm-toggle[aria-expanded="true"] svg { transform: scaleY(-1); }
-    .bm-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .35s cubic-bezier(.22, 1, .36, 1); }
-    .bm-toggle[aria-expanded="true"] ~ .bm-panel, h3:has(.bm-toggle[aria-expanded="true"]) + .bm-panel { grid-template-rows: 1fr; }
-    .bm-panel > div { overflow: hidden; }
-    .bm-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: .25rem .8rem; padding: 0 0 1.2rem; }
-    .bm-list a { display: flex; flex-direction: column; justify-content: center; gap: .1rem; min-height: 48px; padding: .5rem .7rem; border-radius: 3px; text-decoration: none; color: var(--bone); transition: background .15s ease-out; }
-    .bm-list a:hover, .bm-list a:focus-visible { background: rgba(197,160,89,.08); color: var(--bone); outline: none; }
-    .bm-list a:focus-visible { box-shadow: inset 0 0 0 2px var(--focus); }
-    .bm-list .t { font-size: 1.08rem; line-height: 1.25; }
-    .bm-list .d { font-family: 'Outfit', sans-serif; font-size: .66rem; color: var(--muted); letter-spacing: .04em; }
-    .bm-list li[hidden], .bm-group[hidden] { display: none; }
-    .bm-empty { padding: 1.2rem 0; font-style: italic; color: var(--muted); }
-
-    footer { position: relative; z-index: 2; margin-top: 4rem; border-top: 1px solid var(--line); padding: 2rem 0 calc(2.5rem + var(--safe-bottom)); font-family: 'Outfit', sans-serif; font-size: .78rem; color: var(--muted); }
-    footer .row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .8rem 2rem; }
-    @media (max-width: 619px) { footer .row { flex-direction: column; align-items: center; text-align: center; gap: .5rem; } }
-    footer .motto { font-family: 'Crimson Pro', serif; font-style: italic; letter-spacing: .12em; color: var(--slate); }
-    footer .motto .he { font-style: normal; letter-spacing: 0; }
-
-    @keyframes trackIn {
-      0% { opacity: 0; filter: blur(3px); letter-spacing: .6em; transform: translateY(12px); }
-      100% { opacity: 1; filter: blur(0); letter-spacing: .28em; transform: translateY(0); }
-    }
-    @keyframes blurFadeIn {
-      0% { opacity: 0; filter: blur(3px); transform: translateY(12px); }
-      100% { opacity: 1; filter: blur(0); transform: translateY(0); }
+      .field { max-width: 300px; }
     }
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#projects">Skip to projects</a>
-
-  <audio id="bgMusic" loop preload="none">
-    <source src="symphony.mp3" type="audio/mpeg">
-  </audio>
-
-  <section class="hero" aria-label="Introduction">
-    <header>
-      <div class="prefix">Tikkun Mada • תִּיקּוּן עוֹלָם</div>
-      <h1>Curtis Hoffmann</h1>
-      <p class="tagline">weaving biological and cultural lineages</p>
-    </header>
-
-    <div class="canvas-container">
-      <canvas id="kineticLoom" aria-hidden="true"></canvas>
+  <a class="skip" href="#projects">Skip to projects</a>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="v-ico3" viewBox="0 0 100 100"><path d="M50.0 23.0 L26.6 36.5 L26.6 63.5 L50.0 77.0 L73.4 63.5 L73.4 36.5 Z"/><path d="M50.0 36.5 L38.3 56.8 L61.7 56.8 Z"/><path d="M50.0 23.0 L50.0 36.5M26.6 63.5 L38.3 56.8M73.4 63.5 L61.7 56.8M26.6 36.5 L50.0 36.5M26.6 36.5 L38.3 56.8M50.0 77.0 L38.3 56.8M50.0 77.0 L61.7 56.8M73.4 36.5 L61.7 56.8M73.4 36.5 L50.0 36.5" opacity=".8"/></symbol>
+      <symbol id="v-ico5" viewBox="0 0 100 100"><path d="M50.0 22.0 L33.5 27.3 L23.4 41.3 L23.4 58.7 L33.5 72.7 L50.0 78.0 L66.5 72.7 L76.6 58.7 L76.6 41.3 L66.5 27.3 Z"/><path d="M50.0 34.6 L35.4 45.2 L40.9 62.5 L59.1 62.5 L64.6 45.2 Z"/><path d="M50.0 56.2 L55.9 51.9 L53.6 45.0 L46.4 45.0 L44.1 51.9 Z"/><path d="M50.0 22.0 L50.0 34.6 M33.5 27.3 L50.0 34.6 M33.5 27.3 L35.4 45.2M23.4 41.3 L35.4 45.2 M23.4 58.7 L35.4 45.2 M23.4 58.7 L40.9 62.5M33.5 72.7 L40.9 62.5 M50.0 78.0 L40.9 62.5 M50.0 78.0 L59.1 62.5M66.5 72.7 L59.1 62.5 M76.6 58.7 L59.1 62.5 M76.6 58.7 L64.6 45.2M76.6 41.3 L64.6 45.2 M66.5 27.3 L64.6 45.2 M66.5 27.3 L50.0 34.6" opacity=".8"/><path d="M50.0 34.6 L53.6 45.0 M50.0 34.6 L46.4 45.0M35.4 45.2 L46.4 45.0 M35.4 45.2 L44.1 51.9M40.9 62.5 L44.1 51.9 M40.9 62.5 L50.0 56.2M59.1 62.5 L50.0 56.2 M59.1 62.5 L55.9 51.9M64.6 45.2 L55.9 51.9 M64.6 45.2 L53.6 45.0" opacity=".6"/></symbol>
+      <symbol id="v-ico2" viewBox="0 0 100 100"><path d="M64.0 25.8 L36.0 25.8 L22.0 50.0 L36.0 74.2 L64.0 74.2 L78.0 50.0 Z"/><path d="M57.0 37.9 L36.0 50.0 L57.0 62.1 Z"/><path d="M64.0 25.8 L57.0 37.9M22.0 50.0 L36.0 50.0M64.0 74.2 L57.0 62.1M36.0 25.8 L57.0 37.9M36.0 25.8 L36.0 50.0M36.0 74.2 L36.0 50.0M36.0 74.2 L57.0 62.1M78.0 50.0 L57.0 62.1M78.0 50.0 L57.0 37.9" opacity=".8"/></symbol>
+      <symbol id="v-adeno" viewBox="0 0 100 100"><path d="M50.0 26.0 L29.2 38.0 L29.2 62.0 L50.0 74.0 L70.8 62.0 L70.8 38.0 Z"/><path d="M50.0 38.0 L39.6 56.0 L60.4 56.0 Z"/><path d="M50.0 26.0 L50.0 38.0M29.2 62.0 L39.6 56.0M70.8 62.0 L60.4 56.0M29.2 38.0 L50.0 38.0M29.2 38.0 L39.6 56.0M50.0 74.0 L39.6 56.0M50.0 74.0 L60.4 56.0M70.8 38.0 L60.4 56.0M70.8 38.0 L50.0 38.0" opacity=".8"/><path d="M50.0 26.0 L50.0 6.8"/><circle cx="50.0" cy="3.2" r="2.3"/><path d="M29.2 38.0 L12.6 28.4"/><circle cx="9.5" cy="26.6" r="2.3"/><path d="M29.2 62.0 L12.6 71.6"/><circle cx="9.5" cy="73.4" r="2.3"/><path d="M50.0 74.0 L50.0 93.2"/><circle cx="50.0" cy="96.8" r="2.3"/><path d="M70.8 62.0 L87.4 71.6"/><circle cx="90.5" cy="73.4" r="2.3"/><path d="M70.8 38.0 L87.4 28.4"/><circle cx="90.5" cy="26.6" r="2.3"/></symbol>
+      <symbol id="v-spiky" viewBox="0 0 100 100"><path d="M50.0 25.0 L28.3 37.5 L28.3 62.5 L50.0 75.0 L71.7 62.5 L71.7 37.5 Z"/><path d="M50.0 37.5 L39.2 56.2 L60.8 56.3 Z"/><path d="M50.0 25.0 L50.0 37.5M28.3 62.5 L39.2 56.2M71.7 62.5 L60.8 56.3M28.3 37.5 L50.0 37.5M28.3 37.5 L39.2 56.2M50.0 75.0 L39.2 56.2M50.0 75.0 L60.8 56.3M71.7 37.5 L60.8 56.3M71.7 37.5 L50.0 37.5" opacity=".8"/><path d="M50.0 25.0 L50.0 14.5"/><circle cx="50.0" cy="12.2" r="2.6"/><path d="M28.3 37.5 L19.3 32.2"/><circle cx="17.3" cy="31.1" r="2.6"/><path d="M28.3 62.5 L19.3 67.8"/><circle cx="17.3" cy="68.9" r="2.6"/><path d="M50.0 75.0 L50.0 85.5"/><circle cx="50.0" cy="87.8" r="2.6"/><path d="M71.7 62.5 L80.7 67.8"/><circle cx="82.7" cy="68.9" r="2.6"/><path d="M71.7 37.5 L80.7 32.2"/><circle cx="82.7" cy="31.1" r="2.6"/><path d="M39.2 31.2 L33.8 21.9"/><circle cx="32.8" cy="20.2" r="2.6"/><path d="M28.3 50.0 L17.5 50.0"/><circle cx="15.6" cy="50.0" r="2.6"/><path d="M39.2 68.8 L33.8 78.1"/><circle cx="32.8" cy="79.8" r="2.6"/><path d="M60.8 68.8 L66.2 78.1"/><circle cx="67.2" cy="79.8" r="2.6"/><path d="M71.7 50.0 L82.5 50.0"/><circle cx="84.4" cy="50.0" r="2.6"/><path d="M60.8 31.2 L66.2 21.9"/><circle cx="67.2" cy="20.2" r="2.6"/></symbol>
+    </defs>
+  </svg>
+  <header class="bar">
+    <div class="wrap">
+      <a class="name" href="#top">Curtis Hoffmann</a>
+      <nav aria-label="Sections"><a href="#projects">Projects</a><a href="#about">About</a><a href="#bookmarks">Bookmarks</a><a href="#contact">Contact</a></nav>
+      <button class="sound" id="sound" type="button" aria-pressed="false" aria-label="Sound off" title="Sound"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path class="w1" d="M15.5 8.5a5 5 0 0 1 0 7"/><path class="w2" d="M18.5 5.5a9 9 0 0 1 0 13"/></svg></button>
     </div>
+  </header>
+  <audio id="bgMusic" loop preload="none"><source src="symphony.mp3" type="audio/mpeg"></audio>
 
-    <div class="hero-foot">
-      <div class="row">
-        <a href="#projects" class="cv-button solid">Explore projects</a>
-        <a href="mailto:ch1620@georgetown.edu" class="cv-button">Contact</a>
-        <button id="audio-toggle" class="cv-button icon" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path class="wave" d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span class="lbl">Sound off</span></button>
+  <section class="hero" id="top" aria-label="Introduction">
+    <div class="wrap">
+      <div>
+        <p class="prefix">Tikkun Mada • תִּיקּוּן עוֹלָם</p>
+        <h1>Curtis Hoffmann</h1>
+        <p class="tag">weaving biology and culture</p>
+        <div class="btns"><a class="btn solid" href="#projects">Explore projects</a><a class="btn" href="#contact">Contact</a></div>
+        <p class="featured" id="featured"><!-- spotlight-fallback:start -->
+<span class="fl">Check out</span> <a href="https://curtishoffmann.com/outbreak-science-careers/">Outbreak Science Careers</a><span class="cta">See where a career in outbreak science can take you.</span>
+<!-- spotlight-fallback:end --></p>
       </div>
-      <a href="#projects" class="scroll-cue" aria-label="Scroll to projects"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16M5 13l7 7 7-7"/></svg></a>
+      <div class="sky"><svg class="field" viewBox="0 0 420 420" aria-label="Project constellation" role="img">
+        <g class="rings" fill="none" stroke="var(--line)" stroke-width="1"><circle cx="210" cy="210" r="112"/><circle cx="210" cy="210" r="150" stroke-dasharray="2 6"/><circle cx="210" cy="210" r="190" opacity=".6"/></g>
+        <!-- constellation:start -->
+        <g class="threads" fill="none" stroke="var(--gold)" stroke-width=".7" opacity=".55"><path d="M210.0 60.0 Q 210 210 266.0 113.0"/><path d="M266.0 113.0 Q 210 210 339.9 135.0"/><path d="M339.9 135.0 Q 210 210 322.0 210.0"/><path d="M322.0 210.0 Q 210 210 339.9 285.0"/><path d="M339.9 285.0 Q 210 210 266.0 307.0"/><path d="M266.0 307.0 Q 210 210 210.0 360.0"/><path d="M210.0 360.0 Q 210 210 154.0 307.0"/><path d="M154.0 307.0 Q 210 210 80.1 285.0"/><path d="M80.1 285.0 Q 210 210 98.0 210.0"/><path d="M98.0 210.0 Q 210 210 80.1 135.0"/><path d="M80.1 135.0 Q 210 210 154.0 113.0"/><path d="M154.0 113.0 Q 210 210 210.0 60.0"/><path d="M210.0 60.0 Q 210 210 266.0 307.0" opacity=".5"/><path d="M322.0 210.0 Q 210 210 80.1 285.0" opacity=".5"/><path d="M210.0 360.0 Q 210 210 154.0 113.0" opacity=".5"/><path d="M98.0 210.0 Q 210 210 339.9 135.0" opacity=".5"/></g>
+        <g class="phages" fill="none" stroke="var(--gold)" stroke-width="1" stroke-linejoin="round"><g class="phage main" data-x="210" data-y="196" data-k="1.0" transform="translate(210 196) scale(1.0) rotate(0)"><g class="nudge"><g class="body"><path class="head" d="M0.0 -17.0 L-14.7 -8.5 L-14.7 8.5 L-0.0 17.0 L14.7 8.5 L14.7 -8.5 Z"/><path d="M0.0 -8.5 L-7.4 4.3 L7.4 4.3 Z"/><path d="M0.0 -17.0 L0.0 -8.5M-14.7 8.5 L-7.4 4.3M14.7 8.5 L7.4 4.3M-14.7 -8.5 L0.0 -8.5M-14.7 -8.5 L-7.4 4.3M-0.0 17.0 L-7.4 4.3M-0.0 17.0 L7.4 4.3M14.7 -8.5 L7.4 4.3M14.7 -8.5 L0.0 -8.5" opacity=".8"/><path d="M-4 18H4V22H-4Z"/><path d="M-3.2 22H3.2V46H-3.2Z"/><path d="M-3.2 26.0H3.2M-3.2 30.0H3.2M-3.2 34.0H3.2M-3.2 38.0H3.2M-3.2 42.0H3.2" opacity=".7"/><path d="M-6 46H6L7.5 49H-7.5Z"/><path d="M-5 48 C -11 52, -13 56, -15 63M-3 49 C -7 55, -8 59, -9 65M-1 49 C -2 56, -3 60, -3 66M5 48 C 11 52, 13 56, 15 63M3 49 C 7 55, 8 59, 9 65M1 49 C 2 56, 3 60, 3 66" stroke-linecap="round"/></g></g></g><g class="phage cap c1" data-x="156" data-y="160" data-k="0.55" transform="translate(156 160) scale(0.55) rotate(12)"><g class="nudge"><g class="body"><path class="head" d="M0.0 -17.0 L-14.7 -8.5 L-14.7 8.5 L-0.0 17.0 L14.7 8.5 L14.7 -8.5 Z"/><path d="M0.0 -8.5 L-7.4 4.3 L7.4 4.3 Z"/><path d="M0.0 -17.0 L0.0 -8.5M-14.7 8.5 L-7.4 4.3M14.7 8.5 L7.4 4.3M-14.7 -8.5 L0.0 -8.5M-14.7 -8.5 L-7.4 4.3M-0.0 17.0 L-7.4 4.3M-0.0 17.0 L7.4 4.3M14.7 -8.5 L7.4 4.3M14.7 -8.5 L0.0 -8.5" opacity=".8"/></g></g></g><g class="phage cap c2" data-x="270" data-y="164" data-k="0.42" transform="translate(270 164) scale(0.42) rotate(-20)"><g class="nudge"><g class="body"><path class="head" d="M0.0 -17.0 L-14.7 -8.5 L-14.7 8.5 L-0.0 17.0 L14.7 8.5 L14.7 -8.5 Z"/><path d="M0.0 -8.5 L-7.4 4.3 L7.4 4.3 Z"/><path d="M0.0 -17.0 L0.0 -8.5M-14.7 8.5 L-7.4 4.3M14.7 8.5 L7.4 4.3M-14.7 -8.5 L0.0 -8.5M-14.7 -8.5 L-7.4 4.3M-0.0 17.0 L-7.4 4.3M-0.0 17.0 L7.4 4.3M14.7 -8.5 L7.4 4.3M14.7 -8.5 L0.0 -8.5" opacity=".8"/></g></g></g><g class="phage cap c3" data-x="252" data-y="268" data-k="0.48" transform="translate(252 268) scale(0.48) rotate(30)"><g class="nudge"><g class="body"><path class="head" d="M0.0 -17.0 L-14.7 -8.5 L-14.7 8.5 L-0.0 17.0 L14.7 8.5 L14.7 -8.5 Z"/><path d="M0.0 -8.5 L-7.4 4.3 L7.4 4.3 Z"/><path d="M0.0 -17.0 L0.0 -8.5M-14.7 8.5 L-7.4 4.3M14.7 8.5 L7.4 4.3M-14.7 -8.5 L0.0 -8.5M-14.7 -8.5 L-7.4 4.3M-0.0 17.0 L-7.4 4.3M-0.0 17.0 L7.4 4.3M14.7 -8.5 L7.4 4.3M14.7 -8.5 L0.0 -8.5" opacity=".8"/></g></g></g><g class="phage bac" data-x="160" data-y="262" data-k="0.85" transform="translate(160 262) scale(0.85) rotate(-28)"><g class="nudge"><g class="body"><rect x="-18.0" y="-6.5" width="36" height="13.0" rx="6.5"/><path d="M-11.5 -6.5 C -9.9 -9.1, -13.1 -11.1, -11.5 -13.0M-6.1 -6.5 C -4.5 -9.1, -7.7 -11.1, -6.1 -13.0M-0.6 -6.5 C 1.0 -9.1, -2.2 -11.1, -0.6 -13.0M4.8 -6.5 C 6.4 -9.1, 3.2 -11.1, 4.8 -13.0M10.2 -6.5 C 11.8 -9.1, 8.6 -11.1, 10.2 -13.0M15.4 -5.2 C 18.2 -6.4, 16.8 -9.8, 19.2 -10.5M18.0 -0.6 C 20.7 0.7, 22.3 -2.7, 24.4 -1.3M16.3 4.4 C 17.2 7.3, 20.8 6.2, 21.1 8.7M11.5 6.5 C 9.9 9.1, 13.1 11.1, 11.5 13.0M6.1 6.5 C 4.5 9.1, 7.7 11.1, 6.1 13.0M0.6 6.5 C -1.0 9.1, 2.2 11.1, 0.6 13.0M-4.8 6.5 C -6.4 9.1, -3.2 11.1, -4.8 13.0M-10.2 6.5 C -11.8 9.1, -8.6 11.1, -10.2 13.0M-15.4 5.2 C -18.2 6.4, -16.8 9.8, -19.2 10.5M-18.0 0.6 C -20.7 -0.7, -22.3 2.7, -24.4 1.3M-16.3 -4.4 C -17.2 -7.3, -20.8 -6.2, -21.1 -8.7" stroke-linecap="round" opacity=".8"/></g></g></g></g>
+        <g class="nodes" fill="none" stroke="var(--gold)" stroke-width=".9"><a href="https://curtishoffmann.com/exoplanetatlas/" aria-label="Exoplanet Atlas"><g class="node" transform="translate(210.0 60.0)"><circle class="halo" r="25"/><g class="bloom"><circle cx="6.80" cy="0.00" r="9.44"/><circle cx="3.40" cy="5.89" r="9.44"/><circle cx="-3.40" cy="5.89" r="9.44"/><circle cx="-6.80" cy="0.00" r="9.44"/><circle cx="-3.40" cy="-5.89" r="9.44"/><circle cx="3.40" cy="-5.89" r="9.44"/></g><circle r="1.6" class="core"/><text class="lbl" y="30" text-anchor="middle"><tspan x="0" dy="0">EXOPLANET</tspan><tspan x="0" dy="11">ATLAS</tspan></text></g></a><a href="https://curtishoffmann.com/humanevolution/" aria-label="Twenty-Four Cousins"><g class="node" transform="translate(266.0 113.0)"><circle class="halo" r="21"/><g class="bloom"><circle cx="5.20" cy="0.00" r="7.22"/><circle cx="2.60" cy="4.50" r="7.22"/><circle cx="-2.60" cy="4.50" r="7.22"/><circle cx="-5.20" cy="0.00" r="7.22"/><circle cx="-2.60" cy="-4.50" r="7.22"/><circle cx="2.60" cy="-4.50" r="7.22"/></g><circle r="1.6" class="core"/><text class="lbl" y="26" text-anchor="middle"><tspan x="0" dy="0">TWENTY-FOUR</tspan><tspan x="0" dy="11">COUSINS</tspan></text></g></a><a href="https://curtishoffmann.com/biodefense/" aria-label="Biodefense Budget"><g class="node" transform="translate(339.9 135.0)"><circle class="halo" r="25"/><g class="bloom"><circle cx="6.80" cy="0.00" r="9.44"/><circle cx="3.40" cy="5.89" r="9.44"/><circle cx="-3.40" cy="5.89" r="9.44"/><circle cx="-6.80" cy="0.00" r="9.44"/><circle cx="-3.40" cy="-5.89" r="9.44"/><circle cx="3.40" cy="-5.89" r="9.44"/></g><circle r="1.6" class="core"/><text class="lbl" y="30" text-anchor="middle"><tspan x="0" dy="0">BIODEFENSE</tspan><tspan x="0" dy="11">BUDGET</tspan></text></g></a><a href="https://curtishoffmann.com/rnaviromeatlas/" aria-label="RNA Virome Atlas"><g class="node" transform="translate(322.0 210.0)"><circle class="halo" r="21"/><g class="bloom"><circle cx="5.20" cy="0.00" r="7.22"/><circle cx="2.60" cy="4.50" r="7.22"/><circle cx="-2.60" cy="4.50" r="7.22"/><circle cx="-5.20" cy="0.00" r="7.22"/><circle cx="-2.60" cy="-4.50" r="7.22"/><circle cx="2.60" cy="-4.50" r="7.22"/></g><circle r="1.6" class="core"/><text class="lbl" y="26" text-anchor="middle"><tspan x="0" dy="0">RNA VIROME</tspan><tspan x="0" dy="11">ATLAS</tspan></text></g></a><a href="https://curtishoffmann.com/odyssey/" aria-label="Odyssey Character Map"><g class="node" transform="translate(339.9 285.0)"><circle class="halo" r="25"/><g class="bloom"><circle cx="6.80" cy="0.00" r="9.44"/><circle cx="3.40" cy="5.89" r="9.44"/><circle cx="-3.40" cy="5.89" r="9.44"/><circle cx="-6.80" cy="0.00" r="9.44"/><circle cx="-3.40" cy="-5.89" r="9.44"/><circle cx="3.40" cy="-5.89" r="9.44"/></g><circle r="1.6" class="core"/><text class="lbl" y="30" text-anchor="middle"><tspan x="0" dy="0">ODYSSEY</tspan><tspan x="0" dy="11">CHARACTER MAP</tspan></text></g></a><a href="https://curtishoffmann.com/catalogue_of_life/" aria-label="Catalogue of Life Explorer"><g class="node" transform="translate(266.0 307.0)"><circle class="halo" r="21"/><g class="bloom"><circle cx="5.20" cy="0.00" r="7.22"/><circle cx="2.60" cy="4.50" r="7.22"/><circle cx="-2.60" cy="4.50" r="7.22"/><circle cx="-5.20" cy="0.00" r="7.22"/><circle cx="-2.60" cy="-4.50" r="7.22"/><circle cx="2.60" cy="-4.50" r="7.22"/></g><circle r="1.6" class="core"/><text class="lbl" y="26" text-anchor="middle"><tspan x="0" dy="0">CATALOGUE OF</tspan><tspan x="0" dy="11">LIFE EXPLORER</tspan></text></g></a><a href="https://curtishoffmann.com/outbreak-science-careers/" aria-label="Outbreak Science Careers"><g class="node" transform="translate(210.0 360.0)"><circle class="halo" r="25"/><g class="bloom"><circle cx="6.80" cy="0.00" r="9.44"/><circle cx="3.40" cy="5.89" r="9.44"/><circle cx="-3.40" cy="5.89" r="9.44"/><circle cx="-6.80" cy="0.00" r="9.44"/><circle cx="-3.40" cy="-5.89" r="9.44"/><circle cx="3.40" cy="-5.89" r="9.44"/></g><circle r="1.6" class="core"/><text class="lbl" y="30" text-anchor="middle"><tspan x="0" dy="0">OUTBREAK</tspan><tspan x="0" dy="11">SCIENCE CAREERS</tspan></text></g></a><a href="https://curtishoffmann.com/nsfreg/" aria-label="NSF Restricted Entities Guide"><g class="node" transform="translate(154.0 307.0)"><circle class="halo" r="21"/><g class="bloom"><circle cx="5.20" cy="0.00" r="7.22"/><circle cx="2.60" cy="4.50" r="7.22"/><circle cx="-2.60" cy="4.50" r="7.22"/><circle cx="-5.20" cy="0.00" r="7.22"/><circle cx="-2.60" cy="-4.50" r="7.22"/><circle cx="2.60" cy="-4.50" r="7.22"/></g><circle r="1.6" class="core"/><text class="lbl" y="26" text-anchor="middle"><tspan x="0" dy="0">NSF RESTRICTED</tspan><tspan x="0" dy="11">ENTITIES GUIDE</tspan></text></g></a><a href="https://curtishoffmann.com/scripture/" aria-label="Scripture Atlas"><g class="node" transform="translate(80.1 285.0)"><circle class="halo" r="25"/><g class="bloom"><circle cx="6.80" cy="0.00" r="9.44"/><circle cx="3.40" cy="5.89" r="9.44"/><circle cx="-3.40" cy="5.89" r="9.44"/><circle cx="-6.80" cy="0.00" r="9.44"/><circle cx="-3.40" cy="-5.89" r="9.44"/><circle cx="3.40" cy="-5.89" r="9.44"/></g><circle r="1.6" class="core"/><text class="lbl" y="30" text-anchor="middle"><tspan x="0" dy="0">SCRIPTURE</tspan><tspan x="0" dy="11">ATLAS</tspan></text></g></a><a href="https://curtishoffmann.com/saphan/" aria-label="Saphan"><g class="node" transform="translate(98.0 210.0)"><circle class="halo" r="21"/><g class="bloom"><circle cx="5.20" cy="0.00" r="7.22"/><circle cx="2.60" cy="4.50" r="7.22"/><circle cx="-2.60" cy="4.50" r="7.22"/><circle cx="-5.20" cy="0.00" r="7.22"/><circle cx="-2.60" cy="-4.50" r="7.22"/><circle cx="2.60" cy="-4.50" r="7.22"/></g><circle r="1.6" class="core"/><text class="lbl" y="26" text-anchor="middle"><tspan x="0" dy="0">SAPHAN</tspan></text></g></a><a href="https://curtishoffmann.com/whybox/" aria-label="whybox"><g class="node" transform="translate(80.1 135.0)"><circle class="halo" r="25"/><g class="bloom"><circle cx="6.80" cy="0.00" r="9.44"/><circle cx="3.40" cy="5.89" r="9.44"/><circle cx="-3.40" cy="5.89" r="9.44"/><circle cx="-6.80" cy="0.00" r="9.44"/><circle cx="-3.40" cy="-5.89" r="9.44"/><circle cx="3.40" cy="-5.89" r="9.44"/></g><circle r="1.6" class="core"/><text class="lbl" y="30" text-anchor="middle"><tspan x="0" dy="0">WHYBOX</tspan></text></g></a><a href="https://github.com/phagehunter/ember" aria-label="Ember"><g class="node" transform="translate(154.0 113.0)"><circle class="halo" r="21"/><g class="bloom"><circle cx="5.20" cy="0.00" r="7.22"/><circle cx="2.60" cy="4.50" r="7.22"/><circle cx="-2.60" cy="4.50" r="7.22"/><circle cx="-5.20" cy="0.00" r="7.22"/><circle cx="-2.60" cy="-4.50" r="7.22"/><circle cx="2.60" cy="-4.50" r="7.22"/></g><circle r="1.6" class="core"/><text class="lbl" y="26" text-anchor="middle"><tspan x="0" dy="0">EMBER</tspan></text></g></a></g>
+<!-- constellation:end -->
+      </svg></div>
     </div>
-
   </section>
 
   <main>
-    <section class="block wrap" id="projects" aria-labelledby="projects-h">
-      <h2 class="eyebrow" id="projects-h">Projects</h2>
-      <div class="grid">
-        <a class="project" href="https://curtishoffmann.com/exoplanetatlas/">
-          <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="24" cy="24" r="9"/><ellipse cx="24" cy="24" rx="20" ry="7" transform="rotate(-20 24 24)"/><circle cx="40" cy="12" r="1.5" fill="currentColor"/></svg>
-          <h3>Exoplanet Atlas</h3>
+    <section class="block" id="projects" aria-labelledby="projects-h">
+      <div class="drift" aria-hidden="true"><svg class="microbe" style="left:86%;top:3%;width:130px;--dur:10s;--delay:-1s;--rot:8deg" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g class="nudge"><g class="body"><use href="#v-spiky"/></g></g></svg><svg class="microbe" style="left:1%;top:50%;width:110px;--dur:12s;--delay:-4s;--rot:-14deg" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g class="nudge"><g class="body"><use href="#v-ico5"/></g></g></svg><svg class="microbe" style="left:57%;top:89%;width:84px;--dur:9s;--delay:-7s;--rot:15deg" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g class="nudge"><g class="body"><use href="#v-adeno"/></g></g></svg><svg class="microbe" style="left:30%;top:2%;width:58px;--dur:11s;--delay:-3s;--rot:22deg" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g class="nudge"><g class="body"><use href="#v-ico2"/></g></g></svg></div>
+      <div class="wrap">
+        <div class="sec-head"><h2 id="projects-h">Projects</h2></div>
+        <div class="grid">
+<!-- projects:start -->
+        <a class="card" href="https://curtishoffmann.com/exoplanetatlas/">
+          <div class="head"><svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="24" cy="24" r="9"/><ellipse cx="24" cy="24" rx="20" ry="7" transform="rotate(-20 24 24)"/><circle cx="40" cy="12" r="1.5" fill="currentColor"/></svg><h3>Exoplanet Atlas</h3></div>
           <p>Six thousand worlds beyond the Solar System, one sky. Browse 6,278 confirmed planets by size, orbit and host star.</p>
-          <span class="go">Open atlas →</span>
+          <span class="go">Open atlas<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
-        <a class="project" href="https://curtishoffmann.com/humanevolution/">
-          <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="24" cy="20" r="11"/><circle cx="24" cy="20" r="3.5" fill="currentColor"/><rect x="20" y="33" width="8" height="9" rx="2.5"/></svg>
-          <h3>Twenty-Four Cousins</h3>
+        <a class="card" href="https://curtishoffmann.com/humanevolution/">
+          <div class="head"><svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="24" cy="20" r="11"/><circle cx="24" cy="20" r="3.5" fill="currentColor"/><rect x="20" y="33" width="8" height="9" rx="2.5"/></svg><h3>Twenty-Four Cousins</h3></div>
           <p>A field guide to the human family: 24 hominin species across seven million years, with a time slider, brain-size chart and sourced profiles.</p>
-          <span class="go">Open guide →</span>
+          <span class="go">Open guide<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
-        <a class="project" href="https://curtishoffmann.com/biodefense/">
-          <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M24 5l15 6v11c0 9-6 16-15 21C15 38 9 31 9 22V11z"/><path d="M17 24h14M24 17v14"/></svg>
-          <h3>Biodefense Budget</h3>
+        <a class="card" href="https://curtishoffmann.com/biodefense/">
+          <div class="head"><svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M24 5l15 6v11c0 9-6 16-15 21C15 38 9 31 9 22V11z"/><path d="M17 24h14M24 17v14"/></svg><h3>Biodefense Budget</h3></div>
           <p>Every federal biodefense budget line from FY2019 to the FY2026 request, by department, category, and program, with year-over-year change.</p>
-          <span class="go">Open database →</span>
+          <span class="go">Open database<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
-        <a class="project" href="https://curtishoffmann.com/rnaviromeatlas/">
-          <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M14 6c0 12 20 12 20 24s-20 12-20 24M34 6c0 12-20 12-20 24s20 12 20 24"/><path d="M17 12h14M17 36h14M20 24h8"/></svg>
-          <h3>RNA Virome Atlas</h3>
+        <a class="card" href="https://curtishoffmann.com/rnaviromeatlas/">
+          <div class="head"><svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M14 6c0 12 20 12 20 24s-20 12-20 24M34 6c0 12-20 12-20 24s20 12 20 24"/><path d="M17 12h14M17 36h14M20 24h8"/></svg><h3>RNA Virome Atlas</h3></div>
           <p>A cosmos of RNA viruses recovered from metatranscriptomes: where they were found, what they infect, how they relate.</p>
-          <span class="go">Open atlas →</span>
+          <span class="go">Open atlas<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
-        <a class="project" href="https://curtishoffmann.com/odyssey/">
-          <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M6 34c6-4 12-4 18 0s12 4 18 0"/><path d="M12 30l4-16h16l4 16"/><path d="M24 14V8"/></svg>
-          <h3>Odyssey Character Map</h3>
-          <p>A visual companion to Homer's epic: every character, where they appear, and who they are bound to.</p>
-          <span class="go">Open map →</span>
+        <a class="card" href="https://curtishoffmann.com/odyssey/">
+          <div class="head"><svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M6 34c6-4 12-4 18 0s12 4 18 0"/><path d="M12 30l4-16h16l4 16"/><path d="M24 14V8"/></svg><h3>Odyssey Character Map</h3></div>
+          <p>A visual companion to Homer&#x27;s epic: every character, where they appear, and who they are bound to.</p>
+          <span class="go">Open map<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
-        <a class="project" href="https://curtishoffmann.com/catalogue_of_life/">
-          <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M24 42V22M24 22L10 10M24 22l14-12M10 10L6 4M10 10l-2 8M38 10l4-6M38 10l2 8"/></svg>
-          <h3>Catalogue of Life Explorer</h3>
+        <a class="card" href="https://curtishoffmann.com/catalogue_of_life/">
+          <div class="head"><svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M24 42V22M24 22L10 10M24 22l14-12M10 10L6 4M10 10l-2 8M38 10l4-6M38 10l2 8"/></svg><h3>Catalogue of Life Explorer</h3></div>
           <p>Browse the tree of life, search 7.8 million names, and compare how closely any two species are related.</p>
-          <span class="go">Open explorer →</span>
+          <span class="go">Open explorer<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
-        <a class="project" href="https://curtishoffmann.com/outbreak-science-careers/">
-          <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M8 40c6-10 12-14 16-14s10 4 16 14"/><circle cx="24" cy="16" r="7"/><path d="M4 44h40"/></svg>
-          <h3>Outbreak Science Careers</h3>
+        <a class="card" href="https://curtishoffmann.com/outbreak-science-careers/">
+          <div class="head"><svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M8 40c6-10 12-14 16-14s10 4 16 14"/><circle cx="24" cy="16" r="7"/><path d="M4 44h40"/></svg><h3>Outbreak Science Careers</h3></div>
           <p>A guide to careers in outbreak science and biosecurity: ten career tracks with pay and outlook data, fellowships, degree programs, free training, and funding.</p>
-          <span class="go">Open guide →</span>
+          <span class="go">Open guide<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
-        <a class="project" href="https://curtishoffmann.com/nsfreg/">
-          <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="8" y="6" width="32" height="36" rx="3"/><path d="M14 14h20M14 22h20M14 30h12"/></svg>
-          <h3>NSF Restricted Entities Guide</h3>
-          <p>A searchable guide to the thirteen U.S. restricted-party lists named in NSF's July 2026 Dear Colleague Letter, with more than 5,900 entries.</p>
-          <span class="go">Open guide →</span>
+        <a class="card" href="https://curtishoffmann.com/nsfreg/">
+          <div class="head"><svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="8" y="6" width="32" height="36" rx="3"/><path d="M14 14h20M14 22h20M14 30h12"/></svg><h3>NSF Restricted Entities Guide</h3></div>
+          <p>A searchable guide to the thirteen U.S. restricted-party lists named in NSF&#x27;s July 2026 Dear Colleague Letter, with more than 5,900 entries.</p>
+          <span class="go">Open guide<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
-        <a class="project" href="https://curtishoffmann.com/scripture/">
-          <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M8 8h14a4 4 0 0 1 4 4v28a3 3 0 0 0-3-3H8z"/><path d="M40 8H26a4 4 0 0 0-4 4v28a3 3 0 0 1 3-3h15z"/></svg>
-          <h3>Scripture Atlas</h3>
+        <a class="card" href="https://curtishoffmann.com/scripture/">
+          <div class="head"><svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M8 8h14a4 4 0 0 1 4 4v28a3 3 0 0 0-3-3H8z"/><path d="M40 8H26a4 4 0 0 0-4 4v28a3 3 0 0 1 3-3h15z"/></svg><h3>Scripture Atlas</h3></div>
           <p>A visual literary analysis of the King James Bible, the Book of Mormon, and the Pearl of Great Price: 192 figures in a character network, with chapter guides.</p>
-          <span class="go">Open atlas →</span>
+          <span class="go">Open atlas<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
-        <a class="project" href="https://curtishoffmann.com/saphan/">
-          <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 30c8-10 32-10 40 0"/><path d="M4 30v8M44 30v8M14 24v14M24 22v16M34 24v14"/></svg>
-          <h3>Saphan</h3>
+        <a class="card" href="https://curtishoffmann.com/saphan/">
+          <div class="head"><svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 30c8-10 32-10 40 0"/><path d="M4 30v8M44 30v8M14 24v14M24 22v16M34 24v14"/></svg><h3>Saphan</h3></div>
           <p>An offline-first phrasebook of reviewed health phrases in Thai, Burmese, Mon, and English for village health volunteers in Kanchanaburi, Thailand. In development.</p>
-          <span class="go">Open app →</span>
+          <span class="go">Open app<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
-        <a class="project" href="https://curtishoffmann.com/whybox/">
-          <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="8" y="14" width="32" height="26" rx="3"/><path d="M8 22h32M20 14V8h8v6"/><circle cx="24" cy="31" r="3"/></svg>
-          <h3>whybox</h3>
+        <a class="card" href="https://curtishoffmann.com/whybox/">
+          <div class="head"><svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="8" y="14" width="32" height="26" rx="3"/><path d="M8 22h32M20 14V8h8v6"/><circle cx="24" cy="31" r="3"/></svg><h3>whybox</h3></div>
           <p>A science sandbox for reasoning from the outputs you can see to the mechanisms you cannot, built as a working skeleton with one complete example.</p>
-          <span class="go">Open sandbox →</span>
+          <span class="go">Open sandbox<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
-        <a class="project" href="https://github.com/phagehunter/ember">
-          <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M24 6c2 8 10 10 10 20a10 10 0 0 1-20 0c0-5 3-7 4-10 1 3 3 4 4 4-1-5 0-10 2-14z"/></svg>
-          <h3>Ember</h3>
+        <a class="card" href="https://github.com/phagehunter/ember">
+          <div class="head"><svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M24 6c2 8 10 10 10 20a10 10 0 0 1-20 0c0-5 3-7 4-10 1 3 3 4 4 4-1-5 0-10 2-14z"/></svg><h3>Ember</h3></div>
           <p>Free spaced-repetition flashcards for Mac and Windows using the FSRS-6 scheduler: no account, no subscription, one local file. Early release.</p>
-          <span class="go">Download on GitHub →</span>
+          <span class="go">Download on GitHub<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
+<!-- projects:end -->
+        </div>
       </div>
     </section>
 
-    <section class="block wrap" id="photography" aria-labelledby="photography-h" hidden>
-      <h2 class="eyebrow" id="photography-h">Photography</h2>
-      <div class="photos-head">
-        <div class="strip-nav" hidden>
-          <button class="strip-btn" type="button" data-dir="-1" aria-label="Previous photographs"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
-          <button class="strip-btn" type="button" data-dir="1" aria-label="Next photographs"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+    <svg class="trace" viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 20.0 L0 19.7 L18 20.1 L36 19.8 L54 20.1 L72 20.2 L90 19.5 L108 19.4 L126 20.4 L144 19.7 L162 19.7 L180 20.6 L198 20.0 L216 20.4 L234 20.0 L252 20.2 L270 19.6 L288 20.2 L306 20.4 L324 20.0 L342 20.3 L360 20.2 L378 19.5 L396 20.3 L414 20.1 L432 19.8 L450 18.6 L455 19.9 L461 21.3 L466 20.7 L471 19.6 L477 19.8 L481 21.6 L485 17.9 L490 18.6 L496 19.6 L502 22.3 L507 20.1 L512 20.6 L518 20.7 L524 17.4 L529 22.0 L533 24.1 L539 22.2 L543 22.7 L548 26.9 L554 21.1 L560 22.8 L566 26.5 L572 15.0 L576 10.1 L582 32.1 L586 15.9 L590 17.5 L594 6.2 L599 28.2 L603 6.4 L609 27.3 L614 25.7 L619 21.2 L624 20.1 L628 15.9 L632 12.0 L638 11.3 L642 28.3 L647 21.8 L651 22.9 L656 17.4 L660 25.2 L665 18.5 L671 18.8 L677 21.7 L681 21.1 L687 18.2 L693 21.6 L697 22.8 L702 22.8 L708 19.0 L713 17.7 L718 22.1 L723 18.1 L729 20.3 L733 18.5 L739 19.5 L744 20.5 L749 20.3 L754 20.3 L772 19.4 L790 19.5 L808 20.2 L826 20.6 L844 19.7 L862 19.9 L880 20.1 L898 19.8 L916 19.8 L934 19.8 L952 19.8 L970 20.1 L988 19.8 L1006 19.9 L1024 20.3 L1042 19.4 L1060 20.1 L1078 20.3 L1096 19.8 L1114 19.7 L1132 20.4 L1150 19.7 L1168 19.6 L1186 19.9 L1200 20.0"/><path class="burst" d="M432 19.8 L450 18.6 L455 19.9 L461 21.3 L466 20.7 L471 19.6 L477 19.8 L481 21.6 L485 17.9 L490 18.6 L496 19.6 L502 22.3 L507 20.1 L512 20.6 L518 20.7 L524 17.4 L529 22.0 L533 24.1 L539 22.2 L543 22.7 L548 26.9 L554 21.1 L560 22.8 L566 26.5 L572 15.0 L576 10.1 L582 32.1 L586 15.9 L590 17.5 L594 6.2 L599 28.2 L603 6.4 L609 27.3 L614 25.7 L619 21.2 L624 20.1 L628 15.9 L632 12.0 L638 11.3 L642 28.3 L647 21.8 L651 22.9 L656 17.4 L660 25.2 L665 18.5 L671 18.8 L677 21.7 L681 21.1 L687 18.2 L693 21.6 L697 22.8 L702 22.8 L708 19.0 L713 17.7 L718 22.1 L723 18.1 L729 20.3 L733 18.5 L739 19.5 L744 20.5 L749 20.3 L754 20.3"/></svg>
+    <section class="block" id="about" aria-labelledby="about-h">
+      <div class="drift" aria-hidden="true"><svg class="microbe" style="left:90%;top:58%;width:116px;--dur:11s;--delay:-3s;--rot:10deg" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g class="nudge"><g class="body"><use href="#v-ico3"/></g></g></svg><svg class="microbe" style="left:40%;top:6%;width:64px;--dur:10s;--delay:-6s;--rot:30deg" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g class="nudge"><g class="body"><use href="#v-ico5"/></g></g></svg></div>
+      <div class="wrap">
+        <div class="sec-head"><h2 id="about-h">About</h2></div>
+        <div class="about">
+          <div class="text">
+            <svg class="seismic" viewBox="0 0 400 400" aria-hidden="true" focusable="false"><g transform="translate(200 200)"><circle r="18"/><circle r="44"/><circle r="76"/><circle r="114"/><circle r="156"/><circle r="198" opacity=".6"/></g></svg>
+            <p class="big">Biology, <em>culture</em>, and the threads between them.</p>
+            <p>Pathogens have a knack for disrupting society. It's our job to understand them. The deeper we look, the more we learn about ourselves: our cultures, our fears, our shared history.</p>
+            <p><strong>Curtis Hoffmann</strong> is a researcher working at the intersection of biology and anthropology. He studies how microbes move through communities and cultures, and designs live outbreak simulations that help people experience how epidemics unfold.</p>
+            <div class="rows cv" id="cv" aria-label="Fellowships, education, interests and skills">
+              <p class="cv-h"><span class="typed">Fellowships</span></p>
+              <ul>
+                <li class="dated"><span class="role typed">Fulbright Grantee, Thailand</span><span class="when typed">2026–27</span></li>
+                <li class="dated"><span class="role typed">Schull Scholar, USA</span><span class="when typed">2026–27</span></li>
+                <li class="dated"><span class="role typed">Boren Scholar, Thailand</span><span class="when typed">2023</span></li>
+              </ul>
+              <p class="cv-h"><span class="typed">Education</span></p>
+              <ul>
+                <li><span class="role typed">M.S., Biohazardous Threat Agents and Emerging Infectious Diseases</span><span class="org typed">Georgetown University</span></li>
+                <li><span class="role typed">B.S., Microbiology, College of Life Sciences</span><span class="org typed">Brigham Young University</span></li>
+              </ul>
+              <p class="cv-h"><span class="typed">Interests</span></p>
+              <p class="line"><span class="typed">Biosecurity and biodefense • One Health • Genomic surveillance • Outbreak simulations • Bioethics • Medical anthropology</span></p>
+              <p class="cv-h"><span class="typed">Skills</span></p>
+              <p class="line"><span class="typed">Thai language • Audio engineering and music production • Videography and video editing</span></p>
+            </div>
+          </div>
+          <div class="side">
+            <ul class="links" aria-label="Profiles and contact"><li><a href="https://scholar.google.com/citations?user=EOEi56EAAAAJ&amp;hl=en"><span class="k">Publications</span><span class="v">Google Scholar</span></a></li><li><a href="https://www.linkedin.com/in/phagehunter"><span class="k">Profile</span><span class="v">LinkedIn</span></a></li><li><a href="https://github.com/phagehunter"><span class="k">Code</span><span class="v">GitHub</span></a></li><li><a href="#contact"><span class="k">Contact</span><span class="v">Send a message</span></a></li></ul>
+            <div class="rows work" aria-label="Current work">
+              <p class="cv-h">Current work</p>
+              <ul>
+                <li><span class="role">Biosecurity Education Lead</span><a class="org" href="https://operationoutbreak.org" rel="noopener">Operation Outbreak, Inc.</a></li>
+                <li><span class="role">Visiting Scientist, Thai Red Cross Emerging Infectious Diseases Clinical Center</span><a class="org" href="https://eidcc.redcross.or.th/" rel="noopener">Thai Red Cross, King Chulalongkorn Memorial Hospital</a></li>
+                <li><span class="role">Associate, Department of Organismic and Evolutionary Biology</span><a class="org" href="http://sabetilab.org/" rel="noopener">Harvard University, with the Sabeti Lab</a></li>
+              </ul>
+            </div>
+            <div class="rows news" aria-label="In the news">
+              <p class="cv-h">In the news</p>
+              <ul>
+                <li><a href="https://time.com/7328701/pandemic-preparedness-operation-outbreak-game/" rel="noopener"><span class="role">We Aren’t Ready for the Next Pandemic. This Game Proves It.</span><span class="org">TIME, November 2025</span></a></li>
+                <li><a href="https://disarmament.unoda.org/en/updates/participants-engage-experts-during-official-study-visit-2026-youth-biosecurity-programme" rel="noopener"><span class="role">Participants engage with experts during the official study visit of the 2026 Youth for Biosecurity Programme</span><span class="org">United Nations Office for Disarmament Affairs, September 2026</span></a></li>
+                <li><a href="https://biomedicalprograms.georgetown.edu/news/research-breaks-out-operation-outbreak-simulation-opens-new-paths-for-georgetown-students/" rel="noopener"><span class="role">Research “Breaks Out”: Operation Outbreak Simulation Opens New Paths for Georgetown Students</span><span class="org">Georgetown University, April 2026</span></a></li>
+                <li><a href="https://www.broadinstitute.org/news/deployment-outbreak-simulating-app-college-campuses-reveals-hidden-transmission-pathways" rel="noopener"><span class="role">Deployment of outbreak-simulating app on college campuses reveals hidden transmission pathways</span><span class="org">Broad Institute, August 2022</span></a></li>
+                <li><a href="https://eu.usatoday.com/story/news/education/2021/05/23/covid-pandemic-lesson-school-harvard/5146047001/" rel="noopener"><span class="role">A school project began as a pandemic lesson. Harvard got interested, then COVID-19 hit.</span><span class="org">USA TODAY, May 2021</span></a></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="strip" tabindex="0" aria-label="Photography, scroll sideways" role="list"></div>
-      <p class="photos-note"></p>
     </section>
 
-    <dialog class="lightbox" id="lightbox" aria-label="Photograph">
-      <div class="lb-bar"><span class="photos-count" id="lb-count"></span><button class="lb-btn" type="button" data-close>Close</button></div>
-      <div class="lb-stage"><img id="lb-img" alt="" draggable="false"></div>
-      <div class="lb-foot"><button class="lb-btn" type="button" data-step="-1" aria-label="Previous photograph">Prev</button><p id="lb-cap"></p><button class="lb-btn" type="button" data-step="1" aria-label="Next photograph">Next</button></div>
-    </dialog>
-
-    <section class="block wrap" id="about" aria-labelledby="about-h">
-      <h2 class="eyebrow" id="about-h">About</h2>
-      <div class="about">
-        <div>
-          <p class="lede">Biology, <em>culture</em>, and the threads between them.</p>
-          <p>Pathogens have a knack for disrupting society. It's our job to understand them. The deeper we look, the more we learn about ourselves: our cultures, our fears, our shared history.</p>
-          <p><strong>Curtis Hoffmann</strong> is a researcher working at the intersection of biology and anthropology. He studies how microbes move through communities and cultures, and he designs live outbreak simulations that help people experience how epidemics unfold.</p>
-        </div>
-        <ul class="links" aria-label="Profiles and contact">
-          <li><a href="https://scholar.google.com/citations?user=EOEi56EAAAAJ&amp;hl=en"><span class="k">Publications</span><span class="v">Google Scholar</span></a></li>
-          <li><a href="https://www.linkedin.com/in/phagehunter"><span class="k">Profile</span><span class="v">LinkedIn</span></a></li>
-          <li><a href="https://github.com/phagehunter"><span class="k">Code</span><span class="v">GitHub</span></a></li>
-          <li><a href="mailto:ch1620@georgetown.edu"><span class="k">Email</span><span class="v">ch1620@georgetown.edu</span></a></li>
-        </ul>
+    <svg class="trace" viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 20.0 L0 19.9 L18 20.1 L36 20.5 L54 20.0 L72 20.0 L90 20.1 L108 19.6 L126 20.0 L144 20.2 L162 20.4 L180 19.5 L198 19.8 L216 19.5 L234 20.4 L252 20.2 L270 19.5 L288 20.6 L306 20.6 L324 20.2 L342 20.1 L360 19.6 L378 19.4 L396 20.0 L414 19.5 L432 19.6 L450 19.2 L454 20.8 L459 19.8 L463 20.1 L469 19.3 L473 20.6 L478 20.6 L483 22.2 L487 21.0 L492 21.3 L498 18.8 L502 20.4 L506 19.3 L511 19.1 L515 22.9 L519 17.4 L523 19.7 L529 18.9 L533 20.8 L537 23.5 L542 17.8 L547 17.5 L552 24.1 L556 13.8 L562 12.6 L566 19.3 L571 13.2 L577 12.8 L583 12.3 L589 27.3 L594 24.1 L598 16.8 L602 4.9 L608 14.5 L612 12.3 L617 32.4 L623 23.3 L627 10.0 L631 14.1 L636 10.6 L642 17.0 L647 18.2 L651 13.8 L657 21.9 L661 21.3 L666 21.4 L670 25.0 L675 23.3 L679 23.4 L683 21.1 L688 23.2 L694 18.3 L698 17.8 L704 22.5 L708 21.0 L713 21.8 L719 18.2 L723 18.5 L727 20.0 L732 19.1 L738 19.7 L743 21.0 L749 20.0 L755 19.6 L773 20.3 L791 19.5 L809 19.7 L827 20.1 L845 20.4 L863 20.1 L881 19.7 L899 20.5 L917 19.6 L935 19.4 L953 19.7 L971 19.9 L989 19.5 L1007 19.6 L1025 19.8 L1043 20.1 L1061 19.6 L1079 19.8 L1097 20.5 L1115 20.6 L1133 20.2 L1151 20.2 L1169 20.1 L1187 19.6 L1200 20.0"/><path class="burst" d="M432 19.6 L450 19.2 L454 20.8 L459 19.8 L463 20.1 L469 19.3 L473 20.6 L478 20.6 L483 22.2 L487 21.0 L492 21.3 L498 18.8 L502 20.4 L506 19.3 L511 19.1 L515 22.9 L519 17.4 L523 19.7 L529 18.9 L533 20.8 L537 23.5 L542 17.8 L547 17.5 L552 24.1 L556 13.8 L562 12.6 L566 19.3 L571 13.2 L577 12.8 L583 12.3 L589 27.3 L594 24.1 L598 16.8 L602 4.9 L608 14.5 L612 12.3 L617 32.4 L623 23.3 L627 10.0 L631 14.1 L636 10.6 L642 17.0 L647 18.2 L651 13.8 L657 21.9 L661 21.3 L666 21.4 L670 25.0 L675 23.3 L679 23.4 L683 21.1 L688 23.2 L694 18.3 L698 17.8 L704 22.5 L708 21.0 L713 21.8 L719 18.2 L723 18.5 L727 20.0 L732 19.1 L738 19.7 L743 21.0 L749 20.0 L755 19.6"/></svg>
+    <section class="block" id="contact" aria-labelledby="contact-h">
+      <div class="wrap">
+        <div class="sec-head"><h2 id="contact-h">Contact</h2></div>
+        <form class="contact" action="https://api.staticforms.dev/submit" method="POST">
+          <input type="hidden" name="apiKey" value="PASTE_THE_STATICFORMS_API_KEY_HERE">
+          <input type="hidden" name="subject" value="Curtis Hoffmann submission">
+          <div class="row">
+            <label>Name<input type="text" name="name" required autocomplete="name"></label>
+            <label>Email<input type="email" name="email" required autocomplete="email"></label>
+          </div>
+          <label>Message<textarea name="message" rows="5" required></textarea></label>
+          <div class="send"><button class="btn solid" type="submit">Send</button></div>
+        </form>
       </div>
     </section>
 
-    <section class="block wrap" id="bookmarks" aria-labelledby="bookmarks-h">
-      <h2 class="eyebrow" id="bookmarks-h">Bookmarks</h2>
-      <div class="bm-tools">
-        <label class="sr-only" for="bm-filter">Filter bookmarks</label>
-        <input class="bm-filter" id="bm-filter" type="search" placeholder="Filter, e.g. fonts, census, poetry" autocomplete="off" spellcheck="false">
-        <span class="bm-count" id="bm-count" aria-live="polite"></span>
-      </div>
-      <div class="bm-groups">
-        <!-- bookmarks:start -->
-        <div class="bm-group">
-          <h3><button class="bm-toggle" type="button" aria-expanded="false" aria-controls="bm-design-tools"><span>Design tools</span><span class="n" data-total="32">32</span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button></h3>
-          <div class="bm-panel" id="bm-design-tools"><div><ul class="bm-list"><li><a href="https://securitylab.amnesty.org/about/" rel="noopener"><span class="t">Amnesty International Security Lab</span><span class="d">securitylab.amnesty.org</span></a></li><li><a href="https://animejs.com/" rel="noopener"><span class="t">Anime.js</span><span class="d">animejs.com</span></a></li><li><a href="https://animmasterlib.dev/" rel="noopener"><span class="t">Animmaster Lib</span><span class="d">animmasterlib.dev</span></a></li><li><a href="https://mdigi.tools/color-shades/" rel="noopener"><span class="t">Color Shades Generator</span><span class="d">mdigi.tools</span></a></li><li><a href="https://coolors.co/" rel="noopener"><span class="t">Coolors</span><span class="d">coolors.co</span></a></li><li><a href="https://www.dark.design/" rel="noopener"><span class="t">dark.design</span><span class="d">dark.design</span></a></li><li><a href="https://www.designspells.com/" rel="noopener"><span class="t">Design Spells</span><span class="d">designspells.com</span></a></li><li><a href="https://designmd.me/" rel="noopener"><span class="t">DesignMD</span><span class="d">designmd.me</span></a></li><li><a href="https://www.drawkit.com/illustrations/peach-illustration-system" rel="noopener"><span class="t">DrawKit Peach illustrations</span><span class="d">drawkit.com</span></a></li><li><a href="https://www.durves.com/" rel="noopener"><span class="t">Durves</span><span class="d">durves.com</span></a></li><li><a href="https://www.figcomponents.com/" rel="noopener"><span class="t">Figcomponents</span><span class="d">figcomponents.com</span></a></li><li><a href="https://www.flowbase.co/" rel="noopener"><span class="t">Flowbase</span><span class="d">flowbase.co</span></a></li><li><a href="https://fontshare.com/" rel="noopener"><span class="t">Fontshare</span><span class="d">fontshare.com</span></a></li><li><a href="https://www.footer.design/" rel="noopener"><span class="t">Footer gallery</span><span class="d">footer.design</span></a></li><li><a href="https://godly.website/" rel="noopener"><span class="t">Godly</span><span class="d">godly.website</span></a></li><li><a href="https://icons8.com/" rel="noopener"><span class="t">Icons8</span><span class="d">icons8.com</span></a></li><li><a href="https://iconsax.io/" rel="noopener"><span class="t">Iconsax</span><span class="d">iconsax.io</span></a></li><li><a href="https://www.ls.graphics/" rel="noopener"><span class="t">LS Graphics</span><span class="d">ls.graphics</span></a></li><li><a href="https://www.openpeeps.com/" rel="noopener"><span class="t">Open Peeps</span><span class="d">openpeeps.com</span></a></li><li><a href="https://openalternative.co/" rel="noopener"><span class="t">OpenAlternative</span><span class="d">openalternative.co</span></a></li><li><a href="https://quickref.me/" rel="noopener"><span class="t">QuickRef cheat sheets</span><span class="d">quickref.me</span></a></li><li><a href="https://rotato.app/" rel="noopener"><span class="t">Rotato</span><span class="d">rotato.app</span></a></li><li><a href="https://www.shadergradient.co/" rel="noopener"><span class="t">Shader Gradient</span><span class="d">shadergradient.co</span></a></li><li><a href="https://shots.so/" rel="noopener"><span class="t">Shots</span><span class="d">shots.so</span></a></li><li><a href="https://spectrums.framer.website/" rel="noopener"><span class="t">Spectrum vector shapes</span><span class="d">spectrums.framer.website</span></a></li><li><a href="https://www.svgator.com/" rel="noopener"><span class="t">SVGator</span><span class="d">svgator.com</span></a></li><li><a href="https://typescale.com/" rel="noopener"><span class="t">Typescale</span><span class="d">typescale.com</span></a></li><li><a href="https://www.uiguideline.com/" rel="noopener"><span class="t">UI Guideline</span><span class="d">uiguideline.com</span></a></li><li><a href="https://uncut.wtf/" rel="noopener"><span class="t">UNCUT.wtf</span><span class="d">uncut.wtf</span></a></li><li><a href="https://www.unicornicons.com/" rel="noopener"><span class="t">Unicorn Icons</span><span class="d">unicornicons.com</span></a></li><li><a href="https://unsplash.com/" rel="noopener"><span class="t">Unsplash</span><span class="d">unsplash.com</span></a></li><li><a href="https://velvetyne.fr/" rel="noopener"><span class="t">Velvetyne</span><span class="d">velvetyne.fr</span></a></li></ul></div></div>
+    <svg class="trace" viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0 20.0 L0 19.8 L18 19.6 L36 20.2 L54 19.5 L72 20.0 L90 19.8 L108 19.5 L126 20.0 L144 19.4 L162 19.9 L180 19.5 L198 19.5 L216 19.9 L234 20.4 L252 19.5 L270 19.7 L288 20.2 L306 20.5 L324 20.1 L342 19.9 L360 20.6 L378 19.5 L396 20.4 L414 19.7 L432 19.6 L450 18.9 L455 20.2 L461 19.0 L467 20.2 L471 19.5 L477 20.8 L483 18.1 L487 20.0 L493 19.6 L498 19.8 L503 19.1 L507 22.1 L513 22.2 L517 20.6 L523 20.0 L528 22.4 L533 21.3 L537 15.3 L542 15.5 L547 14.9 L552 18.8 L558 12.6 L564 21.4 L569 16.7 L574 22.1 L580 27.1 L584 28.6 L589 19.3 L595 7.3 L601 26.2 L607 22.2 L613 28.5 L618 25.3 L624 16.5 L629 16.9 L635 12.5 L639 14.8 L644 13.7 L648 18.4 L653 13.8 L658 18.7 L663 24.8 L668 24.1 L673 22.1 L678 21.7 L683 23.9 L687 16.7 L691 18.0 L695 16.7 L701 18.1 L706 17.3 L711 20.2 L717 20.3 L721 20.8 L727 21.6 L733 20.6 L737 19.9 L743 20.9 L748 19.7 L753 19.5 L771 20.2 L789 19.5 L807 19.5 L825 19.7 L843 19.6 L861 19.8 L879 19.5 L897 19.4 L915 19.6 L933 19.5 L951 19.8 L969 19.4 L987 20.4 L1005 20.1 L1023 19.6 L1041 19.7 L1059 19.8 L1077 19.8 L1095 19.5 L1113 20.4 L1131 20.6 L1149 20.0 L1167 20.0 L1185 19.5 L1200 20.0"/><path class="burst" d="M432 19.6 L450 18.9 L455 20.2 L461 19.0 L467 20.2 L471 19.5 L477 20.8 L483 18.1 L487 20.0 L493 19.6 L498 19.8 L503 19.1 L507 22.1 L513 22.2 L517 20.6 L523 20.0 L528 22.4 L533 21.3 L537 15.3 L542 15.5 L547 14.9 L552 18.8 L558 12.6 L564 21.4 L569 16.7 L574 22.1 L580 27.1 L584 28.6 L589 19.3 L595 7.3 L601 26.2 L607 22.2 L613 28.5 L618 25.3 L624 16.5 L629 16.9 L635 12.5 L639 14.8 L644 13.7 L648 18.4 L653 13.8 L658 18.7 L663 24.8 L668 24.1 L673 22.1 L678 21.7 L683 23.9 L687 16.7 L691 18.0 L695 16.7 L701 18.1 L706 17.3 L711 20.2 L717 20.3 L721 20.8 L727 21.6 L733 20.6 L737 19.9 L743 20.9 L748 19.7 L753 19.5"/></svg>
+    <section class="block" id="bookmarks" aria-labelledby="bookmarks-h">
+      <div class="drift" aria-hidden="true"><svg class="microbe" style="left:3%;top:14%;width:104px;--dur:12s;--delay:-2s;--rot:-10deg" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g class="nudge"><g class="body"><use href="#v-adeno"/></g></g></svg><svg class="microbe" style="left:84%;top:72%;width:96px;--dur:9s;--delay:-5s;--rot:32deg" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g class="nudge"><g class="body"><use href="#v-ico2"/></g></g></svg><svg class="microbe" style="left:48%;top:42%;width:64px;--dur:11s;--delay:-8s;--rot:-14deg" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><g class="nudge"><g class="body"><use href="#v-spiky"/></g></g></svg></div>
+      <div class="wrap">
+        <div class="sec-head"><h2 id="bookmarks-h">Bookmarks</h2></div>
+        <div class="bm-tools">
+          <label class="sr-only" for="bm-filter">Filter bookmarks</label>
+          <input class="bm-filter" id="bm-filter" type="search" placeholder="Filter, e.g. fonts, census, poetry" autocomplete="off" spellcheck="false">
+          <span class="bm-count" id="bm-count" aria-live="polite"></span>
         </div>
-        <div class="bm-group">
-          <h3><button class="bm-toggle" type="button" aria-expanded="false" aria-controls="bm-data-sources"><span>Data sources</span><span class="n" data-total="29">29</span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button></h3>
-          <div class="bm-panel" id="bm-data-sources"><div><ul class="bm-list"><li><a href="https://addhealth.cpc.unc.edu/" rel="noopener"><span class="t">Add Health</span><span class="d">addhealth.cpc.unc.edu</span></a></li><li><a href="https://www.thearda.com/" rel="noopener"><span class="t">Association of Religion Data Archives</span><span class="d">thearda.com</span></a></li><li><a href="https://www.bls.gov/" rel="noopener"><span class="t">Bureau of Labor Statistics</span><span class="d">bls.gov</span></a></li><li><a href="https://www.cdc.gov/brfss/" rel="noopener"><span class="t">CDC BRFSS</span><span class="d">cdc.gov</span></a></li><li><a href="https://wonder.cdc.gov/" rel="noopener"><span class="t">CDC WONDER</span><span class="d">wonder.cdc.gov</span></a></li><li><a href="https://www.countyhealthrankings.org/" rel="noopener"><span class="t">County Health Rankings</span><span class="d">countyhealthrankings.org</span></a></li><li><a href="https://dasl.datadescription.com/" rel="noopener"><span class="t">Data and Story Library</span><span class="d">dasl.datadescription.com</span></a></li><li><a href="https://datacommons.org/" rel="noopener"><span class="t">Data Commons (was Google Public Data Explorer)</span><span class="d">datacommons.org</span></a></li><li><a href="https://dataverse.org/" rel="noopener"><span class="t">Dataverse</span><span class="d">dataverse.org</span></a></li><li><a href="https://datadryad.org/" rel="noopener"><span class="t">Dryad Digital Repository</span><span class="d">datadryad.org</span></a></li><li><a href="https://figshare.com/" rel="noopener"><span class="t">figshare</span><span class="d">figshare.com</span></a></li><li><a href="https://gss.norc.org/" rel="noopener"><span class="t">General Social Survey</span><span class="d">gss.norc.org</span></a></li><li><a href="https://www.icpsr.umich.edu/" rel="noopener"><span class="t">ICPSR</span><span class="d">icpsr.umich.edu</span></a></li><li><a href="https://www.ipums.org/" rel="noopener"><span class="t">IPUMS</span><span class="d">ipums.org</span></a></li><li><a href="https://www.icpsr.umich.edu/web/pages/NAHDAP/" rel="noopener"><span class="t">National Addiction &amp; HIV Data Archive Program</span><span class="d">icpsr.umich.edu</span></a></li><li><a href="https://www.bls.gov/nls/" rel="noopener"><span class="t">National Longitudinal Surveys</span><span class="d">bls.gov</span></a></li><li><a href="https://www.ons.gov.uk/" rel="noopener"><span class="t">Office for National Statistics (UK)</span><span class="d">ons.gov.uk</span></a></li><li><a href="https://www.pewresearch.org/" rel="noopener"><span class="t">Pew Research Center</span><span class="d">pewresearch.org</span></a></li><li><a href="https://www.ssdan.net/" rel="noopener"><span class="t">Social Science Data Analysis Network</span><span class="d">ssdan.net</span></a></li><li><a href="https://www.albany.edu/sourcebook/" rel="noopener"><span class="t">Sourcebook of Criminal Justice Statistics</span><span class="d">albany.edu</span></a></li><li><a href="https://www.bestplaces.net/" rel="noopener"><span class="t">Sperling&#x27;s Best Places</span><span class="d">bestplaces.net</span></a></li><li><a href="https://www.statcrunch.com/" rel="noopener"><span class="t">StatCrunch</span><span class="d">statcrunch.com</span></a></li><li><a href="https://lib.stat.cmu.edu/" rel="noopener"><span class="t">StatLib</span><span class="d">lib.stat.cmu.edu</span></a></li><li><a href="https://sda.berkeley.edu/" rel="noopener"><span class="t">Survey Documentation and Analysis</span><span class="d">sda.berkeley.edu</span></a></li><li><a href="https://www.theguardian.com/data" rel="noopener"><span class="t">The Guardian - datasets</span><span class="d">theguardian.com</span></a></li><li><a href="https://www.census.gov/" rel="noopener"><span class="t">U.S. Census Bureau</span><span class="d">census.gov</span></a></li><li><a href="https://archive.ics.uci.edu/" rel="noopener"><span class="t">UCI Machine Learning Repository</span><span class="d">archive.ics.uci.edu</span></a></li><li><a href="https://data.worldbank.org/" rel="noopener"><span class="t">World Bank Data</span><span class="d">data.worldbank.org</span></a></li><li><a href="https://www.cia.gov/the-world-factbook/" rel="noopener"><span class="t">World Factbook</span><span class="d">cia.gov</span></a></li></ul></div></div>
+        <div class="bm-groups">
+<!-- bookmarks:start -->
+<details class="bm-group" id="bm-design-tools">
+  <summary><span class="g">Design tools</span><span class="n" data-total="31">31</span></summary>
+  <div class="bm-strip-wrap"><div class="bm-strip-head"><button type="button" data-dir="-1" aria-label="Previous links"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button><button type="button" data-dir="1" aria-label="Next links"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button></div><ul class="bm-list bm-strip" tabindex="0" aria-label="Design tools, scroll sideways"><li><a href="https://animejs.com/" rel="noopener"><span class="t">Anime.js</span><span class="d">animejs.com</span></a></li><li><a href="https://animmasterlib.dev/" rel="noopener"><span class="t">Animmaster Lib</span><span class="d">animmasterlib.dev</span></a></li><li><a href="https://mdigi.tools/color-shades/" rel="noopener"><span class="t">Color Shades Generator</span><span class="d">mdigi.tools</span></a></li><li><a href="https://coolors.co/" rel="noopener"><span class="t">Coolors</span><span class="d">coolors.co</span></a></li><li><a href="https://www.dark.design/" rel="noopener"><span class="t">dark.design</span><span class="d">dark.design</span></a></li><li><a href="https://www.designspells.com/" rel="noopener"><span class="t">Design Spells</span><span class="d">designspells.com</span></a></li><li><a href="https://designmd.me/" rel="noopener"><span class="t">DesignMD</span><span class="d">designmd.me</span></a></li><li><a href="https://www.drawkit.com/illustrations/peach-illustration-system" rel="noopener"><span class="t">DrawKit Peach illustrations</span><span class="d">drawkit.com</span></a></li><li><a href="https://www.durves.com/" rel="noopener"><span class="t">Durves</span><span class="d">durves.com</span></a></li><li><a href="https://www.figcomponents.com/" rel="noopener"><span class="t">Figcomponents</span><span class="d">figcomponents.com</span></a></li><li><a href="https://www.flowbase.co/" rel="noopener"><span class="t">Flowbase</span><span class="d">flowbase.co</span></a></li><li><a href="https://fontshare.com/" rel="noopener"><span class="t">Fontshare</span><span class="d">fontshare.com</span></a></li><li><a href="https://www.footer.design/" rel="noopener"><span class="t">Footer gallery</span><span class="d">footer.design</span></a></li><li><a href="https://godly.website/" rel="noopener"><span class="t">Godly</span><span class="d">godly.website</span></a></li><li><a href="https://icons8.com/" rel="noopener"><span class="t">Icons8</span><span class="d">icons8.com</span></a></li><li><a href="https://iconsax.io/" rel="noopener"><span class="t">Iconsax</span><span class="d">iconsax.io</span></a></li><li><a href="https://www.ls.graphics/" rel="noopener"><span class="t">LS Graphics</span><span class="d">ls.graphics</span></a></li><li><a href="https://www.openpeeps.com/" rel="noopener"><span class="t">Open Peeps</span><span class="d">openpeeps.com</span></a></li><li><a href="https://openalternative.co/" rel="noopener"><span class="t">OpenAlternative</span><span class="d">openalternative.co</span></a></li><li><a href="https://quickref.me/" rel="noopener"><span class="t">QuickRef cheat sheets</span><span class="d">quickref.me</span></a></li><li><a href="https://rotato.app/" rel="noopener"><span class="t">Rotato</span><span class="d">rotato.app</span></a></li><li><a href="https://www.shadergradient.co/" rel="noopener"><span class="t">Shader Gradient</span><span class="d">shadergradient.co</span></a></li><li><a href="https://shots.so/" rel="noopener"><span class="t">Shots</span><span class="d">shots.so</span></a></li><li><a href="https://spectrums.framer.website/" rel="noopener"><span class="t">Spectrum vector shapes</span><span class="d">spectrums.framer.website</span></a></li><li><a href="https://www.svgator.com/" rel="noopener"><span class="t">SVGator</span><span class="d">svgator.com</span></a></li><li><a href="https://typescale.com/" rel="noopener"><span class="t">Typescale</span><span class="d">typescale.com</span></a></li><li><a href="https://www.uiguideline.com/" rel="noopener"><span class="t">UI Guideline</span><span class="d">uiguideline.com</span></a></li><li><a href="https://uncut.wtf/" rel="noopener"><span class="t">UNCUT.wtf</span><span class="d">uncut.wtf</span></a></li><li><a href="https://www.unicornicons.com/" rel="noopener"><span class="t">Unicorn Icons</span><span class="d">unicornicons.com</span></a></li><li><a href="https://unsplash.com/" rel="noopener"><span class="t">Unsplash</span><span class="d">unsplash.com</span></a></li><li><a href="https://velvetyne.fr/" rel="noopener"><span class="t">Velvetyne</span><span class="d">velvetyne.fr</span></a></li></ul></div>
+</details>
+<details class="bm-group" id="bm-data-sources">
+  <summary><span class="g">Data sources</span><span class="n" data-total="29">29</span></summary>
+  <div class="bm-strip-wrap"><div class="bm-strip-head"><button type="button" data-dir="-1" aria-label="Previous links"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button><button type="button" data-dir="1" aria-label="Next links"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button></div><ul class="bm-list bm-strip" tabindex="0" aria-label="Data sources, scroll sideways"><li><a href="https://addhealth.cpc.unc.edu/" rel="noopener"><span class="t">Add Health</span><span class="d">addhealth.cpc.unc.edu</span></a></li><li><a href="https://www.thearda.com/" rel="noopener"><span class="t">Association of Religion Data Archives</span><span class="d">thearda.com</span></a></li><li><a href="https://www.bls.gov/" rel="noopener"><span class="t">Bureau of Labor Statistics</span><span class="d">bls.gov</span></a></li><li><a href="https://www.cdc.gov/brfss/" rel="noopener"><span class="t">CDC BRFSS</span><span class="d">cdc.gov</span></a></li><li><a href="https://wonder.cdc.gov/" rel="noopener"><span class="t">CDC WONDER</span><span class="d">wonder.cdc.gov</span></a></li><li><a href="https://www.countyhealthrankings.org/" rel="noopener"><span class="t">County Health Rankings</span><span class="d">countyhealthrankings.org</span></a></li><li><a href="https://dasl.datadescription.com/" rel="noopener"><span class="t">Data and Story Library</span><span class="d">dasl.datadescription.com</span></a></li><li><a href="https://datacommons.org/" rel="noopener"><span class="t">Data Commons (was Google Public Data Explorer)</span><span class="d">datacommons.org</span></a></li><li><a href="https://dataverse.org/" rel="noopener"><span class="t">Dataverse</span><span class="d">dataverse.org</span></a></li><li><a href="https://datadryad.org/" rel="noopener"><span class="t">Dryad Digital Repository</span><span class="d">datadryad.org</span></a></li><li><a href="https://figshare.com/" rel="noopener"><span class="t">figshare</span><span class="d">figshare.com</span></a></li><li><a href="https://gss.norc.org/" rel="noopener"><span class="t">General Social Survey</span><span class="d">gss.norc.org</span></a></li><li><a href="https://www.icpsr.umich.edu/" rel="noopener"><span class="t">ICPSR</span><span class="d">icpsr.umich.edu</span></a></li><li><a href="https://www.ipums.org/" rel="noopener"><span class="t">IPUMS</span><span class="d">ipums.org</span></a></li><li><a href="https://www.icpsr.umich.edu/web/pages/NAHDAP/" rel="noopener"><span class="t">National Addiction &amp; HIV Data Archive Program</span><span class="d">icpsr.umich.edu</span></a></li><li><a href="https://www.bls.gov/nls/" rel="noopener"><span class="t">National Longitudinal Surveys</span><span class="d">bls.gov</span></a></li><li><a href="https://www.ons.gov.uk/" rel="noopener"><span class="t">Office for National Statistics (UK)</span><span class="d">ons.gov.uk</span></a></li><li><a href="https://www.pewresearch.org/" rel="noopener"><span class="t">Pew Research Center</span><span class="d">pewresearch.org</span></a></li><li><a href="https://www.ssdan.net/" rel="noopener"><span class="t">Social Science Data Analysis Network</span><span class="d">ssdan.net</span></a></li><li><a href="https://www.albany.edu/sourcebook/" rel="noopener"><span class="t">Sourcebook of Criminal Justice Statistics</span><span class="d">albany.edu</span></a></li><li><a href="https://www.bestplaces.net/" rel="noopener"><span class="t">Sperling&#x27;s Best Places</span><span class="d">bestplaces.net</span></a></li><li><a href="https://www.statcrunch.com/" rel="noopener"><span class="t">StatCrunch</span><span class="d">statcrunch.com</span></a></li><li><a href="https://lib.stat.cmu.edu/" rel="noopener"><span class="t">StatLib</span><span class="d">lib.stat.cmu.edu</span></a></li><li><a href="https://sda.berkeley.edu/" rel="noopener"><span class="t">Survey Documentation and Analysis</span><span class="d">sda.berkeley.edu</span></a></li><li><a href="https://www.theguardian.com/data" rel="noopener"><span class="t">The Guardian - datasets</span><span class="d">theguardian.com</span></a></li><li><a href="https://www.census.gov/" rel="noopener"><span class="t">U.S. Census Bureau</span><span class="d">census.gov</span></a></li><li><a href="https://archive.ics.uci.edu/" rel="noopener"><span class="t">UCI Machine Learning Repository</span><span class="d">archive.ics.uci.edu</span></a></li><li><a href="https://data.worldbank.org/" rel="noopener"><span class="t">World Bank Data</span><span class="d">data.worldbank.org</span></a></li><li><a href="https://www.cia.gov/the-world-factbook/" rel="noopener"><span class="t">World Factbook</span><span class="d">cia.gov</span></a></li></ul></div>
+</details>
+<details class="bm-group" id="bm-references">
+  <summary><span class="g">References</span><span class="n" data-total="12">12</span></summary>
+  <div class="bm-strip-wrap"><div class="bm-strip-head"><button type="button" data-dir="-1" aria-label="Previous links"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button><button type="button" data-dir="1" aria-label="Next links"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button></div><ul class="bm-list bm-strip" tabindex="0" aria-label="References, scroll sideways"><li><a href="https://www.britannica.com/" rel="noopener"><span class="t">Encyclopaedia Britannica</span><span class="d">britannica.com</span></a></li><li><a href="https://www.infoplease.com/" rel="noopener"><span class="t">Infoplease</span><span class="d">infoplease.com</span></a></li><li><a href="https://www.oxforddnb.com/" rel="noopener"><span class="t">Oxford Dictionary of National Biography</span><span class="d">oxforddnb.com</span></a></li><li><a href="https://www.oed.com/" rel="noopener"><span class="t">Oxford English Dictionary</span><span class="d">oed.com</span></a></li><li><a href="https://planetmath.org/" rel="noopener"><span class="t">PlanetMath</span><span class="d">planetmath.org</span></a></li><li><a href="https://www.rhymezone.com/" rel="noopener"><span class="t">Rhyming Dictionary</span><span class="d">rhymezone.com</span></a></li><li><a href="https://conjointly.com/kb/" rel="noopener"><span class="t">Social Research Methods</span><span class="d">conjointly.com</span></a></li><li><a href="https://plato.stanford.edu/" rel="noopener"><span class="t">Stanford Encyclopedia of Philosophy</span><span class="d">plato.stanford.edu</span></a></li><li><a href="https://en.wikipedia.org/" rel="noopener"><span class="t">Wikipedia</span><span class="d">en.wikipedia.org</span></a></li><li><a href="https://mathworld.wolfram.com/" rel="noopener"><span class="t">Wolfram MathWorld</span><span class="d">mathworld.wolfram.com</span></a></li><li><a href="https://www.wolframalpha.com/" rel="noopener"><span class="t">Wolfram|Alpha</span><span class="d">wolframalpha.com</span></a></li><li><a href="https://www.yourdictionary.com/" rel="noopener"><span class="t">YourDictionary</span><span class="d">yourdictionary.com</span></a></li></ul></div>
+</details>
+<details class="bm-group" id="bm-data-visualization-and-images">
+  <summary><span class="g">Data visualization and images</span><span class="n" data-total="15">15</span></summary>
+  <div class="bm-strip-wrap"><div class="bm-strip-head"><button type="button" data-dir="-1" aria-label="Previous links"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button><button type="button" data-dir="1" aria-label="Next links"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button></div><ul class="bm-list bm-strip" tabindex="0" aria-label="Data visualization and images, scroll sideways"><li><a href="https://www.easel.ly/" rel="noopener"><span class="t">Easel.ly</span><span class="d">easel.ly</span></a></li><li><a href="https://www.edwardtufte.com/" rel="noopener"><span class="t">Edward Tufte</span><span class="d">edwardtufte.com</span></a></li><li><a href="https://www.flickr.com/" rel="noopener"><span class="t">Flickr</span><span class="d">flickr.com</span></a></li><li><a href="https://flowvella.com/" rel="noopener"><span class="t">Flowvella</span><span class="d">flowvella.com</span></a></li><li><a href="https://www.datavis.ca/gallery/" rel="noopener"><span class="t">Gallery of data visualization</span><span class="d">datavis.ca</span></a></li><li><a href="https://www.gapminder.org/" rel="noopener"><span class="t">Gapminder</span><span class="d">gapminder.org</span></a></li><li><a href="https://junkcharts.typepad.com/" rel="noopener"><span class="t">Junk Charts</span><span class="d">junkcharts.typepad.com</span></a></li><li><a href="https://ourworldindata.org/" rel="noopener"><span class="t">Our World in Data</span><span class="d">ourworldindata.org</span></a></li><li><a href="https://pixabay.com/" rel="noopener"><span class="t">Pixabay</span><span class="d">pixabay.com</span></a></li><li><a href="https://plotly.com/" rel="noopener"><span class="t">Plotly</span><span class="d">plotly.com</span></a></li><li><a href="https://stephanieevergreen.com/blog/" rel="noopener"><span class="t">Stephanie Evergreen&#x27;s blog</span><span class="d">stephanieevergreen.com</span></a></li><li><a href="https://www.storytellingwithdata.com/" rel="noopener"><span class="t">Storytelling with Data</span><span class="d">storytellingwithdata.com</span></a></li><li><a href="https://www.visualnews.com/" rel="noopener"><span class="t">Visual News</span><span class="d">visualnews.com</span></a></li><li><a href="https://www.visualizingeconomics.com/" rel="noopener"><span class="t">Visualizing Economics</span><span class="d">visualizingeconomics.com</span></a></li><li><a href="https://commons.wikimedia.org/" rel="noopener"><span class="t">Wikimedia Commons</span><span class="d">commons.wikimedia.org</span></a></li></ul></div>
+</details>
+<details class="bm-group" id="bm-higher-education-media">
+  <summary><span class="g">Higher-education media</span><span class="n" data-total="4">4</span></summary>
+  <div class="bm-strip-wrap"><div class="bm-strip-head"><button type="button" data-dir="-1" aria-label="Previous links"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button><button type="button" data-dir="1" aria-label="Next links"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button></div><ul class="bm-list bm-strip" tabindex="0" aria-label="Higher-education media, scroll sideways"><li><a href="https://www.chronicle.com/" rel="noopener"><span class="t">Chronicle of Higher Education</span><span class="d">chronicle.com</span></a></li><li><a href="https://www.insidehighered.com/" rel="noopener"><span class="t">Inside Higher Ed</span><span class="d">insidehighered.com</span></a></li><li><a href="https://www.timeshighereducation.com/" rel="noopener"><span class="t">Times Higher Education</span><span class="d">timeshighereducation.com</span></a></li><li><a href="https://universitybusiness.com/" rel="noopener"><span class="t">University Business Magazine</span><span class="d">universitybusiness.com</span></a></li></ul></div>
+</details>
+<details class="bm-group" id="bm-science-media">
+  <summary><span class="g">Science media</span><span class="n" data-total="15">15</span></summary>
+  <div class="bm-strip-wrap"><div class="bm-strip-head"><button type="button" data-dir="-1" aria-label="Previous links"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button><button type="button" data-dir="1" aria-label="Next links"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button></div><ul class="bm-list bm-strip" tabindex="0" aria-label="Science media, scroll sideways"><li><a href="https://www.americanscientist.org/" rel="noopener"><span class="t">American Scientist</span><span class="d">americanscientist.org</span></a></li><li><a href="https://www.discovermagazine.com/" rel="noopener"><span class="t">Discover</span><span class="d">discovermagazine.com</span></a></li><li><a href="https://locusmag.com/" rel="noopener"><span class="t">Locus</span><span class="d">locusmag.com</span></a></li><li><a href="https://www.naturalhistorymag.com/" rel="noopener"><span class="t">Natural History Magazine</span><span class="d">naturalhistorymag.com</span></a></li><li><a href="https://phys.org/science-news/social-sciences/" rel="noopener"><span class="t">Phys.org social sciences</span><span class="d">phys.org</span></a></li><li><a href="https://pubs.aip.org/physicstoday" rel="noopener"><span class="t">Physics Today</span><span class="d">pubs.aip.org</span></a></li><li><a href="https://www.popsci.com/" rel="noopener"><span class="t">Popular Science</span><span class="d">popsci.com</span></a></li><li><a href="https://www.pnas.org/" rel="noopener"><span class="t">Proceedings of the National Academy of Sciences</span><span class="d">pnas.org</span></a></li><li><a href="https://www.psychiatrictimes.com/" rel="noopener"><span class="t">Psychiatric Times</span><span class="d">psychiatrictimes.com</span></a></li><li><a href="https://www.psypost.org/" rel="noopener"><span class="t">PsyPost</span><span class="d">psypost.org</span></a></li><li><a href="https://www.sciencenews.org/" rel="noopener"><span class="t">Science News</span><span class="d">sciencenews.org</span></a></li><li><a href="https://www.scientificamerican.com/" rel="noopener"><span class="t">Scientific American</span><span class="d">scientificamerican.com</span></a></li><li><a href="https://strangehorizons.com/" rel="noopener"><span class="t">Strange Horizons</span><span class="d">strangehorizons.com</span></a></li><li><a href="https://www.symposium-magazine.com/" rel="noopener"><span class="t">Symposium Magazine</span><span class="d">symposium-magazine.com</span></a></li><li><a href="https://www.wired.com/" rel="noopener"><span class="t">Wired</span><span class="d">wired.com</span></a></li></ul></div>
+</details>
+<details class="bm-group" id="bm-poetry-and-literary-magazines">
+  <summary><span class="g">Poetry and literary magazines</span><span class="n" data-total="19">19</span></summary>
+  <div class="bm-strip-wrap"><div class="bm-strip-head"><button type="button" data-dir="-1" aria-label="Previous links"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button><button type="button" data-dir="1" aria-label="Next links"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button></div><ul class="bm-list bm-strip" tabindex="0" aria-label="Poetry and literary magazines, scroll sideways"><li><a href="https://poets.org/" rel="noopener"><span class="t">Academy of American Poets</span><span class="d">poets.org</span></a></li><li><a href="https://aprweb.org/" rel="noopener"><span class="t">American Poetry Review</span><span class="d">aprweb.org</span></a></li><li><a href="https://www.bostonreview.net/" rel="noopener"><span class="t">Boston Review</span><span class="d">bostonreview.net</span></a></li><li><a href="https://hudsonreview.com/" rel="noopener"><span class="t">Hudson Review</span><span class="d">hudsonreview.com</span></a></li><li><a href="https://mythicdelirium.com/" rel="noopener"><span class="t">Mythic Delirium</span><span class="d">mythicdelirium.com</span></a></li><li><a href="https://www.narrativemagazine.com/" rel="noopener"><span class="t">Narrative Magazine</span><span class="d">narrativemagazine.com</span></a></li><li><a href="https://www.newamericanwriting.com/" rel="noopener"><span class="t">New American Writing</span><span class="d">newamericanwriting.com</span></a></li><li><a href="https://newcriterion.com/" rel="noopener"><span class="t">New Criterion</span><span class="d">newcriterion.com</span></a></li><li><a href="https://pbqmag.org/" rel="noopener"><span class="t">Painted Bride Quarterly</span><span class="d">pbqmag.org</span></a></li><li><a href="https://www.theparisreview.org/" rel="noopener"><span class="t">Paris Review</span><span class="d">theparisreview.org</span></a></li><li><a href="https://www.pshares.org/" rel="noopener"><span class="t">Ploughshares</span><span class="d">pshares.org</span></a></li><li><a href="https://www.pw.org/" rel="noopener"><span class="t">Poets &amp; Writers</span><span class="d">pw.org</span></a></li><li><a href="https://www.sfpoetry.com/" rel="noopener"><span class="t">Science Fiction Poetry Association</span><span class="d">sfpoetry.com</span></a></li><li><a href="https://www.tankaonline.com/" rel="noopener"><span class="t">Tanka Online</span><span class="d">tankaonline.com</span></a></li><li><a href="https://www.theatlantic.com/" rel="noopener"><span class="t">The Atlantic</span><span class="d">theatlantic.com</span></a></li><li><a href="https://www.theliteraryreview.org/" rel="noopener"><span class="t">The Literary Review</span><span class="d">theliteraryreview.org</span></a></li><li><a href="https://www.thesunmagazine.org/" rel="noopener"><span class="t">The Sun Magazine</span><span class="d">thesunmagazine.org</span></a></li><li><a href="https://www.garrisonkeillor.com/the-writers-almanac/" rel="noopener"><span class="t">The Writer&#x27;s Almanac</span><span class="d">garrisonkeillor.com</span></a></li><li><a href="https://www.threepennyreview.com/" rel="noopener"><span class="t">Threepenny Review</span><span class="d">threepennyreview.com</span></a></li></ul></div>
+</details>
+<details class="bm-group" id="bm-research-organizations">
+  <summary><span class="g">Research organizations</span><span class="n" data-total="23">23</span></summary>
+  <div class="bm-strip-wrap"><div class="bm-strip-head"><button type="button" data-dir="-1" aria-label="Previous links"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button><button type="button" data-dir="1" aria-label="Next links"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button></div><ul class="bm-list bm-strip" tabindex="0" aria-label="Research organizations, scroll sideways"><li><a href="https://securitylab.amnesty.org/about/" rel="noopener"><span class="t">Amnesty International Security Lab</span><span class="d">securitylab.amnesty.org</span></a></li><li><a href="https://www.campbellcollaboration.org/" rel="noopener"><span class="t">Campbell Collaboration</span><span class="d">campbellcollaboration.org</span></a></li><li><a href="https://www.crimeandjustice.org.uk/" rel="noopener"><span class="t">Centre for Crime and Justice Studies</span><span class="d">crimeandjustice.org.uk</span></a></li><li><a href="https://www.childtrends.org/" rel="noopener"><span class="t">Child Trends</span><span class="d">childtrends.org</span></a></li><li><a href="https://www.gallup.com/" rel="noopener"><span class="t">Gallup</span><span class="d">gallup.com</span></a></li><li><a href="https://www.grants.gov/" rel="noopener"><span class="t">Grants.gov</span><span class="d">grants.gov</span></a></li><li><a href="https://www.iq.harvard.edu/" rel="noopener"><span class="t">Institute for Quantitative Social Science</span><span class="d">iq.harvard.edu</span></a></li><li><a href="https://isr.umich.edu/" rel="noopener"><span class="t">Institute for Social Research</span><span class="d">isr.umich.edu</span></a></li><li><a href="https://www.mathematica.org/" rel="noopener"><span class="t">Mathematica</span><span class="d">mathematica.org</span></a></li><li><a href="https://www.nber.org/" rel="noopener"><span class="t">National Bureau of Economic Research</span><span class="d">nber.org</span></a></li><li><a href="https://nces.ed.gov/" rel="noopener"><span class="t">National Center for Education Statistics</span><span class="d">nces.ed.gov</span></a></li><li><a href="https://www.nimh.nih.gov/" rel="noopener"><span class="t">National Institute of Mental Health</span><span class="d">nimh.nih.gov</span></a></li><li><a href="https://www.niaaa.nih.gov/" rel="noopener"><span class="t">National Institute on Alcohol Abuse and Alcoholism</span><span class="d">niaaa.nih.gov</span></a></li><li><a href="https://nida.nih.gov/" rel="noopener"><span class="t">National Institute on Drug Abuse</span><span class="d">nida.nih.gov</span></a></li><li><a href="https://www.nsf.gov/" rel="noopener"><span class="t">National Science Foundation</span><span class="d">nsf.gov</span></a></li><li><a href="https://www.norc.org/" rel="noopener"><span class="t">NORC at the University of Chicago</span><span class="d">norc.org</span></a></li><li><a href="https://www.rand.org/" rel="noopener"><span class="t">RAND</span><span class="d">rand.org</span></a></li><li><a href="https://ropercenter.cornell.edu/" rel="noopener"><span class="t">Roper Center</span><span class="d">ropercenter.cornell.edu</span></a></li><li><a href="https://www.rti.org/" rel="noopener"><span class="t">RTI International</span><span class="d">rti.org</span></a></li><li><a href="https://www.samhsa.gov/" rel="noopener"><span class="t">SAMHSA</span><span class="d">samhsa.gov</span></a></li><li><a href="https://pluralism.org/" rel="noopener"><span class="t">The Pluralism Project</span><span class="d">pluralism.org</span></a></li><li><a href="https://www.unodc.org/" rel="noopener"><span class="t">United Nations Office on Drugs and Crime</span><span class="d">unodc.org</span></a></li><li><a href="https://www.urban.org/" rel="noopener"><span class="t">Urban Institute</span><span class="d">urban.org</span></a></li></ul></div>
+</details>
+<details class="bm-group" id="bm-statistics-software">
+  <summary><span class="g">Statistics software</span><span class="n" data-total="16">16</span></summary>
+  <div class="bm-strip-wrap"><div class="bm-strip-head"><button type="button" data-dir="-1" aria-label="Previous links"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button><button type="button" data-dir="1" aria-label="Next links"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button></div><ul class="bm-list bm-strip" tabindex="0" aria-label="Statistics software, scroll sideways"><li><a href="https://www.bristol.ac.uk/cmm/learning/" rel="noopener"><span class="t">Bristol multilevel modelling course</span><span class="d">bristol.ac.uk</span></a></li><li><a href="https://www.bristol.ac.uk/cmm/" rel="noopener"><span class="t">Centre for Multilevel Modelling</span><span class="d">bristol.ac.uk</span></a></li><li><a href="https://cran.r-project.org/" rel="noopener"><span class="t">CRAN</span><span class="d">cran.r-project.org</span></a></li><li><a href="https://www.mvsoft.com/" rel="noopener"><span class="t">EQS (Multivariate Software)</span><span class="d">mvsoft.com</span></a></li><li><a href="https://www.ibm.com/products/spss-statistics" rel="noopener"><span class="t">IBM SPSS Statistics</span><span class="d">ibm.com</span></a></li><li><a href="https://quantpsy.org/" rel="noopener"><span class="t">Kristopher Preacher&#x27;s quantpsy.org</span><span class="d">quantpsy.org</span></a></li><li><a href="https://lumivero.com/" rel="noopener"><span class="t">Lumivero (NVivo, formerly QSR)</span><span class="d">lumivero.com</span></a></li><li><a href="https://www.statmodel.com/" rel="noopener"><span class="t">Mplus</span><span class="d">statmodel.com</span></a></li><li><a href="https://www.pdfescape.com/" rel="noopener"><span class="t">PDFescape</span><span class="d">pdfescape.com</span></a></li><li><a href="https://www.statmethods.net/" rel="noopener"><span class="t">Quick-R</span><span class="d">statmethods.net</span></a></li><li><a href="https://www.sas.com/" rel="noopener"><span class="t">SAS</span><span class="d">sas.com</span></a></li><li><a href="https://www.stata.com/" rel="noopener"><span class="t">Stata</span><span class="d">stata.com</span></a></li><li><a href="https://www.statisticalinnovations.com/" rel="noopener"><span class="t">Statistical Innovations</span><span class="d">statisticalinnovations.com</span></a></li><li><a href="https://www.rti.org/impact/sudaanr-statistical-software-analyzing-correlated-data" rel="noopener"><span class="t">SUDAAN</span><span class="d">rti.org</span></a></li><li><a href="https://whonet.org/" rel="noopener"><span class="t">WHONET</span><span class="d">whonet.org</span></a></li><li><a href="https://www.zamzar.com/" rel="noopener"><span class="t">Zamzar file conversion</span><span class="d">zamzar.com</span></a></li></ul></div>
+</details>
+<!-- bookmarks:end -->
+          <p class="bm-empty" id="bm-empty" hidden>Nothing matches. Try a shorter word.</p>
         </div>
-        <div class="bm-group">
-          <h3><button class="bm-toggle" type="button" aria-expanded="false" aria-controls="bm-references"><span>References</span><span class="n" data-total="12">12</span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button></h3>
-          <div class="bm-panel" id="bm-references"><div><ul class="bm-list"><li><a href="https://www.britannica.com/" rel="noopener"><span class="t">Encyclopaedia Britannica</span><span class="d">britannica.com</span></a></li><li><a href="https://www.infoplease.com/" rel="noopener"><span class="t">Infoplease</span><span class="d">infoplease.com</span></a></li><li><a href="https://www.oxforddnb.com/" rel="noopener"><span class="t">Oxford Dictionary of National Biography</span><span class="d">oxforddnb.com</span></a></li><li><a href="https://www.oed.com/" rel="noopener"><span class="t">Oxford English Dictionary</span><span class="d">oed.com</span></a></li><li><a href="https://planetmath.org/" rel="noopener"><span class="t">PlanetMath</span><span class="d">planetmath.org</span></a></li><li><a href="https://www.rhymezone.com/" rel="noopener"><span class="t">Rhyming Dictionary</span><span class="d">rhymezone.com</span></a></li><li><a href="https://conjointly.com/kb/" rel="noopener"><span class="t">Social Research Methods</span><span class="d">conjointly.com</span></a></li><li><a href="https://plato.stanford.edu/" rel="noopener"><span class="t">Stanford Encyclopedia of Philosophy</span><span class="d">plato.stanford.edu</span></a></li><li><a href="https://en.wikipedia.org/" rel="noopener"><span class="t">Wikipedia</span><span class="d">en.wikipedia.org</span></a></li><li><a href="https://mathworld.wolfram.com/" rel="noopener"><span class="t">Wolfram MathWorld</span><span class="d">mathworld.wolfram.com</span></a></li><li><a href="https://www.wolframalpha.com/" rel="noopener"><span class="t">Wolfram|Alpha</span><span class="d">wolframalpha.com</span></a></li><li><a href="https://www.yourdictionary.com/" rel="noopener"><span class="t">YourDictionary</span><span class="d">yourdictionary.com</span></a></li></ul></div></div>
-        </div>
-        <div class="bm-group">
-          <h3><button class="bm-toggle" type="button" aria-expanded="false" aria-controls="bm-data-visualization-and-images"><span>Data visualization and images</span><span class="n" data-total="15">15</span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button></h3>
-          <div class="bm-panel" id="bm-data-visualization-and-images"><div><ul class="bm-list"><li><a href="https://www.easel.ly/" rel="noopener"><span class="t">Easel.ly</span><span class="d">easel.ly</span></a></li><li><a href="https://www.edwardtufte.com/" rel="noopener"><span class="t">Edward Tufte</span><span class="d">edwardtufte.com</span></a></li><li><a href="https://www.flickr.com/" rel="noopener"><span class="t">Flickr</span><span class="d">flickr.com</span></a></li><li><a href="https://flowvella.com/" rel="noopener"><span class="t">Flowvella</span><span class="d">flowvella.com</span></a></li><li><a href="https://www.datavis.ca/gallery/" rel="noopener"><span class="t">Gallery of data visualization</span><span class="d">datavis.ca</span></a></li><li><a href="https://www.gapminder.org/" rel="noopener"><span class="t">Gapminder</span><span class="d">gapminder.org</span></a></li><li><a href="https://junkcharts.typepad.com/" rel="noopener"><span class="t">Junk Charts</span><span class="d">junkcharts.typepad.com</span></a></li><li><a href="https://ourworldindata.org/" rel="noopener"><span class="t">Our World in Data</span><span class="d">ourworldindata.org</span></a></li><li><a href="https://pixabay.com/" rel="noopener"><span class="t">Pixabay</span><span class="d">pixabay.com</span></a></li><li><a href="https://plotly.com/" rel="noopener"><span class="t">Plotly</span><span class="d">plotly.com</span></a></li><li><a href="https://stephanieevergreen.com/blog/" rel="noopener"><span class="t">Stephanie Evergreen&#x27;s blog</span><span class="d">stephanieevergreen.com</span></a></li><li><a href="https://www.storytellingwithdata.com/" rel="noopener"><span class="t">Storytelling with Data</span><span class="d">storytellingwithdata.com</span></a></li><li><a href="https://www.visualnews.com/" rel="noopener"><span class="t">Visual News</span><span class="d">visualnews.com</span></a></li><li><a href="https://www.visualizingeconomics.com/" rel="noopener"><span class="t">Visualizing Economics</span><span class="d">visualizingeconomics.com</span></a></li><li><a href="https://commons.wikimedia.org/" rel="noopener"><span class="t">Wikimedia Commons</span><span class="d">commons.wikimedia.org</span></a></li></ul></div></div>
-        </div>
-        <div class="bm-group">
-          <h3><button class="bm-toggle" type="button" aria-expanded="false" aria-controls="bm-higher-education-media"><span>Higher-education media</span><span class="n" data-total="4">4</span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button></h3>
-          <div class="bm-panel" id="bm-higher-education-media"><div><ul class="bm-list"><li><a href="https://www.chronicle.com/" rel="noopener"><span class="t">Chronicle of Higher Education</span><span class="d">chronicle.com</span></a></li><li><a href="https://www.insidehighered.com/" rel="noopener"><span class="t">Inside Higher Ed</span><span class="d">insidehighered.com</span></a></li><li><a href="https://www.timeshighereducation.com/" rel="noopener"><span class="t">Times Higher Education</span><span class="d">timeshighereducation.com</span></a></li><li><a href="https://universitybusiness.com/" rel="noopener"><span class="t">University Business Magazine</span><span class="d">universitybusiness.com</span></a></li></ul></div></div>
-        </div>
-        <div class="bm-group">
-          <h3><button class="bm-toggle" type="button" aria-expanded="false" aria-controls="bm-science-media"><span>Science media</span><span class="n" data-total="15">15</span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button></h3>
-          <div class="bm-panel" id="bm-science-media"><div><ul class="bm-list"><li><a href="https://www.americanscientist.org/" rel="noopener"><span class="t">American Scientist</span><span class="d">americanscientist.org</span></a></li><li><a href="https://www.discovermagazine.com/" rel="noopener"><span class="t">Discover</span><span class="d">discovermagazine.com</span></a></li><li><a href="https://locusmag.com/" rel="noopener"><span class="t">Locus</span><span class="d">locusmag.com</span></a></li><li><a href="https://www.naturalhistorymag.com/" rel="noopener"><span class="t">Natural History Magazine</span><span class="d">naturalhistorymag.com</span></a></li><li><a href="https://phys.org/science-news/social-sciences/" rel="noopener"><span class="t">Phys.org social sciences</span><span class="d">phys.org</span></a></li><li><a href="https://pubs.aip.org/physicstoday" rel="noopener"><span class="t">Physics Today</span><span class="d">pubs.aip.org</span></a></li><li><a href="https://www.popsci.com/" rel="noopener"><span class="t">Popular Science</span><span class="d">popsci.com</span></a></li><li><a href="https://www.pnas.org/" rel="noopener"><span class="t">Proceedings of the National Academy of Sciences</span><span class="d">pnas.org</span></a></li><li><a href="https://www.psychiatrictimes.com/" rel="noopener"><span class="t">Psychiatric Times</span><span class="d">psychiatrictimes.com</span></a></li><li><a href="https://www.psypost.org/" rel="noopener"><span class="t">PsyPost</span><span class="d">psypost.org</span></a></li><li><a href="https://www.sciencenews.org/" rel="noopener"><span class="t">Science News</span><span class="d">sciencenews.org</span></a></li><li><a href="https://www.scientificamerican.com/" rel="noopener"><span class="t">Scientific American</span><span class="d">scientificamerican.com</span></a></li><li><a href="https://strangehorizons.com/" rel="noopener"><span class="t">Strange Horizons</span><span class="d">strangehorizons.com</span></a></li><li><a href="https://www.symposium-magazine.com/" rel="noopener"><span class="t">Symposium Magazine</span><span class="d">symposium-magazine.com</span></a></li><li><a href="https://www.wired.com/" rel="noopener"><span class="t">Wired</span><span class="d">wired.com</span></a></li></ul></div></div>
-        </div>
-        <div class="bm-group">
-          <h3><button class="bm-toggle" type="button" aria-expanded="false" aria-controls="bm-poetry-and-literary-magazines"><span>Poetry and literary magazines</span><span class="n" data-total="19">19</span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button></h3>
-          <div class="bm-panel" id="bm-poetry-and-literary-magazines"><div><ul class="bm-list"><li><a href="https://poets.org/" rel="noopener"><span class="t">Academy of American Poets</span><span class="d">poets.org</span></a></li><li><a href="https://aprweb.org/" rel="noopener"><span class="t">American Poetry Review</span><span class="d">aprweb.org</span></a></li><li><a href="https://www.bostonreview.net/" rel="noopener"><span class="t">Boston Review</span><span class="d">bostonreview.net</span></a></li><li><a href="https://hudsonreview.com/" rel="noopener"><span class="t">Hudson Review</span><span class="d">hudsonreview.com</span></a></li><li><a href="https://mythicdelirium.com/" rel="noopener"><span class="t">Mythic Delirium</span><span class="d">mythicdelirium.com</span></a></li><li><a href="https://www.narrativemagazine.com/" rel="noopener"><span class="t">Narrative Magazine</span><span class="d">narrativemagazine.com</span></a></li><li><a href="https://www.newamericanwriting.com/" rel="noopener"><span class="t">New American Writing</span><span class="d">newamericanwriting.com</span></a></li><li><a href="https://newcriterion.com/" rel="noopener"><span class="t">New Criterion</span><span class="d">newcriterion.com</span></a></li><li><a href="https://pbqmag.org/" rel="noopener"><span class="t">Painted Bride Quarterly</span><span class="d">pbqmag.org</span></a></li><li><a href="https://www.theparisreview.org/" rel="noopener"><span class="t">Paris Review</span><span class="d">theparisreview.org</span></a></li><li><a href="https://www.pshares.org/" rel="noopener"><span class="t">Ploughshares</span><span class="d">pshares.org</span></a></li><li><a href="https://www.pw.org/" rel="noopener"><span class="t">Poets &amp; Writers</span><span class="d">pw.org</span></a></li><li><a href="https://www.sfpoetry.com/" rel="noopener"><span class="t">Science Fiction Poetry Association</span><span class="d">sfpoetry.com</span></a></li><li><a href="https://www.tankaonline.com/" rel="noopener"><span class="t">Tanka Online</span><span class="d">tankaonline.com</span></a></li><li><a href="https://www.theatlantic.com/" rel="noopener"><span class="t">The Atlantic</span><span class="d">theatlantic.com</span></a></li><li><a href="https://www.theliteraryreview.org/" rel="noopener"><span class="t">The Literary Review</span><span class="d">theliteraryreview.org</span></a></li><li><a href="https://www.thesunmagazine.org/" rel="noopener"><span class="t">The Sun Magazine</span><span class="d">thesunmagazine.org</span></a></li><li><a href="https://www.garrisonkeillor.com/the-writers-almanac/" rel="noopener"><span class="t">The Writer&#x27;s Almanac</span><span class="d">garrisonkeillor.com</span></a></li><li><a href="https://www.threepennyreview.com/" rel="noopener"><span class="t">Threepenny Review</span><span class="d">threepennyreview.com</span></a></li></ul></div></div>
-        </div>
-        <div class="bm-group">
-          <h3><button class="bm-toggle" type="button" aria-expanded="false" aria-controls="bm-research-organizations"><span>Research organizations</span><span class="n" data-total="22">22</span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button></h3>
-          <div class="bm-panel" id="bm-research-organizations"><div><ul class="bm-list"><li><a href="https://www.campbellcollaboration.org/" rel="noopener"><span class="t">Campbell Collaboration</span><span class="d">campbellcollaboration.org</span></a></li><li><a href="https://www.crimeandjustice.org.uk/" rel="noopener"><span class="t">Centre for Crime and Justice Studies</span><span class="d">crimeandjustice.org.uk</span></a></li><li><a href="https://www.childtrends.org/" rel="noopener"><span class="t">Child Trends</span><span class="d">childtrends.org</span></a></li><li><a href="https://www.gallup.com/" rel="noopener"><span class="t">Gallup</span><span class="d">gallup.com</span></a></li><li><a href="https://www.grants.gov/" rel="noopener"><span class="t">Grants.gov</span><span class="d">grants.gov</span></a></li><li><a href="https://www.iq.harvard.edu/" rel="noopener"><span class="t">Institute for Quantitative Social Science</span><span class="d">iq.harvard.edu</span></a></li><li><a href="https://isr.umich.edu/" rel="noopener"><span class="t">Institute for Social Research</span><span class="d">isr.umich.edu</span></a></li><li><a href="https://www.mathematica.org/" rel="noopener"><span class="t">Mathematica</span><span class="d">mathematica.org</span></a></li><li><a href="https://www.nber.org/" rel="noopener"><span class="t">National Bureau of Economic Research</span><span class="d">nber.org</span></a></li><li><a href="https://nces.ed.gov/" rel="noopener"><span class="t">National Center for Education Statistics</span><span class="d">nces.ed.gov</span></a></li><li><a href="https://www.nimh.nih.gov/" rel="noopener"><span class="t">National Institute of Mental Health</span><span class="d">nimh.nih.gov</span></a></li><li><a href="https://www.niaaa.nih.gov/" rel="noopener"><span class="t">National Institute on Alcohol Abuse and Alcoholism</span><span class="d">niaaa.nih.gov</span></a></li><li><a href="https://nida.nih.gov/" rel="noopener"><span class="t">National Institute on Drug Abuse</span><span class="d">nida.nih.gov</span></a></li><li><a href="https://www.nsf.gov/" rel="noopener"><span class="t">National Science Foundation</span><span class="d">nsf.gov</span></a></li><li><a href="https://www.norc.org/" rel="noopener"><span class="t">NORC at the University of Chicago</span><span class="d">norc.org</span></a></li><li><a href="https://www.rand.org/" rel="noopener"><span class="t">RAND</span><span class="d">rand.org</span></a></li><li><a href="https://ropercenter.cornell.edu/" rel="noopener"><span class="t">Roper Center</span><span class="d">ropercenter.cornell.edu</span></a></li><li><a href="https://www.rti.org/" rel="noopener"><span class="t">RTI International</span><span class="d">rti.org</span></a></li><li><a href="https://www.samhsa.gov/" rel="noopener"><span class="t">SAMHSA</span><span class="d">samhsa.gov</span></a></li><li><a href="https://pluralism.org/" rel="noopener"><span class="t">The Pluralism Project</span><span class="d">pluralism.org</span></a></li><li><a href="https://www.unodc.org/" rel="noopener"><span class="t">United Nations Office on Drugs and Crime</span><span class="d">unodc.org</span></a></li><li><a href="https://www.urban.org/" rel="noopener"><span class="t">Urban Institute</span><span class="d">urban.org</span></a></li></ul></div></div>
-        </div>
-        <div class="bm-group">
-          <h3><button class="bm-toggle" type="button" aria-expanded="false" aria-controls="bm-statistics-software"><span>Statistics software</span><span class="n" data-total="16">16</span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button></h3>
-          <div class="bm-panel" id="bm-statistics-software"><div><ul class="bm-list"><li><a href="https://www.bristol.ac.uk/cmm/learning/" rel="noopener"><span class="t">Bristol multilevel modelling course</span><span class="d">bristol.ac.uk</span></a></li><li><a href="https://www.bristol.ac.uk/cmm/" rel="noopener"><span class="t">Centre for Multilevel Modelling</span><span class="d">bristol.ac.uk</span></a></li><li><a href="https://cran.r-project.org/" rel="noopener"><span class="t">CRAN</span><span class="d">cran.r-project.org</span></a></li><li><a href="https://www.mvsoft.com/" rel="noopener"><span class="t">EQS (Multivariate Software)</span><span class="d">mvsoft.com</span></a></li><li><a href="https://www.ibm.com/products/spss-statistics" rel="noopener"><span class="t">IBM SPSS Statistics</span><span class="d">ibm.com</span></a></li><li><a href="https://quantpsy.org/" rel="noopener"><span class="t">Kristopher Preacher&#x27;s quantpsy.org</span><span class="d">quantpsy.org</span></a></li><li><a href="https://lumivero.com/" rel="noopener"><span class="t">Lumivero (NVivo, formerly QSR)</span><span class="d">lumivero.com</span></a></li><li><a href="https://www.statmodel.com/" rel="noopener"><span class="t">Mplus</span><span class="d">statmodel.com</span></a></li><li><a href="https://www.pdfescape.com/" rel="noopener"><span class="t">PDFescape</span><span class="d">pdfescape.com</span></a></li><li><a href="https://www.statmethods.net/" rel="noopener"><span class="t">Quick-R</span><span class="d">statmethods.net</span></a></li><li><a href="https://www.sas.com/" rel="noopener"><span class="t">SAS</span><span class="d">sas.com</span></a></li><li><a href="https://www.stata.com/" rel="noopener"><span class="t">Stata</span><span class="d">stata.com</span></a></li><li><a href="https://www.statisticalinnovations.com/" rel="noopener"><span class="t">Statistical Innovations</span><span class="d">statisticalinnovations.com</span></a></li><li><a href="https://www.rti.org/impact/sudaanr-statistical-software-analyzing-correlated-data" rel="noopener"><span class="t">SUDAAN</span><span class="d">rti.org</span></a></li><li><a href="https://whonet.org/" rel="noopener"><span class="t">WHONET</span><span class="d">whonet.org</span></a></li><li><a href="https://www.zamzar.com/" rel="noopener"><span class="t">Zamzar file conversion</span><span class="d">zamzar.com</span></a></li></ul></div></div>
-        </div>
-        <!-- bookmarks:end -->
-        <p class="bm-empty" id="bm-empty" hidden>Nothing matches. Try a shorter word.</p>
       </div>
     </section>
   </main>
 
+  <div class="threads" aria-hidden="true"><canvas id="threadLoom"></canvas></div>
   <footer>
-    <div class="wrap row">
-      <span>© <span id="year" style="font-variant-numeric: tabular-nums">2026</span> Curtis Hoffmann</span>
-      <span class="motto">Tikkun Mada <span class="he">• תִּיקּוּן עוֹלָם</span></span>
-    </div>
+    <div class="wrap"><span>© 2026 Curtis Hoffmann</span><span class="motto">Tikkun Mada • תִּיקּוּן עוֹלָם</span></div>
   </footer>
 
   <script>
-    const canvas = document.getElementById('kineticLoom');
-    const ctx = canvas.getContext('2d');
-    const music = document.getElementById('bgMusic');
-    const audioBtn = document.getElementById('audio-toggle');
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const isTouch = window.matchMedia('(hover: none), (pointer: coarse)').matches
-                    || ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
-
-    let t = 0, lastTs = 0, mouseX = -9999, mouseY = -9999, pointerInside = false;
-    let bloom = 0, bloomTarget = 0;
-    let musicInitialized = false;
-    // Intro weave: the threads draw in behind a shuttle over 1.4 s, then the nodes bloom once on desktop.
-    const INTRO_MS = 1400;
-    let introStart = null, intro = reduceMotion ? 1 : 0, helloDone = reduceMotion;
-    const easeOut = (x) => 1 - Math.pow(1 - x, 3);
-
-    audioBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      if (!musicInitialized) {
-        music.volume = 0;
-        music.play().then(() => {
-          musicInitialized = true;
-          audioBtn.querySelector('.lbl').textContent = 'Sound on';
-          audioBtn.setAttribute('aria-pressed', 'true');
-          const fade = setInterval(() => {
-            if (music.volume < 0.4) music.volume = Math.min(0.4, music.volume + 0.02);
-            else clearInterval(fade);
-          }, 150);
-        }).catch(() => {});
-      } else if (music.paused) {
-        music.play();
-        audioBtn.querySelector('.lbl').textContent = 'Sound on';
-        audioBtn.setAttribute('aria-pressed', 'true');
-      } else {
-        music.pause();
-        audioBtn.querySelector('.lbl').textContent = 'Sound off';
-        audioBtn.setAttribute('aria-pressed', 'false');
-      }
-    });
-
-    // The loom's nodes mirror the project grid below; links open in the same tab.
-    const nodeData = [
-      // phone: true marks the six nodes shown on narrow screens; the project grid below carries all twelve.
-      { label: "Exoplanet Atlas", link: "https://curtishoffmann.com/exoplanetatlas/", hoverState: 0, phone: true },
-      { label: "Twenty-Four Cousins", link: "https://curtishoffmann.com/humanevolution/", hoverState: 0, phone: true },
-      { label: "Biodefense Budget", link: "https://curtishoffmann.com/biodefense/", hoverState: 0, phone: true },
-      { label: "RNA Virome Atlas", link: "https://curtishoffmann.com/rnaviromeatlas/", hoverState: 0 },
-      { label: "Odyssey Map", link: "https://curtishoffmann.com/odyssey/", hoverState: 0, phone: true },
-      { label: "Catalogue of Life", link: "https://curtishoffmann.com/catalogue_of_life/", hoverState: 0 },
-      { label: "Outbreak Careers", link: "https://curtishoffmann.com/outbreak-science-careers/", hoverState: 0, phone: true },
-      { label: "NSF Entities Guide", link: "https://curtishoffmann.com/nsfreg/", hoverState: 0 },
-      { label: "Scripture Atlas", link: "https://curtishoffmann.com/scripture/", hoverState: 0, phone: true },
-      { label: "Saphan", link: "https://curtishoffmann.com/saphan/", hoverState: 0 },
-      { label: "whybox", link: "https://curtishoffmann.com/whybox/", hoverState: 0 },
-      { label: "Ember", link: "https://github.com/phagehunter/ember", hoverState: 0 }
-    ];
-
-    let currentNodes = [];
-
-    function sizeCanvas() {
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      const w = canvas.parentElement.clientWidth;
-      const h = canvas.parentElement.clientHeight;
-      canvas.width = Math.round(w * dpr);
-      canvas.height = Math.round(h * dpr);
-      canvas.style.width = w + 'px';
-      canvas.style.height = h + 'px';
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    }
-    window.addEventListener('resize', sizeCanvas);
-    window.addEventListener('orientationchange', sizeCanvas);
-
-    canvas.addEventListener('mousemove', e => {
-      const rect = canvas.getBoundingClientRect();
-      mouseX = e.clientX - rect.left;
-      mouseY = e.clientY - rect.top;
-      pointerInside = true;
-      if (!isTouch) bloomTarget = 1;
-    });
-    canvas.addEventListener('mouseleave', () => {
-      pointerInside = false;
-      mouseX = mouseY = -9999;
-      if (!isTouch) bloomTarget = 0;
-      canvas.style.cursor = 'default';
-    });
-
-    function openNodeAt(x, y) {
-      for (const n of currentNodes) {
-        if (Math.hypot(x - n.x, y - n.y) < n.r * 1.35 && n.link) {
-          window.location.assign(n.link);
-          return true;
-        }
-      }
-      return false;
-    }
-
-    canvas.addEventListener('click', () => {
-      if (!isTouch && bloom > 0.5) openNodeAt(mouseX, mouseY);
-    });
-
-    canvas.addEventListener('touchend', e => {
-      const rect = canvas.getBoundingClientRect();
-      const tp = e.changedTouches[0];
-      const tx = tp.clientX - rect.left;
-      const ty = tp.clientY - rect.top;
-      if (bloom < 0.5) bloomTarget = 1;
-      else if (!openNodeAt(tx, ty)) bloomTarget = 0;
-      e.preventDefault();
-    }, { passive: false });
-
-    function drawVesicaIcon(x, y, size, active, hoverState) {
-      ctx.save();
-      ctx.translate(x, y);
-      ctx.rotate(t * 0.15);
-      const scaleBoost = 1 + (hoverState * 0.2);
-      const finalOpacity = (active * 0.78) + (hoverState * 0.22);
-      ctx.lineWidth = 1.4 + (hoverState * 0.6);
-      // gold at rest, teal when hovered: brand hue for identity, the accent for state
-      const r = Math.round(197 + (127 - 197) * hoverState), g = Math.round(160 + (209 - 160) * hoverState), b = Math.round(89 + (193 - 89) * hoverState);
-      ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${finalOpacity})`;
-      if (hoverState > 0.01) {
-        ctx.shadowBlur = hoverState * 22;
-        ctx.shadowColor = `rgba(127, 209, 193, ${hoverState * 0.85})`;
-      }
-      const count = 6;
-      for (let i = 0; i < count; i++) {
-        ctx.rotate((Math.PI * 2) / count);
-        ctx.beginPath();
-        ctx.arc((size * scaleBoost) / 2.5, 0, (size * scaleBoost) / 1.8, 0, Math.PI * 2);
-        ctx.stroke();
-      }
-      ctx.fillStyle = `rgba(227, 194, 124, ${active})`;
-      ctx.beginPath();
-      ctx.arc(0, 0, 2.2, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.restore();
-    }
-
-    function drawMotto(text, y, w) {
-      const maxW = w - 48;
-      let fs = (w < 620) ? 10 : 11;
-      ctx.textAlign = "center";
-      ctx.font = `400 ${fs}px 'Outfit'`;
-      ctx.letterSpacing = (w < 620 ? 0.24 : 0.6) + "em";
-      let tw = ctx.measureText(text).width;
-      if (tw > maxW) {
-        fs = Math.max(9, fs * (maxW / tw));
-        ctx.font = `400 ${fs}px 'Outfit'`;
-      }
-      ctx.fillStyle = `rgba(185, 196, 214, ${(0.45 + bloom * 0.3) * intro})`;
-      ctx.fillText(text, w / 2, y);
-    }
-
-    function loop(ts) {
-      const dt = Math.min((ts - lastTs) / 1000 || 0, 0.05);
-      lastTs = ts;
-      t += dt * 0.4;
-      if (introStart === null) introStart = ts;
-      if (intro < 1) intro = Math.min(1, (ts - introStart) / INTRO_MS);
-      if (intro >= 1 && !helloDone) {
-        helloDone = true;
-        if (!isTouch) { bloomTarget = 1; setTimeout(() => { if (!pointerInside) bloomTarget = 0; }, 2200); }
-      }
-      const reveal = easeOut(intro);
-      const w = canvas.clientWidth, h = canvas.clientHeight;
-      const centerX = w / 2, centerY = h / 2;
-      ctx.clearRect(0, 0, w, h);
-
-      bloom += (bloomTarget - bloom) * 0.06;
-      const pulse = (Math.sin(t * 3) + 1) / 2;
-
-      if (bloom > 0.02) {
-        for (let r = 0; r < 7; r++) {
-          const radius = (55 * r + (t * 45) % 55) * bloom;
-          const alpha = Math.max(0, (1 - radius / (w * 0.4))) * bloom * (0.16 + pulse * 0.08);
-          ctx.beginPath();
-          ctx.strokeStyle = `rgba(197, 160, 89, ${alpha})`;
-          ctx.lineWidth = 0.6 + (pulse * 1.2);
-          ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
-          ctx.stroke();
-        }
-      }
-
-      const threadCount = 12;
-      const points = Math.max(80, Math.min(180, Math.round(w / 7)));
-      const frontX = reveal * (w + 40);
-      let shuttleY = centerY;
-      for (let s = 0; s < threadCount; s++) {
-        ctx.beginPath();
-        const offset = (s / threadCount) * Math.PI * 2;
-        // each thread trails the shuttle by a few percent, so the weave builds thread by thread
-        const lag = (s / threadCount) * 0.18;
-        const threadFront = Math.max(0, (reveal - lag) / (1 - lag)) * (w + 40);
-        ctx.strokeStyle = `rgba(197, 160, 89, ${0.42 * (1 - bloom)})`;
-        ctx.lineWidth = 0.9;
-        for (let i = 0; i <= points; i++) {
-          const x = (i / points) * w;
-          if (x > threadFront) break;
-          const xFactor = x * 0.01;
-          const y1 = Math.sin(xFactor + t + offset) * 48;
-          const y2 = Math.cos(xFactor * 0.5 - t * 0.5 + offset) * 15;
-          const distToCenter = Math.abs(x - centerX);
-          const disruption = Math.max(0, (250 - distToCenter));
-          const jitter = Math.sin((x * 0.5) + (t * 12)) * (pulse * 14 * bloom * (disruption / 250));
-          const y = centerY + (y1 + y2) * (1 - bloom) + jitter;
-          if (s === 0) shuttleY = y;
-          if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
-        }
-        ctx.stroke();
-      }
-      // the shuttle: a glowing gold-bright point leading the weave, gone once the cloth is whole
-      if (intro < 1) {
-        ctx.save();
-        ctx.shadowBlur = 18; ctx.shadowColor = 'rgba(227, 194, 124, 0.9)';
-        ctx.fillStyle = `rgba(227, 194, 124, ${1 - Math.pow(intro, 6)})`;
-        ctx.beginPath(); ctx.arc(Math.min(frontX, w - 4), shuttleY, 3.2, 0, Math.PI * 2); ctx.fill();
-        ctx.restore();
-      }
-
-      // Phones get six nodes in two columns with a side margin; wider screens get all twelve in four.
-      const narrow = w < 620;
-      const shown = narrow ? nodeData.filter(d => d.phone) : nodeData;
-      const cols = narrow ? 2 : 4;
-      const rows = Math.ceil(shown.length / cols);
-      const nodeSize = narrow ? 22 : 34;
-      const sidePad = narrow ? Math.max(24, w * 0.06) : 0;
-      const innerW = w - sidePad * 2;
-      const spreadY = Math.min(1, (h * 0.42) / Math.max(1, (rows - 1) / 2 * (h / (rows + 1))));
-
-      currentNodes = [];
-      let anyHovered = false;
-
-      shown.forEach((data, index) => {
-        const row = Math.floor(index / cols);
-        const col = index % cols;
-        const targetX = narrow ? sidePad + innerW * (col + 0.5) / cols : (w / (cols + 1)) * (col + 1);
-        const ny = (row + 1) / (rows + 1);
-        // Phones: fixed row gap so node, label and the next node never crowd each other.
-        const rowGap = Math.min(100, Math.max(72, (h - 40) / rows));
-        const spreadTargetY = narrow ? centerY + (row - (rows - 1) / 2) * rowGap : centerY + (ny * h - centerY) * spreadY;
-        const baseTargetY = centerY + (spreadTargetY - centerY) * bloom;
-
-        if (data.cx === undefined) { data.cx = targetX; data.cyBase = baseTargetY; }
-        data.cx += (targetX - data.cx) * 0.14;
-        data.cyBase += (baseTargetY - data.cyBase) * 0.14;
-
-        const x = data.cx;
-        const y = data.cyBase + Math.sin(t * 0.7 + col) * 6 * bloom;
-        const size = nodeSize * bloom;
-
-        const dist = Math.hypot(mouseX - x, mouseY - y);
-        const isHovered = !isTouch && pointerInside && dist < size * 1.3;
-        data.hoverState += (isHovered ? 1 - data.hoverState : -data.hoverState) * 0.08;
-
-        drawVesicaIcon(x, y, size, bloom, data.hoverState);
-        currentNodes.push({ x, y, r: Math.max(size * 1.3, 26), label: data.label, link: data.link, hover: data.hoverState });
-        if (isHovered) anyHovered = true;
-      });
-
-      canvas.style.cursor = anyHovered ? 'pointer' : 'default';
-
-      const labelFont = narrow ? "500 11px 'Outfit'" : "500 12px 'Outfit'";
-      currentNodes.forEach(n => {
-        const strength = isTouch ? bloom : Math.max(n.hover, bloom * 0.8);
-        if (strength > 0.05) {
-          ctx.save();
-          ctx.font = labelFont;
-          ctx.textAlign = "center";
-          ctx.letterSpacing = (narrow ? 0.1 : 0.18) + "em";
-          const wobble = isTouch ? 0 : (n.hover * 3);
-          const yOffset = (narrow ? 32 : 48) + wobble;
-          const lr = Math.round(226 + (207 - 226) * n.hover), lg = Math.round(232 + (236 - 232) * n.hover), lb = Math.round(240 + (230 - 240) * n.hover);
-          ctx.fillStyle = `rgba(${lr}, ${lg}, ${lb}, ${Math.min(1, strength)})`;
-          ctx.fillText(n.label.toUpperCase(), n.x, n.y + yOffset);
-          ctx.restore();
-        }
-      });
-
-      drawMotto(bloom > 0.8 ? "SYSTEMA STABILITUM // ARCHIVUM" : "OBSERVARE ET COLLIGERE",
-                (w < 620 ? 26 : 30), w);
-
-      if (isTouch && bloom < 0.25) {
-        ctx.font = "500 11px 'Outfit'";
-        ctx.textAlign = "center";
-        ctx.letterSpacing = "0.3em";
-        ctx.fillStyle = `rgba(227, 194, 124, ${(0.55 + pulse * 0.3) * intro})`;
-        ctx.fillText("TAP TO EXPLORE", centerX, centerY + Math.min(135, h * 0.3));
-      }
-
-      if (!reduceMotion) requestAnimationFrame(loop);
-    }
-
-    sizeCanvas();
-    requestAnimationFrame(() => { sizeCanvas(); });
-
-    if (reduceMotion) {
-      bloom = 1; bloomTarget = 1;
-      loop(0);
-    } else {
-      requestAnimationFrame(loop);
-    }
-  </script>
-  <script>
-    // ── Photography: load the manifest; the section appears only when it has photographs ──
-    (function () {
-      const sec = document.getElementById('photography');
-      const strip = sec.querySelector('.strip');
-      const nav = sec.querySelector('.strip-nav');
-      const note = sec.querySelector('.photos-note');
-      const box = document.getElementById('lightbox');
-      const lbImg = document.getElementById('lb-img'), lbCap = document.getElementById('lb-cap'), lbCount = document.getElementById('lb-count');
-      let photos = [], current = 0, opener = null;
-      const supportsWebp = document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') === 0;
-
-      function pick(p) { return supportsWebp ? p.src : (p.fallback || p.src); }
-
-      function render() {
-        strip.innerHTML = '';
-        photos.forEach((p, i) => {
-          const fig = document.createElement('figure'); fig.className = 'shot'; fig.setAttribute('role', 'listitem');
-          const btn = document.createElement('button'); btn.type = 'button'; btn.className = 'frame';
-          btn.style.setProperty('--ar', p.w + ' / ' + p.h); btn.style.setProperty('--ph', p.color || '');
-          btn.setAttribute('aria-label', (p.alt || p.caption || ('Photograph ' + (i + 1))) + ', open larger');
-          const img = document.createElement('img'); img.alt = p.alt || ''; img.loading = i < 3 ? 'eager' : 'lazy'; img.decoding = 'async'; img.draggable = false;
-          img.width = p.w; img.height = p.h; img.src = supportsWebp ? p.thumb : pick(p);
-          img.addEventListener('load', () => img.classList.add('in'), { once: true });
-          btn.appendChild(img); btn.addEventListener('click', () => open(i, btn));
-          fig.appendChild(btn);
-          if (p.caption) { const c = document.createElement('figcaption'); c.textContent = p.caption; fig.appendChild(c); }
-          strip.appendChild(fig);
-        });
-        note.innerHTML = '<span class="photos-count">' + photos.length + ' photograph' + (photos.length === 1 ? '' : 's') + '</span>';
-        nav.hidden = photos.length < 2;
-        updateNav();
-      }
-
-      function updateNav() {
-        const max = strip.scrollWidth - strip.clientWidth - 2;
-        nav.querySelector('[data-dir="-1"]').disabled = strip.scrollLeft <= 2;
-        nav.querySelector('[data-dir="1"]').disabled = strip.scrollLeft >= max;
-      }
-      nav.addEventListener('click', (e) => {
-        const b = e.target.closest('[data-dir]'); if (!b) return;
-        const first = strip.querySelector('.shot');
-        const step = first ? first.getBoundingClientRect().width + 14 : strip.clientWidth * .8;
-        strip.scrollBy({ left: step * Number(b.dataset.dir), behavior: 'smooth' });
-      });
-      strip.addEventListener('scroll', updateNav, { passive: true });
-      window.addEventListener('resize', updateNav);
-      strip.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { e.preventDefault(); nav.querySelector('[data-dir="' + (e.key === 'ArrowRight' ? 1 : -1) + '"]').click(); }
-      });
-      sec.addEventListener('contextmenu', (e) => { if (e.target.closest('.frame')) e.preventDefault(); });
-      box.addEventListener('contextmenu', (e) => e.preventDefault());
-
-      function show(i) {
-        current = (i + photos.length) % photos.length;
-        const p = photos[current];
-        lbImg.src = pick(p); lbImg.alt = p.alt || ''; lbImg.width = p.w; lbImg.height = p.h; lbImg.style.setProperty('--ph', p.color || '');
-        lbCap.textContent = p.caption || '';
-        lbCount.textContent = (current + 1) + ' of ' + photos.length;
-        const next = photos[(current + 1) % photos.length]; if (next && next !== p) { const pre = new Image(); pre.src = pick(next); }
-      }
-      function open(i, from) {
-        if (typeof box.showModal !== 'function') { return; }
-        opener = from; show(i); box.showModal();
-      }
-      box.addEventListener('click', (e) => {
-        const step = e.target.closest('[data-step]'); if (step) { show(current + Number(step.dataset.step)); return; }
-        if (e.target.closest('[data-close]') || e.target === box) box.close();
-      });
-      box.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowRight') show(current + 1);
-        if (e.key === 'ArrowLeft') show(current - 1);
-      });
-      let tx = null;
-      box.addEventListener('touchstart', (e) => { tx = e.changedTouches[0].clientX; }, { passive: true });
-      box.addEventListener('touchend', (e) => { if (tx === null) return; const dx = e.changedTouches[0].clientX - tx; tx = null; if (Math.abs(dx) > 48) show(current + (dx < 0 ? 1 : -1)); }, { passive: true });
-      box.addEventListener('close', () => { lbImg.removeAttribute('src'); if (opener) opener.focus(); });
-
-      fetch('photos/manifest.json', { cache: 'no-cache' })
-        .then((r) => r.ok ? r.json() : null)
-        .then((m) => {
-          if (!m) return;
-          photos = (m.photos || []).filter((p) => p && p.src && p.w && p.h);
-          if (photos.length) {
-            sec.hidden = false;
-            render();
-          }
-        })
-        .catch(() => {});
-    })();
-
-    // ── Bookmarks: accordion + filter ──
+    // Bookmarks: filter across groups; groups are native <details> so they work without this script.
     (function () {
       const groups = Array.from(document.querySelectorAll('.bm-group'));
       const filter = document.getElementById('bm-filter');
       const count = document.getElementById('bm-count');
       const empty = document.getElementById('bm-empty');
       const total = document.querySelectorAll('.bm-list li').length;
-      const fmt = (n) => n.toLocaleString('en-US');
-      count.textContent = fmt(total) + ' links';
-      groups.forEach((g) => {
-        const b = g.querySelector('.bm-toggle');
-        b.addEventListener('click', () => b.setAttribute('aria-expanded', b.getAttribute('aria-expanded') !== 'true'));
-      });
+      count.textContent = total + ' links';
       let timer;
       filter.addEventListener('input', () => {
         clearTimeout(timer);
@@ -904,15 +613,241 @@
             let n = 0;
             g.querySelectorAll('li').forEach((li) => { const hit = !q || li.textContent.toLowerCase().includes(q); li.hidden = !hit; if (hit) n++; });
             g.hidden = q ? n === 0 : false;
-            g.querySelector('.n').textContent = q ? n + ' of ' + g.querySelector('.n').dataset.total : g.querySelector('.n').dataset.total;
-            if (q) g.querySelector('.bm-toggle').setAttribute('aria-expanded', n > 0);
-            else g.querySelector('.bm-toggle').setAttribute('aria-expanded', 'false');
+            const badge = g.querySelector('.n');
+            badge.textContent = q ? n + ' of ' + badge.dataset.total : badge.dataset.total;
+            g.open = q ? n > 0 : false;
             shown += n;
           });
           empty.hidden = shown > 0;
-          count.textContent = q ? fmt(shown) + ' of ' + fmt(total) + ' links' : fmt(total) + ' links';
+          count.textContent = q ? shown + ' of ' + total + ' links' : total + ' links';
         }, 80);
       });
+    })();
+  </script>
+
+  <script>
+    // Each open collection is a sideways strip of tiles: arrow buttons and arrow keys step by one tile; the strip itself scrolls and snaps natively.
+    (function () {
+      document.querySelectorAll('.bm-strip-wrap').forEach((wrap) => {
+        const strip = wrap.querySelector('.bm-strip'), head = wrap.querySelector('.bm-strip-head');
+        function step() { const c = strip.querySelector('li:not([hidden])'); return c ? c.getBoundingClientRect().width + 10 : strip.clientWidth * .8; }
+        function update() {
+          const max = strip.scrollWidth - strip.clientWidth - 2;
+          head.querySelector('[data-dir="-1"]').disabled = strip.scrollLeft <= 2;
+          head.querySelector('[data-dir="1"]').disabled = strip.scrollLeft >= max;
+          head.hidden = max <= 2;
+        }
+        head.addEventListener('click', (e) => { const b = e.target.closest('[data-dir]'); if (b) strip.scrollBy({ left: step() * Number(b.dataset.dir), behavior: 'smooth' }); });
+        strip.addEventListener('scroll', update, { passive: true });
+        strip.addEventListener('keydown', (e) => { if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { e.preventDefault(); head.querySelector('[data-dir="' + (e.key === 'ArrowRight' ? 1 : -1) + '"]').click(); } });
+        wrap.closest('details').addEventListener('toggle', update);
+        window.addEventListener('resize', update);
+        new MutationObserver(update).observe(strip, { attributes: true, subtree: true, attributeFilter: ['hidden'] });
+      });
+    })();
+    // Collections slide open and closed: the panel's height is animated around the native open/close.
+    (function () {
+      const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      document.querySelectorAll('details.bm-group').forEach((d) => {
+        const sum = d.querySelector('summary'), body = d.querySelector('.bm-strip-wrap'); let busy = false;
+        sum.addEventListener('click', (e) => {
+          e.preventDefault(); if (busy || reduce) { if (!busy) d.open = !d.open; return; }
+          busy = true; let done = false;
+          const finish = () => { if (done) return; done = true; busy = false; body.style.height = ''; body.style.overflow = ''; body.style.transition = ''; if (closing) d.open = false; };
+          const closing = d.open;
+          if (closing) { body.style.height = body.scrollHeight + 'px'; }
+          else { d.open = true; body.style.height = '0px'; }
+          body.style.overflow = 'hidden';
+          const H = closing ? 0 : body.scrollHeight;
+          requestAnimationFrame(() => { body.getBoundingClientRect(); body.style.transition = 'height .34s cubic-bezier(.2,.7,.2,1)'; body.style.height = H + 'px'; });
+          body.addEventListener('transitionend', finish, { once: true }); setTimeout(finish, 450);
+        });
+      });
+    })();
+  </script>
+
+  <script>
+    // The current-work and education rows type themselves the first time they scroll into view. Progress is a function of elapsed time on a
+    // plain timer, so a throttled or background tab only pauses it; the text is laid out hidden beforehand, so nothing shifts.
+    (function () {
+      const card = document.querySelector('.cv'); if (!card) return;
+      const spans = Array.from(card.querySelectorAll('.typed'));
+      const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce || !('IntersectionObserver' in window)) { spans.forEach((s) => s.classList.add('on')); card.querySelectorAll('.cv-h').forEach((h) => h.classList.add('drawn')); return; }
+      const texts = spans.map((s) => s.textContent);
+      const CPS = 42, PAUSE = 160;                                   // characters per second; pause after each line, in ms
+      const starts = []; let total = 0;
+      texts.forEach((t) => { starts.push(total); total += t.length * (1000 / CPS) + PAUSE; });
+      let t0 = null, started = false, timer = 0;
+      const cursor = document.createElement('span'); cursor.className = 'cursor'; cursor.setAttribute('aria-hidden', 'true');
+      function frame() {
+        const ts = Date.now(); if (t0 === null) t0 = ts;
+        const el = ts - t0; let done = true;
+        spans.forEach((s, i) => {
+          const full = texts[i], local = el - starts[i];
+          const k = local <= 0 ? 0 : Math.min(full.length, Math.floor(local / (1000 / CPS)));
+          if (k < full.length) done = false;
+          if (k === 0) return;
+          if (!s.classList.contains('on')) s.classList.add('on');
+          if (s.firstChild && s.firstChild.nodeType === 3) s.firstChild.textContent = full.slice(0, k); else s.insertBefore(document.createTextNode(full.slice(0, k)), s.firstChild);
+          if (k < full.length && cursor.parentNode !== s) s.appendChild(cursor);
+          if (k >= full.length && s.parentNode.classList.contains('cv-h')) s.parentNode.classList.add('drawn');
+        });
+        if (done) { cursor.remove(); clearInterval(timer); }
+      }
+      function start() {
+        if (started) return; started = true; io.disconnect(); clearInterval(poll); window.removeEventListener('scroll', check);
+        spans.forEach((s) => { s.textContent = ''; }); timer = setInterval(frame, 50); frame();
+      }
+      function check() { const r = card.getBoundingClientRect(); if (r.top < window.innerHeight * .85 && r.bottom > 0) start(); }
+      const io = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) start(); }, { threshold: .3 });
+      io.observe(card);
+      const poll = setInterval(check, 400);                    // fallback for background panes, where observers and frames pause
+      window.addEventListener('scroll', check, { passive: true });
+    })();
+  </script>
+
+  <script>
+    // The loom's threads, from the live page: twelve sine threads drift; the pointer flattens them with a shiver, and they settle when it leaves.
+    (function () {
+      const canvas = document.getElementById('threadLoom'); if (!canvas) return;
+      const ctx = canvas.getContext('2d'); const GOLD = '227, 194, 124';
+      const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let t = 0, last = 0, bloom = 0, target = 0, raf = 0;
+      function size() { const dpr = Math.min(devicePixelRatio || 1, 2), r = canvas.getBoundingClientRect(); canvas.width = Math.round(r.width * dpr); canvas.height = Math.round(r.height * dpr); ctx.setTransform(dpr, 0, 0, dpr, 0, 0); }
+      canvas.addEventListener('mouseenter', () => { target = 1; }); canvas.addEventListener('mouseleave', () => { target = 0; });
+      function draw(ts) {
+        const dt = Math.min((ts - last) / 1000 || 0, .05); last = ts; t += dt * .4; bloom += (target - bloom) * .06;
+        const w = canvas.clientWidth, h = canvas.clientHeight, cx = w / 2, cy = h / 2, pulse = (Math.sin(t * 3) + 1) / 2;
+        ctx.clearRect(0, 0, w, h);
+        const n = 12, pts = Math.max(80, Math.min(220, Math.round(w / 6)));
+        for (let s = 0; s < n; s++) {
+          ctx.beginPath(); const off = (s / n) * Math.PI * 2;
+          ctx.strokeStyle = 'rgba(' + GOLD + ', ' + (0.28 * (1 - bloom * .6)) + ')'; ctx.lineWidth = .8;
+          for (let i = 0; i <= pts; i++) {
+            const x = (i / pts) * w, xf = x * .01;
+            const y1 = Math.sin(xf + t + off) * (h * .26), y2 = Math.cos(xf * .5 - t * .5 + off) * (h * .08);
+            const near = Math.max(0, 250 - Math.abs(x - cx)) / 250;
+            const jitter = Math.sin(x * .5 + t * 12) * (pulse * 10 * bloom * near);
+            const y = cy + (y1 + y2) * (1 - bloom) + jitter;
+            i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+          }
+          ctx.stroke();
+        }
+        if (!reduce) raf = requestAnimationFrame(draw);
+      }
+      size(); addEventListener('resize', () => { size(); if (reduce) draw(0); });
+      if (reduce) { draw(0); return; }
+      raf = requestAnimationFrame(draw);
+      document.addEventListener('visibilitychange', () => { if (document.hidden) cancelAnimationFrame(raf); else { last = 0; raf = requestAnimationFrame(draw); } });
+    })();
+  </script>
+  <script>
+    // Sound: nothing downloads until the first press; the music fades in over a few seconds and the button shows it is playing.
+    (function () {
+      const music = document.getElementById('bgMusic'), btn = document.getElementById('sound'); if (!music || !btn) return;
+      let started = false, fade = 0;
+      function set(on) { btn.setAttribute('aria-pressed', on ? 'true' : 'false'); btn.setAttribute('aria-label', on ? 'Sound on' : 'Sound off'); }
+      btn.addEventListener('click', () => {
+        if (!started) {
+          music.volume = 0;
+          music.play().then(() => {
+            started = true; set(true);
+            clearInterval(fade); fade = setInterval(() => { if (music.volume < 0.4) music.volume = Math.min(0.4, music.volume + 0.02); else clearInterval(fade); }, 150);
+          }).catch(() => { set(false); });
+        } else if (music.paused) { music.play(); set(true); }
+        else { music.pause(); set(false); }
+      });
+    })();
+  </script>
+  <script>
+    // Every microbe drifts on its own. A pointer nearby sets each a small target offset; the position eases toward it every frame
+    // and back to rest when the pointer leaves, so the response is a slow drift rather than a jump.
+    (function () {
+      const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches; if (reduce) return;
+      const field = document.querySelector('.field');
+      const items = [];
+      if (field) field.querySelectorAll('.phage').forEach((g) => items.push({ kind: 'svg', n: g.querySelector('.nudge'), x: +g.dataset.x, y: +g.dataset.y, k: +g.dataset.k || 1, cx: 0, cy: 0, cr: 0, tx: 0, ty: 0, tr: 0 }));
+      document.querySelectorAll('.microbe').forEach((el) => items.push({ kind: 'page', el, n: el.querySelector('.nudge'), k: 1, cx: 0, cy: 0, cr: 0, tx: 0, ty: 0, tr: 0, dx: 0, dy: 0, vx: 0, vy: 0, held: false }));
+      const R = 100, PUSH = 7, TILT = 6, RP = 160, PUSHP = 10, TILTP = 5;
+      let raf = 0;
+      function tick() {
+        let moving = false;
+        items.forEach((it) => {
+          it.cx += (it.tx - it.cx) * .045; it.cy += (it.ty - it.cy) * .045; it.cr += (it.tr - it.cr) * .045;
+          if (Math.abs(it.tx - it.cx) + Math.abs(it.ty - it.cy) + Math.abs(it.tr - it.cr) > .02) moving = true;
+          it.n.style.transform = 'translate(' + it.cx.toFixed(2) + 'px, ' + it.cy.toFixed(2) + 'px) rotate(' + it.cr.toFixed(2) + 'deg)';
+          if (it.kind === 'page' && !it.held && (Math.abs(it.vx) + Math.abs(it.vy) > .05)) {    // glide after a release, then settle
+            it.dx += it.vx; it.dy += it.vy; it.vx *= .9; it.vy *= .9; place(it); moving = true;
+          }
+        });
+        raf = moving ? requestAnimationFrame(tick) : 0;
+      }
+      function wake() { if (!raf) raf = requestAnimationFrame(tick); }
+      // Drag: a shadow can be picked up with a mouse or pen, carried anywhere inside its section, and let go with a little glide.
+      function place(it) {
+        it.el.style.setProperty('--dx', it.dx.toFixed(1) + 'px'); it.el.style.setProperty('--dy', it.dy.toFixed(1) + 'px');
+        const box = it.el.parentElement.getBoundingClientRect(), r = it.el.getBoundingClientRect();
+        const cx = r.left + r.width / 2 - box.left, cy = r.top + r.height / 2 - box.top;   // current center inside the section
+        const m = Math.min(r.width, r.height) * .35;
+        if (cx < m) { it.dx += m - cx; it.vx = 0; } if (cx > box.width - m) { it.dx -= cx - (box.width - m); it.vx = 0; }
+        if (cy < m) { it.dy += m - cy; it.vy = 0; } if (cy > box.height - m) { it.dy -= cy - (box.height - m); it.vy = 0; }
+        it.el.style.setProperty('--dx', it.dx.toFixed(1) + 'px'); it.el.style.setProperty('--dy', it.dy.toFixed(1) + 'px');
+      }
+      items.filter((it) => it.kind === 'page').forEach((it) => {
+        let sx = 0, sy = 0, ox = 0, oy = 0, lx = 0, ly = 0, lt = 0;
+        it.el.addEventListener('pointerdown', (e) => {
+          if (e.pointerType === 'touch' || e.button !== 0) return;
+          e.preventDefault(); try { it.el.setPointerCapture(e.pointerId); } catch (_) {} it.held = true; it.el.classList.add('held');
+          sx = e.clientX; sy = e.clientY; ox = it.dx; oy = it.dy; lx = sx; ly = sy; lt = performance.now(); it.vx = it.vy = 0; it.tx = it.ty = it.tr = 0;
+        });
+        it.el.addEventListener('pointermove', (e) => {
+          if (!it.held) return;
+          it.dx = ox + (e.clientX - sx); it.dy = oy + (e.clientY - sy);
+          const now = performance.now(), dt = Math.max(8, now - lt);
+          it.vx = (e.clientX - lx) / dt * 16 * .6 + it.vx * .4; it.vy = (e.clientY - ly) / dt * 16 * .6 + it.vy * .4;   // velocity per frame, smoothed
+          const sp = Math.hypot(it.vx, it.vy); if (sp > 9) { it.vx *= 9 / sp; it.vy *= 9 / sp; }                               // capped: a flick glides at most a hand's width
+          lx = e.clientX; ly = e.clientY; lt = now; place(it);
+        });
+        const drop = (e) => { if (!it.held) return; it.held = false; it.el.classList.remove('held'); if (performance.now() - lt > 80) it.vx = it.vy = 0; wake(); };
+        it.el.addEventListener('pointerup', drop); it.el.addEventListener('pointercancel', drop);
+      });
+      let svgPt = null;
+      document.addEventListener('mousemove', (e) => {
+        if (field) { const pt = field.createSVGPoint(); pt.x = e.clientX; pt.y = e.clientY; svgPt = pt.matrixTransform(field.getScreenCTM().inverse()); }
+        items.forEach((it) => {
+          let dx, dy, r, push, tilt;
+          if (it.kind === 'svg') { if (!svgPt) return; dx = it.x - svgPt.x; dy = it.y - svgPt.y; r = R; push = PUSH / it.k; tilt = TILT; }
+          else { if (it.held) return; const b = it.el.getBoundingClientRect(); dx = b.left + b.width / 2 - e.clientX; dy = b.top + b.height / 2 - e.clientY; r = RP; push = PUSHP * (100 / Math.max(60, b.width)); tilt = TILTP; }
+          const d = Math.hypot(dx, dy) || 1;
+          if (d < r) { const f = (1 - d / r) * (1 - d / r); it.tx = dx / d * push * f; it.ty = dy / d * push * f; it.tr = (dx > 0 ? 1 : -1) * tilt * f; }
+          else { it.tx = it.ty = it.tr = 0; }
+        });
+        wake();
+      }, { passive: true });
+      document.addEventListener('mouseleave', () => { items.forEach((it) => { it.tx = it.ty = it.tr = 0; }); wake(); });
+    })();
+  </script>
+  <script>
+    // Spotlight: one project a day. A project added within the last few days takes the spotlight outright; otherwise the UTC day number
+    // walks the docket in order from the anchor. The data between the markers is rebuilt by build_projects.py; nothing else changes.
+    (function () {
+      /* spotlight:start */
+      const P = [{"title": "Exoplanet Atlas", "href": "https://curtishoffmann.com/exoplanetatlas/", "cta": "Browse six thousand worlds beyond the Solar System.", "added": null}, {"title": "Twenty-Four Cousins", "href": "https://curtishoffmann.com/humanevolution/", "cta": "Meet the twenty-four hominin species in the human family.", "added": null}, {"title": "Biodefense Budget", "href": "https://curtishoffmann.com/biodefense/", "cta": "Follow every federal biodefense dollar from FY2019 to the FY2026 request.", "added": null}, {"title": "RNA Virome Atlas", "href": "https://curtishoffmann.com/rnaviromeatlas/", "cta": "Explore the RNA viruses hidden in metatranscriptomes.", "added": null}, {"title": "Odyssey Character Map", "href": "https://curtishoffmann.com/odyssey/", "cta": "See every character in Homer’s epic and who they are bound to.", "added": null}, {"title": "Catalogue of Life Explorer", "href": "https://curtishoffmann.com/catalogue_of_life/", "cta": "Search 7.8 million names across the tree of life.", "added": null}, {"title": "Outbreak Science Careers", "href": "https://curtishoffmann.com/outbreak-science-careers/", "cta": "See where a career in outbreak science can take you.", "added": null}, {"title": "NSF Restricted Entities Guide", "href": "https://curtishoffmann.com/nsfreg/", "cta": "Search the thirteen restricted-party lists in one place.", "added": null}, {"title": "Scripture Atlas", "href": "https://curtishoffmann.com/scripture/", "cta": "Trace 192 figures through a character network of scripture.", "added": null}, {"title": "Saphan", "href": "https://curtishoffmann.com/saphan/", "cta": "Try the offline health phrasebook for village health volunteers.", "added": null}, {"title": "whybox", "href": "https://curtishoffmann.com/whybox/", "cta": "Reason from what you can see to the mechanisms you cannot.", "added": null}, {"title": "Ember", "href": "https://github.com/phagehunter/ember", "cta": "Get free spaced-repetition flashcards for Mac and Windows.", "added": null}];
+      const SPOT = { anchor: Date.UTC(2026, 9, 24), anchorTitle: "Outbreak Science Careers", newDays: 3 };
+/* spotlight:end */
+      const dayOf = (ms) => Math.floor(ms / 864e5);
+      function pick(ms) {
+        const day = dayOf(ms);
+        const fresh = P.filter((p) => p.added && day - dayOf(Date.parse(p.added + 'T00:00:00Z')) >= 0 && day - dayOf(Date.parse(p.added + 'T00:00:00Z')) < SPOT.newDays);
+        if (fresh.length) return fresh[((day % fresh.length) + fresh.length) % fresh.length];
+        const a = Math.max(0, P.findIndex((p) => p.title === SPOT.anchorTitle));
+        const d = day - dayOf(SPOT.anchor);
+        return P[((a + d) % P.length + P.length) % P.length];
+      }
+      const el = document.getElementById('featured'), f = pick(Date.now());
+      const a = el.querySelector('a'); a.href = f.href; a.textContent = f.title; el.querySelector('.cta').textContent = f.cta;
+      window.featuredFor = (y, m, d) => pick(Date.UTC(y, m - 1, d)).title;   // for checking: featuredFor(2026, 10, 25)
     })();
   </script>
 </body>

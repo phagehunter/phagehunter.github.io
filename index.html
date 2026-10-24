@@ -278,8 +278,9 @@
     .featured .cta { display: block; margin-top: .1rem; }
     .featured { transition: opacity .7s ease; }
     .featured.pending { opacity: 0; }
-    .featured a.reel { display: inline-block; vertical-align: bottom; }
-    .featured .win { display: block; overflow: hidden; }
+    .featured a { position: relative; }
+    .featured a.reel { color: transparent; }                     /* the name stays in the flow, invisible; the reel runs on top of it, so nothing shifts */
+    .featured .win { position: absolute; inset: 0; overflow: hidden; color: var(--gold); }
     .featured .strip { display: block; will-change: transform; }
     .featured .r { display: block; white-space: nowrap; }
     .featured.pending .cta, .featured.cue .cta, .featured.spinning .cta { opacity: 0; transform: translateY(.35rem); transition: none; }
@@ -1148,20 +1149,20 @@
       else {
         setTimeout(() => { el.classList.remove('pending'); el.classList.add('cue'); }, 1500);   // the "Check out" label fades in first
         setTimeout(() => {
-          const box = a.getBoundingClientRect(), H = box.height || 28, Wd = box.width;
+          const H = a.getBoundingClientRect().height || 28;
           const order = P.slice(P.indexOf(f) + 1).concat(P.slice(0, P.indexOf(f) + 1));   // ends on the pick
           const names = order.concat(order);                                                // two turns of the reel
           const strip = document.createElement('span'); strip.className = 'strip';
           names.forEach((q) => { const r = document.createElement('span'); r.className = 'r'; r.style.height = r.style.lineHeight = H + 'px'; r.textContent = q.title; strip.appendChild(r); });
-          const win = document.createElement('span'); win.className = 'win'; win.style.height = H + 'px'; win.style.width = Math.ceil(Wd) + 'px'; win.appendChild(strip);
-          a.textContent = ''; a.appendChild(win); a.classList.add('reel'); el.classList.remove('cue'); el.classList.add('spinning');
+          const win = document.createElement('span'); win.className = 'win'; win.appendChild(strip);
+          a.appendChild(win); a.classList.add('reel'); el.classList.remove('cue'); el.classList.add('spinning');
           const steps = names.length - 1, DUR = 2600, t0 = performance.now();
           const easeOut = (t) => 1 - Math.pow(1 - t, 3);
           (function spin(now) {
             const t = Math.min(1, (now - t0) / DUR);
             strip.style.transform = 'translateY(' + (-easeOut(t) * steps * H).toFixed(2) + 'px)';
             if (t < 1) requestAnimationFrame(spin);
-            else { a.textContent = f.title; a.classList.remove('reel'); el.classList.remove('spinning'); el.classList.add('landed'); }
+            else { win.remove(); a.classList.remove('reel'); el.classList.remove('spinning'); el.classList.add('landed'); }
           })(t0);
         }, 2000);                                                                                // the reel, half a second after the label
       }

@@ -282,8 +282,8 @@
     .featured .win { display: block; overflow: hidden; }
     .featured .strip { display: block; will-change: transform; }
     .featured .r { display: block; white-space: nowrap; }
-    .featured .cta { transition: opacity .6s ease .1s; }
-    .featured.spinning .cta { opacity: 0; }
+    .featured.pending .cta, .featured.spinning .cta { opacity: 0; transform: translateY(.35rem); transition: none; }
+    .featured.landed .cta { opacity: 1; transform: none; transition: opacity 1s ease .25s, transform 1s cubic-bezier(.2,.7,.2,1) .25s; }
     .featured.landed a { animation: land .6s ease; }
     @keyframes land { 0% { color: var(--text); } 100% { color: var(--gold); } }
     .btn { position: relative; isolation: isolate; overflow: hidden; display: inline-flex; align-items: center; gap: .5rem; font-size: .9rem; font-weight: 600; padding: .85rem 1.35rem; border-radius: 6px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none;
@@ -526,6 +526,7 @@
         <p class="featured" id="featured"><!-- spotlight-fallback:start -->
 <span class="fl">Check out</span> <a href="https://curtishoffmann.com/outbreak-science-careers/">Outbreak Science Careers</a><span class="cta">See where a career in outbreak science can take you.</span>
 <!-- spotlight-fallback:end --></p>
+        <script>document.getElementById('featured').classList.add('pending');</script>
       </div>
       <div class="sky"><svg class="field" viewBox="0 0 420 420" aria-label="Project constellation" role="img">
         <g class="rings" fill="none" stroke="var(--line)" stroke-width="1"><circle cx="210" cy="210" r="112"/><circle cx="210" cy="210" r="150" stroke-dasharray="2 6"/><circle cx="210" cy="210" r="190" opacity=".6"/></g>
@@ -1135,8 +1136,8 @@
       // The reveal: the line stays blank for three seconds after the page opens, then fades in and runs through every project
       // name like a slot reel, slowing down to land on the day's pick; the one-line note follows.
       const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (!reduce) {
-        el.classList.add('pending');
+      if (reduce) el.classList.remove('pending');
+      else {
         setTimeout(() => {
           const box = a.getBoundingClientRect(), H = box.height || 28, Wd = box.width;
           const order = P.slice(P.indexOf(f) + 1).concat(P.slice(0, P.indexOf(f) + 1));   // ends on the pick

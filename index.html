@@ -83,7 +83,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200;0,400;0,600;1,200;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200;0,400;0,600;1,200;1,400&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --midnight: #000b18;
@@ -96,7 +96,8 @@
       --bone-dim: #b9c4d6;
       --muted: #8d9bb0;
       --slate: #4a5568;
-      --focus: #7cc4ff;
+      --teal: #7fd1c1;       /* interaction accent: hover, focus, the live thread */
+      --focus: #7fd1c1;
       --safe-top: env(safe-area-inset-top, 0px);
       --safe-bottom: env(safe-area-inset-bottom, 0px);
       --gutter: clamp(1.5rem, 6vw, 2.5rem); /* 24 px on the smallest phones, 40 px from about 670 px up */
@@ -121,26 +122,26 @@
     a:hover { color: var(--gold-bright); }
     :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 3px; }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
-    .skip-link { position: absolute; left: var(--gutter); top: -60px; z-index: 300; background: var(--gold); color: var(--midnight); padding: .5rem .9rem; border-radius: 3px; font-family: 'Inter', sans-serif; font-size: .85rem; }
+    .skip-link { position: absolute; left: var(--gutter); top: -60px; z-index: 300; background: var(--gold); color: var(--midnight); padding: .5rem .9rem; border-radius: 3px; font-family: 'Archivo', sans-serif; font-size: .85rem; }
     .skip-link:focus { top: .75rem; }
 
     /* ── Hero: the loom ── */
     .hero {
       position: relative; z-index: 2;
-      min-height: 100vh; min-height: 100svh;
+      min-height: 92vh; min-height: 92svh;
       display: flex; flex-direction: column; align-items: center;
-      background: radial-gradient(circle at center, var(--indigo) 0%, var(--midnight) 100%);
+      background: radial-gradient(ellipse 70% 60% at 50% 42%, #142440 0%, #0b1a33 55%, var(--midnight) 100%);
       padding: calc(1.5rem + var(--safe-top)) var(--gutter) calc(1.25rem + var(--safe-bottom));
       overflow: hidden;
     }
     .hero header { position: relative; z-index: 20; text-align: center; flex-shrink: 0; padding: 0 .5rem; }
     .hero header > * { animation: blurFadeIn .9s cubic-bezier(0.22, 1, 0.36, 1) both; will-change: opacity, transform, filter; }
     .hero header > :nth-child(1) { animation-delay: .05s; }
-    .hero header > :nth-child(2) { animation-delay: .13s; }
+    .hero header > :nth-child(2) { animation-name: trackIn; animation-duration: 1.2s; animation-delay: .1s; }
     .hero header > :nth-child(3) { animation-delay: .21s; }
-    .prefix { font-size: clamp(0.55rem, 2.4vw, 0.65rem); letter-spacing: 0.7em; color: var(--gold); text-transform: uppercase; margin-bottom: 1.1rem; font-weight: 300; padding-left: 0.7em; overflow-wrap: break-word; }
+    .prefix { font-size: clamp(0.55rem, 2.4vw, 0.65rem); letter-spacing: 0.7em; color: var(--gold); text-transform: uppercase; margin-bottom: 1.1rem; font-weight: 400; padding-left: 0.7em; overflow-wrap: break-word; }
     h1 { font-size: clamp(1.9rem, 8vw, 3.2rem); font-weight: 200; letter-spacing: 0.28em; color: var(--bone); text-transform: uppercase; padding-left: 0.28em; line-height: 1.15; }
-    .tagline { font-size: clamp(0.8rem, 3.6vw, 0.95rem); font-style: italic; letter-spacing: 0.18em; color: #7c8aa0; margin-top: 0.8rem; }
+    .tagline { font-size: clamp(0.85rem, 3.6vw, 1rem); font-style: italic; letter-spacing: 0.18em; color: var(--bone-dim); margin-top: 0.8rem; }
 
     .canvas-container { position: relative; z-index: 10; flex: 1 1 auto; min-height: 260px; width: 100vw; align-self: center; }
     canvas { display: block; width: 100%; height: 100%; filter: drop-shadow(0 0 20px rgba(197, 160, 89, 0.15)); touch-action: manipulation; }
@@ -149,7 +150,7 @@
     .hero-foot .row { display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; }
     .cv-button {
       display: inline-flex; align-items: center; justify-content: center; min-height: 44px;
-      padding: 0.8rem 2.2rem; border: 1px solid rgba(197, 160, 89, 0.35); border-radius: 2px;
+      padding: 0.8rem 2.2rem; border: 1px solid rgba(197, 160, 89, 0.6); border-radius: 2px;
       color: var(--gold); text-decoration: none; font-size: 0.72rem; letter-spacing: 0.4em; text-transform: uppercase;
       transition: border-color .15s ease-out, background .15s ease-out, color .15s ease-out, transform .15s ease-out; background: transparent; -webkit-tap-highlight-color: transparent;
     }
@@ -157,7 +158,7 @@
     .cv-button.solid { background: var(--gold); color: var(--midnight); border-color: var(--gold); }
     .cv-button.solid:hover, .cv-button.solid:focus-visible { background: var(--gold-bright); color: var(--midnight); }
     .cv-button:active { transform: scale(.96); }
-    .scroll-cue { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; color: var(--muted); text-decoration: none; animation: cueBob 2.4s ease-in-out infinite; }
+    .scroll-cue { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; color: var(--bone-dim); text-decoration: none; animation: cueBob 2.4s ease-in-out infinite; }
     .scroll-cue:hover, .scroll-cue:focus-visible { color: var(--gold); }
     @keyframes cueBob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
 
@@ -169,7 +170,7 @@
     /* ── Content below the loom ── */
     .wrap { max-width: 1080px; margin: 0 auto; padding: 0 var(--gutter); position: relative; z-index: 2; }
     section.block { padding-top: 4.5rem; padding-bottom: 1rem; } /* vertical only: the side gutter comes from .wrap */
-    .eyebrow { font-family: 'Inter', sans-serif; font-size: .62rem; letter-spacing: .32em; text-transform: uppercase; color: var(--gold); margin-bottom: .9rem; display: flex; align-items: center; gap: 1rem; }
+    .eyebrow { font-family: 'Archivo', sans-serif; font-size: .62rem; letter-spacing: .32em; text-transform: uppercase; color: var(--gold); margin-bottom: .9rem; display: flex; align-items: center; gap: 1rem; }
     .eyebrow::after { content: ""; flex: 1; height: 1px; background: var(--line); }
     h2 { font-weight: 200; font-size: clamp(1.9rem, 4.5vw, 2.8rem); letter-spacing: .02em; line-height: 1.15; margin-bottom: .6rem; }
     h2 em, .lede em { font-style: italic; color: var(--gold); }
@@ -191,7 +192,7 @@
     .project .ico { width: 34px; height: 34px; color: var(--gold); opacity: .85; }
     .project h3 { font-weight: 400; font-size: 1.45rem; letter-spacing: .01em; line-height: 1.15; }
     .project p { font-size: 1rem; color: var(--bone-dim); flex: 1; }
-    .project .go { font-family: 'Inter', sans-serif; font-size: .62rem; letter-spacing: .28em; text-transform: uppercase; color: var(--gold); }
+    .project .go { font-family: 'Archivo', sans-serif; font-size: .62rem; letter-spacing: .28em; text-transform: uppercase; color: var(--gold); }
     .project:hover .go { color: var(--gold-bright); }
 
     .about { display: grid; grid-template-columns: 1fr; gap: 2rem; }
@@ -202,7 +203,7 @@
     .links a { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .9rem 1.1rem; border: 1px solid var(--line); border-radius: 6px; text-decoration: none; color: var(--bone); background: var(--surface); transition: border-color .15s ease-out, transform .15s ease-out; min-height: 48px; }
     .links a:active { transform: scale(.985); }
     .links a:hover, .links a:focus-visible { border-color: var(--gold); outline: none; }
-    .links .k { font-family: 'Inter', sans-serif; font-size: .62rem; letter-spacing: .28em; text-transform: uppercase; color: var(--muted); }
+    .links .k { font-family: 'Archivo', sans-serif; font-size: .62rem; letter-spacing: .28em; text-transform: uppercase; color: var(--muted); }
     .links .v { font-size: 1.05rem; }
 
     /* ── Photography: film strip + lightbox (the section stays hidden until photos/manifest.json has entries) ── */
@@ -225,7 +226,7 @@
     .frame::after { content: ""; position: absolute; inset: 0; }  /* catches drag and long-press so the image itself is never the target */
     .shot figcaption { font-style: italic; color: var(--muted); font-size: .95rem; max-width: 40ch; text-wrap: pretty; }
     .photos-note { font-style: italic; color: var(--muted); margin-top: .4rem; font-size: 1.05rem; }
-    .photos-count { font-family: 'Inter', sans-serif; font-size: .62rem; letter-spacing: .28em; text-transform: uppercase; color: var(--muted); font-variant-numeric: tabular-nums; }
+    .photos-count { font-family: 'Archivo', sans-serif; font-size: .62rem; letter-spacing: .28em; text-transform: uppercase; color: var(--muted); font-variant-numeric: tabular-nums; }
 
     .lightbox { border: 0; padding: 0; margin: 0; width: 100vw; height: 100vh; max-width: 100vw; max-height: 100vh; background: transparent; color: var(--bone); }
     .lightbox::backdrop { background: rgba(0, 11, 24, .94); }
@@ -236,23 +237,23 @@
     .lb-stage img { max-width: min(100%, 1600px); max-height: calc(100vh - 11rem); width: auto; height: auto; object-fit: contain; outline: 1px solid rgba(255,255,255,.1); outline-offset: -1px; pointer-events: none; -webkit-user-drag: none; background: var(--ph, var(--surface)); }
     .lb-foot { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .75rem var(--gutter) calc(1rem + var(--safe-bottom)); }
     .lb-foot p { font-style: italic; color: var(--bone-dim); font-size: 1.05rem; text-wrap: pretty; }
-    .lb-btn { min-width: 44px; min-height: 44px; padding: .6rem 1rem; border: 1px solid var(--line); border-radius: 2px; background: rgba(7,22,49,.8); color: var(--gold); font-family: 'Inter', sans-serif; font-size: .68rem; letter-spacing: .28em; text-transform: uppercase; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: .5rem; transition: border-color .15s ease-out, transform .15s ease-out; }
+    .lb-btn { min-width: 44px; min-height: 44px; padding: .6rem 1rem; border: 1px solid var(--line); border-radius: 2px; background: rgba(7,22,49,.8); color: var(--gold); font-family: 'Archivo', sans-serif; font-size: .68rem; letter-spacing: .28em; text-transform: uppercase; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: .5rem; transition: border-color .15s ease-out, transform .15s ease-out; }
     .lb-btn:hover, .lb-btn:focus-visible { border-color: var(--gold); color: var(--bone); outline: none; }
     .lb-btn:active { transform: scale(.96); }
 
     /* ── Bookmarks ── */
     .bm-tools { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .8rem 2rem; margin: 0 0 1rem; }
-    .bm-filter { font-family: 'Inter', sans-serif; font-size: 1rem; padding: .7rem 1rem; min-height: 44px; width: min(100%, 340px); background: var(--surface); border: 1px solid var(--line); border-radius: 6px; color: var(--bone); transition: border-color .15s ease-out; }
+    .bm-filter { font-family: 'Archivo', sans-serif; font-size: 1rem; padding: .7rem 1rem; min-height: 44px; width: min(100%, 340px); background: var(--surface); border: 1px solid var(--line); border-radius: 6px; color: var(--bone); transition: border-color .15s ease-out; }
     .bm-filter::placeholder { color: var(--slate); }
     .bm-filter:focus { border-color: var(--gold); outline: none; box-shadow: 0 0 0 2px rgba(124,196,255,.35); }
-    .bm-count { font-family: 'Inter', sans-serif; font-size: .62rem; letter-spacing: .28em; text-transform: uppercase; color: var(--muted); font-variant-numeric: tabular-nums; }
+    .bm-count { font-family: 'Archivo', sans-serif; font-size: .62rem; letter-spacing: .28em; text-transform: uppercase; color: var(--muted); font-variant-numeric: tabular-nums; }
     .bm-group { border-top: 1px solid var(--line); }
     .bm-group:last-child { border-bottom: 1px solid var(--line); }
     .bm-group h3 { font-weight: 400; font-size: 1rem; }
     .bm-toggle { width: 100%; display: flex; align-items: center; gap: 1rem; padding: 1rem 0; min-height: 56px; background: none; border: 0; color: var(--bone); font-family: 'Crimson Pro', Georgia, serif; font-size: 1.4rem; font-weight: 400; text-align: left; cursor: pointer; -webkit-tap-highlight-color: transparent; }
     .bm-toggle:hover span:first-child, .bm-toggle:focus-visible span:first-child { color: var(--gold-bright); }
     .bm-toggle:focus-visible { outline: none; box-shadow: inset 0 0 0 2px var(--focus); border-radius: 3px; }
-    .bm-toggle .n { margin-left: auto; font-family: 'Inter', sans-serif; font-size: .66rem; letter-spacing: .2em; color: var(--muted); font-variant-numeric: tabular-nums; }
+    .bm-toggle .n { margin-left: auto; font-family: 'Archivo', sans-serif; font-size: .66rem; letter-spacing: .2em; color: var(--muted); font-variant-numeric: tabular-nums; }
     .bm-toggle svg { flex-shrink: 0; color: var(--gold); transition: transform .25s cubic-bezier(.22, 1, .36, 1); }
     .bm-toggle[aria-expanded="true"] svg { transform: scaleY(-1); }
     .bm-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .35s cubic-bezier(.22, 1, .36, 1); }
@@ -263,16 +264,20 @@
     .bm-list a:hover, .bm-list a:focus-visible { background: rgba(197,160,89,.08); color: var(--bone); outline: none; }
     .bm-list a:focus-visible { box-shadow: inset 0 0 0 2px var(--focus); }
     .bm-list .t { font-size: 1.08rem; line-height: 1.25; }
-    .bm-list .d { font-family: 'Inter', sans-serif; font-size: .66rem; color: var(--muted); letter-spacing: .04em; }
+    .bm-list .d { font-family: 'Archivo', sans-serif; font-size: .66rem; color: var(--muted); letter-spacing: .04em; }
     .bm-list li[hidden], .bm-group[hidden] { display: none; }
     .bm-empty { padding: 1.2rem 0; font-style: italic; color: var(--muted); }
 
-    footer { position: relative; z-index: 2; margin-top: 4rem; border-top: 1px solid var(--line); padding: 2rem 0 calc(2.5rem + var(--safe-bottom)); font-family: 'Inter', sans-serif; font-size: .78rem; color: var(--muted); }
+    footer { position: relative; z-index: 2; margin-top: 4rem; border-top: 1px solid var(--line); padding: 2rem 0 calc(2.5rem + var(--safe-bottom)); font-family: 'Archivo', sans-serif; font-size: .78rem; color: var(--muted); }
     footer .row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .8rem 2rem; }
     @media (max-width: 619px) { footer .row { flex-direction: column; align-items: center; text-align: center; gap: .5rem; } }
     footer .motto { font-family: 'Crimson Pro', serif; font-style: italic; letter-spacing: .12em; color: var(--slate); }
     footer .motto .he { font-style: normal; letter-spacing: 0; }
 
+    @keyframes trackIn {
+      0% { opacity: 0; filter: blur(3px); letter-spacing: .6em; transform: translateY(12px); }
+      100% { opacity: 1; filter: blur(0); letter-spacing: .28em; transform: translateY(0); }
+    }
     @keyframes blurFadeIn {
       0% { opacity: 0; filter: blur(3px); transform: translateY(12px); }
       100% { opacity: 1; filter: blur(0); transform: translateY(0); }
@@ -494,6 +499,10 @@
     let t = 0, lastTs = 0, mouseX = -9999, mouseY = -9999, pointerInside = false;
     let bloom = 0, bloomTarget = 0;
     let musicInitialized = false;
+    // Intro weave: the threads draw in behind a shuttle over 1.4 s, then the nodes bloom once on desktop.
+    const INTRO_MS = 1400;
+    let introStart = null, intro = reduceMotion ? 1 : 0, helloDone = reduceMotion;
+    const easeOut = (x) => 1 - Math.pow(1 - x, 3);
 
     audioBtn.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -594,12 +603,14 @@
       ctx.translate(x, y);
       ctx.rotate(t * 0.15);
       const scaleBoost = 1 + (hoverState * 0.2);
-      const finalOpacity = (active * 0.5) + (hoverState * 0.5);
-      ctx.lineWidth = 0.8 + (hoverState * 0.6);
-      ctx.strokeStyle = `rgba(197, 160, 89, ${finalOpacity})`;
+      const finalOpacity = (active * 0.78) + (hoverState * 0.22);
+      ctx.lineWidth = 1.4 + (hoverState * 0.6);
+      // gold at rest, teal when hovered: brand hue for identity, the accent for state
+      const r = Math.round(197 + (127 - 197) * hoverState), g = Math.round(160 + (209 - 160) * hoverState), b = Math.round(89 + (193 - 89) * hoverState);
+      ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${finalOpacity})`;
       if (hoverState > 0.01) {
-        ctx.shadowBlur = hoverState * 20;
-        ctx.shadowColor = `rgba(197, 160, 89, ${hoverState * 0.8})`;
+        ctx.shadowBlur = hoverState * 22;
+        ctx.shadowColor = `rgba(127, 209, 193, ${hoverState * 0.85})`;
       }
       const count = 6;
       for (let i = 0; i < count; i++) {
@@ -608,25 +619,25 @@
         ctx.arc((size * scaleBoost) / 2.5, 0, (size * scaleBoost) / 1.8, 0, Math.PI * 2);
         ctx.stroke();
       }
-      ctx.fillStyle = `rgba(226, 232, 240, ${active})`;
+      ctx.fillStyle = `rgba(227, 194, 124, ${active})`;
       ctx.beginPath();
-      ctx.arc(0, 0, 1.5, 0, Math.PI * 2);
+      ctx.arc(0, 0, 2.2, 0, Math.PI * 2);
       ctx.fill();
       ctx.restore();
     }
 
     function drawMotto(text, y, w) {
       const maxW = w - 48;
-      let fs = (w < 620) ? 8 : 9;
+      let fs = (w < 620) ? 10 : 11;
       ctx.textAlign = "center";
-      ctx.font = `400 ${fs}px 'Crimson Pro'`;
-      ctx.letterSpacing = (w < 620 ? 0.28 : 0.9) + "em";
+      ctx.font = `400 ${fs}px 'Archivo'`;
+      ctx.letterSpacing = (w < 620 ? 0.24 : 0.6) + "em";
       let tw = ctx.measureText(text).width;
       if (tw > maxW) {
-        fs = Math.max(6, fs * (maxW / tw));
-        ctx.font = `400 ${fs}px 'Crimson Pro'`;
+        fs = Math.max(9, fs * (maxW / tw));
+        ctx.font = `400 ${fs}px 'Archivo'`;
       }
-      ctx.fillStyle = `rgba(226, 232, 240, ${0.1 + bloom * 0.5})`;
+      ctx.fillStyle = `rgba(185, 196, 214, ${(0.45 + bloom * 0.3) * intro})`;
       ctx.fillText(text, w / 2, y);
     }
 
@@ -634,6 +645,13 @@
       const dt = Math.min((ts - lastTs) / 1000 || 0, 0.05);
       lastTs = ts;
       t += dt * 0.4;
+      if (introStart === null) introStart = ts;
+      if (intro < 1) intro = Math.min(1, (ts - introStart) / INTRO_MS);
+      if (intro >= 1 && !helloDone) {
+        helloDone = true;
+        if (!isTouch) { bloomTarget = 1; setTimeout(() => { if (!pointerInside) bloomTarget = 0; }, 2200); }
+      }
+      const reveal = easeOut(intro);
       const w = canvas.clientWidth, h = canvas.clientHeight;
       const centerX = w / 2, centerY = h / 2;
       ctx.clearRect(0, 0, w, h);
@@ -644,7 +662,7 @@
       if (bloom > 0.02) {
         for (let r = 0; r < 7; r++) {
           const radius = (55 * r + (t * 45) % 55) * bloom;
-          const alpha = Math.max(0, (1 - radius / (w * 0.4))) * bloom * (0.12 + pulse * 0.06);
+          const alpha = Math.max(0, (1 - radius / (w * 0.4))) * bloom * (0.16 + pulse * 0.08);
           ctx.beginPath();
           ctx.strokeStyle = `rgba(197, 160, 89, ${alpha})`;
           ctx.lineWidth = 0.6 + (pulse * 1.2);
@@ -655,13 +673,19 @@
 
       const threadCount = 12;
       const points = Math.max(80, Math.min(180, Math.round(w / 7)));
+      const frontX = reveal * (w + 40);
+      let shuttleY = centerY;
       for (let s = 0; s < threadCount; s++) {
         ctx.beginPath();
         const offset = (s / threadCount) * Math.PI * 2;
-        ctx.strokeStyle = `rgba(197, 160, 89, ${0.3 * (1 - bloom)})`;
-        ctx.lineWidth = 0.7;
+        // each thread trails the shuttle by a few percent, so the weave builds thread by thread
+        const lag = (s / threadCount) * 0.18;
+        const threadFront = Math.max(0, (reveal - lag) / (1 - lag)) * (w + 40);
+        ctx.strokeStyle = `rgba(197, 160, 89, ${0.42 * (1 - bloom)})`;
+        ctx.lineWidth = 0.9;
         for (let i = 0; i <= points; i++) {
           const x = (i / points) * w;
+          if (x > threadFront) break;
           const xFactor = x * 0.01;
           const y1 = Math.sin(xFactor + t + offset) * 48;
           const y2 = Math.cos(xFactor * 0.5 - t * 0.5 + offset) * 15;
@@ -669,9 +693,18 @@
           const disruption = Math.max(0, (250 - distToCenter));
           const jitter = Math.sin((x * 0.5) + (t * 12)) * (pulse * 14 * bloom * (disruption / 250));
           const y = centerY + (y1 + y2) * (1 - bloom) + jitter;
+          if (s === 0) shuttleY = y;
           if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
         }
         ctx.stroke();
+      }
+      // the shuttle: a glowing gold-bright point leading the weave, gone once the cloth is whole
+      if (intro < 1) {
+        ctx.save();
+        ctx.shadowBlur = 18; ctx.shadowColor = 'rgba(227, 194, 124, 0.9)';
+        ctx.fillStyle = `rgba(227, 194, 124, ${1 - Math.pow(intro, 6)})`;
+        ctx.beginPath(); ctx.arc(Math.min(frontX, w - 4), shuttleY, 3.2, 0, Math.PI * 2); ctx.fill();
+        ctx.restore();
       }
 
       // Phones get six nodes in two columns with a side margin; wider screens get all twelve in four.
@@ -716,17 +749,18 @@
 
       canvas.style.cursor = anyHovered ? 'pointer' : 'default';
 
-      const labelFont = narrow ? "400 11px 'Crimson Pro'" : "300 11px 'Crimson Pro'";
+      const labelFont = narrow ? "500 11px 'Archivo'" : "500 12px 'Archivo'";
       currentNodes.forEach(n => {
-        const strength = isTouch ? bloom : Math.max(n.hover, bloom * 0.45);
+        const strength = isTouch ? bloom : Math.max(n.hover, bloom * 0.8);
         if (strength > 0.05) {
           ctx.save();
           ctx.font = labelFont;
           ctx.textAlign = "center";
-          ctx.letterSpacing = (narrow ? 0.08 : (0.3 + n.hover * 0.2)) + "em";
-          const wobble = isTouch ? 0 : (n.hover * 4 + Math.sin(t * 5) * n.hover);
-          const yOffset = (narrow ? 32 : 46) + wobble;
-          ctx.fillStyle = `rgba(226, 232, 240, ${strength * 0.9})`;
+          ctx.letterSpacing = (narrow ? 0.1 : 0.18) + "em";
+          const wobble = isTouch ? 0 : (n.hover * 3);
+          const yOffset = (narrow ? 32 : 48) + wobble;
+          const lr = Math.round(226 + (207 - 226) * n.hover), lg = Math.round(232 + (236 - 232) * n.hover), lb = Math.round(240 + (230 - 240) * n.hover);
+          ctx.fillStyle = `rgba(${lr}, ${lg}, ${lb}, ${Math.min(1, strength)})`;
           ctx.fillText(n.label.toUpperCase(), n.x, n.y + yOffset);
           ctx.restore();
         }
@@ -736,10 +770,10 @@
                 (w < 620 ? 26 : 30), w);
 
       if (isTouch && bloom < 0.25) {
-        ctx.font = "300 10px 'Crimson Pro'";
+        ctx.font = "500 11px 'Archivo'";
         ctx.textAlign = "center";
-        ctx.letterSpacing = "0.35em";
-        ctx.fillStyle = `rgba(197, 160, 89, ${0.35 + pulse * 0.3})`;
+        ctx.letterSpacing = "0.3em";
+        ctx.fillStyle = `rgba(227, 194, 124, ${(0.55 + pulse * 0.3) * intro})`;
         ctx.fillText("TAP TO EXPLORE", centerX, centerY + Math.min(135, h * 0.3));
       }
 

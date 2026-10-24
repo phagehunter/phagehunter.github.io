@@ -293,8 +293,8 @@
       .hero .prefix { animation-delay: .25s; } .hero h1 { animation-delay: .35s; } .hero .tag { animation-delay: .45s; } .hero .btns { animation-delay: .55s; } .hero .sky { animation-delay: .45s; animation-duration: 1.4s; }
       @keyframes fadeUp { from { opacity: 0; transform: translateY(.6rem); } to { opacity: 1; transform: none; } }
     }
-    .featured.landed a { animation: land .6s ease; }
-    @keyframes land { 0% { color: var(--text); } 100% { color: var(--gold); } }
+    .featured.landed a { animation: land 2.6s cubic-bezier(.45,0,.3,1) both; }      /* a slow swell: up to bright with a soft halo, then back down to gold */
+    @keyframes land { 0% { color: var(--gold); text-shadow: 0 0 0 rgba(227,194,124,0); } 38% { color: var(--text); text-shadow: 0 0 16px rgba(227,194,124,.55); } 100% { color: var(--gold); text-shadow: 0 0 0 rgba(227,194,124,0); } }
     .btn { position: relative; isolation: isolate; overflow: hidden; display: inline-flex; align-items: center; gap: .5rem; font-size: .9rem; font-weight: 600; padding: .85rem 1.35rem; border-radius: 6px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none;
       background: linear-gradient(160deg, #162a47 0%, var(--surface) 55%, #0e1c33 100%); box-shadow: 0 1px 0 rgba(255,255,255,.04) inset;
       transition: transform .8s cubic-bezier(.22,.61,.36,1), box-shadow .8s cubic-bezier(.22,.61,.36,1), color .6s ease, border-color .6s ease; }
@@ -629,7 +629,7 @@
           <div class="text">
             <svg class="seismic" viewBox="0 0 400 400" aria-hidden="true" focusable="false"><g transform="translate(200 200)"><circle r="18"/><circle r="44"/><circle r="76"/><circle r="114"/><circle r="156"/><circle r="198" opacity=".6"/></g></svg>
             <p class="big">Biology, <em>culture</em>, and the threads between them.</p>
-            <p>Pathogens have a knack for disrupting society. It's our job to understand them. The deeper we look, the more we learn about ourselves: our cultures, our fears, our shared history.</p>
+            <p>Pathogens have a knack for disrupting society. It's our job to understand them. The deeper we look, the more we learn about ourselves: our traditions, beliefs, social structures, and shared history.</p>
             <p><strong>Curtis Hoffmann</strong> is a researcher working at the intersection of biology and anthropology. He studies how microbes move through communities and cultures, and designs live outbreak simulations that help people experience how epidemics unfold.</p>
             <div class="rows cv" id="cv" aria-label="Fellowships, education, interests and skills">
               <p class="cv-h"><span class="typed">Fellowships</span></p>

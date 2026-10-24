@@ -25,6 +25,8 @@ The right half of the hero is a constellation drawn in SVG: twelve blooms, one p
 
 Under the hero buttons, "Check out" names one project a day: the UTC day number walks the docket in order from an anchor date, so every visitor sees the same pick on a given day, and a newly added project takes the pick for its first three days.
 
+Faint geometric viruses float behind the Projects, About and Bookmarks bands. They drift away from the pointer and can be dragged with a mouse or pen. Drop one onto another in the same band and the two reassort, the way influenza does: both split into eight RNA segments, the segments gather, and eight of them, four from each parent, reassemble into a new design in a new color. The new virus is a shadow like any other and can be reassorted again. All of this is plain JavaScript in the page; nothing is loaded.
+
 ## Adding a project
 
 The grid, the constellation and the daily pick are all generated from `data/projects.json` by `build_projects.py`, which rewrites the blocks between the `projects`, `constellation`, `spotlight` and `spotlight-fallback` markers in `index.html`. One command adds a project and rebuilds everything:
@@ -37,7 +39,7 @@ python3 build_projects.py add --title "Name" --href https://curtishoffmann.com/n
 
 ## Contact form
 
-The Contact section posts to StaticForms, a hosted form endpoint, so the page can take messages without a server. The form's key is the hidden `apiKey` field in `index.html`; it is a public form key, not an account credential, and can be regenerated in the StaticForms dashboard. The dashboard also offers a redirect back to the page after sending, a domain restriction and a honeypot, all worth turning on.
+The Contact section posts to StaticForms, a hosted form endpoint, so the page can take messages without a server. The form's key is the hidden `apiKey` field in `index.html`; it is a public form key, not an account credential, and can be regenerated in the StaticForms dashboard. The page posts the form in the background and reports under the Send button, so visitors stay on the page; if that request cannot be made at all, the form falls back to an ordinary post, which lands on the service's own page. The dashboard also offers a domain restriction and a honeypot, both worth turning on.
 
 ## Hosting notes
 

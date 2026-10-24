@@ -221,7 +221,7 @@
       --teal: #6fd6c6;
       --teal-dim: #4fb8a8;
       --focus: #6fd6c6;
-      --gutter: clamp(1.25rem, 5vw, 3rem);
+      --gutter: clamp(1.5rem, 6vw, 3rem);
       /* type scale, ratio 1.25 from 16 px */
       --s-1: .8rem; --s0: 1rem; --s1: 1.25rem; --s2: 1.5625rem; --s3: 1.953rem; --s4: 2.441rem; --s5: 3.052rem; --s6: 3.815rem; --s7: 4.768rem;
       --serif: 'Crimson Pro', Georgia, serif;
@@ -247,6 +247,11 @@
     .bar { position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
     .bar .wrap { display: flex; justify-content: space-between; align-items: center; gap: 1rem; height: 3.5rem; }
     .bar .name { font-family: var(--serif); font-size: var(--s1); color: var(--text); text-decoration: none; }
+    .bar .brand { display: flex; align-items: center; gap: .9rem; min-width: 0; }
+    .bar .social { display: flex; align-items: center; gap: .55rem; padding-left: .9rem; border-left: 1px solid var(--line); }
+    .bar .social a { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 6px; color: var(--muted); transition: color .25s, background .25s; }
+    .bar .social a:hover, .bar .social a:focus-visible { color: var(--gold); background: color-mix(in srgb, var(--gold) 10%, transparent); outline: none; }
+    .bar .social svg { display: block; }
     .bar nav { display: flex; gap: 1.5rem; }
     .bar nav a { font-family: var(--sans); font-size: .76rem; letter-spacing: .14em; text-transform: uppercase; color: var(--text-2); text-decoration: none; font-weight: 500; }
     .bar nav a:hover { color: var(--teal); }
@@ -332,7 +337,7 @@
     .microbe:hover { stroke: rgba(227, 194, 124, .3); }
     .microbe.held { cursor: grabbing; stroke: rgba(227, 194, 124, .45); fill: rgba(227, 194, 124, .05); }
     .microbe .body, .microbe .nudge { transform-box: fill-box; transform-origin: center; }
-    section.block, .hero { position: relative; }
+    section.block, .hero { position: relative; scroll-margin-top: 3.5rem; }
     section.block > .wrap, .hero > .wrap { position: relative; z-index: 1; }
     /* layout boxes let the pointer through to the shadows behind them; the content itself still takes it */
     section.block > .wrap, .sec-head, .grid, .about, .about .text, .side, .rows, .rows ul, .bm-groups, .bm-tools, .contact, .contact .row { pointer-events: none; }
@@ -407,6 +412,7 @@
     @keyframes blink { 50% { opacity: 0; } }
     .cv .typed { visibility: hidden; }
     .cv .typed.on { visibility: visible; }
+    .cv .typed .rest { visibility: hidden; }
 
     /* contact form */
     .contact { max-width: 680px; display: grid; gap: 1rem; }
@@ -461,12 +467,17 @@
       .contact .row { grid-template-columns: 1fr; }
       .seismic { width: 16rem; height: 16rem; right: -3rem; top: -4rem; }
     }
+    /* the bar: below 760px the section links go and the name, the social icons and sound stay; the sections are a scroll away */
+    .bar .name { white-space: nowrap; }
+    @media (max-width: 760px) { .bar nav { display: none; } }
+    @media (min-width: 761px) and (max-width: 900px) { .bar nav { gap: 1rem; } .bar nav a { font-size: .7rem; letter-spacing: .1em; } .bar .brand { gap: .7rem; } .bar .social { padding-left: .7rem; gap: .3rem; } }
     @media (max-width: 600px) {
-      .bar .name { font-size: .9rem; white-space: nowrap; }
+      .bar .name { font-size: .95rem; }
+      .bar .brand { gap: .7rem; }
+      .bar .social { gap: .25rem; padding-left: .7rem; }
+      .bar .social a { width: 32px; height: 32px; }
+      .bar .social svg { width: 17px; height: 17px; }
       .bar .wrap { gap: .6rem; }
-      .bar nav { gap: .55rem; }
-      .bar nav a { font-size: .64rem; letter-spacing: .04em; }
-      .bar nav a:last-child { display: none; }
       .sound { margin-left: 0; width: 30px; height: 30px; }
       .grid { grid-template-columns: 1fr; }
 
@@ -487,7 +498,8 @@
   </svg>
   <header class="bar">
     <div class="wrap">
-      <a class="name" href="#top">Curtis Hoffmann</a>
+      <div class="brand"><a class="name" href="#top">Curtis Hoffmann</a>
+        <span class="social"><a href="https://github.com/phagehunter" rel="me noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2.17c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.58.23 2.75.11 3.04.74.8 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg></a><a href="https://www.linkedin.com/in/phagehunter" rel="me noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a><a href="https://scholar.google.com/citations?user=EOEi56EAAAAJ&amp;hl=en" rel="me noopener" aria-label="Google Scholar" title="Google Scholar"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3z"/><path d="M5 13.2V17c0 1.7 3.1 3.5 7 3.5s7-1.8 7-3.5v-3.8l-7 3.8-7-3.8z"/></svg></a></span></div>
       <nav aria-label="Sections"><a href="#projects">Projects</a><a href="#about">About</a><a href="#bookmarks">Bookmarks</a><a href="#contact">Contact</a></nav>
       <button class="sound" id="sound" type="button" aria-pressed="false" aria-label="Sound off" title="Sound"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path class="w1" d="M15.5 8.5a5 5 0 0 1 0 7"/><path class="w2" d="M18.5 5.5a9 9 0 0 1 0 13"/></svg></button>
     </div>
@@ -793,7 +805,8 @@
 
   <script>
     // The current-work and education rows type themselves the first time they scroll into view. Progress is a function of elapsed time on a
-    // plain timer, so a throttled or background tab only pauses it; the text is laid out hidden beforehand, so nothing shifts.
+    // plain timer, so a throttled or background tab only pauses it. The full text stays in the flow the whole time and only the untyped
+    // remainder is invisible, so the card keeps its height and nothing below it moves while the lines type.
     (function () {
       const card = document.querySelector('.cv'); if (!card) return;
       const spans = Array.from(card.querySelectorAll('.typed'));
@@ -814,15 +827,16 @@
           if (k < full.length) done = false;
           if (k === 0) return;
           if (!s.classList.contains('on')) s.classList.add('on');
-          if (s.firstChild && s.firstChild.nodeType === 3) s.firstChild.textContent = full.slice(0, k); else s.insertBefore(document.createTextNode(full.slice(0, k)), s.firstChild);
-          if (k < full.length && cursor.parentNode !== s) s.appendChild(cursor);
+          s.firstChild.textContent = full.slice(0, k); s.lastChild.textContent = full.slice(k);          // typed part, then the invisible remainder
+          if (k < full.length) { if (cursor.parentNode !== s) s.insertBefore(cursor, s.lastChild); } else if (cursor.parentNode === s) cursor.remove();
           if (k >= full.length && s.parentNode.classList.contains('cv-h')) s.parentNode.classList.add('drawn');
         });
         if (done) { cursor.remove(); clearInterval(timer); }
       }
       function start() {
         if (started) return; started = true; io.disconnect(); clearInterval(poll); window.removeEventListener('scroll', check);
-        spans.forEach((s) => { s.textContent = ''; }); timer = setInterval(frame, 50); frame();
+        spans.forEach((s, i) => { s.textContent = ''; s.appendChild(document.createTextNode('')); const rest = document.createElement('span'); rest.className = 'rest'; rest.textContent = texts[i]; s.appendChild(rest); });
+        timer = setInterval(frame, 50); frame();
       }
       function check() { const r = card.getBoundingClientRect(); if (r.top < window.innerHeight * .85 && r.bottom > 0) start(); }
       const io = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) start(); }, { threshold: .3 });

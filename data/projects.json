@@ -108,7 +108,7 @@
   {
    "title": "Saphan",
    "href": "https://curtishoffmann.com/saphan/",
-   "blurb": "An offline-first phrasebook of reviewed health phrases in Thai, Burmese, Mon, and English for village health volunteers in Kanchanaburi, Thailand. In development.",
+   "blurb": "An offline-first phrasebook of reviewed health phrases in Thai, Burmese, Mon, and English for village health volunteers in Kanchanaburi, Thailand.",
    "go": "Open app",
    "cta": "Try the offline health phrasebook for village health volunteers.",
    "short": "Saphan",
@@ -117,15 +117,15 @@
    "added": null
   },
   {
-   "title": "whybox",
-   "href": "https://curtishoffmann.com/whybox/",
-   "blurb": "A science sandbox for reasoning from the outputs you can see to the mechanisms you cannot, built as a working skeleton with one complete example.",
-   "go": "Open sandbox",
-   "cta": "Reason from what you can see to the mechanisms you cannot.",
-   "short": "whybox",
+   "title": "Bouba",
+   "href": "https://curtishoffmann.com/bouba/",
+   "blurb": "Shows how speakers of Thai, Burmese, Japanese, Mandarin Chinese, Arabic and Hindi are likely to pronounce a company or product name written in English spelling.",
+   "go": "Open Bouba",
+   "cta": "See how a name written in English spelling is likely to be pronounced in six other languages.",
+   "short": "Bouba",
    "phone": false,
-   "icon": "<svg class=\"ico\" viewBox=\"0 0 48 48\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" aria-hidden=\"true\"><rect x=\"8\" y=\"14\" width=\"32\" height=\"26\" rx=\"3\"/><path d=\"M8 22h32M20 14V8h8v6\"/><circle cx=\"24\" cy=\"31\" r=\"3\"/></svg>",
-   "added": null
+   "icon": "<svg class=\"ico\" viewBox=\"0 0 48 48\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" aria-hidden=\"true\"><path d=\"M18 9c7-3 15 1 17 8 2 6 7 8 6 15-1 7-9 9-15 8-5-1-8 3-13 0-6-4-6-11-3-16 2-4 2-12 8-15z\"/><path d=\"M19 26c3 3 7 3 10 0\"/><circle cx=\"19\" cy=\"20\" r=\"1.2\" fill=\"currentColor\"/><circle cx=\"29\" cy=\"20\" r=\"1.2\" fill=\"currentColor\"/></svg>",
+   "added": "2026-11-23"
   },
   {
    "title": "Ember",
